@@ -10,24 +10,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet">
   <style>
-    /* ─── RESET & TOKENS ─── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --blue:        #005BA7;
-      --blue-dark:   #00478A;
-      --blue-pale:   #EBF3FB;
-      --yellow:      #FFC300;
-      --yellow-dark: #E6B000;
-      --yellow-pale: #FFFBE6;
-      --bg:          #FBFBFB;
-      --white:       #FFFFFF;
-      --text:        #0D1B2A;
-      --muted:       #5A6575;
-      --border:      #E2E8F0;
-      --r:           10px;
-      --fn:          'Barlow', sans-serif;
-      --fn-cond:     'Barlow Condensed', sans-serif;
+      --blue:       #005BA7;
+      --blue-dark:  #00478A;
+      --blue-pale:  #EBF3FB;
+      --yellow:     #FFC300;
+      --yellow-dk:  #E6B000;
+      --yellow-pale:#FFFBE6;
+      --bg:         #FBFBFB;
+      --white:      #FFFFFF;
+      --text:       #0D1B2A;
+      --muted:      #5A6575;
+      --border:     #E2E8F0;
+      --r:          10px;
+      --fn:         'Barlow', sans-serif;
+      --fn-cond:    'Barlow Condensed', sans-serif;
     }
 
     html { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
@@ -38,142 +37,139 @@
 
     .container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 20px; }
 
-    /* ─── BUTTONS ─── */
+    /* ── BUTTONS ── */
     .btn-yellow {
       display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      background: var(--yellow); color: var(--text); font-family: var(--fn);
-      font-weight: 700; font-size: 1rem; padding: 16px 28px; border: none;
-      border-radius: var(--r); cursor: pointer; width: 100%;
-      transition: background .15s, transform .1s;
-      box-shadow: 0 4px 14px rgba(255,195,0,.35);
+      background: var(--yellow); color: var(--text); font-weight: 700; font-size: 1rem;
+      padding: 16px 28px; border: none; border-radius: var(--r); cursor: pointer; width: 100%;
+      transition: background .15s, transform .1s; box-shadow: 0 4px 14px rgba(255,195,0,.3);
     }
-    .btn-yellow:hover { background: var(--yellow-dark); transform: translateY(-1px); }
+    .btn-yellow:hover { background: var(--yellow-dk); transform: translateY(-1px); }
     .btn-yellow:active { transform: translateY(0); }
 
-    .btn-outline-white {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      background: transparent; color: white; font-weight: 700; font-size: .95rem;
-      padding: 14px 24px; border: 2px solid rgba(255,255,255,.4); border-radius: var(--r);
-      transition: border-color .15s, background .15s; width: 100%;
-    }
-    .btn-outline-white:hover { border-color: white; background: rgba(255,255,255,.08); }
-
-    /* ─── URGENCY BAR ─── */
-    .urgency-bar {
-      background: var(--yellow); color: var(--text);
-      text-align: center; padding: 9px 20px; font-size: .82rem; font-weight: 700;
-    }
+    /* ── URGENCY BAR ── */
+    .urgency-bar { background: var(--yellow); color: var(--text); text-align: center; padding: 9px 20px; font-size: .82rem; font-weight: 700; }
     .urgency-inner { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
-    .urgency-bar .ct-wrap { display: inline-flex; gap: 3px; align-items: center; }
+    .ct-wrap { display: inline-flex; gap: 3px; align-items: center; }
     .ct-unit { background: var(--text); color: white; border-radius: 4px; padding: 1px 6px; font-size: .95rem; min-width: 28px; text-align: center; font-family: var(--fn-cond); font-weight: 700; }
-    .ct-sep { color: var(--text); font-weight: 900; opacity: .5; }
+    .ct-sep { font-weight: 900; opacity: .45; }
 
-    /* ─── HEADER ─── */
-    .header { position: sticky; top: 0; z-index: 100; background: white; border-bottom: 1px solid var(--border); box-shadow: 0 1px 12px rgba(0,0,0,.06); }
-    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; max-width: 1080px; margin: 0 auto; }
+    /* ── HEADER ── */
+    .header { position: sticky; top: 0; z-index: 100; background: white; border-bottom: 1px solid var(--border); box-shadow: 0 1px 10px rgba(0,0,0,.06); }
+    .header-inner { display: flex; align-items: center; justify-content: center; padding: 14px 20px; max-width: 1080px; margin: 0 auto; }
     .logo img { height: 44px; width: auto; }
-    .header-contact { text-align: right; }
-    .header-phone { display: flex; align-items: center; gap: 6px; font-size: 1.25rem; font-weight: 800; color: var(--blue); letter-spacing: -.01em; }
-    .header-phone svg { color: var(--blue); }
-    .header-hours { font-size: .65rem; color: var(--muted); font-weight: 500; margin-top: 1px; }
-    @media (max-width: 480px) { .header-phone { font-size: 1rem; } .logo img { height: 36px; } }
+    @media (max-width: 480px) { .logo img { height: 36px; } }
 
-    /* ─── HERO ─── */
-    .hero { background: var(--blue); color: white; padding: 52px 0 60px; }
-    .hero-inner { display: grid; grid-template-columns: 1fr; gap: 40px; }
-    @media (min-width: 768px) { .hero-inner { grid-template-columns: 1.1fr .9fr; gap: 52px; align-items: start; } }
-
+    /* ── HERO ── */
+    .hero { background: var(--blue); color: white; padding: 56px 0 64px; text-align: center; }
     .hero-tag {
       display: inline-flex; align-items: center; gap: 7px;
       background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2);
       color: white; font-size: .72rem; font-weight: 700; letter-spacing: .1em;
-      text-transform: uppercase; padding: 5px 12px; border-radius: 100px; margin-bottom: 18px;
+      text-transform: uppercase; padding: 5px 13px; border-radius: 100px; margin-bottom: 20px;
     }
     .hero-tag::before { content: ''; width: 6px; height: 6px; background: var(--yellow); border-radius: 50%; animation: blink 1.8s ease-in-out infinite; }
     @keyframes blink { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(1.4)} }
 
-    .hero h1 { font-size: clamp(1.9rem, 5.5vw, 3rem); font-weight: 800; line-height: 1.15; margin-bottom: 24px; }
+    .hero h1 { font-size: clamp(2rem, 6vw, 3.4rem); font-weight: 800; line-height: 1.15; margin-bottom: 28px; }
     .hero h1 span { color: var(--yellow); }
 
-    .offer-pills { display: flex; gap: 10px; margin-bottom: 24px; }
-    .offer-pill { flex: 1; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); border-radius: 12px; padding: 16px 10px; text-align: center; }
-    .pill-num { font-family: var(--fn-cond); font-size: clamp(2.6rem, 8vw, 4rem); font-weight: 800; color: var(--yellow); line-height: 1; display: block; }
-    .pill-label { font-size: .72rem; font-weight: 600; color: rgba(255,255,255,.7); text-transform: uppercase; letter-spacing: .05em; line-height: 1.35; display: block; margin-top: 4px; }
-    .offer-plus { display: flex; align-items: center; color: rgba(255,255,255,.3); font-size: 1.5rem; font-weight: 300; }
+    .offer-pills { display: flex; gap: 12px; justify-content: center; max-width: 440px; margin: 0 auto 28px; }
+    .offer-pill { flex: 1; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); border-radius: 14px; padding: 18px 12px; }
+    .pill-num { font-family: var(--fn-cond); font-size: clamp(3rem, 9vw, 4.4rem); font-weight: 800; color: var(--yellow); line-height: 1; display: block; }
+    .pill-label { font-size: .72rem; font-weight: 600; color: rgba(255,255,255,.7); text-transform: uppercase; letter-spacing: .05em; line-height: 1.4; display: block; margin-top: 5px; }
+    .offer-plus { display: flex; align-items: center; color: rgba(255,255,255,.3); font-size: 1.6rem; font-weight: 300; }
 
-    .hero-sub { font-size: .95rem; color: rgba(255,255,255,.7); line-height: 1.65; margin-bottom: 24px; }
+    .hero-sub { font-size: 1rem; color: rgba(255,255,255,.72); line-height: 1.65; max-width: 520px; margin: 0 auto 32px; }
 
-    .hero-trust { display: flex; flex-wrap: wrap; gap: 14px; }
-    .trust-chip { display: flex; align-items: center; gap: 6px; font-size: .78rem; font-weight: 600; color: rgba(255,255,255,.6); }
-    .trust-chip svg { color: var(--yellow); flex-shrink: 0; }
-
-    /* ─── FORM CARD ─── */
-    .form-card { background: white; border-radius: 16px; padding: 28px 24px; box-shadow: 0 20px 60px rgba(0,0,0,.18); }
-    .form-card-eyebrow { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--blue); margin-bottom: 5px; text-align: center; }
-    .form-card-title { font-size: 1.35rem; font-weight: 800; color: var(--text); text-align: center; line-height: 1.25; }
-    .form-card-sub { font-size: .8rem; color: var(--muted); text-align: center; margin-top: 5px; margin-bottom: 18px; }
-
+    /* ── FORM CARD ── */
+    .form-card-wrap { max-width: 520px; margin: 0 auto; }
+    .form-card { background: white; border-radius: 18px; padding: 28px 24px; box-shadow: 0 20px 60px rgba(0,0,0,.2); }
+    .fc-eyebrow { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--blue); margin-bottom: 5px; text-align: center; }
+    .fc-title { font-size: 1.3rem; font-weight: 800; color: var(--text); text-align: center; line-height: 1.25; }
+    .fc-sub { font-size: .8rem; color: var(--muted); text-align: center; margin-top: 5px; margin-bottom: 18px; }
     .form-badges { display: flex; gap: 8px; margin-bottom: 18px; }
     .form-badge { flex: 1; background: var(--yellow-pale); border: 1px solid rgba(255,195,0,.4); border-radius: 8px; padding: 10px 6px; text-align: center; }
     .fb-num { font-family: var(--fn-cond); font-size: 1.7rem; font-weight: 800; color: var(--blue); line-height: 1; display: block; }
     .fb-label { font-size: .6rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; display: block; margin-top: 2px; }
 
     .form-group { margin-bottom: 11px; }
-    .form-group label { display: block; font-size: .74rem; font-weight: 700; color: var(--text); margin-bottom: 4px; text-transform: uppercase; letter-spacing: .04em; }
+    .form-group label { display: block; font-size: .72rem; font-weight: 700; color: var(--text); margin-bottom: 4px; text-transform: uppercase; letter-spacing: .04em; }
     .form-group input {
       width: 100%; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 8px;
       font-family: var(--fn); font-size: .92rem; color: var(--text); background: white;
       transition: border-color .2s, box-shadow .2s; -webkit-appearance: none; appearance: none;
     }
-    .form-group input:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(0,91,167,.12); }
+    .form-group input:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(0,91,167,.1); }
     .form-group input.error { border-color: #E53E3E; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    @media (max-width: 360px) { .form-row { grid-template-columns: 1fr; } }
-
+    @media (max-width: 400px) { .form-row { grid-template-columns: 1fr; } }
     .form-submit { margin-top: 14px; }
     .form-note { font-size: .66rem; color: var(--muted); text-align: center; margin-top: 9px; line-height: 1.5; }
     .form-note a { color: var(--muted); text-decoration: underline; }
 
-    /* ─── SUCCESS ─── */
+    /* ── SUCCESS ── */
     .success-msg { display: none; text-align: center; padding: 28px 16px; }
     .success-msg.show { display: block; }
     .success-icon { width: 56px; height: 56px; background: #EBF8EE; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; }
     .success-msg h3 { font-size: 1.35rem; font-weight: 800; color: var(--text); margin-bottom: 8px; }
     .success-msg p { font-size: .88rem; color: var(--muted); line-height: 1.65; }
 
-    /* ─── STATS ─── */
-    .stats-section { background: var(--yellow); padding: 32px 0; }
-    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; text-align: center; }
-    .stat-num { font-family: var(--fn-cond); font-size: clamp(2rem, 5.5vw, 2.8rem); font-weight: 800; color: var(--blue); line-height: 1; display: block; }
-    .stat-label { font-size: .72rem; font-weight: 700; color: rgba(13,27,42,.6); text-transform: uppercase; letter-spacing: .07em; margin-top: 3px; }
+    /* ── HERO TRUST CHIPS ── */
+    .hero-trust { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 24px; }
+    .trust-chip { display: flex; align-items: center; gap: 6px; font-size: .78rem; font-weight: 600; color: rgba(255,255,255,.6); }
+    .trust-chip svg { color: var(--yellow); flex-shrink: 0; }
 
-    /* ─── SECTIONS ─── */
-    .section { padding: 60px 0; }
+    /* ── FULL-WIDTH PHOTO ── */
+    .photo-banner { width: 100%; overflow: hidden; line-height: 0; }
+    .photo-banner img { width: 100%; height: 420px; object-fit: cover; object-position: center 30%; display: block; }
+    @media (max-width: 767px) { .photo-banner img { height: 260px; } }
+
+    /* ── STATS ── */
+    .stats-section { background: var(--yellow); padding: 32px 0; text-align: center; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; }
+    .stat-num { font-family: var(--fn-cond); font-size: clamp(2rem, 5.5vw, 2.8rem); font-weight: 800; color: var(--blue); line-height: 1; display: block; }
+    .stat-label { font-size: .72rem; font-weight: 700; color: rgba(13,27,42,.58); text-transform: uppercase; letter-spacing: .07em; margin-top: 3px; }
+
+    /* ── BADGES ── */
+    .badges-section { background: var(--bg); padding: 24px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .badges-strip { display: flex; align-items: center; justify-content: center; gap: 28px; flex-wrap: wrap; }
+    .badge-item img { height: 34px; width: auto; opacity: .6; filter: grayscale(20%); transition: opacity .2s; }
+    .badge-item img:hover { opacity: 1; }
+
+    /* ── SECTIONS ── */
+    .section { padding: 64px 0; text-align: center; }
     .sec-label { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--blue); margin-bottom: 8px; }
-    .sec-title { font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 800; color: var(--text); line-height: 1.2; margin-bottom: 10px; }
+    .sec-title { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800; color: var(--text); line-height: 1.2; margin-bottom: 10px; }
     .sec-title span { color: var(--blue); }
-    .sec-sub { font-size: .96rem; color: var(--muted); max-width: 520px; line-height: 1.7; }
+    .sec-sub { font-size: .97rem; color: var(--muted); max-width: 560px; margin: 0 auto; line-height: 1.7; }
     .sec-hdr { margin-bottom: 40px; }
 
-    /* ─── BENEFITS ─── */
-    .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-    .benefit-card { background: white; border-radius: 14px; padding: 28px 24px; border: 1.5px solid var(--border); transition: border-color .2s, box-shadow .2s, transform .2s; }
+    /* ── BENEFITS ── */
+    .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; text-align: left; }
+    .benefit-card { background: white; border-radius: 14px; overflow: hidden; border: 1.5px solid var(--border); transition: border-color .2s, box-shadow .2s, transform .2s; }
     .benefit-card:hover { border-color: var(--blue); box-shadow: 0 8px 28px rgba(0,91,167,.1); transform: translateY(-2px); }
-    .ben-icon { width: 48px; height: 48px; background: var(--blue-pale); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; color: var(--blue); }
-    .ben-title { font-size: 1.1rem; font-weight: 800; color: var(--text); margin-bottom: 6px; }
-    .ben-text { font-size: .88rem; color: var(--muted); line-height: 1.65; }
+    .ben-img { width: 100%; height: 180px; object-fit: cover; display: block; }
+    .ben-body { padding: 20px; }
+    .ben-title { font-size: 1.05rem; font-weight: 800; color: var(--text); margin-bottom: 6px; }
+    .ben-text { font-size: .87rem; color: var(--muted); line-height: 1.65; }
 
-    /* ─── HOW IT WORKS ─── */
-    .steps-section { background: var(--blue); color: white; padding: 60px 0; }
+    /* ── PHOTO SPLIT ── */
+    .photo-split { display: grid; grid-template-columns: 1fr 1fr; }
+    .photo-split img { width: 100%; height: 360px; object-fit: cover; display: block; }
+    @media (max-width: 640px) { .photo-split { grid-template-columns: 1fr; } .photo-split img { height: 240px; } }
+
+    /* ── HOW IT WORKS ── */
+    .steps-section { background: var(--blue); color: white; padding: 64px 0; text-align: center; }
     .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; margin-top: 40px; }
     .step { text-align: center; position: relative; }
     @media (min-width: 768px) { .step:not(:last-child)::after { content: '→'; position: absolute; top: 18px; right: -18px; font-size: 1.1rem; color: rgba(255,195,0,.4); } }
     .step-num { width: 52px; height: 52px; border-radius: 50%; background: rgba(255,195,0,.15); border: 2px solid rgba(255,195,0,.35); display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; font-family: var(--fn-cond); font-size: 1.5rem; font-weight: 800; color: var(--yellow); }
     .step-title { font-size: 1rem; font-weight: 800; margin-bottom: 7px; }
-    .step-text { font-size: .85rem; color: rgba(255,255,255,.6); line-height: 1.65; }
+    .step-text { font-size: .85rem; color: rgba(255,255,255,.58); line-height: 1.65; }
 
-    /* ─── TESTIMONIALS ─── */
-    .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 18px; margin-top: 40px; }
+    /* ── TESTIMONIALS ── */
+    .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 18px; margin-top: 40px; text-align: left; }
     .test-card { background: white; border-radius: 14px; padding: 22px; border: 1.5px solid var(--border); }
     .test-stars { display: flex; gap: 2px; margin-bottom: 12px; }
     .test-stars svg { color: var(--yellow); }
@@ -183,53 +179,38 @@
     .test-name { font-size: .86rem; font-weight: 700; color: var(--text); }
     .test-loc { font-size: .74rem; color: var(--muted); }
 
-    /* ─── CTA SECTION ─── */
-    .cta-section { background: var(--blue); padding: 60px 0; }
-    .cta-inner { max-width: 520px; margin: 0 auto; text-align: center; }
+    /* ── CTA SECTION ── */
+    .cta-section { background: var(--blue); padding: 64px 0; text-align: center; }
+    .cta-inner { max-width: 520px; margin: 0 auto; }
     .cta-section .sec-title { color: white; }
-    .cta-section .sec-sub { color: rgba(255,255,255,.65); margin: 0 auto; }
+    .cta-section .sec-sub { color: rgba(255,255,255,.65); }
     .cta-form { margin-top: 28px; text-align: left; }
-    .cta-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
-    @media (max-width: 480px) { .cta-form-row { grid-template-columns: 1fr; } }
     .cta-form .form-group label { color: rgba(255,255,255,.8); }
     .cta-form .form-group input { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.2); color: white; }
     .cta-form .form-group input::placeholder { color: rgba(255,255,255,.35); }
     .cta-form .form-group input:focus { border-color: var(--yellow); background: rgba(255,255,255,.14); box-shadow: 0 0 0 3px rgba(255,195,0,.2); }
-    .cta-form .form-note { color: rgba(255,255,255,.4); }
-    .cta-divider { margin: 20px auto; color: rgba(255,255,255,.4); font-size: .8rem; font-weight: 600; text-align: center; }
-    .cta-phone-link { display: inline-flex; align-items: center; gap: 8px; font-size: 1.4rem; font-weight: 800; color: var(--yellow); font-family: var(--fn-cond); letter-spacing: .01em; }
-    .cta-hours { font-size: .72rem; color: rgba(255,255,255,.4); margin-top: 4px; }
+    .cta-form .form-note { color: rgba(255,255,255,.38); }
 
-    /* ─── TRUST BADGES ─── */
-    .badges-section { background: var(--bg); padding: 28px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .badges-strip { display: flex; align-items: center; justify-content: center; gap: 28px; flex-wrap: wrap; }
-    .badge-item img { height: 36px; width: auto; opacity: .65; filter: grayscale(30%); transition: opacity .2s; }
-    .badge-item img:hover { opacity: 1; }
-
-    /* ─── FOOTER ─── */
+    /* ── FOOTER ── */
     .footer { background: #0D1B2A; color: rgba(255,255,255,.4); padding: 32px 20px; text-align: center; font-size: .75rem; line-height: 1.8; }
     .footer strong { color: rgba(255,255,255,.7); }
     .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 12px; }
     .footer-links a { color: rgba(255,255,255,.35); font-size: .72rem; }
     .footer-links a:hover { color: rgba(255,255,255,.65); }
 
-    /* ─── MOBILE STICKY BAR ─── */
+    /* ── MOBILE STICKY ── */
     .sticky-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: white; border-top: 2px solid var(--border); padding: 11px 16px; box-shadow: 0 -4px 20px rgba(0,0,0,.1); }
-    .sticky-bar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
-    .sticky-bar .btn-yellow { font-size: .82rem; padding: 13px 10px; }
-    .sticky-bar .btn-phone-sm { display: inline-flex; align-items: center; justify-content: center; gap: 7px; background: var(--blue); color: white; font-weight: 700; font-size: .82rem; padding: 13px 10px; border-radius: var(--r); border: none; cursor: pointer; transition: background .15s; width: 100%; }
-    .sticky-bar .btn-phone-sm:hover { background: var(--blue-dark); }
-    @media (max-width: 767px) { .sticky-bar { display: block; } body { padding-bottom: 74px; } .section, .steps-section, .cta-section { padding: 44px 0; } .hero { padding: 36px 0 44px; } }
+    @media (max-width: 767px) { .sticky-bar { display: block; } body { padding-bottom: 72px; } .section, .steps-section, .cta-section { padding: 48px 0; } .hero { padding: 40px 0 48px; } }
 
-    /* ─── HERO ANIMATIONS ─── */
-    .hero-content > * { animation: fadeUp .55s ease both; }
-    .hero-content > *:nth-child(1) { animation-delay: .04s; }
-    .hero-content > *:nth-child(2) { animation-delay: .12s; }
-    .hero-content > *:nth-child(3) { animation-delay: .2s; }
-    .hero-content > *:nth-child(4) { animation-delay: .28s; }
-    .hero-content > *:nth-child(5) { animation-delay: .36s; }
+    /* ── ANIMATIONS ── */
+    .hero > .container > * { animation: fadeUp .55s ease both; }
+    .hero > .container > *:nth-child(1) { animation-delay: .04s; }
+    .hero > .container > *:nth-child(2) { animation-delay: .12s; }
+    .hero > .container > *:nth-child(3) { animation-delay: .2s; }
+    .hero > .container > *:nth-child(4) { animation-delay: .28s; }
+    .hero > .container > *:nth-child(5) { animation-delay: .36s; }
     .form-card { animation: fadeUp .55s ease .1s both; }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
@@ -237,7 +218,7 @@
   <!-- URGENCY BAR -->
   <div class="urgency-bar">
     <div class="urgency-inner">
-      <span>⚡ LIMITED TIME OFFER — EXPIRES IN:</span>
+      <span>⚡ LIMITED TIME — OFFER EXPIRES IN:</span>
       <span class="ct-wrap">
         <span class="ct-unit" id="ct-d">02</span><span class="ct-sep">:</span>
         <span class="ct-unit" id="ct-h">14</span><span class="ct-sep">:</span>
@@ -251,14 +232,7 @@
   <header class="header">
     <div class="header-inner">
       <div class="logo">
-        <a href="/"><img src="https://windownationdeals.com/images/wn_logo.png" alt="Window Nation" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"><span style="display:none;font-family:var(--fn);font-weight:800;font-size:1.4rem;color:var(--blue);">Window Nation</span></a>
-      </div>
-      <div class="header-contact">
-        <a href="tel:18775545155" class="header-phone">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-          1-877-554-5155
-        </a>
-        <div class="header-hours">Mon–Sat 8am–8pm · Free Estimates</div>
+        <a href="/"><img src="images/logo.png" alt="Window Nation" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span style="display:none;font-family:var(--fn);font-weight:800;font-size:1.4rem;color:var(--blue);">Window Nation</span></a>
       </div>
     </div>
   </header>
@@ -266,58 +240,33 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <div class="hero-inner">
+      <div class="hero-tag">Limited-Time Spring Offer</div>
 
-        <!-- COPY -->
-        <div class="hero-content">
-          <div class="hero-tag">Limited-Time Spring Offer</div>
-          <h1>New Windows.<br><span>Half the Price.</span></h1>
+      <h1>New Windows.<br><span>Half the Price.</span></h1>
 
-          <div class="offer-pills">
-            <div class="offer-pill">
-              <span class="pill-num">50%</span>
-              <span class="pill-label">Off All Window Styles</span>
-            </div>
-            <div class="offer-plus">+</div>
-            <div class="offer-pill">
-              <span class="pill-num">0%</span>
-              <span class="pill-label">Interest for 60 Months</span>
-            </div>
-          </div>
-
-          <p class="hero-sub">Every style, every home size — all included. Get a free, no-pressure in-home estimate and see exactly what 50% off looks like for your home.</p>
-
-          <div class="hero-trust">
-            <div class="trust-chip">
-              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              Lifetime Warranty
-            </div>
-            <div class="trust-chip">
-              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              BBB A+ Rated
-            </div>
-            <div class="trust-chip">
-              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              25,000 Five-Star Reviews
-            </div>
-          </div>
+      <div class="offer-pills">
+        <div class="offer-pill">
+          <span class="pill-num">50%</span>
+          <span class="pill-label">Off All Window Styles</span>
         </div>
+        <div class="offer-plus">+</div>
+        <div class="offer-pill">
+          <span class="pill-num">0%</span>
+          <span class="pill-label">Interest for 60 Months</span>
+        </div>
+      </div>
 
-        <!-- FORM -->
+      <p class="hero-sub">Every style, every home size — all included. Get a free, no-pressure in-home estimate and see exactly what 50% off looks like for your home.</p>
+
+      <div class="form-card-wrap">
         <div class="form-card" id="main-form-card">
           <div id="form-content">
-            <div class="form-card-eyebrow">🔒 Free · No Obligation · No Pressure</div>
-            <div class="form-card-title">Get Your Free In-Home Estimate</div>
-            <div class="form-card-sub">See exactly what 50% off looks like for your home.</div>
+            <div class="fc-eyebrow">🔒 Free · No Obligation · No Pressure</div>
+            <div class="fc-title">Get Your Free In-Home Estimate</div>
+            <div class="fc-sub">See exactly what 50% off looks like for your home.</div>
             <div class="form-badges">
-              <div class="form-badge">
-                <span class="fb-num">50%</span>
-                <span class="fb-label">Off All Styles</span>
-              </div>
-              <div class="form-badge">
-                <span class="fb-num">0%</span>
-                <span class="fb-label">Interest · 60 Mo.</span>
-              </div>
+              <div class="form-badge"><span class="fb-num">50%</span><span class="fb-label">Off All Styles</span></div>
+              <div class="form-badge"><span class="fb-num">0%</span><span class="fb-label">Interest · 60 Mo.</span></div>
             </div>
             <form id="lead-form" novalidate>
               <div class="form-row">
@@ -356,13 +305,23 @@
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#276749" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
             <h3>You're All Set!</h3>
-            <p>A Window Nation specialist will call you within <strong>24 hours</strong> to schedule your free in-home estimate.</p>
+            <p>A Window Nation specialist will contact you within <strong>24 hours</strong> to schedule your free in-home estimate.</p>
           </div>
         </div>
+      </div>
 
+      <div class="hero-trust">
+        <div class="trust-chip"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Lifetime Warranty</div>
+        <div class="trust-chip"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>BBB A+ Rated</div>
+        <div class="trust-chip"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>25,000 Five-Star Reviews</div>
       </div>
     </div>
   </section>
+
+  <!-- HERO PHOTO BANNER -->
+  <div class="photo-banner">
+    <img src="images/hero-installer.avif" alt="Window Nation installer measuring a window" loading="eager">
+  </div>
 
   <!-- STATS -->
   <div class="stats-section">
@@ -399,42 +358,48 @@
       </div>
       <div class="benefits-grid">
         <div class="benefit-card">
-          <div class="ben-icon">
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <img class="ben-img" src="https://windownationdeals.com/images/1daytinstall.jpg" alt="1-day window installation" loading="lazy">
+          <div class="ben-body">
+            <div class="ben-title">Installed in as Fast as 1 Day</div>
+            <p class="ben-text">Our certified crews work fast and clean. Most whole-home installations wrap up in a single day with full cleanup included.</p>
           </div>
-          <div class="ben-title">Installed in as Fast as 1 Day</div>
-          <p class="ben-text">Our certified crews work fast and clean. Most whole-home installations wrap up in a single day with full cleanup included.</p>
         </div>
         <div class="benefit-card">
-          <div class="ben-icon">
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <img class="ben-img" src="https://windownationdeals.com/images/open-window.jpg" alt="Energy efficient windows" loading="lazy">
+          <div class="ben-body">
+            <div class="ben-title">Cut Energy Bills Up to 30%</div>
+            <p class="ben-text">Argon and Krypton gas insulation, Low-E coatings, and foam-injected frames dramatically reduce heat loss year-round.</p>
           </div>
-          <div class="ben-title">Cut Energy Bills Up to 30%</div>
-          <p class="ben-text">Argon and Krypton gas insulation, Low-E coatings, and foam-injected frames dramatically reduce heat loss year-round.</p>
         </div>
         <div class="benefit-card">
-          <div class="ben-icon">
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <img class="ben-img" src="https://windownationdeals.com/images/aesthetic.jpg" alt="Beautiful window styles" loading="lazy">
+          <div class="ben-body">
+            <div class="ben-title">1,500+ Styles to Choose From</div>
+            <p class="ben-text">Double-hung, casement, bay, picture, slider, and specialty shapes — all with custom colors and finishes. Every style is 50% off.</p>
           </div>
-          <div class="ben-title">Lifetime Warranty — Always</div>
-          <p class="ben-text">Glass, frames, and labor covered for life. If anything ever goes wrong, we fix it. Zero hassle, zero cost to you, ever.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- PHOTO SPLIT -->
+  <div class="photo-split">
+    <img src="https://windownationdeals.com/images/iStock-1566819053.jpg" alt="Beautiful home with new windows" loading="lazy">
+    <img src="https://windownationdeals.com/images/iStock-1088161310.jpg" alt="Window Nation window quality" loading="lazy">
+  </div>
+
   <!-- HOW IT WORKS -->
   <section class="steps-section">
     <div class="container">
       <div class="sec-hdr">
-        <div class="sec-label" style="color: var(--yellow);">Simple Process</div>
-        <h2 class="sec-title" style="color: white;">From Form to Finished — <span style="color:var(--yellow);">Fast</span></h2>
+        <div class="sec-label" style="color:var(--yellow);">Simple Process</div>
+        <h2 class="sec-title" style="color:white;">From Form to Finished — <span style="color:var(--yellow);">Fast</span></h2>
       </div>
       <div class="steps-grid">
         <div class="step">
           <div class="step-num">1</div>
           <div class="step-title">Request Your Estimate</div>
-          <p class="step-text">Fill out the form or call us. No credit check to get started — just a quick conversation about your home.</p>
+          <p class="step-text">Fill out the form above. No credit check to get started — just a quick conversation about your home.</p>
         </div>
         <div class="step">
           <div class="step-num">2</div>
@@ -456,7 +421,7 @@
   </section>
 
   <!-- TESTIMONIALS -->
-  <section class="section" style="background: white;">
+  <section class="section" style="background:white;">
     <div class="container">
       <div class="sec-hdr">
         <div class="sec-label">Real Homeowners</div>
@@ -473,13 +438,7 @@
             <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
           <p class="test-quote">"The rep was incredibly knowledgeable and walked us through every option. I was kept up to date throughout the entire process. The quality is outstanding."</p>
-          <div class="test-author">
-            <div class="test-avatar">C</div>
-            <div>
-              <div class="test-name">Carolyn S.</div>
-              <div class="test-loc">Verified Google Review</div>
-            </div>
-          </div>
+          <div class="test-author"><div class="test-avatar">C</div><div><div class="test-name">Carolyn S.</div><div class="test-loc">Verified Google Review</div></div></div>
         </div>
         <div class="test-card">
           <div class="test-stars">
@@ -490,13 +449,7 @@
             <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
           <p class="test-quote">"Great service, great salesman, very clean installation. They were in and out in one day and left the place spotless. Honest pricing, no surprises."</p>
-          <div class="test-author">
-            <div class="test-avatar">J</div>
-            <div>
-              <div class="test-name">Joseph L.</div>
-              <div class="test-loc">Verified Google Review</div>
-            </div>
-          </div>
+          <div class="test-author"><div class="test-avatar">J</div><div><div class="test-name">Joseph L.</div><div class="test-loc">Verified Google Review</div></div></div>
         </div>
         <div class="test-card">
           <div class="test-stars">
@@ -507,59 +460,52 @@
             <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
           <p class="test-quote">"I was impressed by how fast they scheduled us. The pricing was honest and upfront — no hidden fees. I'd recommend Window Nation to anyone replacing windows."</p>
-          <div class="test-author">
-            <div class="test-avatar">T</div>
-            <div>
-              <div class="test-name">Talia E.</div>
-              <div class="test-loc">Verified Google Review</div>
-            </div>
-          </div>
+          <div class="test-author"><div class="test-avatar">T</div><div><div class="test-name">Talia E.</div><div class="test-loc">Verified Google Review</div></div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECOND CTA -->
+  <!-- BOTTOM CTA -->
   <section class="cta-section">
     <div class="container">
       <div class="cta-inner">
-        <div class="sec-label" style="color: var(--yellow);">Don't Miss Out</div>
+        <div class="sec-label" style="color:var(--yellow);">Don't Miss Out</div>
         <h2 class="sec-title">Ready to Save 50%?</h2>
         <p class="sec-sub">Schedule your free, no-pressure estimate before this offer expires.</p>
 
         <div class="cta-form">
           <form id="cta-form" novalidate>
-            <div class="cta-form-row">
+            <div class="form-row">
               <div class="form-group">
                 <label for="cta-fn">First Name *</label>
-                <input type="text" id="cta-fn" name="first_name" placeholder="First name" required autocomplete="given-name">
+                <input type="text" id="cta-fn" name="first_name" placeholder="Jane" required autocomplete="given-name">
               </div>
               <div class="form-group">
-                <label for="cta-ph">Phone *</label>
-                <input type="tel" id="cta-ph" name="phone" placeholder="(555) 123-4567" required autocomplete="tel" inputmode="tel">
+                <label for="cta-ln">Last Name *</label>
+                <input type="text" id="cta-ln" name="last_name" placeholder="Smith" required autocomplete="family-name">
               </div>
             </div>
             <div class="form-group">
+              <label for="cta-ph">Phone Number *</label>
+              <input type="tel" id="cta-ph" name="phone" placeholder="(555) 123-4567" required autocomplete="tel" inputmode="tel">
+            </div>
+            <div class="form-group">
+              <label for="cta-em">Email Address *</label>
+              <input type="email" id="cta-em" name="email" placeholder="jane@email.com" required autocomplete="email">
+            </div>
+            <div class="form-group">
               <label for="cta-zp">ZIP Code *</label>
-              <input type="text" id="cta-zp" name="zip" placeholder="Enter your ZIP code" maxlength="5" required inputmode="numeric" autocomplete="postal-code">
+              <input type="text" id="cta-zp" name="zip" placeholder="12345" maxlength="5" required inputmode="numeric" autocomplete="postal-code">
             </div>
             <div class="form-submit" style="margin-top:14px;">
-              <button type="submit" class="btn-yellow" style="font-size:1.05rem; padding:17px;">
+              <button type="submit" class="btn-yellow" style="font-size:1.05rem;padding:17px;">
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7"/></svg>
                 Get My Free Estimate — 50% Off
               </button>
             </div>
-            <p class="form-note" style="color:rgba(255,255,255,.35);">Free · No Obligation · No Hidden Fees</p>
+            <p class="form-note" style="color:rgba(255,255,255,.38);">Free · No Obligation · No Hidden Fees</p>
           </form>
-        </div>
-
-        <div class="cta-divider">— or call us directly —</div>
-        <div style="text-align:center;">
-          <a href="tel:18775545155" class="cta-phone-link">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-            1-877-554-5155
-          </a>
-          <div class="cta-hours">Mon–Sat 8am–8pm · Speak to a Specialist</div>
         </div>
       </div>
     </div>
@@ -574,56 +520,51 @@
       <a href="#">Terms of Service</a>
       <a href="#">Accessibility</a>
       <a href="#">Contact Us</a>
-      <a href="#">Find a Location</a>
     </div>
   </footer>
 
-  <!-- MOBILE STICKY BAR -->
+  <!-- MOBILE STICKY -->
   <div class="sticky-bar" id="sticky-bar">
-    <div class="sticky-bar-grid">
-      <button class="btn-yellow" onclick="scrollToForm()">Get 50% Off — Free Estimate</button>
-      <a href="tel:18775545155" class="btn-phone-sm">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-        Call Now
-      </a>
-    </div>
+    <button class="btn-yellow" onclick="scrollToForm()" style="font-size:.9rem;padding:14px;">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7"/></svg>
+      Get 50% Off — Free Estimate
+    </button>
   </div>
 
   <script>
-    // ── COUNTDOWN ────────────────────────────────────────
+    // COUNTDOWN
     (function() {
       var end = new Date(Date.now() + 72 * 60 * 60 * 1000);
-      function pad(n) { return String(n).padStart(2, '0'); }
+      function pad(n) { return String(n).padStart(2,'0'); }
       function tick() {
-        var diff = end - Date.now();
-        if (diff <= 0) return;
-        document.getElementById('ct-d').textContent = pad(Math.floor(diff / 86400000));
-        document.getElementById('ct-h').textContent = pad(Math.floor((diff % 86400000) / 3600000));
-        document.getElementById('ct-m').textContent = pad(Math.floor((diff % 3600000) / 60000));
-        document.getElementById('ct-s').textContent = pad(Math.floor((diff % 60000) / 1000));
+        var diff = end - Date.now(); if (diff <= 0) return;
+        document.getElementById('ct-d').textContent = pad(Math.floor(diff/86400000));
+        document.getElementById('ct-h').textContent = pad(Math.floor((diff%86400000)/3600000));
+        document.getElementById('ct-m').textContent = pad(Math.floor((diff%3600000)/60000));
+        document.getElementById('ct-s').textContent = pad(Math.floor((diff%60000)/1000));
       }
       tick(); setInterval(tick, 1000);
     })();
 
-    // ── PHONE FORMAT ─────────────────────────────────────
+    // PHONE FORMAT
     document.querySelectorAll('input[type="tel"]').forEach(function(el) {
       el.addEventListener('input', function() {
-        var d = this.value.replace(/\D/g, '').slice(0, 10);
-        if (d.length > 6) this.value = '(' + d.slice(0,3) + ') ' + d.slice(3,6) + '-' + d.slice(6);
-        else if (d.length > 3) this.value = '(' + d.slice(0,3) + ') ' + d.slice(3);
-        else if (d.length > 0) this.value = '(' + d;
+        var d = this.value.replace(/\D/g,'').slice(0,10);
+        if (d.length>6) this.value='('+d.slice(0,3)+') '+d.slice(3,6)+'-'+d.slice(6);
+        else if (d.length>3) this.value='('+d.slice(0,3)+') '+d.slice(3);
+        else if (d.length>0) this.value='('+d;
       });
     });
 
-    // ── VALIDATION ───────────────────────────────────────
+    // VALIDATION
     function validate(form) {
       var ok = true;
       form.querySelectorAll('[required]').forEach(function(el) {
         el.classList.remove('error');
         var v = el.value.trim();
         if (!v) { el.classList.add('error'); ok = false; return; }
-        if (el.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) { el.classList.add('error'); ok = false; }
-        if (el.type === 'tel' && v.replace(/\D/g,'').length < 10) { el.classList.add('error'); ok = false; }
+        if (el.type==='email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) { el.classList.add('error'); ok = false; }
+        if (el.type==='tel' && v.replace(/\D/g,'').length<10) { el.classList.add('error'); ok = false; }
       });
       return ok;
     }
@@ -639,11 +580,11 @@
     document.getElementById('cta-form').addEventListener('submit', function(e) {
       e.preventDefault();
       if (validate(this)) {
-        this.parentElement.innerHTML = '<div style="text-align:center;padding:24px 16px;"><div style="font-size:2.5rem;margin-bottom:12px;">✓</div><h3 style="font-size:1.3rem;font-weight:800;color:white;margin-bottom:8px;">You\'re All Set!</h3><p style="color:rgba(255,255,255,.6);font-size:.88rem;line-height:1.65;">A specialist will call you within 24 hours to schedule your free estimate.</p></div>';
+        this.parentElement.innerHTML = '<div style="text-align:center;padding:24px 16px;"><div style="font-size:2.5rem;margin-bottom:12px;">✓</div><h3 style="font-size:1.3rem;font-weight:800;color:white;margin-bottom:8px;">You\'re All Set!</h3><p style="color:rgba(255,255,255,.6);font-size:.88rem;line-height:1.65;">A specialist will contact you within 24 hours to schedule your free estimate.</p></div>';
       }
     });
 
-    // ── MOBILE BAR VISIBILITY ────────────────────────────
+    // MOBILE STICKY VISIBILITY
     var bar = document.getElementById('sticky-bar');
     var formCard = document.getElementById('main-form-card');
     if (window.IntersectionObserver && bar && formCard) {
@@ -652,7 +593,6 @@
       }, { threshold: 0.2 }).observe(formCard);
     }
 
-    // ── SCROLL TO FORM ───────────────────────────────────
     function scrollToForm() {
       formCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
