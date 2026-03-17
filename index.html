@@ -62,6 +62,7 @@
 
     /* ── HERO ── */
     .hero { background: var(--blue); color: white; padding: 56px 0 64px; text-align: center; }
+    .hero-layout { display: block; }
     .hero-tag {
       display: inline-flex; align-items: center; gap: 7px;
       background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2);
@@ -83,8 +84,19 @@
 
     .hero-sub { font-size: 1rem; color: rgba(255,255,255,.72); line-height: 1.65; max-width: 520px; margin: 0 auto 32px; }
 
+    /* Desktop two-column hero */
+    @media (min-width: 768px) {
+      .hero { text-align: left; padding: 72px 0 80px; }
+      .hero-layout { display: grid; grid-template-columns: 1fr 460px; gap: 56px; align-items: center; }
+      .hero h1 { font-size: clamp(2.8rem, 4.5vw, 3.8rem); }
+      .offer-pills { justify-content: flex-start; margin-left: 0; margin-right: 0; }
+      .hero-sub { margin-left: 0; margin-right: 0; }
+      .hero-trust { justify-content: flex-start; }
+    }
+
     /* ── FORM CARD ── */
     .form-card-wrap { max-width: 520px; margin: 0 auto; }
+    @media (min-width: 768px) { .form-card-wrap { max-width: 100%; margin: 0; } }
     .form-card { background: white; border-radius: 18px; padding: 28px 24px; box-shadow: 0 20px 60px rgba(0,0,0,.2); }
     .fc-eyebrow { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--blue); margin-bottom: 5px; text-align: center; }
     .fc-title { font-size: 1.3rem; font-weight: 800; color: var(--text); text-align: center; line-height: 1.25; }
@@ -126,8 +138,8 @@
 
     /* ── FULL-WIDTH PHOTO ── */
     .photo-banner { width: 100%; overflow: hidden; line-height: 0; }
-    .photo-banner img { width: 100%; height: 480px; object-fit: cover; object-position: center 20%; display: block; }
-    @media (max-width: 767px) { .photo-banner img { height: 360px; object-position: center 15%; } }
+    .photo-banner img { width: 100%; height: 360px; object-fit: cover; object-position: center 15%; display: block; }
+    @media (min-width: 768px) { .photo-banner { display: none; } }
 
     /* ── STATS ── */
     .stats-section { background: var(--yellow); padding: 32px 0; text-align: center; }
@@ -247,80 +259,90 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <div class="hero-tag">Limited-Time Spring Offer</div>
+      <div class="hero-layout">
 
-      <h1>New Windows.<br><span>Half the Price.</span></h1>
+        <!-- LEFT: copy -->
+        <div class="hero-left">
+          <div class="hero-tag">Limited-Time Spring Offer</div>
 
-      <div class="offer-pills">
-        <div class="offer-pill">
-          <span class="pill-num">50%</span>
-          <span class="pill-label">Off All Window Styles</span>
-        </div>
-        <div class="offer-plus">+</div>
-        <div class="offer-pill">
-          <span class="pill-num">0%</span>
-          <span class="pill-label">Interest for 60 Months</span>
-        </div>
-      </div>
+          <h1>New Windows.<br><span>Half the Price.</span></h1>
 
-      <p class="hero-sub">Every style, every home size — all included. Get a free, no-pressure in-home estimate and see exactly what 50% off looks like for your home.</p>
-
-      <div class="form-card-wrap">
-        <div class="form-card" id="main-form-card">
-          <div id="form-content">
-            <div class="fc-eyebrow">🔒 Free · No Obligation · No Pressure</div>
-            <div class="fc-title">Get Your Free In-Home Estimate</div>
-            <div class="fc-sub">See exactly what 50% off looks like for your home.</div>
-            <div class="form-badges">
-              <div class="form-badge"><span class="fb-num">50%</span><span class="fb-label">Off All Styles</span></div>
-              <div class="form-badge"><span class="fb-num">0%</span><span class="fb-label">Interest · 60 Mo.</span></div>
+          <div class="offer-pills">
+            <div class="offer-pill">
+              <span class="pill-num">50%</span>
+              <span class="pill-label">Off All Window Styles</span>
             </div>
-            <form id="lead-form" novalidate>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="fn">First Name *</label>
-                  <input type="text" id="fn" name="first_name" placeholder="Jane" required autocomplete="given-name">
-                </div>
-                <div class="form-group">
-                  <label for="ln">Last Name *</label>
-                  <input type="text" id="ln" name="last_name" placeholder="Smith" required autocomplete="family-name">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="ph">Phone Number *</label>
-                <input type="tel" id="ph" name="phone" placeholder="(555) 123-4567" required autocomplete="tel" inputmode="tel">
-              </div>
-              <div class="form-group">
-                <label for="em">Email Address *</label>
-                <input type="email" id="em" name="email" placeholder="jane@email.com" required autocomplete="email">
-              </div>
-              <div class="form-group">
-                <label for="zp">ZIP Code *</label>
-                <input type="text" id="zp" name="zip" placeholder="12345" maxlength="5" required autocomplete="postal-code" inputmode="numeric">
-              </div>
-              <div class="form-submit">
-                <button type="submit" class="btn-yellow">
-                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7"/></svg>
-                  Claim My 50% Off Estimate
-                </button>
-              </div>
-              <p class="form-note">By submitting, you agree to be contacted by Window Nation. <a href="#">Privacy Policy</a>. We never sell your info.</p>
-            </form>
+            <div class="offer-plus">+</div>
+            <div class="offer-pill">
+              <span class="pill-num">0%</span>
+              <span class="pill-label">Interest for 60 Months</span>
+            </div>
           </div>
-          <div class="success-msg" id="success-msg">
-            <div class="success-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#276749" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <h3>You're All Set!</h3>
-            <p>A Window Nation specialist will contact you within <strong>24 hours</strong> to schedule your free in-home estimate.</p>
+
+          <p class="hero-sub">Every style, every home size — all included. Get a free, no-pressure in-home estimate and see exactly what 50% off looks like for your home.</p>
+
+          <div class="hero-trust">
+            <div class="trust-chip"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Lifetime Warranty</div>
+            <div class="trust-chip"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>BBB A+ Rated</div>
+            <div class="trust-chip"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>25,000 Five-Star Reviews</div>
           </div>
         </div>
-      </div>
 
-      <div class="hero-trust">
-        <div class="trust-chip"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Lifetime Warranty</div>
-        <div class="trust-chip"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>BBB A+ Rated</div>
-        <div class="trust-chip"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>25,000 Five-Star Reviews</div>
+        <!-- RIGHT: form -->
+        <div class="hero-right">
+          <div class="form-card-wrap">
+            <div class="form-card" id="main-form-card">
+              <div id="form-content">
+                <div class="fc-eyebrow">🔒 Free · No Obligation · No Pressure</div>
+                <div class="fc-title">Get Your Free In-Home Estimate</div>
+                <div class="fc-sub">See exactly what 50% off looks like for your home.</div>
+                <div class="form-badges">
+                  <div class="form-badge"><span class="fb-num">50%</span><span class="fb-label">Off All Styles</span></div>
+                  <div class="form-badge"><span class="fb-num">0%</span><span class="fb-label">Interest · 60 Mo.</span></div>
+                </div>
+                <form id="lead-form" novalidate>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="fn">First Name *</label>
+                      <input type="text" id="fn" name="first_name" placeholder="Jane" required autocomplete="given-name">
+                    </div>
+                    <div class="form-group">
+                      <label for="ln">Last Name *</label>
+                      <input type="text" id="ln" name="last_name" placeholder="Smith" required autocomplete="family-name">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="ph">Phone Number *</label>
+                    <input type="tel" id="ph" name="phone" placeholder="(555) 123-4567" required autocomplete="tel" inputmode="tel">
+                  </div>
+                  <div class="form-group">
+                    <label for="em">Email Address *</label>
+                    <input type="email" id="em" name="email" placeholder="jane@email.com" required autocomplete="email">
+                  </div>
+                  <div class="form-group">
+                    <label for="zp">ZIP Code *</label>
+                    <input type="text" id="zp" name="zip" placeholder="12345" maxlength="5" required autocomplete="postal-code" inputmode="numeric">
+                  </div>
+                  <div class="form-submit">
+                    <button type="submit" class="btn-yellow">
+                      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7"/></svg>
+                      Claim My 50% Off Estimate
+                    </button>
+                  </div>
+                  <p class="form-note">By submitting, you agree to be contacted by Window Nation. <a href="#">Privacy Policy</a>. We never sell your info.</p>
+                </form>
+              </div>
+              <div class="success-msg" id="success-msg">
+                <div class="success-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#276749" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <h3>You're All Set!</h3>
+                <p>A Window Nation specialist will contact you within <strong>24 hours</strong> to schedule your free in-home estimate.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
