@@ -95,7 +95,7 @@
     .fb-label { font-size: .6rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; display: block; margin-top: 2px; }
 
     .form-group { margin-bottom: 11px; }
-    .form-group label { display: block; font-size: .72rem; font-weight: 700; color: var(--text); margin-bottom: 4px; text-transform: uppercase; letter-spacing: .04em; }
+    .form-group label { display: block; font-size: .72rem; font-weight: 700; color: var(--text); margin-bottom: 4px; text-transform: uppercase; letter-spacing: .04em; text-align: left; }
     .form-group input {
       width: 100%; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 8px;
       font-family: var(--fn); font-size: .92rem; color: var(--text); background: white;
@@ -139,10 +139,10 @@
     .badges-section { background: var(--bg); padding: 24px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     .badges-strip { display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: nowrap; overflow-x: hidden; }
     .badge-item { flex: 0 1 auto; min-width: 0; }
-    .badge-item img { height: 34px; width: auto; max-width: 100%; opacity: .6; filter: grayscale(20%); transition: opacity .2s; }
+    .badge-item img { height: 44px; width: auto; max-width: 100%; opacity: .65; filter: grayscale(15%); transition: opacity .2s; }
     .badge-item img:hover { opacity: 1; }
-    @media (max-width: 640px) { .badges-strip { gap: 10px; } .badge-item img { height: 26px; } }
-    @media (max-width: 400px) { .badges-strip { gap: 6px; } .badge-item img { height: 22px; } }
+    @media (max-width: 640px) { .badges-strip { gap: 10px; } .badge-item img { height: 32px; } }
+    @media (max-width: 400px) { .badges-strip { gap: 6px; } .badge-item img { height: 26px; } }
 
     /* ── SECTIONS ── */
     .section { padding: 64px 0; text-align: center; }
@@ -389,12 +389,6 @@
     </div>
   </section>
 
-  <!-- PHOTO SPLIT -->
-  <div class="photo-split">
-    <img src="https://windownationdeals.com/images/iStock-1566819053.jpg" alt="Beautiful home with new windows" loading="lazy">
-    <img src="https://windownationdeals.com/images/iStock-1088161310.jpg" alt="Window Nation window quality" loading="lazy">
-  </div>
-
   <!-- HOW IT WORKS -->
   <section class="steps-section">
     <div class="container">
@@ -541,7 +535,7 @@
   <script>
     // COUNTDOWN
     (function() {
-      var end = new Date(Date.now() + 72 * 60 * 60 * 1000);
+      var end = new Date('2026-03-31T23:59:59');
       function pad(n) { return String(n).padStart(2,'0'); }
       function tick() {
         var diff = end - Date.now(); if (diff <= 0) return;
