@@ -150,13 +150,13 @@
     .deal-expires { font-size: .72rem; font-weight: 700; color: rgba(13,27,42,.55); }
 
     /* ── STATS ── */
-    .stats-section { background: var(--blue); padding: 32px 0; text-align: center; }
+    .stats-section { background: var(--yellow); padding: 32px 0; text-align: center; }
     .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
     @media (max-width: 640px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
-    .stat-item { border-right: 1px solid rgba(255,255,255,.1); }
+    .stat-item { border-right: 1px solid rgba(0,91,167,.15); }
     .stat-item:last-child { border-right: none; }
-    .stat-num { font-family: var(--fn-cond); font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 800; color: var(--yellow); line-height: 1; display: block; }
-    .stat-label { font-size: .7rem; font-weight: 700; color: rgba(255,255,255,.55); text-transform: uppercase; letter-spacing: .07em; margin-top: 4px; }
+    .stat-num { font-family: var(--fn-cond); font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 800; color: var(--blue); line-height: 1; display: block; }
+    .stat-label { font-size: .7rem; font-weight: 700; color: rgba(13,27,42,.55); text-transform: uppercase; letter-spacing: .07em; margin-top: 4px; }
 
     /* ── BADGES ── */
     .badges-section { background: white; padding: 22px 0; border-bottom: 1px solid var(--border); }
@@ -465,23 +465,6 @@
     </div>
   </section>
 
-  <!-- DEAL BAR -->
-  <div class="deal-bar">
-    <div class="deal-inner">
-      <span class="deal-tag">Spring Offer</span>
-      <div class="deal-pill">
-        <span class="deal-pill-num">50%</span>
-        <span class="deal-pill-lbl">Off All Windows</span>
-      </div>
-      <span class="deal-plus">+</span>
-      <div class="deal-pill">
-        <span class="deal-pill-num">0%</span>
-        <span class="deal-pill-lbl">Interest · 60 Months</span>
-      </div>
-      <span class="deal-expires">⏰ Expires March 31, 2026</span>
-    </div>
-  </div>
-
   <!-- TESTIMONIALS -->
   <section class="test-section">
     <div class="container">
@@ -594,6 +577,23 @@
       </div>
     </div>
   </section>
+
+  <!-- DEAL BAR -->
+  <div class="deal-bar">
+    <div class="deal-inner">
+      <span class="deal-tag">Spring Offer</span>
+      <div class="deal-pill">
+        <span class="deal-pill-num">50%</span>
+        <span class="deal-pill-lbl">Off All Windows</span>
+      </div>
+      <span class="deal-plus">+</span>
+      <div class="deal-pill">
+        <span class="deal-pill-num">0%</span>
+        <span class="deal-pill-lbl">Interest · 60 Months</span>
+      </div>
+      <span class="deal-expires">⏰ Expires March 31, 2026</span>
+    </div>
+  </div>
 
   <!-- BOTTOM CTA -->
   <section class="cta-section">
