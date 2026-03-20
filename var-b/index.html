@@ -150,12 +150,13 @@
     .deal-expires { font-size: .72rem; font-weight: 700; color: rgba(13,27,42,.55); }
 
     @media (max-width: 767px) {
-      .deal-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 0 16px; }
-      .deal-tag { grid-column: 1 / -1; margin-bottom: 2px; }
-      .deal-expires { grid-column: 1 / -1; margin-top: 2px; }
-      .deal-plus { display: none; }
-      .deal-pill { display: flex; flex-direction: column-reverse; align-items: center; padding: 12px 10px; }
-      .deal-pill-num { font-size: 2.2rem; margin-top: 2px; }
+      .deal-bar { padding: 18px 0; }
+      .deal-inner { display: grid !important; grid-template-columns: 1fr 1fr; gap: 10px; padding: 0 16px; align-items: unset; flex-wrap: unset; }
+      .deal-tag { grid-column: 1 / -1; margin-bottom: 2px; text-align: center; }
+      .deal-expires { grid-column: 1 / -1; margin-top: 2px; text-align: center; }
+      .deal-plus { display: none !important; }
+      .deal-pill { display: flex !important; flex-direction: column-reverse; align-items: center; padding: 14px 10px; width: 100%; }
+      .deal-pill-num { font-size: 2.2rem; margin-top: 4px; }
       .deal-pill-lbl { font-size: .6rem; }
     }
 
