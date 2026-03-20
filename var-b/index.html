@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="theme-color" content="#005BA7">
+  <title>Window Nation | 50% Off + 0% Interest — Join 200,000+ Homeowners</title>
+  <meta name="description" content="200,000+ homes. 25,000 five-star reviews. 50% off all windows + 0% interest for 60 months. Get your free estimate today.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue:      #005BA7;
+      --blue-dark: #00478A;
+      --navy:      #0D1B2A;
+      --yellow:    #FFC300;
+      --yellow-dk: #E6B000;
+      --bg:        #F5F7FA;
+      --white:     #FFFFFF;
+      --text:      #0D1B2A;
+      --muted:     #5A6575;
+      --border:    #E2E8F0;
+      --green:     #1E8A4C;
+      --r:         10px;
+      --fn:        'Barlow', sans-serif;
+      --fn-cond:   'Barlow Condensed', sans-serif;
+    }
+    html { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body { font-family: var(--fn); color: var(--text); background: var(--bg); line-height: 1.6; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font-family: var(--fn); }
+    img { max-width: 100%; display: block; }
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+    /* ── BUTTONS ── */
+    .btn-yellow {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--yellow); color: var(--text); font-weight: 800; font-size: 1rem;
+      padding: 17px 28px; border: none; border-radius: var(--r); cursor: pointer; width: 100%;
+      transition: background .15s, transform .1s; box-shadow: 0 4px 18px rgba(255,195,0,.35);
+      letter-spacing: .01em;
+    }
+    .btn-yellow:hover { background: var(--yellow-dk); transform: translateY(-1px); }
+    .btn-yellow:active { transform: translateY(0); }
+
+    /* ── URGENCY BAR ── */
+    .urgency-bar { background: var(--navy); color: white; text-align: center; padding: 9px 20px; font-size: .82rem; font-weight: 700; }
+    .urgency-inner { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
+    .ct-wrap { display: inline-flex; gap: 3px; align-items: center; }
+    .ct-unit { background: var(--yellow); color: var(--navy); border-radius: 4px; padding: 1px 6px; font-size: .95rem; min-width: 28px; text-align: center; font-family: var(--fn-cond); font-weight: 800; }
+    .ct-sep { font-weight: 900; opacity: .4; }
+
+    /* ── HEADER ── */
+    .header { position: sticky; top: 0; z-index: 100; background: white; border-bottom: 1px solid var(--border); box-shadow: 0 1px 10px rgba(0,0,0,.05); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; max-width: 1100px; margin: 0 auto; }
+    .logo img { height: 40px; width: auto; }
+    @media (max-width: 480px) { .logo img { height: 34px; } }
+    .header-badge { display: flex; align-items: center; gap: 6px; font-size: .78rem; font-weight: 700; color: var(--muted); }
+    .header-stars { display: flex; gap: 1px; }
+    .header-stars svg { color: var(--yellow); }
+    @media (max-width: 380px) { .header-badge span { display: none; } }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; background: var(--navy); color: white;
+      padding: 52px 0 60px; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: url('../images/hero-installer.avif') center 20% / cover no-repeat;
+      opacity: .12;
+    }
+    .hero-layout { position: relative; z-index: 1; display: block; }
+
+    /* Review badge */
+    .hero-rating { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); border-radius: 100px; padding: 6px 14px; margin-bottom: 20px; }
+    .hero-stars { display: flex; gap: 2px; }
+    .hero-stars svg { color: var(--yellow); }
+    .hero-rating-text { font-size: .8rem; font-weight: 700; color: rgba(255,255,255,.75); }
+    .hero-rating-count { font-size: .75rem; color: rgba(255,255,255,.45); margin-left: 2px; }
+
+    .hero h1 { font-size: clamp(2.4rem, 8vw, 3.6rem); font-weight: 800; line-height: 1.1; margin-bottom: 12px; }
+    @media (max-width: 767px) { .hero h1 { font-size: clamp(2.8rem, 11vw, 3.4rem); } }
+    .hero h1 .hl { color: var(--yellow); }
+    .hero-sub { font-size: 1rem; color: rgba(255,255,255,.68); line-height: 1.65; max-width: 480px; margin-bottom: 28px; }
+    .hero-checklist { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px; }
+    .hero-checklist li { display: flex; align-items: center; gap: 9px; font-size: .9rem; color: rgba(255,255,255,.8); font-weight: 600; }
+    .chk { width: 20px; height: 20px; border-radius: 50%; background: rgba(255,195,0,.15); border: 1.5px solid rgba(255,195,0,.4); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .chk svg { color: var(--yellow); }
+
+    /* Desktop two-column */
+    @media (min-width: 768px) {
+      .hero { padding: 72px 0 80px; text-align: left; }
+      .hero-layout { display: grid; grid-template-columns: 1fr 440px; gap: 60px; align-items: center; }
+      .hero-sub { margin-left: 0; }
+    }
+
+    /* ── FORM CARD ── */
+    .form-card-wrap { max-width: 520px; margin: 0 auto; }
+    @media (min-width: 768px) { .form-card-wrap { max-width: 100%; margin: 0; } }
+    .form-card {
+      background: white; border-radius: 18px; padding: 28px 24px;
+      box-shadow: 0 24px 64px rgba(0,0,0,.28); position: relative; overflow: hidden;
+    }
+    .form-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--blue), var(--yellow));
+    }
+    .fc-eyebrow { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--green); margin-bottom: 5px; text-align: center; }
+    .fc-title { font-size: 1.25rem; font-weight: 800; color: var(--text); text-align: center; line-height: 1.25; }
+    .fc-sub { font-size: .78rem; color: var(--muted); text-align: center; margin-top: 5px; margin-bottom: 18px; }
+    .offer-bar { display: flex; gap: 8px; margin-bottom: 18px; }
+    .ob-pill { flex: 1; background: #EBF3FB; border: 1.5px solid rgba(0,91,167,.15); border-radius: 10px; padding: 11px 8px; text-align: center; }
+    .ob-num { font-family: var(--fn-cond); font-size: 1.9rem; font-weight: 800; color: var(--blue); line-height: 1; display: block; }
+    .ob-lbl { font-size: .58rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; display: block; margin-top: 2px; }
+
+    .form-group { margin-bottom: 11px; }
+    .form-group label { display: block; font-size: .72rem; font-weight: 700; color: var(--text); margin-bottom: 4px; text-transform: uppercase; letter-spacing: .04em; text-align: left; }
+    .form-group input {
+      width: 100%; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 8px;
+      font-family: var(--fn); font-size: .92rem; color: var(--text); background: white;
+      transition: border-color .2s, box-shadow .2s; -webkit-appearance: none;
+    }
+    .form-group input:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(0,91,167,.1); }
+    .form-group input.error { border-color: #E53E3E; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    @media (max-width: 767px) {
+      .form-row .form-group label { font-size: .65rem; }
+      .form-row .form-group input { padding: 10px 10px; font-size: .82rem; }
+    }
+    .form-note { font-size: .66rem; color: var(--muted); text-align: center; margin-top: 9px; line-height: 1.5; }
+
+    /* ── SUCCESS ── */
+    .success-msg { display: none; text-align: center; padding: 28px 16px; }
+    .success-msg.show { display: block; }
+    .success-icon { width: 56px; height: 56px; background: #EBF8EE; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; }
+    .success-msg h3 { font-size: 1.35rem; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+    .success-msg p { font-size: .88rem; color: var(--muted); line-height: 1.65; }
+
+    /* ── DEAL BAR ── */
+    .deal-bar { background: var(--yellow); padding: 20px 0; }
+    .deal-inner { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; text-align: center; }
+    .deal-tag { font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; color: rgba(13,27,42,.5); }
+    .deal-pill { background: var(--navy); color: white; border-radius: 8px; padding: 7px 18px; }
+    .deal-pill-num { font-family: var(--fn-cond); font-size: 1.9rem; font-weight: 800; color: var(--yellow); line-height: 1; display: block; }
+    .deal-pill-lbl { font-size: .62rem; font-weight: 700; color: rgba(255,255,255,.6); text-transform: uppercase; letter-spacing: .05em; }
+    .deal-plus { font-size: 1.4rem; font-weight: 300; color: rgba(13,27,42,.4); }
+    .deal-expires { font-size: .72rem; font-weight: 700; color: rgba(13,27,42,.55); }
+
+    /* ── STATS ── */
+    .stats-section { background: var(--blue); padding: 32px 0; text-align: center; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    @media (max-width: 640px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+    .stat-item { border-right: 1px solid rgba(255,255,255,.1); }
+    .stat-item:last-child { border-right: none; }
+    .stat-num { font-family: var(--fn-cond); font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 800; color: var(--yellow); line-height: 1; display: block; }
+    .stat-label { font-size: .7rem; font-weight: 700; color: rgba(255,255,255,.55); text-transform: uppercase; letter-spacing: .07em; margin-top: 4px; }
+
+    /* ── BADGES ── */
+    .badges-section { background: white; padding: 22px 0; border-bottom: 1px solid var(--border); }
+    .badges-strip { display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: nowrap; }
+    .badge-item { flex: 0 1 auto; }
+    .badge-item img { height: 44px; width: auto; opacity: .6; filter: grayscale(10%); transition: opacity .2s; }
+    .badge-item img:hover { opacity: 1; }
+    @media (max-width: 640px) { .badges-strip { gap: 10px; } .badge-item img { height: 32px; } }
+    @media (max-width: 400px) { .badges-strip { gap: 6px; } .badge-item img { height: 26px; } }
+
+    /* ── PROMISE SECTION ── */
+    .promise-section { background: white; padding: 64px 0; }
+    .sec-label { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--blue); margin-bottom: 8px; text-align: center; }
+    .sec-title { font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 800; color: var(--text); line-height: 1.2; margin-bottom: 10px; text-align: center; }
+    .sec-title span { color: var(--blue); }
+    .sec-sub { font-size: .95rem; color: var(--muted); max-width: 520px; margin: 0 auto 40px; line-height: 1.7; text-align: center; }
+    .promise-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+    .promise-card {
+      background: var(--bg); border-radius: 14px; padding: 24px 20px;
+      border: 1.5px solid var(--border); display: flex; gap: 14px; align-items: flex-start;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .promise-card:hover { border-color: var(--blue); box-shadow: 0 6px 22px rgba(0,91,167,.08); }
+    .promise-icon { width: 44px; height: 44px; border-radius: 12px; background: #EBF3FB; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .promise-icon svg { color: var(--blue); }
+    .promise-title { font-size: 1rem; font-weight: 800; color: var(--text); margin-bottom: 5px; }
+    .promise-text { font-size: .85rem; color: var(--muted); line-height: 1.65; }
+
+    /* ── TESTIMONIALS ── */
+    .test-section { background: var(--bg); padding: 64px 0; }
+    .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px; margin-top: 40px; }
+    .test-card {
+      background: white; border-radius: 16px; padding: 28px 24px;
+      border: 1.5px solid var(--border); position: relative; overflow: hidden;
+    }
+    .test-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--yellow); }
+    .test-quote-mark { font-size: 3.5rem; line-height: 1; color: var(--yellow); font-family: Georgia, serif; margin-bottom: -8px; display: block; }
+    .test-stars { display: flex; gap: 2px; margin-bottom: 12px; }
+    .test-stars svg { color: var(--yellow); }
+    .test-quote { font-size: .95rem; color: var(--text); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+    .test-author { display: flex; align-items: center; gap: 11px; }
+    .test-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 800; color: white; flex-shrink: 0; }
+    .test-name { font-size: .88rem; font-weight: 800; color: var(--text); }
+    .test-loc { font-size: .74rem; color: var(--muted); }
+
+    /* ── BENEFITS LIST ── */
+    .benefits-section { background: white; padding: 64px 0; }
+    .ben-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 40px; }
+    .ben-row { display: flex; align-items: flex-start; gap: 12px; padding: 16px; border-radius: 12px; border: 1.5px solid var(--border); background: var(--bg); }
+    .ben-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--yellow); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .ben-icon svg { color: var(--navy); }
+    .ben-copy-title { font-size: .95rem; font-weight: 800; color: var(--text); margin-bottom: 3px; }
+    .ben-copy-text { font-size: .82rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── BOTTOM CTA ── */
+    .cta-section { background: var(--navy); padding: 72px 0; }
+    .cta-layout { display: block; }
+    @media (min-width: 768px) {
+      .cta-layout { display: grid; grid-template-columns: 1fr 480px; gap: 60px; align-items: center; }
+    }
+    .cta-copy { margin-bottom: 36px; }
+    @media (min-width: 768px) { .cta-copy { margin-bottom: 0; } }
+    .cta-label { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--yellow); margin-bottom: 10px; }
+    .cta-title { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; color: white; line-height: 1.2; margin-bottom: 14px; }
+    .cta-title span { color: var(--yellow); }
+    .cta-sub { font-size: .95rem; color: rgba(255,255,255,.6); line-height: 1.7; max-width: 440px; margin-bottom: 24px; }
+    .cta-checklist { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .cta-checklist li { display: flex; align-items: center; gap: 9px; font-size: .88rem; color: rgba(255,255,255,.7); font-weight: 600; }
+    .cta-chk { width: 18px; height: 18px; border-radius: 50%; background: rgba(255,195,0,.15); border: 1.5px solid rgba(255,195,0,.4); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .cta-chk svg { color: var(--yellow); }
+
+    .cta-form-card { background: white; border-radius: 18px; padding: 28px 24px; box-shadow: 0 20px 60px rgba(0,0,0,.3); }
+    .cta-form-title { font-size: 1.1rem; font-weight: 800; color: var(--text); text-align: center; margin-bottom: 18px; }
+    .cta-form-title span { color: var(--blue); }
+
+    /* ── HOW IT WORKS ── */
+    .steps-section { background: var(--bg); padding: 64px 0; text-align: center; }
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px; }
+    .step { background: white; border-radius: 14px; padding: 28px 20px; border: 1.5px solid var(--border); position: relative; }
+    .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--blue); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-family: var(--fn-cond); font-size: 1.4rem; font-weight: 800; color: white; }
+    .step-title { font-size: .98rem; font-weight: 800; margin-bottom: 7px; color: var(--text); }
+    .step-text { font-size: .83rem; color: var(--muted); line-height: 1.65; }
+    @media (min-width: 768px) {
+      .step:not(:last-child)::after { content: '→'; position: absolute; top: 36px; right: -16px; font-size: 1.2rem; color: var(--yellow); z-index: 1; }
+    }
+
+    /* ── FOOTER ── */
+    .footer { background: var(--navy); color: rgba(255,255,255,.38); padding: 32px 20px; text-align: center; font-size: .75rem; line-height: 1.8; }
+
+    /* ── MOBILE STICKY ── */
+    .sticky-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: white; border-top: 2px solid var(--border); padding: 11px 16px; box-shadow: 0 -4px 20px rgba(0,0,0,.1); }
+    @media (max-width: 767px) { .sticky-bar { display: block; } body { padding-bottom: 72px; } }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-left > * { animation: fadeUp .55s ease both; }
+    .hero-left > *:nth-child(1) { animation-delay: .04s; }
+    .hero-left > *:nth-child(2) { animation-delay: .12s; }
+    .hero-left > *:nth-child(3) { animation-delay: .2s; }
+    .hero-left > *:nth-child(4) { animation-delay: .28s; }
+    .form-card { animation: fadeUp .6s ease .1s both; }
+  </style>
+</head>
+<body>
+
+  <!-- URGENCY BAR -->
+  <div class="urgency-bar">
+    <div class="urgency-inner">
+      <span>⚡ SPRING SALE ENDS IN:</span>
+      <span class="ct-wrap">
+        <span class="ct-unit" id="ct-d">13</span><span class="ct-sep">:</span>
+        <span class="ct-unit" id="ct-h">00</span><span class="ct-sep">:</span>
+        <span class="ct-unit" id="ct-m">00</span><span class="ct-sep">:</span>
+        <span class="ct-unit" id="ct-s">00</span>
+      </span>
+      <span>— Don't Miss 50% Off</span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <a href="/window-nation-landing/"><img src="../images/logo.png" alt="Window Nation" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span style="display:none;font-weight:800;font-size:1.3rem;color:var(--blue);">Window Nation</span></a>
+      </div>
+      <div class="header-badge">
+        <div class="header-stars">
+          <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <span>25,000 Reviews · BBB A+</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-layout">
+        <div class="hero-left">
+          <div class="hero-rating">
+            <div class="hero-stars">
+              <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="hero-rating-text">4.9/5</span>
+            <span class="hero-rating-count">(25,000+ reviews)</span>
+          </div>
+
+          <h1>New Windows.<br><span class="hl">200,000 Families</span><br>Can't Be Wrong.</h1>
+
+          <p class="hero-sub">America's most trusted window company is offering 50% off every style — plus 0% interest for 60 months. Find out what you save in a free, no-pressure home visit.</p>
+
+          <ul class="hero-checklist">
+            <li>
+              <div class="chk"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              50% off every window style — no exclusions
+            </li>
+            <li>
+              <div class="chk"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              0% interest for 60 months on approved credit
+            </li>
+            <li>
+              <div class="chk"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              Lifetime warranty — we stand behind every window
+            </li>
+            <li>
+              <div class="chk"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              Most installations complete in a single day
+            </li>
+          </ul>
+        </div>
+
+        <div class="hero-right">
+          <div class="form-card-wrap">
+            <div class="form-card" id="main-form-card">
+              <div id="form-content">
+                <div class="fc-eyebrow">✓ Free · No Obligation · No Pressure</div>
+                <div class="fc-title">Claim Your Free In-Home Estimate</div>
+                <div class="fc-sub">Lock in 50% off before this offer expires.</div>
+                <div class="offer-bar">
+                  <div class="ob-pill"><span class="ob-num">50%</span><span class="ob-lbl">Off All Styles</span></div>
+                  <div class="ob-pill"><span class="ob-num">0%</span><span class="ob-lbl">Interest · 60 Mo.</span></div>
+                </div>
+                <form id="lead-form" novalidate>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="fn">First Name *</label>
+                      <input type="text" id="fn" name="first_name" placeholder="Jane" required autocomplete="given-name">
+                    </div>
+                    <div class="form-group">
+                      <label for="ln">Last Name *</label>
+                      <input type="text" id="ln" name="last_name" placeholder="Smith" required autocomplete="family-name">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="ph">Phone Number *</label>
+                    <input type="tel" id="ph" name="phone" placeholder="(555) 123-4567" required autocomplete="tel" inputmode="tel">
+                  </div>
+                  <div class="form-group">
+                    <label for="em">Email Address *</label>
+                    <input type="email" id="em" name="email" placeholder="jane@email.com" required autocomplete="email">
+                  </div>
+                  <div class="form-group">
+                    <label for="zp">ZIP Code *</label>
+                    <input type="text" id="zp" name="zip" placeholder="12345" maxlength="5" required autocomplete="postal-code" inputmode="numeric">
+                  </div>
+                  <div style="margin-top:14px;">
+                    <button type="submit" class="btn-yellow">
+                      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7"/></svg>
+                      Claim My 50% Off Estimate
+                    </button>
+                  </div>
+                  <p class="form-note">By submitting, you agree to be contacted by Window Nation. We never sell your info.</p>
+                </form>
+              </div>
+              <div class="success-msg" id="success-msg">
+                <div class="success-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#276749" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <h3>You're All Set!</h3>
+                <p>A Window Nation specialist will contact you within <strong>24 hours</strong> to schedule your free in-home estimate.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEAL BAR -->
+  <div class="deal-bar">
+    <div class="deal-inner">
+      <span class="deal-tag">Spring Offer</span>
+      <div class="deal-pill">
+        <span class="deal-pill-num">50%</span>
+        <span class="deal-pill-lbl">Off All Windows</span>
+      </div>
+      <span class="deal-plus">+</span>
+      <div class="deal-pill">
+        <span class="deal-pill-num">0%</span>
+        <span class="deal-pill-lbl">Interest · 60 Months</span>
+      </div>
+      <span class="deal-expires">⏰ Expires March 31, 2026</span>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item"><span class="stat-num">2M+</span><div class="stat-label">Windows Installed</div></div>
+        <div class="stat-item"><span class="stat-num">200K</span><div class="stat-label">Homes Serviced</div></div>
+        <div class="stat-item"><span class="stat-num">25K</span><div class="stat-label">5-Star Reviews</div></div>
+        <div class="stat-item"><span class="stat-num">1,500+</span><div class="stat-label">Style Options</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BADGES -->
+  <div class="badges-section">
+    <div class="container">
+      <div class="badges-strip">
+        <div class="badge-item"><img src="https://windownationdeals.com/images/qualified-remodeler-award.webp" alt="Qualified Remodeler Award"></div>
+        <div class="badge-item"><img src="https://windownationdeals.com/images/AngiesList-May17.webp" alt="Angi's List"></div>
+        <div class="badge-item"><img src="https://windownationdeals.com/images/GuildQuality.webp" alt="Guild Quality"></div>
+        <div class="badge-item"><img src="https://windownationdeals.com/images/RM_Big50-01.webp" alt="Remodelers Big 50"></div>
+        <div class="badge-item"><img src="https://windownationdeals.com/images/Dealer.webp" alt="Certified Dealer"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OUR PROMISE -->
+  <section class="promise-section">
+    <div class="container">
+      <div class="sec-label">Our Commitment</div>
+      <h2 class="sec-title">The Window Nation <span>Promise</span></h2>
+      <p class="sec-sub">Every project, every home, every time. Here's what you can count on when you choose us.</p>
+      <div class="promise-grid">
+        <div class="promise-card">
+          <div class="promise-icon">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <div class="promise-title">Lifetime Warranty</div>
+            <p class="promise-text">Every window we install is backed by a lifetime warranty — materials, labor, and glass. If something goes wrong, we make it right. Period.</p>
+          </div>
+        </div>
+        <div class="promise-card">
+          <div class="promise-icon">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="promise-title">Installed in a Day</div>
+            <p class="promise-text">Our certified crews work fast without cutting corners. Most whole-home installations finish in a single day, with full cleanup when we're done.</p>
+          </div>
+        </div>
+        <div class="promise-card">
+          <div class="promise-icon">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div>
+            <div class="promise-title">Transparent Pricing</div>
+            <p class="promise-text">No hidden fees, no bait-and-switch. Your specialist locks in your 50% off price on the spot. What you're quoted is what you pay.</p>
+          </div>
+        </div>
+        <div class="promise-card">
+          <div class="promise-icon">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <div>
+            <div class="promise-title">Zero-Pressure Experience</div>
+            <p class="promise-text">Your free in-home estimate is exactly that — free and pressure-free. No obligation to buy. No sales games. Just honest answers and real pricing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="test-section">
+    <div class="container">
+      <div class="sec-label">Real Homeowners</div>
+      <h2 class="sec-title">25,000 Five-Star <span>Reviews</span></h2>
+      <p class="sec-sub">See what real families are saying after their Window Nation installations.</p>
+      <div class="test-grid">
+        <div class="test-card">
+          <span class="test-quote-mark">"</span>
+          <div class="test-stars">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="test-quote">The rep was incredibly knowledgeable and walked us through every option. I was kept up to date throughout the entire process. The quality is outstanding.</p>
+          <div class="test-author"><div class="test-avatar">C</div><div><div class="test-name">Carolyn S.</div><div class="test-loc">Verified Google Review</div></div></div>
+        </div>
+        <div class="test-card">
+          <span class="test-quote-mark">"</span>
+          <div class="test-stars">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="test-quote">Great service, great salesman, very clean installation. They were in and out in one day and left the place spotless. Honest pricing, no surprises whatsoever.</p>
+          <div class="test-author"><div class="test-avatar">J</div><div><div class="test-name">Joseph L.</div><div class="test-loc">Verified Google Review</div></div></div>
+        </div>
+        <div class="test-card">
+          <span class="test-quote-mark">"</span>
+          <div class="test-stars">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="test-quote">I was impressed by how fast they scheduled us. Pricing was honest and upfront — no hidden fees. I'd recommend Window Nation to anyone replacing their windows.</p>
+          <div class="test-author"><div class="test-avatar">T</div><div><div class="test-name">Talia E.</div><div class="test-loc">Verified Google Review</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="benefits-section">
+    <div class="container">
+      <div class="sec-label">What You Get</div>
+      <h2 class="sec-title">Every Window. Every <span>Advantage.</span></h2>
+      <p class="sec-sub">From the glass to the installation, every detail is covered.</p>
+      <div class="ben-grid">
+        <div class="ben-row">
+          <div class="ben-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+          <div><div class="ben-copy-title">1,500+ Style Options</div><p class="ben-copy-text">Double-hung, casement, bay, picture, slider, specialty — every style is 50% off.</p></div>
+        </div>
+        <div class="ben-row">
+          <div class="ben-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+          <div><div class="ben-copy-title">Energy Savings Up to 30%</div><p class="ben-copy-text">Low-E coatings and gas insulation cut heating and cooling costs year-round.</p></div>
+        </div>
+        <div class="ben-row">
+          <div class="ben-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <div><div class="ben-copy-title">Factory-Certified Installers</div><p class="ben-copy-text">Every crew member is trained and certified. Your home is treated with respect.</p></div>
+        </div>
+        <div class="ben-row">
+          <div class="ben-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <div><div class="ben-copy-title">Licensed &amp; Fully Insured</div><p class="ben-copy-text">We carry full liability and workers' comp. You're protected from day one to installation.</p></div>
+        </div>
+        <div class="ben-row">
+          <div class="ben-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div><div class="ben-copy-title">Installed in as Fast as 1 Day</div><p class="ben-copy-text">Most whole-home installs wrap up in a single day. Full site cleanup always included.</p></div>
+        </div>
+        <div class="ben-row">
+          <div class="ben-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div><div class="ben-copy-title">Lifetime Warranty</div><p class="ben-copy-text">Glass, frames, hardware, labor — all covered for life. No fine print, no exceptions.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="steps-section">
+    <div class="container">
+      <div class="sec-label">Simple Process</div>
+      <h2 class="sec-title">From Form to <span>Finished</span> — Fast</h2>
+      <p class="sec-sub">Four easy steps stand between you and brand-new windows at half the price.</p>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-title">Request Your Estimate</div>
+          <p class="step-text">Fill out the short form. No credit check required to get started — just a few quick details.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-title">Meet Your Specialist</div>
+          <p class="step-text">A certified local expert visits, measures every window, and shows you 50% off in real numbers.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-title">Choose &amp; Lock In</div>
+          <p class="step-text">Pick your style, color, and date. Your 50% off price is locked in the moment you sign.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-title">We Install. You Relax.</div>
+          <p class="step-text">Factory-trained crew handles everything. Done in a day, cleanup included.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-layout">
+        <div class="cta-copy">
+          <div class="cta-label">⏰ Offer Expires March 31, 2026</div>
+          <h2 class="cta-title">Ready to See <span>What 50% Off</span> Looks Like?</h2>
+          <p class="cta-sub">Schedule your free in-home estimate. A local specialist will walk through every window, give you real pricing, and lock in your discount on the spot.</p>
+          <ul class="cta-checklist">
+            <li><div class="cta-chk"><svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Free estimate — zero cost, zero obligation</li>
+            <li><div class="cta-chk"><svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>50% off locked in at your appointment</li>
+            <li><div class="cta-chk"><svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>0% interest financing available</li>
+            <li><div class="cta-chk"><svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Lifetime warranty on every window</li>
+          </ul>
+        </div>
+        <div>
+          <div class="cta-form-card">
+            <div class="cta-form-title">Get My Free Estimate &amp; <span>50% Off</span></div>
+            <form id="cta-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cta-fn">First Name *</label>
+                  <input type="text" id="cta-fn" name="first_name" placeholder="Jane" required autocomplete="given-name">
+                </div>
+                <div class="form-group">
+                  <label for="cta-ln">Last Name *</label>
+                  <input type="text" id="cta-ln" name="last_name" placeholder="Smith" required autocomplete="family-name">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="cta-ph">Phone Number *</label>
+                <input type="tel" id="cta-ph" name="phone" placeholder="(555) 123-4567" required autocomplete="tel" inputmode="tel">
+              </div>
+              <div class="form-group">
+                <label for="cta-em">Email Address *</label>
+                <input type="email" id="cta-em" name="email" placeholder="jane@email.com" required autocomplete="email">
+              </div>
+              <div class="form-group">
+                <label for="cta-zp">ZIP Code *</label>
+                <input type="text" id="cta-zp" name="zip" placeholder="12345" maxlength="5" required inputmode="numeric" autocomplete="postal-code">
+              </div>
+              <div style="margin-top:14px;">
+                <button type="submit" class="btn-yellow" style="font-size:1.05rem;padding:17px;">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7"/></svg>
+                  Get My Free Estimate — 50% Off
+                </button>
+              </div>
+              <p class="form-note">Free · No Obligation · No Hidden Fees</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    © 2026 Window Nation Landing Pages. All Rights Reserved.
+    <a href="https://windownationdeals.com/privacy.php" style="color:rgba(255,255,255,.45);text-decoration:underline;">Privacy Policy</a> |
+    <a href="https://windownationdeals.com/terms.php" style="color:rgba(255,255,255,.45);text-decoration:underline;">Terms &amp; Conditions</a>
+    <br><br>
+    *Offer Valid on replacement windows, and excludes the cost of labor. Cannot be combined with any other offer. Financing offers a no payment- no interest feature (during the "promotional period") on your purchase at an APR of 17.99%. No finance charges will accrue on your account during the promotional period, as set forth in your Truth in Lending Disclosures, and you will not have to pay a monthly payment until the promotional period has ended. If you repay your purchase in full before the end of the promotional period you will not have to pay any finance charges. You may also prepay your account at any time without penalty. Financing is subject to credit requirements and satisfactory completion of finance documents. Any finance terms advertised are estimates only. Normal late charges apply once the promotional period has ended. Offer expires on 2/28/2026.
+    <br><br>
+    MD MHIC # 124358, VA # 2705178069, DC # 420212000037, DELAWARE # 2013601804, PA # 104611, MA HIC #197968, NJ # 13VH07997100, RI RIGL #44067, KS #9641242, CT HIC #0661044, WA # WINDONL771PW
+  </footer>
+
+  <!-- MOBILE STICKY -->
+  <div class="sticky-bar" id="sticky-bar">
+    <button class="btn-yellow" onclick="scrollToForm()" style="font-size:.9rem;padding:14px;">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7"/></svg>
+      Get 50% Off — Free Estimate
+    </button>
+  </div>
+
+  <script>
+    // COUNTDOWN
+    (function() {
+      var end = new Date('2026-03-31T23:59:59');
+      function pad(n) { return String(n).padStart(2,'0'); }
+      function tick() {
+        var diff = end - Date.now(); if (diff <= 0) return;
+        document.getElementById('ct-d').textContent = pad(Math.floor(diff/86400000));
+        document.getElementById('ct-h').textContent = pad(Math.floor((diff%86400000)/3600000));
+        document.getElementById('ct-m').textContent = pad(Math.floor((diff%3600000)/60000));
+        document.getElementById('ct-s').textContent = pad(Math.floor((diff%60000)/1000));
+      }
+      tick(); setInterval(tick, 1000);
+    })();
+
+    // PHONE FORMAT
+    document.querySelectorAll('input[type="tel"]').forEach(function(el) {
+      el.addEventListener('input', function() {
+        var d = this.value.replace(/\D/g,'').slice(0,10);
+        if (d.length>6) this.value='('+d.slice(0,3)+') '+d.slice(3,6)+'-'+d.slice(6);
+        else if (d.length>3) this.value='('+d.slice(0,3)+') '+d.slice(3);
+        else if (d.length>0) this.value='('+d;
+      });
+    });
+
+    // VALIDATION
+    function validate(form) {
+      var ok = true;
+      form.querySelectorAll('[required]').forEach(function(el) {
+        el.classList.remove('error');
+        var v = el.value.trim();
+        if (!v) { el.classList.add('error'); ok = false; return; }
+        if (el.type==='email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) { el.classList.add('error'); ok = false; }
+        if (el.type==='tel' && v.replace(/\D/g,'').length<10) { el.classList.add('error'); ok = false; }
+      });
+      return ok;
+    }
+
+    document.getElementById('lead-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (validate(this)) {
+        document.getElementById('form-content').style.display = 'none';
+        document.getElementById('success-msg').classList.add('show');
+      }
+    });
+
+    document.getElementById('cta-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (validate(this)) {
+        this.closest('.cta-form-card').innerHTML = '<div style="text-align:center;padding:28px 16px;"><div style="font-size:3rem;margin-bottom:12px;">✓</div><h3 style="font-size:1.3rem;font-weight:800;color:var(--text);margin-bottom:8px;">You\'re All Set!</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.65;">A specialist will contact you within 24 hours to schedule your free estimate.</p></div>';
+      }
+    });
+
+    var bar = document.getElementById('sticky-bar');
+    var formCard = document.getElementById('main-form-card');
+    if (window.IntersectionObserver && bar && formCard) {
+      new IntersectionObserver(function(entries) {
+        if (window.innerWidth < 768) bar.style.display = entries[0].isIntersecting ? 'none' : 'block';
+      }, { threshold: 0.2 }).observe(formCard);
+    }
+
+    function scrollToForm() {
+      formCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  </script>
+</body>
+</html>

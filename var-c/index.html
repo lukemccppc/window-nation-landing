@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="theme-color" content="#005BA7">
+  <title>Window Nation | Get Your Custom 50% Off Estimate</title>
+  <meta name="description" content="Answer 3 quick questions and unlock your custom 50% off estimate. Plus 0% interest for 60 months. Free, no-pressure in-home visit.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue:      #005BA7;
+      --blue-dark: #00478A;
+      --navy:      #0D1B2A;
+      --yellow:    #FFC300;
+      --yellow-dk: #E6B000;
+      --yellow-pale: #FFFBE6;
+      --bg:        #F5F7FA;
+      --white:     #FFFFFF;
+      --text:      #0D1B2A;
+      --muted:     #5A6575;
+      --border:    #E2E8F0;
+      --green:     #1E8A4C;
+      --r:         12px;
+      --fn:        'Barlow', sans-serif;
+      --fn-cond:   'Barlow Condensed', sans-serif;
+    }
+    html { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body { font-family: var(--fn); color: var(--text); background: var(--bg); line-height: 1.6; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font-family: var(--fn); }
+    img { max-width: 100%; display: block; }
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+    /* ── BUTTONS ── */
+    .btn-yellow {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--yellow); color: var(--text); font-weight: 800; font-size: 1.05rem;
+      padding: 17px 28px; border: none; border-radius: var(--r); cursor: pointer; width: 100%;
+      transition: background .15s, transform .1s, box-shadow .15s;
+      box-shadow: 0 4px 18px rgba(255,195,0,.35); letter-spacing: .01em;
+    }
+    .btn-yellow:hover { background: var(--yellow-dk); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(255,195,0,.4); }
+    .btn-yellow:active { transform: translateY(0); }
+    .btn-outline {
+      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      background: transparent; color: var(--muted); font-weight: 600; font-size: .88rem;
+      padding: 11px 20px; border: 1.5px solid var(--border); border-radius: var(--r);
+      cursor: pointer; transition: border-color .15s, color .15s; width: auto;
+    }
+    .btn-outline:hover { border-color: var(--blue); color: var(--blue); }
+
+    /* ── URGENCY BAR ── */
+    .urgency-bar { background: var(--blue); color: white; text-align: center; padding: 8px 20px; font-size: .8rem; font-weight: 700; }
+    .urgency-inner { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
+    .ct-wrap { display: inline-flex; gap: 3px; align-items: center; }
+    .ct-unit { background: rgba(255,255,255,.18); border-radius: 4px; padding: 1px 6px; font-size: .92rem; min-width: 26px; text-align: center; font-family: var(--fn-cond); font-weight: 800; }
+    .ct-sep { opacity: .5; }
+
+    /* ── HEADER ── */
+    .header { position: sticky; top: 0; z-index: 100; background: white; border-bottom: 1px solid var(--border); box-shadow: 0 1px 8px rgba(0,0,0,.05); }
+    .header-inner { display: flex; align-items: center; justify-content: center; padding: 13px 20px; max-width: 1100px; margin: 0 auto; }
+    .logo img { height: 40px; width: auto; }
+    @media (max-width: 480px) { .logo img { height: 34px; } }
+
+    /* ── HERO ── */
+    .hero { background: var(--white); padding: 48px 0 0; }
+    .hero-inner { text-align: center; max-width: 680px; margin: 0 auto; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 7px; background: #EBF3FB; border: 1px solid rgba(0,91,167,.15); color: var(--blue); font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; padding: 5px 13px; border-radius: 100px; margin-bottom: 18px; }
+    .hero-tag::before { content: ''; width: 6px; height: 6px; background: var(--yellow); border-radius: 50%; animation: blink 1.8s ease-in-out infinite; }
+    @keyframes blink { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(1.5)} }
+    .hero h1 { font-size: clamp(2.4rem, 7vw, 3.4rem); font-weight: 800; line-height: 1.1; color: var(--text); margin-bottom: 12px; }
+    @media (max-width: 767px) { .hero h1 { font-size: clamp(2.6rem, 10vw, 3.2rem); } }
+    .hero h1 span { color: var(--blue); }
+    .hero-sub { font-size: 1.02rem; color: var(--muted); line-height: 1.7; margin-bottom: 10px; max-width: 540px; margin-left: auto; margin-right: auto; }
+    .hero-offer-strip { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 32px; flex-wrap: wrap; }
+    .offer-chip { background: var(--yellow); border-radius: 8px; padding: 6px 14px; font-family: var(--fn-cond); font-weight: 800; font-size: 1.1rem; color: var(--navy); }
+    .offer-chip small { font-family: var(--fn); font-size: .6rem; font-weight: 700; display: block; text-transform: uppercase; letter-spacing: .06em; color: rgba(13,27,42,.5); margin-top: -1px; }
+    .offer-plus { color: var(--muted); font-size: 1.1rem; }
+    .expires-note { font-size: .72rem; color: var(--muted); font-weight: 600; }
+
+    /* ── MULTI-STEP FORM ── */
+    .form-wrap { max-width: 540px; margin: 0 auto; padding: 0 0 56px; }
+
+    .step-form {
+      background: white; border-radius: 20px;
+      box-shadow: 0 12px 48px rgba(0,0,0,.1), 0 2px 8px rgba(0,0,0,.06);
+      overflow: hidden;
+    }
+
+    /* Progress */
+    .progress-header { background: var(--bg); padding: 18px 24px 0; border-bottom: 1px solid var(--border); }
+    .progress-labels { display: flex; justify-content: space-between; margin-bottom: 10px; }
+    .progress-step-label { font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); transition: color .3s; }
+    .progress-step-label.active { color: var(--blue); }
+    .progress-step-label.done { color: var(--green); }
+    .progress-bar-track { height: 4px; background: var(--border); border-radius: 2px; margin-bottom: 18px; }
+    .progress-bar-fill { height: 100%; border-radius: 2px; background: linear-gradient(90deg, var(--blue), var(--yellow)); transition: width .45s ease; }
+    .progress-info { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+    .progress-counter { font-size: .72rem; color: var(--muted); font-weight: 600; }
+    .progress-pct { font-size: .72rem; color: var(--blue); font-weight: 800; }
+
+    /* Step body */
+    .step-body { padding: 28px 24px; }
+    .step-question { font-size: 1.2rem; font-weight: 800; color: var(--text); margin-bottom: 6px; text-align: center; line-height: 1.3; }
+    .step-hint { font-size: .82rem; color: var(--muted); text-align: center; margin-bottom: 24px; }
+
+    /* Choice cards */
+    .choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 24px; }
+    .choice-card {
+      border: 2px solid var(--border); border-radius: var(--r); padding: 16px 14px;
+      cursor: pointer; transition: border-color .2s, background .2s, box-shadow .2s;
+      text-align: center; user-select: none; position: relative;
+    }
+    .choice-card:hover { border-color: var(--blue); background: #EBF3FB; }
+    .choice-card.selected { border-color: var(--blue); background: #EBF3FB; box-shadow: 0 0 0 3px rgba(0,91,167,.1); }
+    .choice-card.selected::after {
+      content: '✓'; position: absolute; top: 8px; right: 10px;
+      font-size: .7rem; font-weight: 900; color: var(--blue);
+    }
+    .choice-icon { font-size: 1.8rem; margin-bottom: 6px; display: block; }
+    .choice-label { font-size: .88rem; font-weight: 700; color: var(--text); line-height: 1.3; display: block; }
+    .choice-sub { font-size: .72rem; color: var(--muted); display: block; margin-top: 3px; }
+
+    /* Contact step */
+    .contact-step-header { text-align: center; margin-bottom: 20px; }
+    .contact-step-summary { background: var(--yellow-pale); border: 1px solid rgba(255,195,0,.4); border-radius: 10px; padding: 14px 16px; margin-bottom: 20px; }
+    .summary-title { font-size: .65rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: var(--blue); margin-bottom: 8px; }
+    .summary-items { display: flex; flex-direction: column; gap: 4px; }
+    .summary-item { font-size: .82rem; color: var(--text); display: flex; align-items: center; gap: 6px; }
+    .summary-item::before { content: '✓'; color: var(--green); font-weight: 900; font-size: .7rem; }
+
+    .form-group { margin-bottom: 11px; }
+    .form-group label { display: block; font-size: .72rem; font-weight: 700; color: var(--text); margin-bottom: 4px; text-transform: uppercase; letter-spacing: .04em; text-align: left; }
+    .form-group input {
+      width: 100%; padding: 13px 14px; border: 1.5px solid var(--border); border-radius: 9px;
+      font-family: var(--fn); font-size: .95rem; color: var(--text); background: white;
+      transition: border-color .2s, box-shadow .2s; -webkit-appearance: none;
+    }
+    .form-group input:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(0,91,167,.1); }
+    .form-group input.error { border-color: #E53E3E; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    @media (max-width: 420px) {
+      .form-row .form-group label { font-size: .65rem; }
+      .form-row .form-group input { padding: 11px 10px; font-size: .85rem; }
+    }
+
+    /* Step actions */
+    .step-actions { display: flex; gap: 10px; align-items: center; }
+    .step-actions .btn-yellow { flex: 1; }
+
+    .form-note { font-size: .64rem; color: var(--muted); text-align: center; margin-top: 10px; line-height: 1.5; }
+
+    /* Success */
+    .success-pane { padding: 40px 24px; text-align: center; }
+    .success-ring { width: 72px; height: 72px; border-radius: 50%; background: #EBF8EE; border: 3px solid #9AE6B4; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; }
+    .success-pane h2 { font-size: 1.5rem; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+    .success-pane p { font-size: .9rem; color: var(--muted); line-height: 1.7; margin-bottom: 16px; }
+    .success-summary { background: var(--bg); border-radius: 12px; padding: 16px; margin-bottom: 20px; text-align: left; }
+    .success-summary-title { font-size: .65rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: var(--blue); margin-bottom: 10px; }
+    .success-row { display: flex; justify-content: space-between; font-size: .83rem; padding: 5px 0; border-bottom: 1px solid var(--border); }
+    .success-row:last-child { border-bottom: none; }
+    .success-row-label { color: var(--muted); }
+    .success-row-val { font-weight: 700; color: var(--text); }
+    .success-offer { background: var(--yellow); border-radius: 10px; padding: 14px 18px; margin-bottom: 16px; }
+    .success-offer-line { display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; font-size: .85rem; font-weight: 700; color: var(--navy); }
+    .success-offer-num { font-family: var(--fn-cond); font-size: 1.6rem; font-weight: 800; }
+
+    /* ── TRUST STRIP ── */
+    .trust-strip { background: white; padding: 28px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .trust-inner { display: flex; align-items: center; justify-content: center; gap: 28px; flex-wrap: wrap; }
+    .trust-item { display: flex; align-items: center; gap: 7px; font-size: .8rem; font-weight: 700; color: var(--muted); }
+    .trust-item svg { color: var(--blue); flex-shrink: 0; }
+
+    /* ── STATS ── */
+    .stats-section { background: var(--blue); padding: 28px 0; text-align: center; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    @media (max-width: 560px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+    .stat-num { font-family: var(--fn-cond); font-size: clamp(1.8rem, 5vw, 2.6rem); font-weight: 800; color: var(--yellow); line-height: 1; display: block; }
+    .stat-label { font-size: .68rem; font-weight: 700; color: rgba(255,255,255,.55); text-transform: uppercase; letter-spacing: .07em; margin-top: 4px; }
+
+    /* ── BADGES ── */
+    .badges-section { background: var(--bg); padding: 20px 0; }
+    .badges-strip { display: flex; align-items: center; justify-content: center; gap: 22px; flex-wrap: nowrap; }
+    .badge-item img { height: 42px; width: auto; opacity: .58; filter: grayscale(10%); transition: opacity .2s; }
+    .badge-item img:hover { opacity: 1; }
+    @media (max-width: 640px) { .badges-strip { gap: 10px; } .badge-item img { height: 30px; } }
+    @media (max-width: 400px) { .badges-strip { gap: 6px; } .badge-item img { height: 24px; } }
+
+    /* ── TESTIMONIALS ── */
+    .test-section { background: white; padding: 56px 0; }
+    .sec-label { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--blue); margin-bottom: 8px; text-align: center; }
+    .sec-title { font-size: clamp(1.65rem, 3.5vw, 2.2rem); font-weight: 800; color: var(--text); line-height: 1.2; margin-bottom: 10px; text-align: center; }
+    .sec-title span { color: var(--blue); }
+    .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px; margin-top: 32px; }
+    .test-card { background: var(--bg); border-radius: 14px; padding: 22px; border: 1.5px solid var(--border); }
+    .test-stars { display: flex; gap: 2px; margin-bottom: 10px; }
+    .test-stars svg { color: var(--yellow); }
+    .test-quote { font-size: .9rem; color: var(--text); line-height: 1.68; margin-bottom: 14px; }
+    .test-author { display: flex; align-items: center; gap: 10px; }
+    .test-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 800; color: white; flex-shrink: 0; }
+    .test-name { font-size: .85rem; font-weight: 800; color: var(--text); }
+    .test-loc { font-size: .72rem; color: var(--muted); }
+
+    /* ── HOW-IT-WORKS ── */
+    .steps-section { background: var(--bg); padding: 56px 0; text-align: center; }
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 20px; margin-top: 32px; }
+    .step { background: white; border-radius: 14px; padding: 24px 18px; border: 1.5px solid var(--border); }
+    .step-num { width: 44px; height: 44px; border-radius: 50%; background: var(--blue); display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; font-family: var(--fn-cond); font-size: 1.3rem; font-weight: 800; color: white; }
+    .step-title { font-size: .95rem; font-weight: 800; margin-bottom: 6px; color: var(--text); }
+    .step-text { font-size: .82rem; color: var(--muted); line-height: 1.65; }
+
+    /* ── FOOTER ── */
+    .footer { background: var(--navy); color: rgba(255,255,255,.38); padding: 32px 20px; text-align: center; font-size: .75rem; line-height: 1.8; }
+
+    /* ── MOBILE STICKY ── */
+    .sticky-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: white; border-top: 2px solid var(--border); padding: 11px 16px; box-shadow: 0 -4px 20px rgba(0,0,0,.1); }
+    @media (max-width: 767px) { .sticky-bar { display: block; } body { padding-bottom: 72px; } }
+
+    /* ── TRANSITIONS ── */
+    .step-panel { animation: fadeIn .35s ease both; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-inner > * { animation: fadeUp .5s ease both; }
+    .hero-inner > *:nth-child(1) { animation-delay: .04s; }
+    .hero-inner > *:nth-child(2) { animation-delay: .1s; }
+    .hero-inner > *:nth-child(3) { animation-delay: .16s; }
+    .hero-inner > *:nth-child(4) { animation-delay: .22s; }
+    .step-form { animation: fadeUp .55s ease .15s both; }
+  </style>
+</head>
+<body>
+
+  <!-- URGENCY BAR -->
+  <div class="urgency-bar">
+    <div class="urgency-inner">
+      <span>⚡ SPRING OFFER ENDS:</span>
+      <span class="ct-wrap">
+        <span class="ct-unit" id="ct-d">13</span><span class="ct-sep">d</span>
+        <span class="ct-unit" id="ct-h">00</span><span class="ct-sep">h</span>
+        <span class="ct-unit" id="ct-m">00</span><span class="ct-sep">m</span>
+        <span class="ct-unit" id="ct-s">00</span><span class="ct-sep">s</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <a href="/window-nation-landing/"><img src="../images/logo.png" alt="Window Nation" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span style="display:none;font-weight:800;font-size:1.3rem;color:var(--blue);">Window Nation</span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-tag">Limited-Time Spring Offer</div>
+        <h1>Get Your Custom <span>50% Off</span> Estimate</h1>
+        <p class="hero-sub">Answer 3 quick questions — we'll match you to the right windows and lock in your discount before it expires.</p>
+        <div class="hero-offer-strip">
+          <div class="offer-chip">50% OFF<small>All Window Styles</small></div>
+          <span class="offer-plus">+</span>
+          <div class="offer-chip">0% Interest<small>for 60 Months</small></div>
+        </div>
+      </div>
+
+      <!-- MULTI-STEP FORM -->
+      <div class="form-wrap">
+        <div class="step-form" id="step-form">
+
+          <!-- PROGRESS HEADER -->
+          <div class="progress-header">
+            <div class="progress-info">
+              <span class="progress-counter" id="progress-counter">Step 1 of 4</span>
+              <span class="progress-pct" id="progress-pct">25%</span>
+            </div>
+            <div class="progress-bar-track">
+              <div class="progress-bar-fill" id="progress-fill" style="width:25%"></div>
+            </div>
+            <div class="progress-labels">
+              <span class="progress-step-label active" id="lbl-1">Windows</span>
+              <span class="progress-step-label" id="lbl-2">Goals</span>
+              <span class="progress-step-label" id="lbl-3">Timeline</span>
+              <span class="progress-step-label" id="lbl-4">Your Info</span>
+            </div>
+          </div>
+
+          <!-- STEP 1: How many windows? -->
+          <div class="step-body step-panel" id="step-1">
+            <div class="step-question">How many windows need replacing?</div>
+            <div class="step-hint">Every style qualifies — all 50% off.</div>
+            <div class="choice-grid">
+              <div class="choice-card" data-step="1" data-value="1–3 windows" onclick="selectChoice(this)">
+                <span class="choice-icon">🪟</span>
+                <span class="choice-label">1–3 Windows</span>
+                <span class="choice-sub">1–2 rooms</span>
+              </div>
+              <div class="choice-card" data-step="1" data-value="4–7 windows" onclick="selectChoice(this)">
+                <span class="choice-icon">🏠</span>
+                <span class="choice-label">4–7 Windows</span>
+                <span class="choice-sub">Most common</span>
+              </div>
+              <div class="choice-card" data-step="1" data-value="8–12 windows" onclick="selectChoice(this)">
+                <span class="choice-icon">🏡</span>
+                <span class="choice-label">8–12 Windows</span>
+                <span class="choice-sub">Whole home</span>
+              </div>
+              <div class="choice-card" data-step="1" data-value="12+ windows" onclick="selectChoice(this)">
+                <span class="choice-icon">🏘️</span>
+                <span class="choice-label">12+ Windows</span>
+                <span class="choice-sub">Large home</span>
+              </div>
+            </div>
+            <div class="step-actions">
+              <button class="btn-yellow" onclick="nextStep(1)">
+                Next Step
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+            <p class="form-note" style="margin-top:12px;">Free estimate · No obligation · Takes under 2 minutes</p>
+          </div>
+
+          <!-- STEP 2: Primary goal -->
+          <div class="step-body step-panel" id="step-2" style="display:none;">
+            <div class="step-question">What matters most to you?</div>
+            <div class="step-hint">We'll recommend the best window options for your goals.</div>
+            <div class="choice-grid">
+              <div class="choice-card" data-step="2" data-value="Energy savings" onclick="selectChoice(this)">
+                <span class="choice-icon">⚡</span>
+                <span class="choice-label">Energy Savings</span>
+                <span class="choice-sub">Lower bills</span>
+              </div>
+              <div class="choice-card" data-step="2" data-value="Curb appeal" onclick="selectChoice(this)">
+                <span class="choice-icon">✨</span>
+                <span class="choice-label">Curb Appeal</span>
+                <span class="choice-sub">Look &amp; style</span>
+              </div>
+              <div class="choice-card" data-step="2" data-value="Home value" onclick="selectChoice(this)">
+                <span class="choice-icon">📈</span>
+                <span class="choice-label">Home Value</span>
+                <span class="choice-sub">ROI &amp; resale</span>
+              </div>
+              <div class="choice-card" data-step="2" data-value="Noise &amp; comfort" onclick="selectChoice(this)">
+                <span class="choice-icon">🔇</span>
+                <span class="choice-label">Comfort</span>
+                <span class="choice-sub">Noise &amp; drafts</span>
+              </div>
+            </div>
+            <div class="step-actions">
+              <button class="btn-outline" onclick="goBack(2)">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+                Back
+              </button>
+              <button class="btn-yellow" onclick="nextStep(2)">
+                Next Step
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 3: Timeline -->
+          <div class="step-body step-panel" id="step-3" style="display:none;">
+            <div class="step-question">When are you looking to get started?</div>
+            <div class="step-hint">No pressure — we'll work around your schedule.</div>
+            <div class="choice-grid">
+              <div class="choice-card" data-step="3" data-value="As soon as possible" onclick="selectChoice(this)">
+                <span class="choice-icon">🚀</span>
+                <span class="choice-label">ASAP</span>
+                <span class="choice-sub">Ready now</span>
+              </div>
+              <div class="choice-card" data-step="3" data-value="Within 1 month" onclick="selectChoice(this)">
+                <span class="choice-icon">📅</span>
+                <span class="choice-label">Within 1 Month</span>
+                <span class="choice-sub">Planning ahead</span>
+              </div>
+              <div class="choice-card" data-step="3" data-value="1–3 months out" onclick="selectChoice(this)">
+                <span class="choice-icon">🗓️</span>
+                <span class="choice-label">1–3 Months</span>
+                <span class="choice-sub">No rush</span>
+              </div>
+              <div class="choice-card" data-step="3" data-value="Just exploring" onclick="selectChoice(this)">
+                <span class="choice-icon">🔍</span>
+                <span class="choice-label">Just Exploring</span>
+                <span class="choice-sub">Getting info</span>
+              </div>
+            </div>
+            <div class="step-actions">
+              <button class="btn-outline" onclick="goBack(3)">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+                Back
+              </button>
+              <button class="btn-yellow" onclick="nextStep(3)">
+                See My Offer
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 4: Contact info -->
+          <div class="step-body step-panel" id="step-4" style="display:none;">
+            <div class="contact-step-header">
+              <div class="step-question">Almost there — where should we send your estimate?</div>
+              <div class="step-hint">Your personalized offer is ready based on your answers.</div>
+            </div>
+            <div class="contact-step-summary" id="answers-summary">
+              <div class="summary-title">Your Custom Estimate Details</div>
+              <div class="summary-items" id="summary-list"></div>
+            </div>
+            <form id="lead-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="fn">First Name *</label>
+                  <input type="text" id="fn" name="first_name" placeholder="Jane" required autocomplete="given-name">
+                </div>
+                <div class="form-group">
+                  <label for="ln">Last Name *</label>
+                  <input type="text" id="ln" name="last_name" placeholder="Smith" required autocomplete="family-name">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="ph">Phone Number *</label>
+                <input type="tel" id="ph" name="phone" placeholder="(555) 123-4567" required autocomplete="tel" inputmode="tel">
+              </div>
+              <div class="form-group">
+                <label for="em">Email Address *</label>
+                <input type="email" id="em" name="email" placeholder="jane@email.com" required autocomplete="email">
+              </div>
+              <div class="form-group">
+                <label for="zp">ZIP Code *</label>
+                <input type="text" id="zp" name="zip" placeholder="12345" maxlength="5" required autocomplete="postal-code" inputmode="numeric">
+              </div>
+              <div class="step-actions" style="margin-top:16px;">
+                <button class="btn-outline" onclick="goBack(4)" type="button">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+                  Back
+                </button>
+                <button type="submit" class="btn-yellow" style="font-size:1rem;">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7"/></svg>
+                  Unlock My 50% Off Estimate
+                </button>
+              </div>
+              <p class="form-note">By submitting, you agree to be contacted by Window Nation. We never sell your info.</p>
+            </form>
+          </div>
+
+          <!-- SUCCESS -->
+          <div class="success-pane" id="success-pane" style="display:none;">
+            <div class="success-ring">
+              <svg width="32" height="32" fill="none" stroke="#276749" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h2>Your Estimate Is Confirmed!</h2>
+            <p>A local Window Nation specialist will contact you within <strong>24 hours</strong> to schedule your free in-home visit. Your 50% off is locked in.</p>
+            <div class="success-summary" id="success-summary">
+              <div class="success-summary-title">Your Estimate Summary</div>
+              <div id="success-summary-rows"></div>
+            </div>
+            <div class="success-offer">
+              <div class="success-offer-line">
+                <span>Your Offer:</span>
+                <span class="success-offer-num">50% OFF</span>
+                <span>+ 0% Interest for 60 Months</span>
+              </div>
+            </div>
+            <p class="form-note">Check your email for a confirmation. Questions? Visit <a href="https://windownationdeals.com" style="color:var(--blue);text-decoration:underline;">windownationdeals.com</a></p>
+          </div>
+
+        </div><!-- /step-form -->
+      </div><!-- /form-wrap -->
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="trust-inner">
+      <div class="trust-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Lifetime Warranty</div>
+      <div class="trust-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>BBB A+ Rated</div>
+      <div class="trust-item"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>25,000 Five-Star Reviews</div>
+      <div class="trust-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Installed in 1 Day</div>
+      <div class="trust-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Licensed &amp; Insured</div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div><span class="stat-num">2M+</span><div class="stat-label">Windows Installed</div></div>
+        <div><span class="stat-num">200K</span><div class="stat-label">Homes Serviced</div></div>
+        <div><span class="stat-num">25K</span><div class="stat-label">5-Star Reviews</div></div>
+        <div><span class="stat-num">1,500+</span><div class="stat-label">Style Options</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BADGES -->
+  <div class="badges-section">
+    <div class="container">
+      <div class="badges-strip">
+        <div class="badge-item"><img src="https://windownationdeals.com/images/qualified-remodeler-award.webp" alt="Qualified Remodeler Award"></div>
+        <div class="badge-item"><img src="https://windownationdeals.com/images/AngiesList-May17.webp" alt="Angi's List"></div>
+        <div class="badge-item"><img src="https://windownationdeals.com/images/GuildQuality.webp" alt="Guild Quality"></div>
+        <div class="badge-item"><img src="https://windownationdeals.com/images/RM_Big50-01.webp" alt="Remodelers Big 50"></div>
+        <div class="badge-item"><img src="https://windownationdeals.com/images/Dealer.webp" alt="Certified Dealer"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <section class="test-section">
+    <div class="container">
+      <div class="sec-label">Real Homeowners</div>
+      <h2 class="sec-title">25,000 Five-Star <span>Reviews</span></h2>
+      <div class="test-grid">
+        <div class="test-card">
+          <div class="test-stars">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="test-quote">"The rep was incredibly knowledgeable and walked us through every option. I was kept up to date throughout. The quality is outstanding."</p>
+          <div class="test-author"><div class="test-avatar">C</div><div><div class="test-name">Carolyn S.</div><div class="test-loc">Verified Google Review</div></div></div>
+        </div>
+        <div class="test-card">
+          <div class="test-stars">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="test-quote">"Great service, great salesman, very clean installation. In and out in one day, left the place spotless. Honest pricing, no surprises."</p>
+          <div class="test-author"><div class="test-avatar">J</div><div><div class="test-name">Joseph L.</div><div class="test-loc">Verified Google Review</div></div></div>
+        </div>
+        <div class="test-card">
+          <div class="test-stars">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="test-quote">"Impressed by how fast they scheduled us. Pricing was honest and upfront — no hidden fees. I'd recommend Window Nation to anyone."</p>
+          <div class="test-author"><div class="test-avatar">T</div><div><div class="test-name">Talia E.</div><div class="test-loc">Verified Google Review</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="steps-section">
+    <div class="container">
+      <div class="sec-label">Simple Process</div>
+      <h2 class="sec-title">From Questions to <span>New Windows</span> — Fast</h2>
+      <div class="steps-grid">
+        <div class="step"><div class="step-num">1</div><div class="step-title">Answer 3 Questions</div><p class="step-text">Tell us what you need. Takes less than 2 minutes and helps us personalize your offer.</p></div>
+        <div class="step"><div class="step-num">2</div><div class="step-title">Get Your Estimate</div><p class="step-text">A specialist contacts you within 24 hours to schedule a free, no-pressure in-home visit.</p></div>
+        <div class="step"><div class="step-num">3</div><div class="step-title">Lock In 50% Off</div><p class="step-text">Review real pricing. Choose your windows. Your discount is locked in when you sign.</p></div>
+        <div class="step"><div class="step-num">4</div><div class="step-title">Installation Day</div><p class="step-text">Our crew arrives, installs, and cleans up. Most homes are done in a single day.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    © 2026 Window Nation Landing Pages. All Rights Reserved.
+    <a href="https://windownationdeals.com/privacy.php" style="color:rgba(255,255,255,.45);text-decoration:underline;">Privacy Policy</a> |
+    <a href="https://windownationdeals.com/terms.php" style="color:rgba(255,255,255,.45);text-decoration:underline;">Terms &amp; Conditions</a>
+    <br><br>
+    *Offer Valid on replacement windows, and excludes the cost of labor. Cannot be combined with any other offer. Financing offers a no payment- no interest feature (during the "promotional period") on your purchase at an APR of 17.99%. No finance charges will accrue on your account during the promotional period, as set forth in your Truth in Lending Disclosures, and you will not have to pay a monthly payment until the promotional period has ended. If you repay your purchase in full before the end of the promotional period you will not have to pay any finance charges. You may also prepay your account at any time without penalty. Financing is subject to credit requirements and satisfactory completion of finance documents. Any finance terms advertised are estimates only. Normal late charges apply once the promotional period has ended. Offer expires on 2/28/2026.
+    <br><br>
+    MD MHIC # 124358, VA # 2705178069, DC # 420212000037, DELAWARE # 2013601804, PA # 104611, MA HIC #197968, NJ # 13VH07997100, RI RIGL #44067, KS #9641242, CT HIC #0661044, WA # WINDONL771PW
+  </footer>
+
+  <!-- MOBILE STICKY -->
+  <div class="sticky-bar" id="sticky-bar">
+    <button class="btn-yellow" onclick="scrollToForm()" style="font-size:.9rem;padding:14px;">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7"/></svg>
+      Start My 50% Off Estimate
+    </button>
+  </div>
+
+  <script>
+    // COUNTDOWN
+    (function() {
+      var end = new Date('2026-03-31T23:59:59');
+      function pad(n) { return String(n).padStart(2,'0'); }
+      function tick() {
+        var diff = end - Date.now(); if (diff <= 0) return;
+        document.getElementById('ct-d').textContent = pad(Math.floor(diff/86400000));
+        document.getElementById('ct-h').textContent = pad(Math.floor((diff%86400000)/3600000));
+        document.getElementById('ct-m').textContent = pad(Math.floor((diff%3600000)/60000));
+        document.getElementById('ct-s').textContent = pad(Math.floor((diff%60000)/1000));
+      }
+      tick(); setInterval(tick, 1000);
+    })();
+
+    // MULTI-STEP STATE
+    var answers = { windows: '', goal: '', timeline: '' };
+    var currentStep = 1;
+    var totalSteps = 4;
+
+    var progressPcts = { 1: 25, 2: 50, 3: 75, 4: 100 };
+    var labelIds = ['lbl-1','lbl-2','lbl-3','lbl-4'];
+    var labelNames = { 1: 'Windows', 2: 'Goals', 3: 'Timeline', 4: 'Your Info' };
+
+    function updateProgress(step) {
+      document.getElementById('progress-counter').textContent = 'Step ' + step + ' of ' + totalSteps;
+      document.getElementById('progress-pct').textContent = progressPcts[step] + '%';
+      document.getElementById('progress-fill').style.width = progressPcts[step] + '%';
+      labelIds.forEach(function(id, i) {
+        var el = document.getElementById(id);
+        el.className = 'progress-step-label';
+        if (i + 1 < step) el.className += ' done';
+        else if (i + 1 === step) el.className += ' active';
+      });
+    }
+
+    function showStep(n) {
+      for (var i = 1; i <= totalSteps; i++) {
+        var el = document.getElementById('step-' + i);
+        if (el) { el.style.display = i === n ? 'block' : 'none'; if (i === n) el.classList.add('step-panel'); }
+      }
+      currentStep = n;
+      updateProgress(n);
+    }
+
+    function selectChoice(card) {
+      var step = card.getAttribute('data-step');
+      document.querySelectorAll('[data-step="' + step + '"]').forEach(function(c) { c.classList.remove('selected'); });
+      card.classList.add('selected');
+    }
+
+    function getSelectedValue(step) {
+      var sel = document.querySelector('[data-step="' + step + '"].selected');
+      return sel ? sel.getAttribute('data-value') : null;
+    }
+
+    function nextStep(from) {
+      var val = getSelectedValue(from);
+      if (!val) {
+        var cards = document.querySelectorAll('[data-step="' + from + '"]');
+        cards.forEach(function(c) { c.style.border = '2px solid #E53E3E'; });
+        setTimeout(function() { cards.forEach(function(c) { c.style.border = ''; }); }, 1200);
+        return;
+      }
+      if (from === 1) answers.windows = val;
+      if (from === 2) answers.goal = val;
+      if (from === 3) {
+        answers.timeline = val;
+        buildSummary();
+      }
+      showStep(from + 1);
+      document.getElementById('step-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function goBack(from) {
+      showStep(from - 1);
+      document.getElementById('step-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function buildSummary() {
+      var items = [
+        { label: 'Windows to replace', val: answers.windows },
+        { label: 'Primary goal', val: answers.goal },
+        { label: 'Timeline', val: answers.timeline },
+        { label: 'Your discount', val: '50% OFF + 0% Interest · 60 Mo.' }
+      ];
+      var html = items.map(function(i) {
+        return '<div class="summary-item"><strong>' + i.label + ':</strong> ' + i.val + '</div>';
+      }).join('');
+      document.getElementById('summary-list').innerHTML = html;
+
+      // Also build success summary rows
+      var rowHtml = items.map(function(i) {
+        return '<div class="success-row"><span class="success-row-label">' + i.label + '</span><span class="success-row-val">' + i.val + '</span></div>';
+      }).join('');
+      document.getElementById('success-summary-rows').innerHTML = rowHtml;
+    }
+
+    // PHONE FORMAT
+    document.querySelectorAll('input[type="tel"]').forEach(function(el) {
+      el.addEventListener('input', function() {
+        var d = this.value.replace(/\D/g,'').slice(0,10);
+        if (d.length>6) this.value='('+d.slice(0,3)+') '+d.slice(3,6)+'-'+d.slice(6);
+        else if (d.length>3) this.value='('+d.slice(0,3)+') '+d.slice(3);
+        else if (d.length>0) this.value='('+d;
+      });
+    });
+
+    // VALIDATION
+    function validate(form) {
+      var ok = true;
+      form.querySelectorAll('[required]').forEach(function(el) {
+        el.classList.remove('error');
+        var v = el.value.trim();
+        if (!v) { el.classList.add('error'); ok = false; return; }
+        if (el.type==='email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) { el.classList.add('error'); ok = false; }
+        if (el.type==='tel' && v.replace(/\D/g,'').length<10) { el.classList.add('error'); ok = false; }
+        if (el.id==='zp' && !/^\d{5}$/.test(v)) { el.classList.add('error'); ok = false; }
+      });
+      return ok;
+    }
+
+    document.getElementById('lead-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (validate(this)) {
+        // Hide all step panels and progress
+        document.querySelector('.progress-header').style.display = 'none';
+        document.getElementById('step-4').style.display = 'none';
+        document.getElementById('success-pane').style.display = 'block';
+        document.getElementById('step-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+
+    // MOBILE STICKY
+    var bar = document.getElementById('sticky-bar');
+    var formEl = document.getElementById('step-form');
+    if (window.IntersectionObserver && bar && formEl) {
+      new IntersectionObserver(function(entries) {
+        if (window.innerWidth < 768) bar.style.display = entries[0].isIntersecting ? 'none' : 'block';
+      }, { threshold: 0.2 }).observe(formEl);
+    }
+
+    function scrollToForm() {
+      formEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  </script>
+</body>
+</html>
