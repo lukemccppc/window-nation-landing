@@ -756,15 +756,14 @@
     document.getElementById('lead-form').addEventListener('submit', function(e) {
       e.preventDefault();
       if (validate(this)) {
-        document.getElementById('form-content').style.display = 'none';
-        document.getElementById('success-msg').classList.add('show');
+        window.location.href = 'thank-you.html';
       }
     });
 
     document.getElementById('cta-form').addEventListener('submit', function(e) {
       e.preventDefault();
       if (validate(this)) {
-        this.closest('.cta-form-card').innerHTML = '<div style="text-align:center;padding:28px 16px;"><div style="font-size:3rem;margin-bottom:12px;">✓</div><h3 style="font-size:1.3rem;font-weight:800;color:var(--text);margin-bottom:8px;">You\'re All Set!</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.65;">A specialist will contact you within 24 hours to schedule your free estimate.</p></div>';
+        window.location.href = 'thank-you.html';
       }
     });
 

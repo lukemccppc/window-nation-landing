@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You — Window Nation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;800&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue:    #005BA7;
+      --yellow:  #FFC300;
+      --bg:      #FBFBFB;
+      --text:    #0D1B2A;
+      --muted:   #5A6575;
+      --fn:      'Barlow', sans-serif;
+      --fn-cond: 'Barlow Condensed', sans-serif;
+    }
+    body {
+      font-family: var(--fn);
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* HEADER */
+    .header {
+      background: var(--blue);
+      padding: 16px 24px;
+      text-align: center;
+    }
+    .header img { height: 40px; }
+
+    /* MAIN */
+    .main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+    }
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 56px 48px;
+      max-width: 540px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 8px 40px rgba(0,91,167,.10);
+    }
+    .checkmark {
+      width: 72px;
+      height: 72px;
+      background: var(--yellow);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+    }
+    .checkmark svg { display: block; }
+    .headline {
+      font-family: var(--fn-cond);
+      font-size: 3.2rem;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--blue);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+    .subheading {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .divider {
+      width: 48px;
+      height: 4px;
+      background: var(--yellow);
+      border-radius: 2px;
+      margin: 24px auto;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #0D1B2A;
+      color: rgba(255,255,255,.4);
+      text-align: center;
+      font-size: .75rem;
+      padding: 20px 24px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 540px) {
+      .card { padding: 40px 24px; }
+      .headline { font-size: 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <img src="../images/logo.png" alt="Window Nation">
+  </header>
+
+  <main class="main">
+    <div class="card">
+      <div class="checkmark">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0D1B2A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+      <h1 class="headline">Thank You</h1>
+      <div class="divider"></div>
+      <p class="subheading">Your information has been submitted. Our qualified representatives will be reaching out to you soon. Please expect our call.</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    © 2026 Window Nation Landing Pages. All Rights Reserved.
+    <a href="https://windownationdeals.com/privacy.php" style="color:rgba(255,255,255,.45);text-decoration:underline;">Privacy Policy</a> |
+    <a href="https://windownationdeals.com/terms.php" style="color:rgba(255,255,255,.45);text-decoration:underline;">Terms &amp; Conditions</a>
+  </footer>
+
+</body>
+</html>
