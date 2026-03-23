@@ -178,6 +178,22 @@
     .photo-split img { width: 100%; height: 360px; object-fit: cover; display: block; }
     @media (max-width: 640px) { .photo-split { grid-template-columns: 1fr; } .photo-split img { height: 240px; } }
 
+    /* ── GALLERY ── */
+    .gallery-section { background: var(--white); padding: 72px 0; }
+    .gallery-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 40px; }
+    .gallery-featured { grid-row: span 2; }
+    .gallery-featured img { width: 100%; height: 100%; object-fit: cover; border-radius: 14px; display: block; }
+    .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .gallery-grid img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 14px; display: block; transition: transform .3s; }
+    .gallery-grid img:hover { transform: scale(1.02); }
+    .gallery-featured img:hover { transform: scale(1.01); }
+    @media (max-width: 767px) {
+      .gallery-layout { grid-template-columns: 1fr; }
+      .gallery-featured { display: none; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .gallery-grid img { aspect-ratio: 1/1; border-radius: 10px; }
+    }
+
     /* ── HOW IT WORKS ── */
     .steps-section { background: var(--blue); color: white; padding: 64px 0; text-align: center; }
     .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; margin-top: 40px; }
@@ -406,6 +422,27 @@
             <div class="ben-title">1,500+ Styles to Choose From</div>
             <p class="ben-text">Double-hung, casement, bay, picture, slider, and specialty shapes — all with custom colors and finishes. Every style is 50% off.</p>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery-section">
+    <div class="container">
+      <div class="sec-hdr">
+        <div class="sec-label">Get What You Really Want</div>
+        <h2 class="sec-title">Turn Your Dream Windows &amp; Doors <span>into Reality</span></h2>
+      </div>
+      <div class="gallery-layout">
+        <div class="gallery-featured">
+          <img src="images/gallery-living.avif" alt="Bright living room with floor-to-ceiling windows" loading="lazy">
+        </div>
+        <div class="gallery-grid">
+          <img src="images/gallery-bedroom.avif" alt="Bedroom with large picture windows and flowering trees" loading="lazy">
+          <img src="images/gallery-kitchen.avif" alt="Kitchen with large windows over farmhouse sink" loading="lazy">
+          <img src="images/gallery-kitchen2.avif" alt="Kitchen with double-hung windows and marble countertop" loading="lazy">
+          <img src="images/gallery-bay.avif" alt="Bay window with white curtains and sky view" loading="lazy">
         </div>
       </div>
     </div>
