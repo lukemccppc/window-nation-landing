@@ -77,8 +77,12 @@
     .hero h1 span { color: var(--blue); }
     .hero-sub { font-size: 1.02rem; color: var(--muted); line-height: 1.7; margin-bottom: 10px; max-width: 540px; margin-left: auto; margin-right: auto; }
     .hero-offer-strip { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 32px; flex-wrap: wrap; }
-    .offer-chip { background: var(--yellow); border-radius: 8px; padding: 6px 14px; font-family: var(--fn-cond); font-weight: 800; font-size: 1.1rem; color: var(--navy); }
-    .offer-chip small { font-family: var(--fn); font-size: .6rem; font-weight: 700; display: block; text-transform: uppercase; letter-spacing: .06em; color: rgba(13,27,42,.5); margin-top: -1px; }
+    .offer-chip { background: var(--yellow); border-radius: 10px; padding: 10px 22px; font-family: var(--fn-cond); font-weight: 800; font-size: 1.5rem; color: var(--navy); }
+    .offer-chip small { font-family: var(--fn); font-size: .7rem; font-weight: 700; display: block; text-transform: uppercase; letter-spacing: .06em; color: rgba(13,27,42,.5); margin-top: 1px; }
+    @media (max-width: 767px) {
+      .offer-chip { font-size: 1.25rem; padding: 9px 16px; }
+      .hero-offer-strip { gap: 8px; }
+    }
     .offer-plus { color: var(--muted); font-size: 1.1rem; }
     .expires-note { font-size: .72rem; color: var(--muted); font-weight: 600; }
 
@@ -216,6 +220,22 @@
     /* ── FOOTER ── */
     .footer { background: var(--navy); color: rgba(255,255,255,.38); padding: 32px 20px; text-align: center; font-size: .75rem; line-height: 1.8; }
 
+    /* GALLERY */
+    .gallery-section { background: var(--white); padding: 72px 0; }
+    .gallery-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 40px; }
+    .gallery-featured { grid-row: span 2; overflow: hidden; border-radius: 14px; }
+    .gallery-featured img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s; }
+    .gallery-featured img:hover { transform: scale(1.01); }
+    .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .gallery-grid img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 14px; display: block; transition: transform .3s; }
+    .gallery-grid img:hover { transform: scale(1.02); }
+    @media (max-width: 767px) {
+      .gallery-layout { grid-template-columns: 1fr; }
+      .gallery-featured { display: none; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .gallery-grid img { aspect-ratio: 1/1; border-radius: 10px; }
+    }
+
     /* ── MOBILE STICKY ── */
     .sticky-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: white; border-top: 2px solid var(--border); padding: 11px 16px; box-shadow: 0 -4px 20px rgba(0,0,0,.1); }
     @media (max-width: 767px) { .sticky-bar { display: block; } body { padding-bottom: 72px; } }
@@ -262,7 +282,7 @@
       <div class="hero-inner">
         <div class="hero-tag">Limited-Time Spring Offer</div>
         <h1>Get Your Custom <span>50% Off</span> Estimate</h1>
-        <p class="hero-sub">Answer 3 quick questions to lock in your discount before it expires.</p>
+        <p class="hero-sub">Answer 4 quick questions to lock in your discount before it expires.</p>
         <div class="hero-offer-strip">
           <div class="offer-chip">50% OFF<small>All Window Styles</small></div>
           <span class="offer-plus">+</span>
@@ -597,12 +617,31 @@
   <section class="steps-section">
     <div class="container">
       <div class="sec-label">Simple Process</div>
-      <h2 class="sec-title">From Questions to <span>New Windows</span> — Fast</h2>
+      <h2 class="sec-title">We Make It Simple and Affordable to <span>Get the Right Windows</span></h2>
       <div class="steps-grid">
-        <div class="step"><div class="step-num">1</div><div class="step-title">Answer 3 Questions</div><p class="step-text">Tell us what you need. Takes less than 2 minutes and helps us personalize your offer.</p></div>
-        <div class="step"><div class="step-num">2</div><div class="step-title">Get Your Estimate</div><p class="step-text">A specialist contacts you within 24 hours to schedule a free, no-pressure in-home visit.</p></div>
+        <div class="step"><div class="step-num">1</div><div class="step-title">Answer 4 Questions</div><p class="step-text">Tell us what you need. Takes less than 2 minutes and helps us personalize your offer.</p></div>
+        <div class="step"><div class="step-num">2</div><div class="step-title">Get Your Free Estimate</div><p class="step-text">A specialist contacts you within 24 hours to schedule a free, no-pressure in-home visit.</p></div>
         <div class="step"><div class="step-num">3</div><div class="step-title">Lock In 50% Off</div><p class="step-text">Review real pricing. Choose your windows. Your discount is locked in when you sign.</p></div>
         <div class="step"><div class="step-num">4</div><div class="step-title">Installation Day</div><p class="step-text">Our crew arrives, installs, and cleans up. Most homes are done in a single day.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery-section">
+    <div class="container">
+      <div class="sec-label">Get What You Really Want</div>
+      <h2 class="sec-title">Make Your Dream Windows <span>a Reality</span></h2>
+      <div class="gallery-layout">
+        <div class="gallery-featured">
+          <img src="../images/gallery-living.avif" alt="Bright living room with floor-to-ceiling windows" loading="lazy">
+        </div>
+        <div class="gallery-grid">
+          <img src="../images/gallery-bedroom.avif" alt="Bedroom with large picture windows and flowering trees" loading="lazy">
+          <img src="../images/gallery-kitchen.avif" alt="Kitchen with large windows over farmhouse sink" loading="lazy">
+          <img src="../images/gallery-kitchen2.avif" alt="Kitchen with double-hung windows and marble countertop" loading="lazy">
+          <img src="../images/gallery-bay.avif" alt="Bay window with white curtains and sky view" loading="lazy">
+        </div>
       </div>
     </div>
   </section>
