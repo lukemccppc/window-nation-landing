@@ -53,7 +53,8 @@
     }
     .btn-outline:hover { border-color: var(--blue); color: var(--blue); }
 
-    /* ── URGENCY BAR ── */
+    /* ── URGENCY BAR + HEADER sticky wrapper ── */
+    .sticky-top { position: sticky; top: 0; z-index: 100; }
     .urgency-bar { background: var(--blue); color: white; text-align: center; padding: 8px 20px; font-size: .8rem; font-weight: 700; }
     .urgency-inner { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
     .ct-wrap { display: inline-flex; gap: 3px; align-items: center; }
@@ -61,7 +62,7 @@
     .ct-sep { opacity: .5; }
 
     /* ── HEADER ── */
-    .header { position: sticky; top: 0; z-index: 100; background: white; border-bottom: 1px solid var(--border); box-shadow: 0 1px 8px rgba(0,0,0,.05); }
+    .header { background: white; border-bottom: 1px solid var(--border); box-shadow: 0 1px 8px rgba(0,0,0,.05); }
     .header-inner { display: flex; align-items: center; justify-content: center; padding: 13px 20px; max-width: 1100px; margin: 0 auto; }
     .logo img { height: 56px; width: auto; }
     @media (max-width: 480px) { .logo img { height: 46px; } }
@@ -255,26 +256,28 @@
 <body>
 
   <!-- URGENCY BAR -->
-  <div class="urgency-bar">
-    <div class="urgency-inner">
-      <span>⚡ SPRING OFFER ENDS:</span>
-      <span class="ct-wrap">
-        <span class="ct-unit" id="ct-d">13</span><span class="ct-sep">d</span>
-        <span class="ct-unit" id="ct-h">00</span><span class="ct-sep">h</span>
-        <span class="ct-unit" id="ct-m">00</span><span class="ct-sep">m</span>
-        <span class="ct-unit" id="ct-s">00</span><span class="ct-sep">s</span>
-      </span>
-    </div>
-  </div>
-
-  <!-- HEADER -->
-  <header class="header">
-    <div class="header-inner">
-      <div class="logo">
-        <a href="/window-nation-landing/"><img src="../images/hwd-wn-logo.webp" alt="Home Window Deals — In Partnership With Window Nation" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span style="display:none;font-weight:800;font-size:1.3rem;color:var(--blue);">Home Window Deals × Window Nation</span></a>
+  <div class="sticky-top">
+    <div class="urgency-bar">
+      <div class="urgency-inner">
+        <span>⚡ SPRING OFFER ENDS:</span>
+        <span class="ct-wrap">
+          <span class="ct-unit" id="ct-d">13</span><span class="ct-sep">d</span>
+          <span class="ct-unit" id="ct-h">00</span><span class="ct-sep">h</span>
+          <span class="ct-unit" id="ct-m">00</span><span class="ct-sep">m</span>
+          <span class="ct-unit" id="ct-s">00</span><span class="ct-sep">s</span>
+        </span>
       </div>
     </div>
-  </header>
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-inner">
+        <div class="logo">
+          <a href="/window-nation-landing/"><img src="../images/hwd-wn-logo.webp" alt="Home Window Deals — In Partnership With Window Nation" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span style="display:none;font-weight:800;font-size:1.3rem;color:var(--blue);">Home Window Deals × Window Nation</span></a>
+        </div>
+      </div>
+    </header>
+  </div>
 
   <!-- HERO -->
   <section class="hero">
@@ -619,7 +622,7 @@
       <div class="sec-label">Simple Process</div>
       <h2 class="sec-title">We Make It Simple and Affordable to <span>Get the Right Windows</span></h2>
       <div class="steps-grid">
-        <div class="step"><div class="step-num">1</div><div class="step-title">Answer 4 Questions</div><p class="step-text">Tell us what you need. Takes less than 2 minutes and helps us personalize your offer.</p></div>
+        <div class="step"><div class="step-num">1</div><div class="step-title">Take the Quiz</div><p class="step-text">Tell us what you need. Takes less than 2 minutes and helps us personalize your offer.</p></div>
         <div class="step"><div class="step-num">2</div><div class="step-title">Get Your Free Estimate</div><p class="step-text">A specialist contacts you within 24 hours to schedule a free, no-pressure in-home visit.</p></div>
         <div class="step"><div class="step-num">3</div><div class="step-title">Lock In 50% Off</div><p class="step-text">Review real pricing. Choose your windows. Your discount is locked in when you sign.</p></div>
         <div class="step"><div class="step-num">4</div><div class="step-title">Installation Day</div><p class="step-text">Our crew arrives, installs, and cleans up. Most homes are done in a single day.</p></div>
@@ -648,13 +651,11 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-    © 2026 Window Nation Landing Pages. All Rights Reserved.
-    <a href="https://windownationdeals.com/privacy.php" style="color:rgba(255,255,255,.45);text-decoration:underline;">Privacy Policy</a> |
-    <a href="https://windownationdeals.com/terms.php" style="color:rgba(255,255,255,.45);text-decoration:underline;">Terms &amp; Conditions</a>
+    *50% off applies to all window styles on qualifying replacement window projects. 0% interest for 60 months with approved credit. 5% military/senior discount applies to qualifying customers. Restrictions apply. Cannot be combined with other offers. See design consultant for details. By using this site, you authorize Home Window Deals and its partners to contact you about home improvement products or services via email, phone (including autodialed or prerecorded calls), or text at the number provided. Consent is not required for purchase.
     <br><br>
-    *Offer Valid on replacement windows, and excludes the cost of labor. Cannot be combined with any other offer. Financing offers a no payment- no interest feature (during the "promotional period") on your purchase at an APR of 17.99%. No finance charges will accrue on your account during the promotional period, as set forth in your Truth in Lending Disclosures, and you will not have to pay a monthly payment until the promotional period has ended. If you repay your purchase in full before the end of the promotional period you will not have to pay any finance charges. You may also prepay your account at any time without penalty. Financing is subject to credit requirements and satisfactory completion of finance documents. Any finance terms advertised are estimates only. Normal late charges apply once the promotional period has ended. Offer expires on 2/28/2026.
-    <br><br>
-    MD MHIC # 124358, VA # 2705178069, DC # 420212000037, DELAWARE # 2013601804, PA # 104611, MA HIC #197968, NJ # 13VH07997100, RI RIGL #44067, KS #9641242, CT HIC #0661044, WA # WINDONL771PW
+    © 2026 homewindowdeals.com. All Rights Reserved.
+    <a href="https://homewindowdeals.com/LP/privacy.html" style="color:rgba(255,255,255,.45);text-decoration:underline;">Privacy Policy</a> |
+    <a href="https://homewindowdeals.com/LP/terms.html" style="color:rgba(255,255,255,.45);text-decoration:underline;">Terms &amp; Conditions</a>
   </footer>
 
   <!-- MOBILE STICKY -->
