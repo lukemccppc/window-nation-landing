@@ -262,7 +262,7 @@
       <div class="hero-inner">
         <div class="hero-tag">Limited-Time Spring Offer</div>
         <h1>Get Your Custom <span>50% Off</span> Estimate</h1>
-        <p class="hero-sub">Answer 3 quick questions — we'll match you to the right windows and lock in your discount before it expires.</p>
+        <p class="hero-sub">Answer 3 quick questions to lock in your discount before it expires.</p>
         <div class="hero-offer-strip">
           <div class="offer-chip">50% OFF<small>All Window Styles</small></div>
           <span class="offer-plus">+</span>
@@ -277,17 +277,18 @@
           <!-- PROGRESS HEADER -->
           <div class="progress-header">
             <div class="progress-info">
-              <span class="progress-counter" id="progress-counter">Step 1 of 4</span>
-              <span class="progress-pct" id="progress-pct">25%</span>
+              <span class="progress-counter" id="progress-counter">Step 1 of 5</span>
+              <span class="progress-pct" id="progress-pct">20%</span>
             </div>
             <div class="progress-bar-track">
-              <div class="progress-bar-fill" id="progress-fill" style="width:25%"></div>
+              <div class="progress-bar-fill" id="progress-fill" style="width:20%"></div>
             </div>
             <div class="progress-labels">
               <span class="progress-step-label active" id="lbl-1">Windows</span>
-              <span class="progress-step-label" id="lbl-2">Goals</span>
-              <span class="progress-step-label" id="lbl-3">Timeline</span>
-              <span class="progress-step-label" id="lbl-4">Your Info</span>
+              <span class="progress-step-label" id="lbl-2">Age</span>
+              <span class="progress-step-label" id="lbl-3">Goals</span>
+              <span class="progress-step-label" id="lbl-4">Timeline</span>
+              <span class="progress-step-label" id="lbl-5">Your Info</span>
             </div>
           </div>
 
@@ -296,25 +297,25 @@
             <div class="step-question">How many windows need replacing?</div>
             <div class="step-hint">Every style qualifies — all 50% off.</div>
             <div class="choice-grid">
-              <div class="choice-card" data-step="1" data-value="1–3 windows" onclick="selectChoice(this)">
+              <div class="choice-card" data-step="1" data-value="3–5 windows" onclick="selectChoice(this)">
                 <span class="choice-icon">🪟</span>
-                <span class="choice-label">1–3 Windows</span>
+                <span class="choice-label">3–5 Windows</span>
                 <span class="choice-sub">1–2 rooms</span>
               </div>
-              <div class="choice-card" data-step="1" data-value="4–7 windows" onclick="selectChoice(this)">
+              <div class="choice-card" data-step="1" data-value="6–10 windows" onclick="selectChoice(this)">
                 <span class="choice-icon">🏠</span>
-                <span class="choice-label">4–7 Windows</span>
+                <span class="choice-label">6–10 Windows</span>
                 <span class="choice-sub">Most common</span>
               </div>
-              <div class="choice-card" data-step="1" data-value="8–12 windows" onclick="selectChoice(this)">
+              <div class="choice-card" data-step="1" data-value="11+ windows" onclick="selectChoice(this)">
                 <span class="choice-icon">🏡</span>
-                <span class="choice-label">8–12 Windows</span>
+                <span class="choice-label">11+ Windows</span>
                 <span class="choice-sub">Whole home</span>
               </div>
-              <div class="choice-card" data-step="1" data-value="12+ windows" onclick="selectChoice(this)">
-                <span class="choice-icon">🏘️</span>
-                <span class="choice-label">12+ Windows</span>
-                <span class="choice-sub">Large home</span>
+              <div class="choice-card" data-step="1" data-value="I don't know" onclick="selectChoice(this)">
+                <span class="choice-icon">🤷</span>
+                <span class="choice-label">I Don't Know</span>
+                <span class="choice-sub">We'll help</span>
               </div>
             </div>
             <div class="step-actions">
@@ -326,30 +327,30 @@
             <p class="form-note" style="margin-top:12px;">Free estimate · No obligation · Takes under 2 minutes</p>
           </div>
 
-          <!-- STEP 2: Primary goal -->
+          <!-- STEP 2: Window age -->
           <div class="step-body step-panel" id="step-2" style="display:none;">
-            <div class="step-question">What matters most to you?</div>
-            <div class="step-hint">We'll recommend the best window options for your goals.</div>
+            <div class="step-question">How old are your windows?</div>
+            <div class="step-hint">This helps us recommend the right replacement solution.</div>
             <div class="choice-grid">
-              <div class="choice-card" data-step="2" data-value="Energy savings" onclick="selectChoice(this)">
-                <span class="choice-icon">⚡</span>
-                <span class="choice-label">Energy Savings</span>
-                <span class="choice-sub">Lower bills</span>
+              <div class="choice-card" data-step="2" data-value="Less than 10 years" onclick="selectChoice(this)">
+                <span class="choice-icon">🆕</span>
+                <span class="choice-label">Less than 10 Yrs</span>
+                <span class="choice-sub">Relatively recent</span>
               </div>
-              <div class="choice-card" data-step="2" data-value="Curb appeal" onclick="selectChoice(this)">
-                <span class="choice-icon">✨</span>
-                <span class="choice-label">Curb Appeal</span>
-                <span class="choice-sub">Look &amp; style</span>
+              <div class="choice-card" data-step="2" data-value="10–20 years" onclick="selectChoice(this)">
+                <span class="choice-icon">🕐</span>
+                <span class="choice-label">10–20 Years</span>
+                <span class="choice-sub">Showing age</span>
               </div>
-              <div class="choice-card" data-step="2" data-value="Home value" onclick="selectChoice(this)">
-                <span class="choice-icon">📈</span>
-                <span class="choice-label">Home Value</span>
-                <span class="choice-sub">ROI &amp; resale</span>
+              <div class="choice-card" data-step="2" data-value="Over 20 years" onclick="selectChoice(this)">
+                <span class="choice-icon">⏳</span>
+                <span class="choice-label">Over 20 Years</span>
+                <span class="choice-sub">Past their prime</span>
               </div>
-              <div class="choice-card" data-step="2" data-value="Noise &amp; comfort" onclick="selectChoice(this)">
-                <span class="choice-icon">🔇</span>
-                <span class="choice-label">Comfort</span>
-                <span class="choice-sub">Noise &amp; drafts</span>
+              <div class="choice-card" data-step="2" data-value="Not sure" onclick="selectChoice(this)">
+                <span class="choice-icon">🤷</span>
+                <span class="choice-label">Not Sure</span>
+                <span class="choice-sub">We'll assess</span>
               </div>
             </div>
             <div class="step-actions">
@@ -364,30 +365,30 @@
             </div>
           </div>
 
-          <!-- STEP 3: Timeline -->
+          <!-- STEP 3: Primary goal -->
           <div class="step-body step-panel" id="step-3" style="display:none;">
-            <div class="step-question">When are you looking to get started?</div>
-            <div class="step-hint">No pressure — we'll work around your schedule.</div>
+            <div class="step-question">What matters most to you?</div>
+            <div class="step-hint">We'll recommend the best window options for your goals.</div>
             <div class="choice-grid">
-              <div class="choice-card" data-step="3" data-value="As soon as possible" onclick="selectChoice(this)">
-                <span class="choice-icon">🚀</span>
-                <span class="choice-label">ASAP</span>
-                <span class="choice-sub">Ready now</span>
+              <div class="choice-card" data-step="3" data-value="Energy savings" onclick="selectChoice(this)">
+                <span class="choice-icon">⚡</span>
+                <span class="choice-label">Energy Savings</span>
+                <span class="choice-sub">Lower bills</span>
               </div>
-              <div class="choice-card" data-step="3" data-value="Within 1 month" onclick="selectChoice(this)">
-                <span class="choice-icon">📅</span>
-                <span class="choice-label">Within 1 Month</span>
-                <span class="choice-sub">Planning ahead</span>
+              <div class="choice-card" data-step="3" data-value="Curb appeal" onclick="selectChoice(this)">
+                <span class="choice-icon">✨</span>
+                <span class="choice-label">Curb Appeal</span>
+                <span class="choice-sub">Look &amp; style</span>
               </div>
-              <div class="choice-card" data-step="3" data-value="1–3 months out" onclick="selectChoice(this)">
-                <span class="choice-icon">🗓️</span>
-                <span class="choice-label">1–3 Months</span>
-                <span class="choice-sub">No rush</span>
+              <div class="choice-card" data-step="3" data-value="Home value" onclick="selectChoice(this)">
+                <span class="choice-icon">📈</span>
+                <span class="choice-label">Home Value</span>
+                <span class="choice-sub">ROI &amp; resale</span>
               </div>
-              <div class="choice-card" data-step="3" data-value="Just exploring" onclick="selectChoice(this)">
-                <span class="choice-icon">🔍</span>
-                <span class="choice-label">Just Exploring</span>
-                <span class="choice-sub">Getting info</span>
+              <div class="choice-card" data-step="3" data-value="All of these matter" onclick="selectChoice(this)">
+                <span class="choice-icon">🏆</span>
+                <span class="choice-label">All of These Matter</span>
+                <span class="choice-sub">The full package</span>
               </div>
             </div>
             <div class="step-actions">
@@ -396,14 +397,52 @@
                 Back
               </button>
               <button class="btn-yellow" onclick="nextStep(3)">
+                Next Step
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 4: Timeline -->
+          <div class="step-body step-panel" id="step-4" style="display:none;">
+            <div class="step-question">When are you looking to get started?</div>
+            <div class="step-hint">No pressure — we'll work around your schedule.</div>
+            <div class="choice-grid">
+              <div class="choice-card" data-step="4" data-value="Ready to install" onclick="selectChoice(this)">
+                <span class="choice-icon">🚀</span>
+                <span class="choice-label">Ready to Install</span>
+                <span class="choice-sub">Let's go</span>
+              </div>
+              <div class="choice-card" data-step="4" data-value="Within 1 month" onclick="selectChoice(this)">
+                <span class="choice-icon">📅</span>
+                <span class="choice-label">Within 1 Month</span>
+                <span class="choice-sub">Planning ahead</span>
+              </div>
+              <div class="choice-card" data-step="4" data-value="Just getting a price" onclick="selectChoice(this)">
+                <span class="choice-icon">💰</span>
+                <span class="choice-label">Just Getting a Price</span>
+                <span class="choice-sub">No commitment</span>
+              </div>
+              <div class="choice-card" data-step="4" data-value="I'm not sure" onclick="selectChoice(this)">
+                <span class="choice-icon">🤔</span>
+                <span class="choice-label">I'm Not Sure</span>
+                <span class="choice-sub">Still deciding</span>
+              </div>
+            </div>
+            <div class="step-actions">
+              <button class="btn-outline" onclick="goBack(4)">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+                Back
+              </button>
+              <button class="btn-yellow" onclick="nextStep(4)">
                 See My Offer
                 <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
               </button>
             </div>
           </div>
 
-          <!-- STEP 4: Contact info -->
-          <div class="step-body step-panel" id="step-4" style="display:none;">
+          <!-- STEP 5: Contact info -->
+          <div class="step-body step-panel" id="step-5" style="display:none;">
             <div class="contact-step-header">
               <div class="step-question">Almost there — where should we send your estimate?</div>
               <div class="step-hint">Your personalized offer is ready based on your answers.</div>
@@ -603,13 +642,13 @@
     })();
 
     // MULTI-STEP STATE
-    var answers = { windows: '', goal: '', timeline: '' };
+    var answers = { windows: '', age: '', goal: '', timeline: '' };
     var currentStep = 1;
-    var totalSteps = 4;
+    var totalSteps = 5;
 
-    var progressPcts = { 1: 25, 2: 50, 3: 75, 4: 100 };
-    var labelIds = ['lbl-1','lbl-2','lbl-3','lbl-4'];
-    var labelNames = { 1: 'Windows', 2: 'Goals', 3: 'Timeline', 4: 'Your Info' };
+    var progressPcts = { 1: 20, 2: 40, 3: 60, 4: 80, 5: 100 };
+    var labelIds = ['lbl-1','lbl-2','lbl-3','lbl-4','lbl-5'];
+    var labelNames = { 1: 'Windows', 2: 'Age', 3: 'Goals', 4: 'Timeline', 5: 'Your Info' };
 
     function updateProgress(step) {
       document.getElementById('progress-counter').textContent = 'Step ' + step + ' of ' + totalSteps;
@@ -652,8 +691,9 @@
         return;
       }
       if (from === 1) answers.windows = val;
-      if (from === 2) answers.goal = val;
-      if (from === 3) {
+      if (from === 2) answers.age = val;
+      if (from === 3) answers.goal = val;
+      if (from === 4) {
         answers.timeline = val;
         buildSummary();
       }
@@ -669,6 +709,7 @@
     function buildSummary() {
       var items = [
         { label: 'Windows to replace', val: answers.windows },
+        { label: 'Window age', val: answers.age },
         { label: 'Primary goal', val: answers.goal },
         { label: 'Timeline', val: answers.timeline },
         { label: 'Your discount', val: '50% OFF + 0% Interest · 60 Mo.' }
@@ -714,7 +755,7 @@
       if (validate(this)) {
         // Hide all step panels and progress
         document.querySelector('.progress-header').style.display = 'none';
-        document.getElementById('step-4').style.display = 'none';
+        document.getElementById('step-5').style.display = 'none';
         document.getElementById('success-pane').style.display = 'block';
         document.getElementById('step-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
