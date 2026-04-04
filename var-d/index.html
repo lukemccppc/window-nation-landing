@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="theme-color" content="#005BA7">
+  <title>Home Window Deals | Get Your 50% Off Window Estimate</title>
+  <meta name="description" content="Answer a few quick questions and lock in 50% off all window styles plus 0% interest for 60 months. Free in-home estimate, no obligation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue:      #005BA7;
+      --blue-dark: #00478A;
+      --blue-deep: #003d75;
+      --yellow:    #FFC300;
+      --yellow-dk: #E6B000;
+      --navy:      #0D1B2A;
+      --white:     #FFFFFF;
+      --bg:        #F5F7FA;
+      --text:      #0D1B2A;
+      --muted:     #5A6575;
+      --border:    #E2E8F0;
+      --green:     #1E8A4C;
+      --fn:        'Barlow', sans-serif;
+      --fn-cond:   'Barlow Condensed', sans-serif;
+    }
+    html { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body { font-family: var(--fn); color: var(--text); background: var(--blue); min-height: 100vh; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font-family: var(--fn); }
+    img { max-width: 100%; display: block; }
+
+    /* ── STICKY TOP ── */
+    .sticky-top { position: sticky; top: 0; z-index: 100; }
+
+    /* ── COUNTDOWN BAR ── */
+    .countdown-bar { background: var(--yellow); color: var(--navy); text-align: center; padding: 7px 16px; font-size: .78rem; font-weight: 700; }
+    .cd-inner { display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; }
+    .ct-wrap { display: inline-flex; gap: 3px; align-items: center; }
+    .ct-unit { background: var(--navy); color: white; border-radius: 4px; padding: 1px 6px; font-size: .9rem; min-width: 26px; text-align: center; font-family: var(--fn-cond); font-weight: 800; }
+    .ct-sep { opacity: .5; }
+
+    /* ── HEADER ── */
+    .header { background: var(--blue-dark); border-bottom: 1px solid rgba(255,255,255,.1); padding: 12px 20px; text-align: center; }
+    .logo img { height: 52px; width: auto; margin: 0 auto; }
+    @media (max-width: 480px) { .logo img { height: 42px; } }
+
+    /* ── PAGE WRAPPER ── */
+    .page-wrap { padding: 28px 16px 48px; max-width: 1100px; margin: 0 auto; }
+
+    /* ── HEADLINE ── */
+    .page-headline { text-align: center; margin-bottom: 22px; }
+    .page-headline h1 { font-family: var(--fn-cond); font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 900; color: white; letter-spacing: .01em; line-height: 1.1; }
+    .page-headline h1 span { color: var(--yellow); }
+    .page-headline p { font-size: .9rem; color: rgba(255,255,255,.65); margin-top: 6px; }
+
+    /* ── MAIN CARD ── */
+    .main-card { display: grid; grid-template-columns: 380px 1fr; border-radius: 16px; overflow: hidden; box-shadow: 0 24px 72px rgba(0,0,0,.3); background: white; }
+    @media (max-width: 860px) { .main-card { grid-template-columns: 1fr; } }
+
+    /* ── LEFT PANEL ── */
+    .left-panel { position: relative; min-height: 340px; }
+    .left-panel-img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+    .left-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,23,58,.95) 40%, transparent); padding: 28px 22px 24px; }
+    .trust-bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .trust-bullets li { display: flex; align-items: flex-start; gap: 9px; font-size: .88rem; color: white; line-height: 1.4; }
+    .trust-check { width: 18px; height: 18px; background: var(--yellow); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .trust-check svg { display: block; }
+    .trust-bullets strong { color: var(--yellow); }
+    @media (max-width: 860px) { .left-panel { min-height: 200px; } .left-overlay { padding: 18px 16px 16px; } .trust-bullets { flex-direction: row; flex-wrap: wrap; gap: 8px; } .trust-bullets li { font-size: .78rem; } }
+
+    /* ── RIGHT PANEL (form) ── */
+    .right-panel { padding: 28px 28px 24px; background: white; }
+    @media (max-width: 480px) { .right-panel { padding: 20px 16px 20px; } }
+
+    /* ── QUESTION BLOCKS ── */
+    .q-block { margin-bottom: 22px; }
+    .q-block:last-of-type { margin-bottom: 0; }
+    .q-label { font-size: .82rem; font-weight: 800; color: var(--blue); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 10px; display: flex; align-items: center; gap: 7px; }
+    .q-num { width: 22px; height: 22px; background: var(--blue); border-radius: 50%; color: white; font-size: .7rem; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: var(--fn-cond); }
+    .q-required { color: #E53E3E; margin-left: 2px; }
+
+    /* ── OPTION BUTTONS ── */
+    .opt-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+    .opt-btn {
+      border: 2px solid var(--border); border-radius: 8px; padding: 9px 14px;
+      font-family: var(--fn); font-size: .83rem; font-weight: 700; color: var(--text);
+      background: white; cursor: pointer; transition: border-color .15s, background .15s, color .15s;
+      display: flex; align-items: center; gap: 6px; white-space: nowrap;
+    }
+    .opt-btn:hover { border-color: var(--blue); background: #EBF3FB; }
+    .opt-btn.selected { border-color: var(--blue); background: var(--blue); color: white; }
+    .opt-btn.error-state { border-color: #E53E3E; }
+
+    /* ── DIVIDER ── */
+    .q-divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+
+    /* ── CONTACT FIELDS ── */
+    .contact-header { font-size: .82rem; font-weight: 800; color: var(--blue); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 12px; display: flex; align-items: center; gap: 7px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+    .form-group { margin-bottom: 10px; }
+    .form-group label { display: block; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin-bottom: 4px; }
+    .form-group input {
+      width: 100%; padding: 11px 13px; border: 1.5px solid var(--border); border-radius: 8px;
+      font-family: var(--fn); font-size: .9rem; color: var(--text); background: white;
+      transition: border-color .2s; -webkit-appearance: none; appearance: none;
+    }
+    .form-group input:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(0,91,167,.1); }
+    .form-group input.error { border-color: #E53E3E; }
+
+    /* ── SUBMIT ── */
+    .submit-wrap { margin-top: 16px; }
+    .btn-submit {
+      width: 100%; padding: 17px; background: var(--yellow); color: var(--navy);
+      border: none; border-radius: 10px; font-family: var(--fn-cond); font-size: 1.25rem;
+      font-weight: 900; letter-spacing: .03em; cursor: pointer; display: flex; align-items: center;
+      justify-content: center; gap: 8px; transition: background .15s, transform .1s;
+      box-shadow: 0 4px 18px rgba(255,195,0,.4);
+    }
+    .btn-submit:hover { background: var(--yellow-dk); transform: translateY(-1px); }
+    .btn-submit:active { transform: translateY(0); }
+    .form-note { font-size: .65rem; color: var(--muted); text-align: center; margin-top: 9px; line-height: 1.55; }
+    .form-note a { color: var(--muted); text-decoration: underline; }
+
+    /* ── TRUST BADGES BOTTOM ── */
+    .badges-row { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: nowrap; padding: 16px 0 2px; overflow: hidden; }
+    .badges-row img { height: 28px; width: auto; opacity: .55; filter: grayscale(20%); }
+    @media (max-width: 640px) { .badges-row { gap: 10px; } .badges-row img { height: 22px; } }
+
+    /* ── SUCCESS ── */
+    .success-pane { display: none; text-align: center; padding: 48px 24px; }
+    .success-pane.show { display: block; }
+    .success-check { width: 64px; height: 64px; background: var(--yellow); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; }
+    .success-pane h2 { font-family: var(--fn-cond); font-size: 2rem; font-weight: 900; color: var(--blue); margin-bottom: 10px; }
+    .success-pane p { font-size: .95rem; color: var(--muted); line-height: 1.7; max-width: 380px; margin: 0 auto; }
+
+    /* ── FOOTER ── */
+    .footer { background: var(--navy); color: rgba(255,255,255,.38); padding: 28px 20px; text-align: center; font-size: .72rem; line-height: 1.8; }
+    .footer a { color: rgba(255,255,255,.45); text-decoration: underline; }
+
+    /* ── MOBILE STICKY CTA ── */
+    .sticky-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: white; border-top: 2px solid var(--border); padding: 11px 16px; box-shadow: 0 -4px 20px rgba(0,0,0,.1); }
+    @media (max-width: 767px) { .sticky-bar { display: block; } body { padding-bottom: 70px; } }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    .main-card { animation: fadeUp .5s ease both; }
+    .page-headline { animation: fadeUp .4s ease both; }
+  </style>
+</head>
+<body>
+
+  <!-- STICKY: COUNTDOWN + HEADER -->
+  <div class="sticky-top">
+    <div class="countdown-bar">
+      <div class="cd-inner">
+        <span>⚡ SPRING OFFER ENDS:</span>
+        <span class="ct-wrap">
+          <span class="ct-unit" id="ct-d">27</span><span class="ct-sep">d</span>
+          <span class="ct-unit" id="ct-h">00</span><span class="ct-sep">h</span>
+          <span class="ct-unit" id="ct-m">00</span><span class="ct-sep">m</span>
+          <span class="ct-unit" id="ct-s">00</span><span class="ct-sep">s</span>
+        </span>
+      </div>
+    </div>
+    <header class="header">
+      <div class="logo">
+        <img src="../images/hwd-wn-logo.webp" alt="Home Window Deals — In Partnership With Window Nation" onerror="this.style.display='none'">
+      </div>
+    </header>
+  </div>
+
+  <!-- PAGE CONTENT -->
+  <div class="page-wrap">
+
+    <div class="page-headline">
+      <h1>Get <span>50% Off</span> Your New Windows</h1>
+      <p>Answer a few quick questions — lock in your discount before it expires.</p>
+    </div>
+
+    <div class="main-card" id="main-card">
+
+      <!-- LEFT: image + trust -->
+      <div class="left-panel">
+        <img class="left-panel-img" src="https://windownationdeals.com/images/iStock-1566819053.jpg" alt="Beautiful home with new windows" loading="eager">
+        <div class="left-overlay">
+          <ul class="trust-bullets">
+            <li>
+              <div class="trust-check"><svg width="10" height="10" fill="none" stroke="#0D1B2A" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span><strong>50% Off</strong> All Window Styles — Every Style Included</span>
+            </li>
+            <li>
+              <div class="trust-check"><svg width="10" height="10" fill="none" stroke="#0D1B2A" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span><strong>0% Interest</strong> for 60 Months with Approved Credit</span>
+            </li>
+            <li>
+              <div class="trust-check"><svg width="10" height="10" fill="none" stroke="#0D1B2A" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span><strong>Free In-Home Estimate</strong> — No Obligation, No Pressure</span>
+            </li>
+            <li>
+              <div class="trust-check"><svg width="10" height="10" fill="none" stroke="#0D1B2A" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span><strong>25,000+</strong> Five-Star Reviews Nationwide</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- RIGHT: all-in-view form -->
+      <div class="right-panel" id="form-panel">
+
+        <!-- Q1 -->
+        <div class="q-block">
+          <div class="q-label"><span class="q-num">1</span> How many windows need replacing?<span class="q-required">*</span></div>
+          <div class="opt-grid" id="q1-opts">
+            <button class="opt-btn" data-q="1" data-val="3–5 windows" onclick="selectOpt(this)">🪟 3–5 Windows</button>
+            <button class="opt-btn" data-q="1" data-val="6–10 windows" onclick="selectOpt(this)">🏠 6–10 Windows</button>
+            <button class="opt-btn" data-q="1" data-val="11+ windows" onclick="selectOpt(this)">🏡 11+ Windows</button>
+            <button class="opt-btn" data-q="1" data-val="I don't know" onclick="selectOpt(this)">🤷 I Don't Know</button>
+          </div>
+        </div>
+
+        <hr class="q-divider">
+
+        <!-- Q2 -->
+        <div class="q-block">
+          <div class="q-label"><span class="q-num">2</span> How old are your current windows?<span class="q-required">*</span></div>
+          <div class="opt-grid" id="q2-opts">
+            <button class="opt-btn" data-q="2" data-val="Less than 10 years" onclick="selectOpt(this)">🆕 Under 10 Years</button>
+            <button class="opt-btn" data-q="2" data-val="10–20 years" onclick="selectOpt(this)">🕐 10–20 Years</button>
+            <button class="opt-btn" data-q="2" data-val="Over 20 years" onclick="selectOpt(this)">⏳ Over 20 Years</button>
+            <button class="opt-btn" data-q="2" data-val="Not sure" onclick="selectOpt(this)">🤷 Not Sure</button>
+          </div>
+        </div>
+
+        <hr class="q-divider">
+
+        <!-- Q3 -->
+        <div class="q-block">
+          <div class="q-label"><span class="q-num">3</span> What matters most to you?<span class="q-required">*</span></div>
+          <div class="opt-grid" id="q3-opts">
+            <button class="opt-btn" data-q="3" data-val="Energy savings" onclick="selectOpt(this)">⚡ Energy Savings</button>
+            <button class="opt-btn" data-q="3" data-val="Curb appeal" onclick="selectOpt(this)">✨ Curb Appeal</button>
+            <button class="opt-btn" data-q="3" data-val="Home value" onclick="selectOpt(this)">📈 Home Value</button>
+            <button class="opt-btn" data-q="3" data-val="All of these matter" onclick="selectOpt(this)">🏆 All of These</button>
+          </div>
+        </div>
+
+        <hr class="q-divider">
+
+        <!-- Q4 -->
+        <div class="q-block">
+          <div class="q-label"><span class="q-num">4</span> When are you looking to get started?<span class="q-required">*</span></div>
+          <div class="opt-grid" id="q4-opts">
+            <button class="opt-btn" data-q="4" data-val="Ready to install" onclick="selectOpt(this)">🚀 Ready to Install</button>
+            <button class="opt-btn" data-q="4" data-val="Within 1 month" onclick="selectOpt(this)">📅 Within 1 Month</button>
+            <button class="opt-btn" data-q="4" data-val="Just getting a price" onclick="selectOpt(this)">💰 Just Getting a Price</button>
+            <button class="opt-btn" data-q="4" data-val="I'm not sure" onclick="selectOpt(this)">🤔 I'm Not Sure</button>
+          </div>
+        </div>
+
+        <hr class="q-divider">
+
+        <!-- Q5: Contact -->
+        <div class="q-block">
+          <div class="contact-header"><span class="q-num">5</span> Where should we send your estimate?</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fn">First Name *</label>
+              <input type="text" id="fn" name="first_name" placeholder="Jane" required autocomplete="given-name">
+            </div>
+            <div class="form-group">
+              <label for="ln">Last Name *</label>
+              <input type="text" id="ln" name="last_name" placeholder="Smith" required autocomplete="family-name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="ph">Phone Number *</label>
+            <input type="tel" id="ph" name="phone" placeholder="(555) 123-4567" required autocomplete="tel" inputmode="tel">
+          </div>
+          <div class="form-group">
+            <label for="em">Email Address *</label>
+            <input type="email" id="em" name="email" placeholder="jane@email.com" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="zp">ZIP Code *</label>
+            <input type="text" id="zp" name="zip" placeholder="12345" maxlength="5" required autocomplete="postal-code" inputmode="numeric">
+          </div>
+        </div>
+
+        <div class="submit-wrap">
+          <button class="btn-submit" id="submit-btn" onclick="handleSubmit()">
+            Get My Free 50% Off Estimate
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+
+        <p class="form-note">By submitting, you authorize Home Window Deals and its partners to contact you via email, phone, or text. Consent is not required for purchase. <a href="https://homewindowdeals.com/LP/privacy.html">Privacy Policy</a>.</p>
+
+        <!-- Badges -->
+        <div class="badges-row">
+          <img src="https://windownationdeals.com/images/qualified-remodeler-award.webp" alt="Qualified Remodeler">
+          <img src="https://windownationdeals.com/images/AngiesList-May17.webp" alt="Angi's List">
+          <img src="https://windownationdeals.com/images/GuildQuality.webp" alt="Guild Quality">
+          <img src="https://windownationdeals.com/images/RM_Big50-01.webp" alt="Remodelers Big 50">
+          <img src="https://windownationdeals.com/images/Dealer.webp" alt="Certified Dealer">
+        </div>
+
+      </div><!-- /right-panel -->
+
+      <!-- SUCCESS STATE -->
+      <div class="success-pane" id="success-pane">
+        <div class="success-check">
+          <svg width="28" height="28" fill="none" stroke="#0D1B2A" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h2>You're All Set!</h2>
+        <p>A Window Nation specialist will contact you within <strong>24 hours</strong> to schedule your free in-home estimate and lock in your 50% discount.</p>
+      </div>
+
+    </div><!-- /main-card -->
+  </div><!-- /page-wrap -->
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    *50% off applies to all window styles on qualifying replacement window projects. 0% interest for 60 months with approved credit. 5% military/senior discount applies to qualifying customers. Restrictions apply. Cannot be combined with other offers. See design consultant for details. By using this site, you authorize Home Window Deals and its partners to contact you about home improvement products or services via email, phone (including autodialed or prerecorded calls), or text at the number provided. Consent is not required for purchase.
+    <br><br>
+    © 2026 homewindowdeals.com. All Rights Reserved. &nbsp;
+    <a href="https://homewindowdeals.com/LP/privacy.html">Privacy Policy</a> |
+    <a href="https://homewindowdeals.com/LP/terms.html">Terms &amp; Conditions</a>
+  </footer>
+
+  <!-- MOBILE STICKY -->
+  <div class="sticky-bar" id="sticky-bar">
+    <button class="btn-submit" onclick="document.getElementById('submit-btn').scrollIntoView({behavior:'smooth',block:'center'})" style="font-size:1rem;padding:14px;">
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+      Get 50% Off — Free Estimate
+    </button>
+  </div>
+
+  <script>
+    // COUNTDOWN
+    (function() {
+      var end = new Date('2026-04-30T23:59:59');
+      function pad(n) { return String(n).padStart(2,'0'); }
+      function tick() {
+        var diff = end - Date.now(); if (diff <= 0) return;
+        document.getElementById('ct-d').textContent = pad(Math.floor(diff/86400000));
+        document.getElementById('ct-h').textContent = pad(Math.floor((diff%86400000)/3600000));
+        document.getElementById('ct-m').textContent = pad(Math.floor((diff%3600000)/60000));
+        document.getElementById('ct-s').textContent = pad(Math.floor((diff%60000)/1000));
+      }
+      tick(); setInterval(tick, 1000);
+    })();
+
+    // OPTION SELECTION
+    function selectOpt(btn) {
+      var q = btn.getAttribute('data-q');
+      document.querySelectorAll('[data-q="' + q + '"]').forEach(function(b) {
+        b.classList.remove('selected', 'error-state');
+      });
+      btn.classList.add('selected');
+    }
+
+    function getVal(q) {
+      var sel = document.querySelector('[data-q="' + q + '"].selected');
+      return sel ? sel.getAttribute('data-val') : null;
+    }
+
+    // PHONE FORMAT
+    document.getElementById('ph').addEventListener('input', function() {
+      var d = this.value.replace(/\D/g,'').slice(0,10);
+      if (d.length>6) this.value='('+d.slice(0,3)+') '+d.slice(3,6)+'-'+d.slice(6);
+      else if (d.length>3) this.value='('+d.slice(0,3)+') '+d.slice(3);
+      else if (d.length>0) this.value='('+d;
+    });
+
+    // SUBMIT
+    function handleSubmit() {
+      var valid = true;
+
+      // Validate quiz selections
+      [1,2,3,4].forEach(function(q) {
+        if (!getVal(q)) {
+          document.querySelectorAll('[data-q="' + q + '"]').forEach(function(b) {
+            b.classList.add('error-state');
+            setTimeout(function(){ b.classList.remove('error-state'); }, 1400);
+          });
+          valid = false;
+        }
+      });
+
+      // Validate contact fields
+      var fields = ['fn','ln','ph','em','zp'];
+      fields.forEach(function(id) {
+        var el = document.getElementById(id);
+        el.classList.remove('error');
+        var v = el.value.trim();
+        if (!v) { el.classList.add('error'); valid = false; return; }
+        if (el.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) { el.classList.add('error'); valid = false; }
+        if (el.type === 'tel' && v.replace(/\D/g,'').length < 10) { el.classList.add('error'); valid = false; }
+        if (el.id === 'zp' && !/^\d{5}$/.test(v)) { el.classList.add('error'); valid = false; }
+      });
+
+      if (!valid) {
+        // Scroll to first error
+        var firstErr = document.querySelector('.opt-btn.error-state, input.error');
+        if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      // Success
+      document.getElementById('form-panel').style.display = 'none';
+      document.getElementById('success-pane').classList.add('show');
+      document.getElementById('main-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // MOBILE STICKY: hide when submit button is visible
+    var stickyBar = document.getElementById('sticky-bar');
+    var submitBtn = document.getElementById('submit-btn');
+    if (window.IntersectionObserver && stickyBar && submitBtn) {
+      new IntersectionObserver(function(entries) {
+        if (window.innerWidth < 768) stickyBar.style.display = entries[0].isIntersecting ? 'none' : 'block';
+      }, { threshold: 0.5 }).observe(submitBtn);
+    }
+  </script>
+</body>
+</html>
