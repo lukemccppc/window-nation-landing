@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pittsburgh Criminal Defense Attorney | Louis Emmi</title>
+  <meta name="description" content="Arrested or under investigation in Pittsburgh? Attorney Louis Emmi provides aggressive criminal defense. Free consultations. Available 24/7. Call now." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0d1b2a;
+      --navy2:  #162032;
+      --gold:   #c9a84c;
+      --gold2:  #e0bc6a;
+      --white:  #ffffff;
+      --light:  #f4f6f8;
+      --mid:    #e8ecf0;
+      --text:   #1a1a2e;
+      --muted:  #5a6476;
+      --radius: 6px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ── TOPBAR ── */
+    .topbar {
+      background: var(--navy);
+      color: var(--gold);
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 8px 16px;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--navy2);
+      padding: 22px 20px 28px;
+      text-align: center;
+    }
+
+    .firm-name {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    header h1 {
+      font-size: clamp(26px, 6vw, 42px);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 6px;
+    }
+
+    header h1 span {
+      display: block;
+      color: var(--gold2);
+    }
+
+    header .subhead {
+      font-size: clamp(15px, 3.5vw, 18px);
+      color: #b0bbc9;
+      margin-bottom: 22px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── CTA BUTTON ── */
+    .btn-call {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: clamp(17px, 4vw, 22px);
+      font-weight: 800;
+      padding: 16px 32px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      width: 100%;
+      max-width: 380px;
+      transition: background 0.2s;
+    }
+
+    .btn-call:hover { background: var(--gold2); }
+
+    .btn-call svg { flex-shrink: 0; }
+
+    .no-obligation {
+      font-size: 13px;
+      color: #8a97a8;
+      margin-top: 9px;
+    }
+
+    /* ── TRUST BADGES ── */
+    .trust-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 20px;
+      margin-top: 24px;
+    }
+
+    .badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #cdd6e0;
+    }
+
+    .badge svg { color: var(--gold); flex-shrink: 0; }
+
+    .badge-divider {
+      width: 1px;
+      height: 16px;
+      background: #334155;
+      align-self: center;
+    }
+
+    /* ── URGENCY STRIP ── */
+    .urgency-strip {
+      background: #1a2a1a;
+      border-top: 3px solid #c0392b;
+      border-bottom: 3px solid #c0392b;
+      padding: 14px 20px;
+      text-align: center;
+    }
+
+    .urgency-strip p {
+      color: #fff;
+      font-size: clamp(13px, 3vw, 15px);
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .urgency-strip p:first-child {
+      color: #f97b7b;
+      font-size: clamp(14px, 3.5vw, 16px);
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 44px 20px; }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: clamp(22px, 5vw, 32px);
+      font-weight: 800;
+      line-height: 1.2;
+      text-align: center;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .section-intro {
+      text-align: center;
+      color: var(--muted);
+      max-width: 540px;
+      margin: 0 auto 32px;
+      font-size: 15px;
+    }
+
+    /* ── DARK SECTION ── */
+    .section-dark {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .section-dark h2 { color: var(--white); }
+    .section-dark .section-label { color: var(--gold2); }
+    .section-dark .section-intro { color: #8fa4bc; }
+
+    /* ── REASON CARDS ── */
+    .reasons {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .reason-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      background: var(--light);
+      border-radius: var(--radius);
+      padding: 20px 18px;
+      border-left: 4px solid var(--gold);
+    }
+
+    .reason-icon {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+    }
+
+    .reason-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .reason-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ── CTA BLOCK ── */
+    .cta-block {
+      text-align: center;
+      padding: 36px 20px;
+      background: var(--light);
+    }
+
+    .cta-block p {
+      font-size: clamp(15px, 3.5vw, 18px);
+      color: var(--muted);
+      margin-bottom: 18px;
+      max-width: 440px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── WHAT HAPPENS ── */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .step {
+      display: flex;
+      gap: 18px;
+      padding: 22px 0;
+      border-bottom: 1px solid #2a3a50;
+    }
+
+    .step:last-child { border-bottom: none; }
+
+    .step-num {
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+      background: var(--gold);
+      color: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .step h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .step p {
+      font-size: 14px;
+      color: #8fa4bc;
+      line-height: 1.55;
+    }
+
+    /* ── PRACTICE AREAS ── */
+    .practice-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      max-width: 580px;
+      margin: 0 auto 28px;
+    }
+
+    .practice-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--navy2);
+      border-radius: var(--radius);
+      padding: 14px 14px;
+    }
+
+    .practice-item svg { color: var(--gold); flex-shrink: 0; }
+
+    .practice-item span {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .practice-note {
+      text-align: center;
+      color: #8fa4bc;
+      font-size: 13px;
+      margin-bottom: 28px;
+    }
+
+    /* ── FAQ ── */
+    .faq-list {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    details {
+      border-bottom: 1px solid var(--mid);
+      padding: 0;
+    }
+
+    details:first-child { border-top: 1px solid var(--mid); }
+
+    summary {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      padding: 18px 4px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: "+";
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--gold);
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    details[open] summary::after { content: "−"; }
+
+    .faq-answer {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.65;
+      padding: 0 4px 18px;
+    }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      background: var(--navy2);
+      padding: 44px 20px;
+      text-align: center;
+    }
+
+    .final-cta h2 { color: var(--white); margin-bottom: 8px; }
+
+    .final-cta .subhead {
+      color: #8fa4bc;
+      font-size: 15px;
+      margin-bottom: 24px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 12px;
+      color: #4a5568;
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    footer a { color: #5a6476; text-decoration: none; }
+
+    .footer-divider {
+      border: none;
+      border-top: 1px solid #1e2a38;
+      margin: 14px 0;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 400px) {
+      .practice-grid { grid-template-columns: 1fr; }
+      .badge-divider { display: none; }
+    }
+
+    @media (min-width: 600px) {
+      .reasons { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">Pittsburgh, PA</div>
+
+  <!-- HEADER / HERO -->
+  <header>
+    <div class="firm-name">Louis J. Emmi &nbsp;|&nbsp; Criminal Defense Attorney</div>
+
+    <h1>
+      Charged With a Crime
+      <span>in Pittsburgh?</span>
+    </h1>
+
+    <p class="subhead">
+      Get an experienced Pittsburgh criminal defense attorney fighting for your rights — starting today.
+    </p>
+
+    <a href="tel:4122886829" class="btn-call" style="margin: 0 auto;">
+      <!-- phone icon -->
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.5 11.5 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1C9.61 21 3 14.39 3 6a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.03l-2.2 2.19z"/>
+      </svg>
+      Call Now — Free Consultation
+    </a>
+    <p class="no-obligation">No obligation &mdash; confidential &amp; free</p>
+
+    <div class="trust-badges">
+      <div class="badge">
+        <!-- shield icon -->
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z"/></svg>
+        Licensed in PA
+      </div>
+      <div class="badge-divider"></div>
+      <div class="badge">
+        <!-- dollar icon -->
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16C9.39 5.5 8 6.81 8 8.75c0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+        Free Consultations
+      </div>
+      <div class="badge-divider"></div>
+      <div class="badge">
+        <!-- clock icon -->
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 5H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+        Available Now
+      </div>
+    </div>
+  </header>
+
+  <!-- URGENCY STRIP -->
+  <div class="urgency-strip">
+    <p>Every hour matters after an arrest — your words can be used against you</p>
+    <p>Protect your rights before speaking to police &nbsp;|&nbsp; Call Attorney Emmi first</p>
+  </div>
+
+  <!-- WHY YOU NEED AN ATTORNEY NOW -->
+  <section>
+    <div class="section-label">Pittsburgh, PA</div>
+    <h2>Don't Wait —<br>The Stakes Are Too High</h2>
+    <p class="section-intro">
+      Evidence disappears. Witnesses forget. And anything you say without an attorney can be used against you. Here's why acting now protects your future.
+    </p>
+
+    <div class="reasons">
+
+      <div class="reason-card">
+        <div class="reason-icon">
+          <!-- alert icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+        </div>
+        <div>
+          <h3>Evidence Must Be Preserved Immediately</h3>
+          <p>Surveillance footage gets erased, witnesses' memories fade, and police build their case from minute one. Your attorney needs to start building your defense just as fast.</p>
+        </div>
+      </div>
+
+      <div class="reason-card">
+        <div class="reason-icon">
+          <!-- lock icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+        </div>
+        <div>
+          <h3>Anything You Say Can Be Used Against You</h3>
+          <p>Police are trained to elicit statements. Without an attorney present, even innocent explanations can be twisted into admissions. Exercise your right to remain silent — then call.</p>
+        </div>
+      </div>
+
+      <div class="reason-card">
+        <div class="reason-icon">
+          <!-- scale/justice icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17 7h-1.5l-1.41-1.41L12 4l-2.09 1.59L8.5 7H7C5.34 7 4 8.34 4 10v7c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-7c0-1.66-1.34-3-3-3zm-5 9c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+        </div>
+        <div>
+          <h3>Early Action Can Mean Reduced Charges</h3>
+          <p>An experienced defense attorney can intervene before charges are filed, negotiate with prosecutors, and identify weaknesses in the case — opportunities that disappear as time passes.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MID-PAGE CTA -->
+  <div class="cta-block">
+    <p>Call now for a free, confidential consultation with Attorney Emmi</p>
+    <a href="tel:4122886829" class="btn-call" style="margin: 0 auto;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.5 11.5 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1C9.61 21 3 14.39 3 6a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.03l-2.2 2.19z"/></svg>
+      Call Attorney Emmi Now
+    </a>
+    <p style="font-size:13px; color:#8a97a8; margin-top:9px;">No obligation — 100% confidential</p>
+  </div>
+
+  <!-- WHAT HAPPENS WHEN YOU CALL -->
+  <section class="section-dark">
+    <div class="section-label">What to Expect</div>
+    <h2>What Happens When You Call?</h2>
+    <p class="section-intro">
+      You'll speak directly with Attorney Emmi — not a paralegal, not a call center. Here's exactly what happens next.
+    </p>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <h3>You Talk to Attorney Emmi Directly</h3>
+          <p>No gatekeepers. Describe your situation in confidence — what you say is fully protected by attorney-client privilege from the moment you call.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <h3>Free Case Review</h3>
+          <p>Attorney Emmi evaluates your charges, reviews the circumstances of your arrest, and explains your rights and realistic options — at no cost and no obligation.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <h3>Immediate Defense Strategy</h3>
+          <p>If you choose to retain Attorney Emmi, he begins building your defense immediately — contacting prosecutors, preserving evidence, and protecting your rights before your next court date.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PRACTICE AREAS -->
+  <section class="section-dark" style="padding-top: 0;">
+    <div class="section-label">Pittsburgh, PA</div>
+    <h2>Criminal Defense for All Charges</h2>
+    <p class="section-intro">
+      Attorney Emmi defends clients across Allegheny County and Western Pennsylvania against a full range of criminal charges, including but not limited to:
+    </p>
+
+    <div class="practice-grid">
+
+      <div class="practice-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z"/></svg>
+        <span>DUI / DWI</span>
+      </div>
+
+      <div class="practice-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z"/></svg>
+        <span>Drug Offenses</span>
+      </div>
+
+      <div class="practice-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z"/></svg>
+        <span>Assault &amp; Battery</span>
+      </div>
+
+      <div class="practice-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z"/></svg>
+        <span>Theft &amp; Robbery</span>
+      </div>
+
+      <div class="practice-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z"/></svg>
+        <span>Weapons Charges</span>
+      </div>
+
+      <div class="practice-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z"/></svg>
+        <span>Domestic Violence</span>
+      </div>
+
+      <div class="practice-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z"/></svg>
+        <span>White Collar Crime</span>
+      </div>
+
+      <div class="practice-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z"/></svg>
+        <span>Felonies &amp; Misdemeanors</span>
+      </div>
+
+    </div>
+
+    <p class="practice-note">Don't see your charge listed? Any criminal matter can be handled — call to discuss your case.</p>
+
+    <div style="text-align:center;">
+      <a href="tel:4122886829" class="btn-call" style="margin: 0 auto;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.5 11.5 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1C9.61 21 3 14.39 3 6a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.03l-2.2 2.19z"/></svg>
+        Call Now — Free Consultation
+      </a>
+      <p style="font-size:13px; color:#4a6078; margin-top:9px;">No obligation — free estimates</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="section-label">Common Questions</div>
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-list">
+
+      <details>
+        <summary>How quickly can I get in touch with Attorney Emmi?</summary>
+        <p class="faq-answer">You can call right now. Attorney Emmi is available for consultations and understands that criminal matters can't wait for business hours. The sooner you reach out, the sooner your defense begins.</p>
+      </details>
+
+      <details>
+        <summary>Is the consultation really free?</summary>
+        <p class="faq-answer">Yes. Your initial consultation with Attorney Emmi is completely free and carries no obligation. You'll get honest guidance about your situation before making any decisions.</p>
+      </details>
+
+      <details>
+        <summary>Should I talk to police before calling an attorney?</summary>
+        <p class="faq-answer">No. You have the constitutional right to remain silent and to have an attorney present during questioning. Politely invoke that right and contact Attorney Emmi before making any statements — even if you believe you're innocent.</p>
+      </details>
+
+      <details>
+        <summary>What if I've already spoken to police?</summary>
+        <p class="faq-answer">It's not too late. Call Attorney Emmi immediately. He can review what was said, assess any potential issues, and develop a strategy to protect you going forward.</p>
+      </details>
+
+      <details>
+        <summary>Can Attorney Emmi handle my case if I'm in Allegheny County?</summary>
+        <p class="faq-answer">Yes. Attorney Emmi defends clients throughout Allegheny County and the greater Pittsburgh area, including cases in municipal, magisterial district, and county courts.</p>
+      </details>
+
+      <details>
+        <summary>What does it cost to hire a criminal defense attorney?</summary>
+        <p class="faq-answer">Fees vary depending on the charges and complexity of the case. Attorney Emmi will discuss fees transparently during your free consultation, with no surprise costs. The cost of quality defense is always less than the cost of a conviction.</p>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <div class="final-cta">
+    <div class="section-label">Get Help Now</div>
+    <h2>Need a Criminal Defense<br>Attorney in Pittsburgh?</h2>
+    <p class="subhead">Your future is worth defending. Call now for a free, confidential consultation.</p>
+
+    <a href="tel:4122886829" class="btn-call" style="margin: 0 auto 10px;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.5 11.5 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1C9.61 21 3 14.39 3 6a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.03l-2.2 2.19z"/></svg>
+      Call Now — Free Consultation
+    </a>
+    <p style="font-size:13px; color:#4a6078;">Available Now &nbsp;&bull;&nbsp; Confidential &nbsp;&bull;&nbsp; No Obligation</p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      <strong style="color:#5a6476;">Louis J. Emmi, Attorney at Law</strong><br>
+      Pittsburgh, PA &nbsp;&bull;&nbsp; Serving Allegheny County &amp; Western Pennsylvania
+    </p>
+    <hr class="footer-divider" />
+    <p>
+      &copy; 2026 AttorneyEmmi.com &nbsp;&bull;&nbsp;
+      <a href="tel:4122886829">(412) 288-6829</a>
+    </p>
+    <hr class="footer-divider" />
+    <p style="font-size:11px;">
+      This site is for informational purposes only and does not constitute legal advice. Viewing this site or contacting Attorney Emmi does not create an attorney-client relationship. Results may vary depending on the facts and circumstances of your case.
+    </p>
+  </footer>
+
+</body>
+</html>
