@@ -46,21 +46,20 @@
       position: relative;
       padding: 22px 20px 28px;
       text-align: center;
-      background: var(--navy2);
-      overflow: hidden;
-    }
-
-    header .hero-bg {
-      position: absolute;
-      inset: 0;
       background-image: url('pittsburgh-pa.webp');
       background-size: cover;
       background-position: center 40%;
-      opacity: 0.2;
+      overflow: hidden;
+    }
+
+    header .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(13, 27, 42, 0.80);
       z-index: 0;
     }
 
-    header > *:not(.hero-bg) {
+    header > *:not(.hero-overlay) {
       position: relative;
       z-index: 1;
     }
@@ -154,22 +153,22 @@
 
     /* ── URGENCY STRIP ── */
     .urgency-strip {
-      background: #1a2a1a;
-      border-top: 3px solid #c0392b;
-      border-bottom: 3px solid #c0392b;
+      background: var(--navy);
+      border-top: 3px solid var(--gold);
+      border-bottom: 3px solid var(--gold);
       padding: 14px 20px;
       text-align: center;
     }
 
     .urgency-strip p {
-      color: #fff;
+      color: #b0bbc9;
       font-size: clamp(13px, 3vw, 15px);
       font-weight: 600;
       line-height: 1.5;
     }
 
     .urgency-strip p:first-child {
-      color: #f97b7b;
+      color: var(--gold2);
       font-size: clamp(14px, 3.5vw, 16px);
     }
 
@@ -453,7 +452,7 @@
 
   <!-- HEADER / HERO -->
   <header>
-    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
     <div class="firm-name">Louis J. Emmi &nbsp;|&nbsp; Criminal Defense Attorney</div>
 
     <h1>
