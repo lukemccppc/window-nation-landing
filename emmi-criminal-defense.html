@@ -32,13 +32,14 @@
     /* ── TOPBAR ── */
     .topbar {
       background: var(--navy);
-      color: var(--gold);
       text-align: center;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 8px 16px;
+      padding: 10px 16px;
+    }
+
+    .topbar img {
+      height: 52px;
+      width: auto;
+      display: inline-block;
     }
 
     /* ── HEADER ── */
@@ -455,13 +456,13 @@
 <body>
 
   <!-- TOPBAR -->
-  <div class="topbar">Pittsburgh, PA</div>
+  <div class="topbar">
+    <img src="emmi-logo.webp" alt="Louis W. Emmi, Attorney At Law" />
+  </div>
 
   <!-- HEADER / HERO -->
   <header>
     <div class="hero-overlay"></div>
-    <img src="emmi-logo.webp" alt="Louis W. Emmi, Attorney At Law" class="hero-logo" />
-    <div class="firm-name">Louis W. Emmi &nbsp;|&nbsp; Criminal Defense Attorney</div>
 
     <h1>
       Charged With a Crime
