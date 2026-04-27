@@ -43,9 +43,26 @@
 
     /* ── HEADER ── */
     header {
-      background: var(--navy2);
+      position: relative;
       padding: 22px 20px 28px;
       text-align: center;
+      background: var(--navy2);
+      overflow: hidden;
+    }
+
+    header .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('pittsburgh-pa.webp');
+      background-size: cover;
+      background-position: center 40%;
+      opacity: 0.2;
+      z-index: 0;
+    }
+
+    header > *:not(.hero-bg) {
+      position: relative;
+      z-index: 1;
     }
 
     .firm-name {
@@ -436,6 +453,7 @@
 
   <!-- HEADER / HERO -->
   <header>
+    <div class="hero-bg"></div>
     <div class="firm-name">Louis J. Emmi &nbsp;|&nbsp; Criminal Defense Attorney</div>
 
     <h1>
