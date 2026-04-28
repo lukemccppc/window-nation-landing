@@ -113,10 +113,10 @@
       font-size: 14px; color: var(--text-muted); margin-bottom: 20px;
     }
     .zip-input-row {
-      display: flex; gap: 10px;
+      display: flex; flex-direction: column; gap: 10px;
     }
     .zip-input-row input {
-      flex: 1;
+      width: 100%;
       padding: 15px 16px;
       border: 2.5px solid #ddd;
       border-radius: var(--radius);
@@ -130,12 +130,13 @@
     .zip-input-row input:focus { outline: none; border-color: var(--green-dark); }
     .zip-input-row input::placeholder { font-size: 16px; font-weight: 400; letter-spacing: 0; color: #bbb; }
     .zip-btn {
+      width: 100%;
       background: var(--red);
       color: var(--white);
       border: none; border-radius: var(--radius);
-      padding: 15px 22px;
-      font-size: 16px; font-weight: 800;
-      cursor: pointer; white-space: nowrap;
+      padding: 17px 22px;
+      font-size: 18px; font-weight: 800;
+      cursor: pointer;
       transition: background 0.15s, transform 0.1s;
     }
     .zip-btn:hover { background: #a93226; transform: translateY(-1px); }
