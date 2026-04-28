@@ -274,12 +274,11 @@
     .signs-grid { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 640px; margin: 0 auto 40px; }
     @media (min-width: 520px) { .signs-grid { grid-template-columns: 1fr 1fr 1fr; } }
     .sign-card { background: #f8f8f7; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
-    .sign-photo { width: 100%; height: 160px; object-fit: cover; display: block; }
-    .sign-icon-wrap {
-      width: 100%; height: 160px; background: var(--green-light);
-      display: flex; align-items: center; justify-content: center;
+    .sign-photo-wrap {
+      width: 100%; height: 170px; overflow: hidden;
+      border-radius: 50% 50% 0 0 / 40% 40% 0 0;
     }
-    .sign-icon-wrap svg.icon { width: 52px; height: 52px; color: var(--green-dark); opacity: 0.6; }
+    .sign-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
     .sign-label { padding: 14px 14px 16px; }
     .sign-label strong { display: block; font-size: 15px; font-weight: 700; color: var(--green-dark); margin-bottom: 4px; }
     .sign-label p { font-size: 13px; color: var(--text-muted); }
@@ -709,15 +708,17 @@
     <p class="section-sub">If any of these sound familiar, it&rsquo;s time to get a quote.</p>
     <div class="signs-grid">
       <div class="sign-card">
-        <img src="assets/img/condensation.jpg" alt="Condensation and moisture on an old window" class="sign-photo" loading="lazy" />
+        <div class="sign-photo-wrap">
+          <img src="assets/img/condensation.jpg" alt="Condensation and moisture on an old window" class="sign-photo" loading="lazy" />
+        </div>
         <div class="sign-label">
           <strong>Condensation or Mold</strong>
           <p>Moisture between panes means the seal is broken and insulation has failed.</p>
         </div>
       </div>
       <div class="sign-card">
-        <div class="sign-icon-wrap">
-          <svg class="icon"><use href="#ico-thermo"/></svg>
+        <div class="sign-photo-wrap">
+          <img src="assets/img/energy-bill.jpg" alt="Person reviewing a high energy bill" class="sign-photo" loading="lazy" />
         </div>
         <div class="sign-label">
           <strong>High Energy Bills</strong>
@@ -725,8 +726,8 @@
         </div>
       </div>
       <div class="sign-card">
-        <div class="sign-icon-wrap">
-          <svg class="icon"><use href="#ico-warning"/></svg>
+        <div class="sign-photo-wrap">
+          <img src="assets/img/cracked-window.jpg" alt="Cracked and broken window glass" class="sign-photo" loading="lazy" />
         </div>
         <div class="sign-label">
           <strong>Rotting or Warping</strong>
