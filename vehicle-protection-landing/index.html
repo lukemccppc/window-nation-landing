@@ -215,16 +215,41 @@
 
   footer{
     text-align:center;
-    padding:24px 0;
+    padding:36px 0;
+    background:#fff;
+    border-top:1px solid var(--line);
+  }
+  footer .footer-logo{
+    height:44px;
+    width:auto;
+    margin:0 auto 16px;
+  }
+  footer .footer-copy{
+    max-width:640px;
+    margin:0 auto 14px;
     font-size:12px;
-    color:#94a0ac;
+    line-height:1.6;
+    color:var(--gray);
+  }
+  footer .footer-links{
+    font-size:13px;
+    font-weight:600;
+    color:var(--gray);
+  }
+  footer .footer-links a{
+    color:var(--blue);
+    text-decoration:underline;
+  }
+  footer .footer-links span{
+    margin:0 8px;
+    color:var(--line);
   }
 
   @media (max-width: 900px){
     .grid{grid-template-columns:1fr;gap:36px;}
     .form-card{position:static;}
-    h1{font-size:32px;text-align:center;}
-    .subhead{font-size:17px;text-align:center;}
+    h1{font-size:34px;text-align:center;}
+    .subhead{font-size:20px;text-align:center;}
   }
   @media (max-width: 480px){
     .form-card{padding:24px 18px;}
@@ -318,7 +343,7 @@
           </div>
         </div>
 
-        <button type="submit" class="submit-btn">Get FREE Quote Now</button>
+        <button type="submit" class="submit-btn">Get My FREE Quote Now</button>
         <p class="disclaimer">By clicking submit, you agree to be contacted about vehicle protection plans via phone, email, or text. Consent is not a condition of purchase.</p>
       </form>
 
@@ -332,7 +357,15 @@
 </main>
 
 <footer>
-  &copy; 2026 Vehicle Protection. All rights reserved.
+  <div class="wrap">
+    <img src="img/logo.png" alt="Vehicle Protection" class="footer-logo">
+    <p class="footer-copy">Copyright &copy; 2026 VehicleProtectionUSA.com. All Rights Reserved. VehicleProtectionUSA.com is not responsible for the offers, products or services provided by Service Providers.</p>
+    <p class="footer-links">
+      <a href="https://go.vehicleprotectionusa.com/vpu-privacy-policy/">Privacy Policy</a>
+      <span>|</span>
+      <a href="https://go.vehicleprotectionusa.com/vpu-terms-conditions/">Terms and Conditions</a>
+    </p>
+  </div>
 </footer>
 
 <script>
