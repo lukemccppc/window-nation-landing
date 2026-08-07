@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vehicle Protection | Stop Overpaying For Car Repairs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#0b3d91;
+    --blue-dark:#082a66;
+    --red:#e2231a;
+    --orange:#ff6a3d;
+    --ink:#16202b;
+    --gray:#5c6b7a;
+    --line:#dfe4ea;
+    --bg:#f4f6f9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:#fff;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+  a{color:inherit;}
+
+  .bg-tint{background:var(--bg);}
+
+  /* Header */
+  header{
+    background:#fff;
+    border-bottom:1px solid var(--line);
+    padding:18px 0;
+  }
+  header .wrap{display:flex;align-items:center;justify-content:center;}
+  header img{height:64px;width:auto;}
+
+  /* Shared type components */
+  .eyebrow{
+    display:inline-block;
+    background:rgba(226,35,26,0.1);
+    color:var(--red);
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    padding:6px 14px;
+    border-radius:999px;
+    margin-bottom:16px;
+  }
+  .section{padding:76px 0;}
+  .section-head{max-width:680px;margin:0 auto 48px;text-align:center;}
+  .section-head h2{font-size:34px;font-weight:900;letter-spacing:-0.01em;line-height:1.15;margin-bottom:14px;color:var(--ink);}
+  .section-head p{color:var(--gray);font-size:16px;line-height:1.65;}
+
+  /* Check bullet reused throughout */
+  .check-circle{
+    flex:none;
+    border-radius:50%;
+    background:var(--blue);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:800;
+  }
+
+  /* Hero */
+  .hero{padding:60px 0 0;text-align:center;background:#fff;}
+  .hero h1{
+    font-size:48px;
+    font-weight:900;
+    letter-spacing:-0.01em;
+    line-height:1.1;
+    max-width:820px;
+    margin:0 auto 18px;
+    color:var(--ink);
+  }
+  .hero h1 span{color:var(--red);}
+  .hero-sub{font-size:19px;color:var(--gray);max-width:600px;margin:0 auto 30px;line-height:1.55;}
+
+  .cta-btn{
+    display:inline-block;
+    background:var(--red);
+    color:#fff;
+    font-weight:800;
+    font-size:17px;
+    padding:17px 44px;
+    border-radius:8px;
+    text-decoration:none;
+    margin-bottom:36px;
+    transition:background .15s ease, transform .1s ease;
+  }
+  .cta-btn:hover{background:#c81d15;}
+  .cta-btn:active{transform:translateY(1px);}
+
+  .trust-strip{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:28px;
+    max-width:920px;
+    margin:0 auto 44px;
+  }
+  .trust-item{display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:700;color:var(--ink);}
+  .trust-item .check-circle{width:22px;height:22px;font-size:11px;}
+
+  .hero-img{background:var(--bg);padding:32px 0 0;}
+  .hero-img img{max-width:640px;margin:0 auto;}
+
+  /* Cost comparison chart */
+  .cost-chart{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    max-width:880px;
+    margin:0 auto;
+  }
+  .cost-card{border-radius:16px;padding:32px;color:#fff;}
+  .cost-card.without{background:linear-gradient(160deg,var(--blue-dark),var(--blue));}
+  .cost-card.with{background:linear-gradient(135deg,var(--red),var(--orange));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
+  .cost-card h3{font-size:13px;letter-spacing:0.06em;text-transform:uppercase;opacity:0.85;margin-bottom:22px;font-weight:800;}
+  .cost-row{display:flex;justify-content:space-between;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.18);}
+  .cost-row:last-child{border-bottom:none;}
+  .cost-row .label{font-size:14px;opacity:0.85;}
+  .cost-row .value{font-size:21px;font-weight:800;}
+  .cost-card.with .big-value{font-size:56px;font-weight:900;margin:6px 0;}
+  .cost-card.with .value-label{font-size:13px;opacity:0.9;letter-spacing:0.03em;}
+
+  .savings-banner{
+    text-align:center;
+    margin-top:32px;
+    font-size:21px;
+    font-weight:800;
+    color:var(--ink);
+    max-width:640px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .savings-banner strong{color:var(--red);}
+  .cost-note{text-align:center;color:var(--gray);font-size:12px;margin-top:14px;}
+
+  /* Steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;max-width:1000px;margin:0 auto;}
+  .step{text-align:center;padding:0 12px;}
+  .step .check-circle{width:52px;height:52px;font-size:20px;margin:0 auto 18px;}
+  .step h3{font-size:18px;font-weight:800;margin-bottom:8px;}
+  .step p{color:var(--gray);font-size:14.5px;line-height:1.6;}
+
+  /* Plans */
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1080px;margin:0 auto;align-items:stretch;}
+  .plan-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:36px 28px 28px;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+  }
+  .plan-card.popular{border-color:var(--red);box-shadow:0 16px 40px rgba(226,35,26,0.14);}
+  .plan-badge{
+    position:absolute;
+    top:-14px;
+    left:50%;
+    transform:translateX(-50%);
+    background:var(--red);
+    color:#fff;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    padding:6px 16px;
+    border-radius:999px;
+    white-space:nowrap;
+  }
+  .plan-name{font-size:22px;font-weight:900;margin-bottom:6px;}
+  .plan-desc{color:var(--gray);font-size:14px;margin-bottom:8px;line-height:1.55;min-height:44px;}
+  .plan-features{list-style:none;margin:18px 0 24px;flex:1;}
+  .plan-features li{display:flex;gap:10px;align-items:flex-start;font-size:14px;padding:8px 0;color:var(--ink);}
+  .plan-features li .check-circle{width:18px;height:18px;font-size:10px;margin-top:2px;}
+  .plan-cta{
+    display:block;
+    text-align:center;
+    background:var(--red);
+    color:#fff;
+    font-weight:800;
+    padding:14px;
+    border-radius:8px;
+    text-decoration:none;
+    margin-top:auto;
+  }
+  .plan-cta:hover{background:#c81d15;}
+  .plans-note{text-align:center;color:var(--gray);font-size:12px;margin-top:28px;}
+
+  /* Vehicles we cover */
+  .vehicles-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  .vehicles-copy h2{font-size:32px;font-weight:900;letter-spacing:-0.01em;line-height:1.15;margin-bottom:16px;}
+  .vehicles-copy p{color:var(--gray);font-size:16px;line-height:1.65;margin-bottom:22px;}
+  .vehicle-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 16px;margin-bottom:28px;}
+  .vehicle-list li{display:flex;gap:10px;align-items:center;font-weight:700;font-size:14.5px;}
+  .vehicle-list li .check-circle{width:22px;height:22px;font-size:11px;}
+  .vehicles-img{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;}
+
+  /* Why us */
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1080px;margin:0 auto;}
+  .why-item{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px;display:flex;gap:14px;align-items:flex-start;}
+  .why-item .check-circle{width:38px;height:38px;font-size:15px;}
+  .why-item h3{font-size:16px;font-weight:800;margin-bottom:4px;}
+  .why-item p{color:var(--gray);font-size:13.5px;line-height:1.55;}
+
+  /* FAQ */
+  .faq{max-width:760px;margin:0 auto;}
+  .faq details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:4px 22px;margin-bottom:12px;}
+  .faq summary{
+    cursor:pointer;
+    font-weight:700;
+    padding:18px 0;
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+    font-size:15.5px;
+  }
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary:after{
+    content:'+';
+    flex:none;
+    font-size:22px;
+    color:var(--blue);
+    font-weight:400;
+    transition:transform .2s ease;
+  }
+  .faq details[open] summary:after{transform:rotate(45deg);}
+  .faq p{color:var(--gray);font-size:14.5px;line-height:1.65;padding-bottom:20px;}
+
+  /* Final CTA / form */
+  .final-cta-inner{max-width:540px;margin:0 auto;}
+
+  .form-card{
+    background:#fff;
+    border-radius:16px;
+    box-shadow:0 12px 40px rgba(16,32,55,0.1);
+    border:1px solid var(--line);
+    padding:32px;
+  }
+  .form-card h3{
+    font-size:21px;
+    font-weight:800;
+    text-align:center;
+    color:var(--ink);
+    margin-bottom:6px;
+  }
+  .form-card .form-sub{
+    text-align:center;
+    color:var(--gray);
+    font-size:14px;
+    margin-bottom:24px;
+  }
+  .section-label{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--blue);
+    margin:20px 0 12px;
+  }
+  .section-label:first-of-type{margin-top:0;}
+
+  .field-row{display:grid;gap:12px;margin-bottom:12px;}
+  .field-row.cols-2{grid-template-columns:1fr 1fr;}
+  .vehicle-grid-fields{grid-template-columns:1fr 1fr 1fr;}
+  .vehicle-grid-fields .miles-field{grid-column:1 / -1;}
+
+  label{display:block;font-size:12px;font-weight:600;color:var(--gray);margin-bottom:5px;}
+
+  input, select{
+    width:100%;
+    padding:12px 12px;
+    font-size:15px;
+    font-family:inherit;
+    color:var(--ink);
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:8px;
+    outline:none;
+    transition:border-color .15s ease, box-shadow .15s ease;
+  }
+  input:focus, select:focus{
+    border-color:var(--blue);
+    box-shadow:0 0 0 3px rgba(11,61,145,0.12);
+  }
+  select{appearance:none;-webkit-appearance:none;
+    background-image:url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='%235c6b7a' d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat:no-repeat;
+    background-position:right 10px center;
+    background-size:20px;
+    padding-right:34px;
+  }
+
+  .submit-btn{
+    width:100%;
+    margin-top:16px;
+    background:var(--red);
+    color:#fff;
+    font-size:17px;
+    font-weight:800;
+    letter-spacing:0.01em;
+    border:none;
+    border-radius:8px;
+    padding:16px;
+    cursor:pointer;
+    transition:background .15s ease, transform .1s ease;
+  }
+  .submit-btn:hover{background:#c81d15;}
+  .submit-btn:active{transform:translateY(1px);}
+
+  .disclaimer{font-size:11px;color:#94a0ac;text-align:center;margin-top:14px;line-height:1.4;}
+
+  .success-msg{display:none;text-align:center;padding:20px 0;}
+  .success-msg .checkmark{
+    width:56px;height:56px;border-radius:50%;
+    background:var(--blue);
+    color:#fff;
+    font-size:28px;
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto 16px;
+  }
+  .success-msg h3{font-size:20px;margin-bottom:8px;}
+  .success-msg p{color:var(--gray);font-size:14px;}
+
+  footer{
+    text-align:center;
+    padding:36px 0 96px;
+    background:#fff;
+    border-top:1px solid var(--line);
+  }
+  footer .footer-logo{height:44px;width:auto;margin:0 auto 16px;}
+  footer .footer-copy{max-width:640px;margin:0 auto 14px;font-size:12px;line-height:1.6;color:var(--gray);}
+  footer .footer-links{font-size:13px;font-weight:600;color:var(--gray);}
+  footer .footer-links a{color:var(--blue);text-decoration:underline;}
+  footer .footer-links span{margin:0 8px;color:var(--line);}
+
+  /* Sticky mobile CTA */
+  .sticky-cta{
+    display:none;
+    position:fixed;
+    left:0;right:0;bottom:0;
+    background:#fff;
+    border-top:1px solid var(--line);
+    padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+    box-shadow:0 -8px 24px rgba(16,32,55,0.14);
+    z-index:50;
+  }
+  .sticky-cta a{
+    display:block;
+    text-align:center;
+    background:var(--red);
+    color:#fff;
+    font-weight:800;
+    font-size:15px;
+    padding:14px;
+    border-radius:8px;
+    text-decoration:none;
+  }
+
+  @media (max-width: 900px){
+    .section{padding:56px 0;}
+    .section-head{margin-bottom:36px;}
+    .section-head h2{font-size:26px;}
+    .hero h1{font-size:32px;}
+    .hero-sub{font-size:16px;}
+    .trust-strip{gap:14px 22px;}
+    .cost-chart{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr;gap:32px;}
+    .plans{grid-template-columns:1fr;}
+    .plan-card.popular{order:-1;}
+    .vehicles-grid{grid-template-columns:1fr;gap:32px;}
+    .vehicles-copy h2{font-size:26px;text-align:center;}
+    .vehicles-copy p{text-align:center;}
+    .vehicle-list{max-width:420px;margin-left:auto;margin-right:auto;}
+    .why-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width: 480px){
+    .form-card{padding:24px 18px;}
+    .vehicle-grid-fields{grid-template-columns:1fr 1fr;}
+    .vehicle-grid-fields .miles-field{grid-column:auto;}
+    .sticky-cta{display:block;}
+    body{padding-bottom:2px;}
+  }
+  @media (max-width: 760px){
+    .sticky-cta{display:block;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <img src="img/logo.png" alt="Vehicle Protection">
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Limited-Time Savings</span>
+      <h1>STOP OVERPAYING FOR <span>CAR REPAIRS</span></h1>
+      <p class="hero-sub">Get complete vehicle protection in minutes — plus $300 off your plan when you sign up today.</p>
+      <a href="#quote-form" class="cta-btn">Get My FREE Quote Now</a>
+      <div class="trust-strip">
+        <div class="trust-item"><span class="check-circle">&#10003;</span> AM Best &ldquo;A-&rdquo; Rated Backing</div>
+        <div class="trust-item"><span class="check-circle">&#10003;</span> 24/7 Roadside Assistance</div>
+        <div class="trust-item"><span class="check-circle">&#10003;</span> 30-Day Money-Back Guarantee</div>
+        <div class="trust-item"><span class="check-circle">&#10003;</span> Any ASE-Certified Mechanic</div>
+      </div>
+    </div>
+    <div class="hero-img">
+      <div class="wrap">
+        <img src="img/hero-pair.png" alt="Covered vehicles">
+      </div>
+    </div>
+  </section>
+
+  <!-- Cost comparison -->
+  <section class="section bg-tint" id="cost-compare">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Why It Matters</span>
+        <h2>One Repair Bill Can Wreck Your Budget</h2>
+        <p>Modern vehicles are more complex — and more expensive to fix — than ever. Here's what a major repair typically costs with and without vehicle protection.</p>
+      </div>
+
+      <div class="cost-chart">
+        <div class="cost-card without">
+          <h3>Without Vehicle Protection</h3>
+          <div class="cost-row"><span class="label">Engine</span><span class="value">$3,350</span></div>
+          <div class="cost-row"><span class="label">Transmission</span><span class="value">$3,375</span></div>
+          <div class="cost-row"><span class="label">Air Conditioner</span><span class="value">$1,800</span></div>
+        </div>
+        <div class="cost-card with">
+          <h3>With Vehicle Protection</h3>
+          <div class="big-value">$0</div>
+          <div class="value-label">TOTAL FOR ALL THREE REPAIRS*</div>
+        </div>
+      </div>
+
+      <p class="savings-banner">That's up to <strong>$8,525</strong> in potential repair costs covered by your plan.</p>
+      <p class="cost-note">*Based on average nationwide repair costs. Actual coverage and out-of-pocket costs depend on your plan and deductible.</p>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section" id="how-it-works">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Simple Process</span>
+        <h2>Getting Covered Takes 3 Easy Steps</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="check-circle">1</div>
+          <h3>Get Your Free Quote</h3>
+          <p>Tell us a little about your vehicle in under 60 seconds — no obligation, no pressure.</p>
+        </div>
+        <div class="step">
+          <div class="check-circle">2</div>
+          <h3>Choose Your Coverage</h3>
+          <p>Pick the plan that matches your vehicle's age, mileage, and your budget.</p>
+        </div>
+        <div class="step">
+          <div class="check-circle">3</div>
+          <h3>Drive With Confidence</h3>
+          <p>When something breaks, take it to any ASE-certified mechanic or your dealership.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plans -->
+  <section class="section bg-tint" id="plans">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Coverage Options</span>
+        <h2>Choose the Plan That Fits Your Vehicle</h2>
+        <p>Every plan includes 24/7 roadside assistance and our 30-day money-back guarantee.</p>
+      </div>
+      <div class="plans">
+        <div class="plan-card">
+          <div class="plan-name">Essential</div>
+          <p class="plan-desc">Solid protection for older or higher-mileage vehicles.</p>
+          <ul class="plan-features">
+            <li><span class="check-circle">&#10003;</span> Engine &amp; transmission</li>
+            <li><span class="check-circle">&#10003;</span> 24/7 roadside assistance</li>
+            <li><span class="check-circle">&#10003;</span> 30-day money-back guarantee</li>
+            <li><span class="check-circle">&#10003;</span> Accepted nationwide</li>
+          </ul>
+          <a href="#quote-form" class="plan-cta">Get My Price</a>
+        </div>
+        <div class="plan-card popular">
+          <span class="plan-badge">Most Popular</span>
+          <div class="plan-name">Preferred</div>
+          <p class="plan-desc">Comprehensive coverage similar to a manufacturer's warranty.</p>
+          <ul class="plan-features">
+            <li><span class="check-circle">&#10003;</span> Everything in Essential</li>
+            <li><span class="check-circle">&#10003;</span> Electrical system &amp; A/C</li>
+            <li><span class="check-circle">&#10003;</span> Fuel &amp; cooling systems</li>
+            <li><span class="check-circle">&#10003;</span> Rental car reimbursement</li>
+          </ul>
+          <a href="#quote-form" class="plan-cta">Get My Price</a>
+        </div>
+        <div class="plan-card">
+          <div class="plan-name">Premier</div>
+          <p class="plan-desc">Our most extensive, near bumper-to-bumper protection.</p>
+          <ul class="plan-features">
+            <li><span class="check-circle">&#10003;</span> Everything in Preferred</li>
+            <li><span class="check-circle">&#10003;</span> Suspension &amp; steering</li>
+            <li><span class="check-circle">&#10003;</span> Brakes &amp; electronics</li>
+            <li><span class="check-circle">&#10003;</span> Maximum component coverage</li>
+          </ul>
+          <a href="#quote-form" class="plan-cta">Get My Price</a>
+        </div>
+      </div>
+      <p class="plans-note">Final coverage and pricing depend on your vehicle's year, make, model, and mileage. Get your personalized quote above.</p>
+    </div>
+  </section>
+
+  <!-- Vehicles we cover -->
+  <section class="section" id="vehicles">
+    <div class="wrap vehicles-grid">
+      <div class="vehicles-copy">
+        <span class="eyebrow">All Makes &amp; Models</span>
+        <h2>Coverage for Every Vehicle You Drive</h2>
+        <p>Whether you drive a daily commuter, a family SUV, or a work truck, we have a protection plan built for it — regardless of make or model.</p>
+        <ul class="vehicle-list">
+          <li><span class="check-circle">&#10003;</span> Sedans &amp; Coupes</li>
+          <li><span class="check-circle">&#10003;</span> SUVs &amp; Crossovers</li>
+          <li><span class="check-circle">&#10003;</span> Trucks &amp; Vans</li>
+          <li><span class="check-circle">&#10003;</span> High-Mileage Vehicles</li>
+        </ul>
+        <a href="#quote-form" class="cta-btn" style="margin-bottom:0;">Get My FREE Quote Now</a>
+      </div>
+      <div class="vehicles-img">
+        <img src="img/fleet-4up.png" alt="Cars, SUVs, and trucks we cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- Why us -->
+  <section class="section bg-tint" id="why-us">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">The Difference</span>
+        <h2>Why Drivers Choose Vehicle Protection</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item">
+          <span class="check-circle">&#10003;</span>
+          <div><h3>Nationwide Coverage</h3><p>Protection that travels with you, accepted at repair shops across the country.</p></div>
+        </div>
+        <div class="why-item">
+          <span class="check-circle">&#10003;</span>
+          <div><h3>24/7 Roadside Assistance</h3><p>Towing, lockout service, and emergency fuel delivery whenever you need it.</p></div>
+        </div>
+        <div class="why-item">
+          <span class="check-circle">&#10003;</span>
+          <div><h3>Fast, Simple Claims</h3><p>File a claim in minutes — no complicated paperwork or long hold times.</p></div>
+        </div>
+        <div class="why-item">
+          <span class="check-circle">&#10003;</span>
+          <div><h3>Flexible Payment Plans</h3><p>Choose a plan and payment schedule that fits your budget.</p></div>
+        </div>
+        <div class="why-item">
+          <span class="check-circle">&#10003;</span>
+          <div><h3>Transferable Coverage</h3><p>Selling your car? Your plan can transfer to the new owner, boosting resale value.</p></div>
+        </div>
+        <div class="why-item">
+          <span class="check-circle">&#10003;</span>
+          <div><h3>30-Day Guarantee</h3><p>Not satisfied? Cancel within 30 days for a full refund — no questions asked.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Questions</span>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>What does a vehicle protection plan cover?</summary>
+          <p>Coverage varies by plan level, but most plans include major mechanical components like the engine, transmission, electrical system, and air conditioning — plus extras like 24/7 roadside assistance.</p>
+        </details>
+        <details>
+          <summary>Can I use my own mechanic?</summary>
+          <p>Yes. Your plan is accepted at your dealership or any ASE-certified repair shop nationwide — you're never limited to a specific network.</p>
+        </details>
+        <details>
+          <summary>Is there a waiting period before I'm covered?</summary>
+          <p>Most plans include a short waiting period before coverage begins, which helps keep costs low for every driver. Your specialist will walk you through the exact terms for your plan.</p>
+        </details>
+        <details>
+          <summary>Will my monthly payment ever change?</summary>
+          <p>No. Your monthly rate is locked in for the life of your contract, so you'll never be surprised by a rate increase.</p>
+        </details>
+        <details>
+          <summary>Can I cancel my plan?</summary>
+          <p>Yes, you can cancel anytime. If you cancel within the first 30 days, you'll receive a full refund under our money-back guarantee.</p>
+        </details>
+        <details>
+          <summary>Does coverage work for older or high-mileage vehicles?</summary>
+          <p>We offer plans for vehicles of varying ages and mileage. Get a free quote to see the coverage options available for your specific vehicle.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA / Form -->
+  <section class="section bg-tint" id="quote-form">
+    <div class="wrap">
+      <div class="final-cta-inner">
+        <div class="section-head" style="margin-bottom:32px;">
+          <span class="eyebrow">Get Started Today</span>
+          <h2>Ready to Stop Paying Full Price for Repairs?</h2>
+          <p>Answer a few quick questions and get your free, no-obligation quote in under 60 seconds.</p>
+        </div>
+
+        <div class="form-card">
+          <form id="quoteForm">
+            <h3>Get a FREE Vehicle Protection Quote</h3>
+            <p class="form-sub">Takes less than 60 seconds</p>
+
+            <div class="section-label">Vehicle Details</div>
+            <div class="field-row vehicle-grid-fields">
+              <div>
+                <label for="year">Year</label>
+                <select id="year" name="year" required>
+                  <option value="" disabled selected>Select</option>
+                </select>
+              </div>
+              <div>
+                <label for="make">Make</label>
+                <select id="make" name="make" required>
+                  <option value="" disabled selected>Select</option>
+                </select>
+              </div>
+              <div>
+                <label for="model">Model</label>
+                <select id="model" name="model" required disabled>
+                  <option value="" disabled selected>Select make first</option>
+                </select>
+              </div>
+              <div class="miles-field">
+                <label for="miles">Estimated Miles</label>
+                <input type="text" inputmode="numeric" id="miles" name="miles" placeholder="e.g. 45,000" required>
+              </div>
+            </div>
+
+            <div class="section-label">Personal Details</div>
+            <div class="field-row cols-2">
+              <div>
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="fname" placeholder="John" required>
+              </div>
+              <div>
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lname" placeholder="Smith" required>
+              </div>
+            </div>
+            <div class="field-row">
+              <div>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="john@email.com" required>
+              </div>
+            </div>
+            <div class="field-row cols-2">
+              <div>
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" required>
+              </div>
+              <div>
+                <label for="zip">Zip Code</label>
+                <input type="text" inputmode="numeric" id="zip" name="zip" placeholder="90210" maxlength="5" required>
+              </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Get My FREE Quote Now</button>
+            <p class="disclaimer">By clicking submit, you agree to be contacted about vehicle protection plans via phone, email, or text. Consent is not a condition of purchase.</p>
+          </form>
+
+          <div class="success-msg" id="successMsg">
+            <div class="checkmark">&#10003;</div>
+            <h3>You're all set!</h3>
+            <p>A vehicle protection specialist will reach out shortly with your free quote.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo.png" alt="Vehicle Protection" class="footer-logo">
+    <p class="footer-copy">Copyright &copy; 2026 VehicleProtectionUSA.com. All Rights Reserved. VehicleProtectionUSA.com is not responsible for the offers, products or services provided by Service Providers.</p>
+    <p class="footer-links">
+      <a href="https://go.vehicleprotectionusa.com/vpu-privacy-policy/">Privacy Policy</a>
+      <span>|</span>
+      <a href="https://go.vehicleprotectionusa.com/vpu-terms-conditions/">Terms and Conditions</a>
+    </p>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a href="#quote-form">Get My FREE Quote Now</a>
+</div>
+
+<script>
+  // Year dropdown
+  const yearSelect = document.getElementById('year');
+  const currentYear = new Date().getFullYear();
+  for (let y = currentYear + 1; y >= 1995; y--) {
+    const opt = document.createElement('option');
+    opt.value = y;
+    opt.textContent = y;
+    yearSelect.appendChild(opt);
+  }
+
+  // Make / Model data
+  const vehicleData = {
+    "Toyota": ["Camry", "Corolla", "RAV4", "Highlander", "Tacoma", "Tundra", "4Runner", "Prius", "Sienna", "Other"],
+    "Honda": ["Accord", "Civic", "CR-V", "Pilot", "Odyssey", "HR-V", "Ridgeline", "Other"],
+    "Ford": ["F-150", "Escape", "Explorer", "Edge", "Mustang", "Ranger", "Expedition", "Focus", "Other"],
+    "Chevrolet": ["Silverado", "Equinox", "Malibu", "Traverse", "Tahoe", "Suburban", "Cruze", "Camaro", "Other"],
+    "Nissan": ["Altima", "Rogue", "Sentra", "Pathfinder", "Murano", "Frontier", "Titan", "Other"],
+    "Jeep": ["Grand Cherokee", "Wrangler", "Cherokee", "Compass", "Renegade", "Gladiator", "Other"],
+    "Ram": ["1500", "2500", "3500", "ProMaster", "Other"],
+    "GMC": ["Sierra", "Yukon", "Terrain", "Acadia", "Canyon", "Other"],
+    "Hyundai": ["Elantra", "Sonata", "Tucson", "Santa Fe", "Palisade", "Kona", "Other"],
+    "Kia": ["Forte", "Optima", "Sportage", "Sorento", "Telluride", "Soul", "Other"],
+    "Subaru": ["Outback", "Forester", "Crosstrek", "Impreza", "Legacy", "Ascent", "Other"],
+    "Volkswagen": ["Jetta", "Passat", "Tiguan", "Atlas", "Golf", "Other"],
+    "BMW": ["3 Series", "5 Series", "X3", "X5", "X1", "Other"],
+    "Mercedes-Benz": ["C-Class", "E-Class", "GLC", "GLE", "Other"],
+    "Audi": ["A4", "A6", "Q5", "Q7", "Other"],
+    "Dodge": ["Charger", "Challenger", "Durango", "Journey", "Other"],
+    "Chrysler": ["300", "Pacifica", "Voyager", "Other"],
+    "Buick": ["Encore", "Enclave", "Envision", "Other"],
+    "Lexus": ["RX", "ES", "NX", "GX", "Other"],
+    "Mazda": ["Mazda3", "CX-5", "CX-9", "Mazda6", "Other"],
+    "Other": ["Other"]
+  };
+
+  const makeSelect = document.getElementById('make');
+  Object.keys(vehicleData).sort((a,b)=> a === "Other" ? 1 : b === "Other" ? -1 : a.localeCompare(b)).forEach(make => {
+    const opt = document.createElement('option');
+    opt.value = make;
+    opt.textContent = make;
+    makeSelect.appendChild(opt);
+  });
+
+  const modelSelect = document.getElementById('model');
+  makeSelect.addEventListener('change', () => {
+    const models = vehicleData[makeSelect.value] || [];
+    modelSelect.innerHTML = '<option value="" disabled selected>Select</option>';
+    models.forEach(model => {
+      const opt = document.createElement('option');
+      opt.value = model;
+      opt.textContent = model;
+      modelSelect.appendChild(opt);
+    });
+    modelSelect.disabled = false;
+  });
+
+  // Phone formatting
+  const phoneInput = document.getElementById('phone');
+  phoneInput.addEventListener('input', () => {
+    let digits = phoneInput.value.replace(/\D/g, '').slice(0, 10);
+    let formatted = digits;
+    if (digits.length > 6) {
+      formatted = `(${digits.slice(0,3)}) ${digits.slice(3,6)}-${digits.slice(6)}`;
+    } else if (digits.length > 3) {
+      formatted = `(${digits.slice(0,3)}) ${digits.slice(3)}`;
+    } else if (digits.length > 0) {
+      formatted = `(${digits}`;
+    }
+    phoneInput.value = formatted;
+  });
+
+  // Zip: digits only
+  document.getElementById('zip').addEventListener('input', (e) => {
+    e.target.value = e.target.value.replace(/\D/g, '').slice(0, 5);
+  });
+
+  // Miles: digits + commas
+  document.getElementById('miles').addEventListener('input', (e) => {
+    const digits = e.target.value.replace(/\D/g, '');
+    e.target.value = digits ? Number(digits).toLocaleString('en-US') : '';
+  });
+
+  // Submit
+  document.getElementById('quoteForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    this.style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
