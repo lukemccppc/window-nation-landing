@@ -107,9 +107,8 @@
     margin-bottom:16px;
     color:var(--ink);
   }
-  .hero-subhead{font-size:24px;font-weight:800;color:var(--blue);margin-bottom:14px;line-height:1.3;}
+  .hero-subhead{font-size:24px;font-weight:800;color:var(--blue);margin-bottom:24px;line-height:1.3;}
   .hero-subhead strong{color:var(--red);}
-  .hero-sub{font-size:16px;color:var(--gray);max-width:520px;margin-bottom:28px;line-height:1.6;}
 
   .cta-btn{
     display:inline-block;
@@ -125,55 +124,53 @@
   .cta-btn:hover{background:#c81d15;}
   .cta-btn:active{transform:translateY(1px);}
 
-  .hero-bullets{
+  ul.hero-list{list-style:none;margin-bottom:28px;}
+  ul.hero-list li{
     display:flex;
-    flex-wrap:wrap;
-    gap:22px;
-    margin:28px 0 26px;
+    align-items:flex-start;
+    gap:12px;
+    font-size:17px;
+    font-weight:500;
+    color:var(--ink);
+    padding:10px 0;
+    border-bottom:1px solid var(--line);
   }
-  .hero-bullets .trust-item{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:var(--ink);}
-  .hero-bullets .check-circle{width:22px;height:22px;font-size:11px;}
+  ul.hero-list li:last-child{border-bottom:none;}
+  ul.hero-list .check-circle{width:22px;height:22px;font-size:13px;margin-top:1px;}
 
-  .badge-row{display:flex;flex-wrap:wrap;gap:10px;}
-  .badge-chip{
-    border:1px solid var(--line);
-    color:var(--gray);
-    font-size:11px;
-    font-weight:800;
-    letter-spacing:0.04em;
-    padding:8px 14px;
-    border-radius:8px;
-    text-transform:uppercase;
-  }
-
-  .hero-panel{
-    background:linear-gradient(160deg,var(--blue),var(--blue-dark));
-    border-radius:20px;
-    padding:36px 24px;
-  }
-  .hero-panel img{max-width:100%;margin:0 auto;}
+  .hero-image img{max-width:100%;margin:0 auto;}
 
   .trust-item{display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:700;color:var(--ink);}
   .trust-item .check-circle{width:22px;height:22px;font-size:11px;}
 
   /* Cost comparison chart */
-  .cost-chart{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-    max-width:880px;
+  .cost-table{
+    max-width:720px;
     margin:0 auto;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 8px 28px rgba(16,32,55,0.06);
   }
-  .cost-card{border-radius:16px;padding:32px;color:#fff;}
-  .cost-card.without{background:linear-gradient(160deg,var(--blue-dark),var(--blue));}
-  .cost-card.with{background:linear-gradient(135deg,var(--red),var(--orange));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
-  .cost-card h3{font-size:13px;letter-spacing:0.06em;text-transform:uppercase;opacity:0.85;margin-bottom:22px;font-weight:800;}
-  .cost-row{display:flex;justify-content:space-between;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.18);}
-  .cost-row:last-child{border-bottom:none;}
-  .cost-row .label{font-size:14px;opacity:0.85;}
-  .cost-row .value{font-size:21px;font-weight:800;}
-  .cost-card.with .big-value{font-size:56px;font-weight:900;margin:6px 0;}
-  .cost-card.with .value-label{font-size:13px;opacity:0.9;letter-spacing:0.03em;}
+  .cost-table-row{display:grid;grid-template-columns:1.5fr 1fr 1fr;}
+  .cost-table-row.head{background:var(--blue-dark);}
+  .cost-table-row.head div{
+    color:#fff;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    padding:16px 20px;
+  }
+  .cost-table-row.head div:first-child{text-align:left;}
+  .cost-table-row.head div:not(:first-child){text-align:center;}
+  .cost-table-row:not(.head){border-bottom:1px solid var(--line);}
+  .cost-table-row:not(.head):last-child{border-bottom:none;}
+  .cost-table-row:not(.head) div{padding:18px 20px;font-weight:800;font-size:16px;}
+  .cost-table-row .issue{color:var(--ink);text-align:left;}
+  .cost-table-row .before{color:var(--red);text-align:center;text-decoration:line-through;text-decoration-color:rgba(226,35,26,0.45);}
+  .cost-table-row .after{color:var(--blue);text-align:center;}
 
   .savings-banner{
     text-align:center;
@@ -195,60 +192,19 @@
   .step h3{font-size:18px;font-weight:800;margin-bottom:8px;}
   .step p{color:var(--gray);font-size:14.5px;line-height:1.6;}
 
-  /* Plans */
-  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1080px;margin:0 auto;align-items:stretch;}
-  .plan-card{
-    background:#fff;
-    border:1px solid var(--line);
-    border-radius:16px;
-    padding:36px 28px 28px;
-    display:flex;
-    flex-direction:column;
-    position:relative;
+  /* Solution */
+  .vehicle-list{
+    list-style:none;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px 16px;
+    max-width:480px;
+    margin:0 auto 36px;
   }
-  .plan-card.popular{border-color:var(--red);box-shadow:0 16px 40px rgba(226,35,26,0.14);}
-  .plan-badge{
-    position:absolute;
-    top:-14px;
-    left:50%;
-    transform:translateX(-50%);
-    background:var(--red);
-    color:#fff;
-    font-size:11px;
-    font-weight:800;
-    letter-spacing:0.05em;
-    text-transform:uppercase;
-    padding:6px 16px;
-    border-radius:999px;
-    white-space:nowrap;
-  }
-  .plan-name{font-size:22px;font-weight:900;margin-bottom:6px;}
-  .plan-desc{color:var(--gray);font-size:14px;margin-bottom:8px;line-height:1.55;min-height:44px;}
-  .plan-features{list-style:none;margin:18px 0 24px;flex:1;}
-  .plan-features li{display:flex;gap:10px;align-items:flex-start;font-size:14px;padding:8px 0;color:var(--ink);}
-  .plan-features li .check-circle{width:18px;height:18px;font-size:10px;margin-top:2px;}
-  .plan-cta{
-    display:block;
-    text-align:center;
-    background:var(--red);
-    color:#fff;
-    font-weight:800;
-    padding:14px;
-    border-radius:8px;
-    text-decoration:none;
-    margin-top:auto;
-  }
-  .plan-cta:hover{background:#c81d15;}
-  .plans-note{text-align:center;color:var(--gray);font-size:12px;margin-top:28px;}
-
-  /* Vehicles we cover */
-  .vehicles-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
-  .vehicles-copy h2{font-size:32px;font-weight:900;letter-spacing:-0.01em;line-height:1.15;margin-bottom:16px;}
-  .vehicles-copy p{color:var(--gray);font-size:16px;line-height:1.65;margin-bottom:22px;}
-  .vehicle-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 16px;margin-bottom:28px;}
   .vehicle-list li{display:flex;gap:10px;align-items:center;font-weight:700;font-size:14.5px;}
   .vehicle-list li .check-circle{width:22px;height:22px;font-size:11px;}
-  .vehicles-img{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;}
+  .solution-img{max-width:760px;margin:0 auto 36px;}
+  .solution-cta{text-align:center;}
 
   /* Trust / proof stats */
   .stat-grid{
@@ -302,7 +258,17 @@
   .faq p{color:var(--gray);font-size:14.5px;line-height:1.65;padding-bottom:20px;}
 
   /* Final CTA / form */
-  .final-cta{background:linear-gradient(120deg,var(--blue-dark),var(--blue) 55%,var(--red));}
+  .final-cta{
+    position:relative;
+    background:url('img/form-bg.png') center/cover no-repeat;
+  }
+  .final-cta::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+  }
+  .final-cta .wrap{position:relative;z-index:1;}
   .final-cta .eyebrow{background:rgba(255,255,255,0.16);color:#fff;}
   .final-cta .section-head h2{color:#fff;}
   .final-cta .section-head p{color:rgba(255,255,255,0.85);}
@@ -444,20 +410,17 @@
     .hero-grid{grid-template-columns:1fr;gap:32px;text-align:center;}
     .hero h1{font-size:30px;}
     .hero-subhead{font-size:20px;}
-    .hero-sub{font-size:15px;max-width:480px;margin-left:auto;margin-right:auto;}
     .rating-line{justify-content:center;}
-    .hero-bullets{justify-content:center;}
-    .badge-row{justify-content:center;}
-    .hero-panel{max-width:420px;margin:0 auto;}
-    .cost-chart{grid-template-columns:1fr;}
+    ul.hero-list{text-align:left;max-width:440px;margin-left:auto;margin-right:auto;}
+    .hero-image{max-width:420px;margin:0 auto;}
+    .cost-table{max-width:100%;}
+    .cost-table-row{grid-template-columns:1.3fr 1fr 1fr;}
+    .cost-table-row div{padding:14px 12px !important;font-size:14px !important;}
+    .cost-table-row.head div{font-size:10.5px !important;}
     .steps{grid-template-columns:1fr;gap:32px;}
     .stat-grid{grid-template-columns:repeat(2,1fr);}
-    .plans{grid-template-columns:1fr;}
-    .plan-card.popular{order:-1;}
-    .vehicles-grid{grid-template-columns:1fr;gap:32px;}
-    .vehicles-copy h2{font-size:26px;text-align:center;}
-    .vehicles-copy p{text-align:center;}
-    .vehicle-list{max-width:420px;margin-left:auto;margin-right:auto;}
+    .vehicle-list{max-width:420px;}
+    .solution-img{max-width:100%;}
     .why-grid{grid-template-columns:1fr;}
   }
   @media (max-width: 480px){
@@ -491,21 +454,16 @@
         <div class="rating-line"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> Trusted by Tens of Thousands of Drivers</div>
         <h1>SAVE THOUSANDS ON EXPENSIVE AUTO REPAIRS</h1>
         <p class="hero-subhead">Sign Up Today and Get <strong>$300 Off!</strong></p>
-        <p class="hero-sub">Get complete vehicle protection in minutes — no long forms, no pressure, just real coverage for whatever the road throws at you.</p>
+        <ul class="hero-list">
+          <li><span class="check-circle">&#10003;</span> 24-hour roadside assistance</li>
+          <li><span class="check-circle">&#10003;</span> 30 day money-back guarantee</li>
+          <li><span class="check-circle">&#10003;</span> Accepted at your dealership and by any ASE licensed mechanic</li>
+          <li><span class="check-circle">&#10003;</span> Flexible plans that meet your needs and fit your budget</li>
+        </ul>
         <a href="#quote-form" class="cta-btn">Get My FREE Quote Now</a>
-        <div class="hero-bullets">
-          <div class="trust-item"><span class="check-circle">&#10003;</span> Approved in Minutes</div>
-          <div class="trust-item"><span class="check-circle">&#10003;</span> 30-Day Guarantee</div>
-          <div class="trust-item"><span class="check-circle">&#10003;</span> Nationwide Coverage</div>
-        </div>
-        <div class="badge-row">
-          <span class="badge-chip">AM Best &ldquo;A-&rdquo; Rated</span>
-          <span class="badge-chip">BBB Accredited</span>
-          <span class="badge-chip">RepairPal Network</span>
-        </div>
       </div>
-      <div class="hero-panel">
-        <img src="img/hero-pair.png" alt="Covered vehicles">
+      <div class="hero-image">
+        <img src="img/fleet.png" alt="Covered vehicles">
       </div>
     </div>
   </section>
@@ -519,17 +477,26 @@
         <p>Modern vehicles are more complex — and more expensive to fix — than ever. Here's what a major repair typically costs with and without vehicle protection.</p>
       </div>
 
-      <div class="cost-chart">
-        <div class="cost-card without">
-          <h3>Without Vehicle Protection</h3>
-          <div class="cost-row"><span class="label">Engine</span><span class="value">$3,350</span></div>
-          <div class="cost-row"><span class="label">Transmission</span><span class="value">$3,375</span></div>
-          <div class="cost-row"><span class="label">Air Conditioner</span><span class="value">$1,800</span></div>
+      <div class="cost-table">
+        <div class="cost-table-row head">
+          <div>Issue</div>
+          <div>Cost Before</div>
+          <div>Cost After</div>
         </div>
-        <div class="cost-card with">
-          <h3>With Vehicle Protection</h3>
-          <div class="big-value">$0</div>
-          <div class="value-label">TOTAL FOR ALL THREE REPAIRS*</div>
+        <div class="cost-table-row">
+          <div class="issue">Engine</div>
+          <div class="before">$3,350</div>
+          <div class="after">$0</div>
+        </div>
+        <div class="cost-table-row">
+          <div class="issue">Transmission</div>
+          <div class="before">$3,375</div>
+          <div class="after">$0</div>
+        </div>
+        <div class="cost-table-row">
+          <div class="issue">Air Conditioner</div>
+          <div class="before">$1,800</div>
+          <div class="after">$0</div>
         </div>
       </div>
 
@@ -540,21 +507,23 @@
 
   <!-- Solution -->
   <section class="section" id="solution">
-    <div class="wrap vehicles-grid">
-      <div class="vehicles-copy">
+    <div class="wrap">
+      <div class="section-head">
         <span class="eyebrow">The Solution</span>
-        <h2>Complete Vehicle Protection, Built Around You</h2>
+        <h2>Get Custom Vehicle Protection, Built Around Your Vehicle</h2>
         <p>Vehicle Protection picks up right where your manufacturer's warranty leaves off — covering the major repairs that cost the most, for cars, SUVs, trucks, and vans of every make and model.</p>
-        <ul class="vehicle-list">
-          <li><span class="check-circle">&#10003;</span> Sedans &amp; Coupes</li>
-          <li><span class="check-circle">&#10003;</span> SUVs &amp; Crossovers</li>
-          <li><span class="check-circle">&#10003;</span> Trucks &amp; Vans</li>
-          <li><span class="check-circle">&#10003;</span> High-Mileage Vehicles</li>
-        </ul>
-        <a href="#quote-form" class="cta-btn" style="margin-bottom:0;">Get My FREE Quote Now</a>
       </div>
-      <div class="vehicles-img">
+      <ul class="vehicle-list">
+        <li><span class="check-circle">&#10003;</span> Sedans &amp; Coupes</li>
+        <li><span class="check-circle">&#10003;</span> SUVs &amp; Crossovers</li>
+        <li><span class="check-circle">&#10003;</span> Trucks &amp; Vans</li>
+        <li><span class="check-circle">&#10003;</span> High-Mileage Vehicles</li>
+      </ul>
+      <div class="solution-img">
         <img src="img/fleet-4up.png" alt="Cars, SUVs, and trucks we cover">
+      </div>
+      <div class="solution-cta">
+        <a href="#quote-form" class="cta-btn">Get My FREE Quote Now</a>
       </div>
     </div>
   </section>
@@ -613,56 +582,8 @@
     </div>
   </section>
 
-  <!-- Plans -->
-  <section class="section bg-tint" id="plans">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Coverage Options</span>
-        <h2>Choose the Plan That Fits Your Vehicle</h2>
-        <p>Every plan includes 24/7 roadside assistance and our 30-day money-back guarantee.</p>
-      </div>
-      <div class="plans">
-        <div class="plan-card">
-          <div class="plan-name">Essential</div>
-          <p class="plan-desc">Solid protection for older or higher-mileage vehicles.</p>
-          <ul class="plan-features">
-            <li><span class="check-circle">&#10003;</span> Engine &amp; transmission</li>
-            <li><span class="check-circle">&#10003;</span> 24/7 roadside assistance</li>
-            <li><span class="check-circle">&#10003;</span> 30-day money-back guarantee</li>
-            <li><span class="check-circle">&#10003;</span> Accepted nationwide</li>
-          </ul>
-          <a href="#quote-form" class="plan-cta">Get My Price</a>
-        </div>
-        <div class="plan-card popular">
-          <span class="plan-badge">Most Popular</span>
-          <div class="plan-name">Preferred</div>
-          <p class="plan-desc">Comprehensive coverage similar to a manufacturer's warranty.</p>
-          <ul class="plan-features">
-            <li><span class="check-circle">&#10003;</span> Everything in Essential</li>
-            <li><span class="check-circle">&#10003;</span> Electrical system &amp; A/C</li>
-            <li><span class="check-circle">&#10003;</span> Fuel &amp; cooling systems</li>
-            <li><span class="check-circle">&#10003;</span> Rental car reimbursement</li>
-          </ul>
-          <a href="#quote-form" class="plan-cta">Get My Price</a>
-        </div>
-        <div class="plan-card">
-          <div class="plan-name">Premier</div>
-          <p class="plan-desc">Our most extensive, near bumper-to-bumper protection.</p>
-          <ul class="plan-features">
-            <li><span class="check-circle">&#10003;</span> Everything in Preferred</li>
-            <li><span class="check-circle">&#10003;</span> Suspension &amp; steering</li>
-            <li><span class="check-circle">&#10003;</span> Brakes &amp; electronics</li>
-            <li><span class="check-circle">&#10003;</span> Maximum component coverage</li>
-          </ul>
-          <a href="#quote-form" class="plan-cta">Get My Price</a>
-        </div>
-      </div>
-      <p class="plans-note">Final coverage and pricing depend on your vehicle's year, make, model, and mileage. Get your personalized quote above.</p>
-    </div>
-  </section>
-
   <!-- How it works -->
-  <section class="section" id="how-it-works">
+  <section class="section bg-tint" id="how-it-works">
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">Simple Process</span>
