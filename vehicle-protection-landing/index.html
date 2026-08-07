@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vehicle Protection | Don't Pay For Auto Repairs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#0b3d91;
+    --blue-dark:#082a66;
+    --red:#e2231a;
+    --ink:#16202b;
+    --gray:#5c6b7a;
+    --line:#dfe4ea;
+    --bg:#f4f6f9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  /* Header */
+  header{
+    background:#fff;
+    border-bottom:1px solid var(--line);
+    padding:18px 0;
+  }
+  header .wrap{display:flex;align-items:center;}
+  header img{height:40px;width:auto;}
+
+  /* Main layout */
+  main{padding:48px 0 72px;}
+  .grid{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:56px;
+    align-items:start;
+  }
+
+  .eyebrow{
+    display:inline-block;
+    background:rgba(226,35,26,0.1);
+    color:var(--red);
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    padding:6px 14px;
+    border-radius:999px;
+    margin-bottom:18px;
+  }
+  h1{
+    font-size:44px;
+    line-height:1.08;
+    font-weight:900;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+    margin-bottom:16px;
+  }
+  .subhead{
+    font-size:20px;
+    font-weight:600;
+    color:var(--blue);
+    margin-bottom:28px;
+  }
+  .subhead strong{color:var(--red);}
+
+  ul.benefits{
+    list-style:none;
+    margin-bottom:32px;
+  }
+  ul.benefits li{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    font-size:17px;
+    font-weight:500;
+    color:var(--ink);
+    padding:10px 0;
+    border-bottom:1px solid var(--line);
+  }
+  ul.benefits li:last-child{border-bottom:none;}
+  ul.benefits .check{
+    flex:none;
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    background:var(--blue);
+    color:#fff;
+    font-size:13px;
+    font-weight:800;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:1px;
+  }
+
+  .fleet-img{
+    margin-top:8px;
+    border-radius:12px;
+    overflow:hidden;
+  }
+
+  /* Form card */
+  .form-card{
+    background:#fff;
+    border-radius:16px;
+    box-shadow:0 12px 40px rgba(16,32,55,0.1);
+    border:1px solid var(--line);
+    padding:32px;
+    position:sticky;
+    top:24px;
+  }
+  .form-card h2{
+    font-size:23px;
+    font-weight:800;
+    text-align:center;
+    color:var(--ink);
+    margin-bottom:6px;
+  }
+  .form-card .form-sub{
+    text-align:center;
+    color:var(--gray);
+    font-size:14px;
+    margin-bottom:24px;
+  }
+  .section-label{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--blue);
+    margin:20px 0 12px;
+  }
+  .section-label:first-of-type{margin-top:0;}
+
+  .field-row{
+    display:grid;
+    gap:12px;
+    margin-bottom:12px;
+  }
+  .field-row.cols-2{grid-template-columns:1fr 1fr;}
+  .field-row.cols-3{grid-template-columns:1fr 1fr 1fr;}
+
+  label{
+    display:block;
+    font-size:12px;
+    font-weight:600;
+    color:var(--gray);
+    margin-bottom:5px;
+  }
+
+  input, select{
+    width:100%;
+    padding:12px 12px;
+    font-size:15px;
+    font-family:inherit;
+    color:var(--ink);
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:8px;
+    outline:none;
+    transition:border-color .15s ease, box-shadow .15s ease;
+  }
+  input:focus, select:focus{
+    border-color:var(--blue);
+    box-shadow:0 0 0 3px rgba(11,61,145,0.12);
+  }
+  select{appearance:none;-webkit-appearance:none;
+    background-image:url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='%235c6b7a' d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat:no-repeat;
+    background-position:right 10px center;
+    background-size:20px;
+    padding-right:34px;
+  }
+
+  .submit-btn{
+    width:100%;
+    margin-top:16px;
+    background:var(--red);
+    color:#fff;
+    font-size:17px;
+    font-weight:800;
+    letter-spacing:0.01em;
+    border:none;
+    border-radius:8px;
+    padding:16px;
+    cursor:pointer;
+    transition:background .15s ease, transform .1s ease;
+  }
+  .submit-btn:hover{background:#c81d15;}
+  .submit-btn:active{transform:translateY(1px);}
+
+  .disclaimer{
+    font-size:11px;
+    color:#94a0ac;
+    text-align:center;
+    margin-top:14px;
+    line-height:1.4;
+  }
+
+  .success-msg{
+    display:none;
+    text-align:center;
+    padding:20px 0;
+  }
+  .success-msg .checkmark{
+    width:56px;height:56px;border-radius:50%;
+    background:var(--blue);
+    color:#fff;
+    font-size:28px;
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto 16px;
+  }
+  .success-msg h3{font-size:20px;margin-bottom:8px;}
+  .success-msg p{color:var(--gray);font-size:14px;}
+
+  footer{
+    text-align:center;
+    padding:24px 0;
+    font-size:12px;
+    color:#94a0ac;
+  }
+
+  @media (max-width: 900px){
+    .grid{grid-template-columns:1fr;gap:36px;}
+    .form-card{position:static;}
+    h1{font-size:32px;}
+    .subhead{font-size:17px;}
+  }
+  @media (max-width: 480px){
+    .form-card{padding:24px 18px;}
+    .field-row.cols-3{grid-template-columns:1fr 1fr;}
+    .field-row.cols-3 select:last-child{grid-column:1 / -1;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <img src="img/logo.png" alt="Vehicle Protection">
+  </div>
+</header>
+
+<main>
+  <div class="wrap grid">
+    <div>
+      <span class="eyebrow">Limited Time Offer</span>
+      <h1>DON'T PAY FOR AUTO REPAIRS</h1>
+      <p class="subhead">Sign Up Today and Get <strong>$300 Off!</strong></p>
+
+      <ul class="benefits">
+        <li><span class="check">&#10003;</span> 24-hour roadside assistance</li>
+        <li><span class="check">&#10003;</span> 30 day money-back guarantee</li>
+        <li><span class="check">&#10003;</span> Accepted at your dealership and by any ASE licensed mechanic</li>
+        <li><span class="check">&#10003;</span> Coverage backed by an AM Best &ldquo;A-&rdquo; rated insurance company</li>
+      </ul>
+
+      <div class="fleet-img">
+        <img src="img/fleet.png" alt="Covered vehicles">
+      </div>
+    </div>
+
+    <div class="form-card">
+      <form id="quoteForm">
+        <h2>Get a FREE Vehicle Protection Quote</h2>
+        <p class="form-sub">Takes less than 60 seconds</p>
+
+        <div class="section-label">Vehicle Details</div>
+        <div class="field-row cols-3">
+          <div>
+            <label for="year">Year</label>
+            <select id="year" name="year" required>
+              <option value="" disabled selected>Select</option>
+            </select>
+          </div>
+          <div>
+            <label for="make">Make</label>
+            <select id="make" name="make" required>
+              <option value="" disabled selected>Select</option>
+            </select>
+          </div>
+          <div>
+            <label for="model">Model</label>
+            <select id="model" name="model" required disabled>
+              <option value="" disabled selected>Select make first</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div>
+            <label for="miles">Estimated Miles</label>
+            <input type="text" inputmode="numeric" id="miles" name="miles" placeholder="e.g. 45,000" required>
+          </div>
+        </div>
+
+        <div class="section-label">Personal Details</div>
+        <div class="field-row cols-2">
+          <div>
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="fname" placeholder="John" required>
+          </div>
+          <div>
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lname" placeholder="Smith" required>
+          </div>
+        </div>
+        <div class="field-row">
+          <div>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="john@email.com" required>
+          </div>
+        </div>
+        <div class="field-row cols-2">
+          <div>
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" required>
+          </div>
+          <div>
+            <label for="zip">Zip Code</label>
+            <input type="text" inputmode="numeric" id="zip" name="zip" placeholder="90210" maxlength="5" required>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">Get FREE Quote Now</button>
+        <p class="disclaimer">By clicking submit, you agree to be contacted about vehicle protection plans via phone, email, or text. Consent is not a condition of purchase.</p>
+      </form>
+
+      <div class="success-msg" id="successMsg">
+        <div class="checkmark">&#10003;</div>
+        <h3>You're all set!</h3>
+        <p>A vehicle protection specialist will reach out shortly with your free quote.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  &copy; 2026 Vehicle Protection. All rights reserved.
+</footer>
+
+<script>
+  // Year dropdown
+  const yearSelect = document.getElementById('year');
+  const currentYear = new Date().getFullYear();
+  for (let y = currentYear + 1; y >= 1995; y--) {
+    const opt = document.createElement('option');
+    opt.value = y;
+    opt.textContent = y;
+    yearSelect.appendChild(opt);
+  }
+
+  // Make / Model data
+  const vehicleData = {
+    "Toyota": ["Camry", "Corolla", "RAV4", "Highlander", "Tacoma", "Tundra", "4Runner", "Prius", "Sienna", "Other"],
+    "Honda": ["Accord", "Civic", "CR-V", "Pilot", "Odyssey", "HR-V", "Ridgeline", "Other"],
+    "Ford": ["F-150", "Escape", "Explorer", "Edge", "Mustang", "Ranger", "Expedition", "Focus", "Other"],
+    "Chevrolet": ["Silverado", "Equinox", "Malibu", "Traverse", "Tahoe", "Suburban", "Cruze", "Camaro", "Other"],
+    "Nissan": ["Altima", "Rogue", "Sentra", "Pathfinder", "Murano", "Frontier", "Titan", "Other"],
+    "Jeep": ["Grand Cherokee", "Wrangler", "Cherokee", "Compass", "Renegade", "Gladiator", "Other"],
+    "Ram": ["1500", "2500", "3500", "ProMaster", "Other"],
+    "GMC": ["Sierra", "Yukon", "Terrain", "Acadia", "Canyon", "Other"],
+    "Hyundai": ["Elantra", "Sonata", "Tucson", "Santa Fe", "Palisade", "Kona", "Other"],
+    "Kia": ["Forte", "Optima", "Sportage", "Sorento", "Telluride", "Soul", "Other"],
+    "Subaru": ["Outback", "Forester", "Crosstrek", "Impreza", "Legacy", "Ascent", "Other"],
+    "Volkswagen": ["Jetta", "Passat", "Tiguan", "Atlas", "Golf", "Other"],
+    "BMW": ["3 Series", "5 Series", "X3", "X5", "X1", "Other"],
+    "Mercedes-Benz": ["C-Class", "E-Class", "GLC", "GLE", "Other"],
+    "Audi": ["A4", "A6", "Q5", "Q7", "Other"],
+    "Dodge": ["Charger", "Challenger", "Durango", "Journey", "Other"],
+    "Chrysler": ["300", "Pacifica", "Voyager", "Other"],
+    "Buick": ["Encore", "Enclave", "Envision", "Other"],
+    "Lexus": ["RX", "ES", "NX", "GX", "Other"],
+    "Mazda": ["Mazda3", "CX-5", "CX-9", "Mazda6", "Other"],
+    "Other": ["Other"]
+  };
+
+  const makeSelect = document.getElementById('make');
+  Object.keys(vehicleData).sort((a,b)=> a === "Other" ? 1 : b === "Other" ? -1 : a.localeCompare(b)).forEach(make => {
+    const opt = document.createElement('option');
+    opt.value = make;
+    opt.textContent = make;
+    makeSelect.appendChild(opt);
+  });
+
+  const modelSelect = document.getElementById('model');
+  makeSelect.addEventListener('change', () => {
+    const models = vehicleData[makeSelect.value] || [];
+    modelSelect.innerHTML = '<option value="" disabled selected>Select</option>';
+    models.forEach(model => {
+      const opt = document.createElement('option');
+      opt.value = model;
+      opt.textContent = model;
+      modelSelect.appendChild(opt);
+    });
+    modelSelect.disabled = false;
+  });
+
+  // Phone formatting
+  const phoneInput = document.getElementById('phone');
+  phoneInput.addEventListener('input', () => {
+    let digits = phoneInput.value.replace(/\D/g, '').slice(0, 10);
+    let formatted = digits;
+    if (digits.length > 6) {
+      formatted = `(${digits.slice(0,3)}) ${digits.slice(3,6)}-${digits.slice(6)}`;
+    } else if (digits.length > 3) {
+      formatted = `(${digits.slice(0,3)}) ${digits.slice(3)}`;
+    } else if (digits.length > 0) {
+      formatted = `(${digits}`;
+    }
+    phoneInput.value = formatted;
+  });
+
+  // Zip: digits only
+  document.getElementById('zip').addEventListener('input', (e) => {
+    e.target.value = e.target.value.replace(/\D/g, '').slice(0, 5);
+  });
+
+  // Miles: digits + commas
+  document.getElementById('miles').addEventListener('input', (e) => {
+    const digits = e.target.value.replace(/\D/g, '');
+    e.target.value = digits ? Number(digits).toLocaleString('en-US') : '';
+  });
+
+  // Submit
+  document.getElementById('quoteForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    this.style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
