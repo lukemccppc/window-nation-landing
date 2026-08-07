@@ -137,7 +137,8 @@
     margin-bottom:12px;
   }
   .field-row.cols-2{grid-template-columns:1fr 1fr;}
-  .field-row.cols-3{grid-template-columns:1fr 1fr 1fr;}
+  .vehicle-grid{grid-template-columns:1fr 1fr 1fr;}
+  .vehicle-grid .miles-field{grid-column:1 / -1;}
 
   label{
     display:block;
@@ -222,13 +223,13 @@
   @media (max-width: 900px){
     .grid{grid-template-columns:1fr;gap:36px;}
     .form-card{position:static;}
-    h1{font-size:32px;}
-    .subhead{font-size:17px;}
+    h1{font-size:32px;text-align:center;}
+    .subhead{font-size:17px;text-align:center;}
   }
   @media (max-width: 480px){
     .form-card{padding:24px 18px;}
-    .field-row.cols-3{grid-template-columns:1fr 1fr;}
-    .field-row.cols-3 select:last-child{grid-column:1 / -1;}
+    .vehicle-grid{grid-template-columns:1fr 1fr;}
+    .vehicle-grid .miles-field{grid-column:auto;}
   }
 </style>
 </head>
@@ -264,7 +265,7 @@
         <p class="form-sub">Takes less than 60 seconds</p>
 
         <div class="section-label">Vehicle Details</div>
-        <div class="field-row cols-3">
+        <div class="field-row vehicle-grid">
           <div>
             <label for="year">Year</label>
             <select id="year" name="year" required>
@@ -283,9 +284,7 @@
               <option value="" disabled selected>Select make first</option>
             </select>
           </div>
-        </div>
-        <div class="field-row">
-          <div>
+          <div class="miles-field">
             <label for="miles">Estimated Miles</label>
             <input type="text" inputmode="numeric" id="miles" name="miles" placeholder="e.g. 45,000" required>
           </div>
