@@ -46,6 +46,23 @@
     align-items:start;
   }
 
+  .rating-line{
+    font-size:13.5px;
+    font-weight:700;
+    color:var(--ink);
+    margin-bottom:16px;
+  }
+  .star-rating{position:relative;display:inline-block;vertical-align:middle;margin-right:9px;font-size:16px;letter-spacing:1px;line-height:1;}
+  .star-rating .stars-bg{color:#d9dde3;}
+  .star-rating .stars-fg{
+    position:absolute;
+    top:0;
+    left:0;
+    overflow:hidden;
+    white-space:nowrap;
+    color:#f5a623;
+  }
+
   h1{
     font-size:44px;
     line-height:1.08;
@@ -250,6 +267,7 @@
     .form-card{position:static;}
     h1{font-size:34px;text-align:center;}
     .subhead{font-size:20px;text-align:center;}
+    .rating-line{text-align:center;}
   }
   @media (max-width: 480px){
     .form-card{padding:24px 18px;}
@@ -269,10 +287,18 @@
 <main>
   <div class="wrap grid">
     <div>
+      <div class="rating-line">
+        <span class="star-rating">
+          <span class="stars-bg">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="stars-fg" style="width:94%">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        </span>
+        Trusted by 500,000+ Drivers Nationwide
+      </div>
       <h1>SAVE THOUSANDS ON AUTO REPAIRS</h1>
       <p class="subhead">Sign Up Today and Get <strong>$300 Off!</strong></p>
 
       <ul class="benefits">
+        <li><span class="check">&#10003;</span> Comprehensive vehicle protection</li>
         <li><span class="check">&#10003;</span> 24-hour roadside assistance</li>
         <li><span class="check">&#10003;</span> 30 day money-back guarantee</li>
         <li><span class="check">&#10003;</span> Accepted at your dealership and by any ASE licensed mechanic</li>
