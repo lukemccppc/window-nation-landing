@@ -267,7 +267,18 @@
     .form-card{position:static;}
     h1{font-size:34px;text-align:center;}
     .subhead{font-size:20px;text-align:center;}
-    .rating-line{text-align:center;}
+    .rating-line{display:flex;justify-content:center;}
+    .rating-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:8px 16px;
+      box-shadow:0 2px 8px rgba(16,32,55,0.06);
+    }
+    .nationwide-text{display:none;}
   }
   @media (max-width: 480px){
     .form-card{padding:24px 18px;}
@@ -288,11 +299,13 @@
   <div class="wrap grid">
     <div>
       <div class="rating-line">
-        <span class="star-rating">
-          <span class="stars-bg">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <span class="stars-fg" style="width:94%">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="rating-pill">
+          <span class="star-rating">
+            <span class="stars-bg">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="stars-fg" style="width:94%">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          </span>
+          Trusted by 500,000+ Drivers<span class="nationwide-text"> Nationwide</span>
         </span>
-        Trusted by 500,000+ Drivers Nationwide
       </div>
       <h1>SAVE THOUSANDS ON AUTO REPAIRS</h1>
       <p class="subhead">Sign Up Today and Get <strong>$300 Off!</strong></p>
