@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vehicle Protection | Thank You</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#0b3d91;
+    --blue-dark:#082a66;
+    --red:#e2231a;
+    --ink:#16202b;
+    --gray:#5c6b7a;
+    --line:#dfe4ea;
+    --bg:#f4f6f9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  /* Header */
+  header{
+    background:#fff;
+    border-bottom:1px solid var(--line);
+    padding:18px 0;
+  }
+  header .wrap{display:flex;align-items:center;justify-content:center;}
+  header img{height:64px;width:auto;}
+
+  /* Main */
+  main{padding:64px 0;}
+  .confirm-card{
+    max-width:640px;
+    margin:0 auto;
+    background:#fff;
+    border-radius:16px;
+    box-shadow:0 12px 40px rgba(16,32,55,0.1);
+    border:1px solid var(--line);
+    padding:56px 40px;
+    text-align:center;
+  }
+  .checkmark{
+    width:72px;
+    height:72px;
+    border-radius:50%;
+    background:var(--blue);
+    color:#fff;
+    font-size:34px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 24px;
+  }
+  h1{
+    font-size:34px;
+    font-weight:900;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+    margin-bottom:14px;
+  }
+  .lead{
+    font-size:17px;
+    color:var(--gray);
+    max-width:460px;
+    margin:0 auto 36px;
+    line-height:1.6;
+  }
+  .next-steps{
+    list-style:none;
+    text-align:left;
+    margin-bottom:36px;
+  }
+  .next-steps li{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    font-size:15.5px;
+    font-weight:500;
+    color:var(--ink);
+    padding:12px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .next-steps li:last-child{border-bottom:none;}
+  .next-steps .check{
+    flex:none;
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    background:var(--blue);
+    color:#fff;
+    font-size:13px;
+    font-weight:800;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:1px;
+  }
+  .home-btn{
+    display:inline-block;
+    background:var(--red);
+    color:#fff;
+    font-weight:800;
+    font-size:16px;
+    padding:15px 36px;
+    border-radius:8px;
+    text-decoration:none;
+    transition:background .15s ease, transform .1s ease;
+  }
+  .home-btn:hover{background:#c81d15;}
+  .home-btn:active{transform:translateY(1px);}
+
+  footer{
+    text-align:center;
+    padding:36px 0;
+    background:#fff;
+    border-top:1px solid var(--line);
+  }
+  footer .footer-logo{
+    height:44px;
+    width:auto;
+    margin:0 auto 16px;
+  }
+  footer .footer-copy{
+    max-width:640px;
+    margin:0 auto 14px;
+    font-size:12px;
+    line-height:1.6;
+    color:var(--gray);
+  }
+  footer .footer-links{
+    font-size:13px;
+    font-weight:600;
+    color:var(--gray);
+  }
+  footer .footer-links a{
+    color:var(--blue);
+    text-decoration:underline;
+  }
+  footer .footer-links span{
+    margin:0 8px;
+    color:var(--line);
+  }
+
+  @media (max-width: 480px){
+    main{padding:40px 0;}
+    .confirm-card{padding:40px 24px;}
+    h1{font-size:26px;}
+    .lead{font-size:15px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <img src="img/logo.png" alt="Vehicle Protection">
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="confirm-card">
+      <div class="checkmark">&#10003;</div>
+      <h1>You're All Set!</h1>
+      <p class="lead">Thanks for requesting your free quote. A vehicle protection specialist will reach out shortly to walk you through your options.</p>
+
+      <ul class="next-steps">
+        <li><span class="check">&#10003;</span> We're reviewing your vehicle details now</li>
+        <li><span class="check">&#10003;</span> A specialist will call or email you shortly</li>
+        <li><span class="check">&#10003;</span> Ask about your $300 sign-up discount</li>
+      </ul>
+
+      <a href="index.html" class="home-btn">Back to Home</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo.png" alt="Vehicle Protection" class="footer-logo">
+    <p class="footer-copy">Copyright &copy; 2026 VehicleProtectionUSA.com. All Rights Reserved. VehicleProtectionUSA.com is not responsible for the offers, products or services provided by Service Providers.</p>
+    <p class="footer-links">
+      <a href="https://go.vehicleprotectionusa.com/vpu-privacy-policy/">Privacy Policy</a>
+      <span>|</span>
+      <a href="https://go.vehicleprotectionusa.com/vpu-terms-conditions/">Terms and Conditions</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
