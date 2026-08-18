@@ -177,17 +177,6 @@
       padding: 32px 28px;
       box-shadow: 0 16px 48px rgba(0,0,0,.3);
     }
-    .quote-card-promo {
-      background: var(--red);
-      color: white;
-      text-align: center;
-      border-radius: 8px;
-      padding: 10px 16px;
-      font-size: .85rem;
-      font-weight: 700;
-      letter-spacing: .02em;
-      margin-bottom: 20px;
-    }
     .quote-card h3 {
       font-size: 1.3rem;
       font-weight: 800;
@@ -252,6 +241,22 @@
       margin-top: 6px;
     }
     .btn-form:hover { background: var(--red-dark); transform: translateY(-1px); }
+    .form-callouts {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .form-callout {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--gray);
+    }
+    .form-callout svg { flex-shrink: 0; color: var(--blue); }
     .form-disclaimer {
       text-align: center;
       font-size: .72rem;
@@ -678,10 +683,6 @@
 
       <!-- Quote Form -->
       <div class="quote-card" id="quote">
-        <div class="quote-card-promo">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:6px;"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
-          Buy 2, Get 2 FREE — Limited Time
-        </div>
         <h3>Get Your Free Quote</h3>
         <p class="sub">No obligation. No pressure. Just savings.</p>
         <form action="thank-you.html" method="GET">
@@ -709,7 +710,17 @@
               <input id="f-zip" type="text" placeholder="ZIP" autocomplete="postal-code" inputmode="numeric" maxlength="5" />
             </div>
           </div>
-          <button type="submit" class="btn-form">Claim My Free Offer →</button>
+          <button type="submit" class="btn-form">Claim Offer</button>
+          <div class="form-callouts">
+            <span class="form-callout">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+              Limited Lifetime Warranty
+            </span>
+            <span class="form-callout">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              Flexible Financing
+            </span>
+          </div>
           <p class="form-disclaimer">By submitting, you agree to be contacted by Champion. We respect your privacy and never share your information.</p>
         </form>
       </div>
@@ -742,8 +753,8 @@
           <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
         </div>
         <div class="trust-stat-text">
-          <div class="trust-stat-number">Factory</div>
-          <div class="trust-stat-label">Direct</div>
+          <div class="trust-stat-number">Factory Direct</div>
+          <div class="trust-stat-label">Pricing</div>
         </div>
       </div>
       <div class="trust-stat">
