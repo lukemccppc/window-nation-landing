@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buy 2 Windows, Get 2 FREE | Champion Window Replacement</title>
+  <meta name="description" content="Buy 2 Champion windows, get 2 FREE. Plus pay nothing for a year. Comfort 365 Windows®, Limited Lifetime Warranty, factory-direct pricing. Get your free quote today." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #005387;
+      --blue-dark: #003a5f;
+      --blue-light: #5fb3e0;
+      --red: #d71920;
+      --red-dark: #a51217;
+      --white: #ffffff;
+      --off-white: #f4f8fb;
+      --gray-light: #e2e8f0;
+      --gray: #5c7080;
+      --dark: #0d2136;
+      --font: 'DM Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; color-scheme: light; }
+
+    body {
+      font-family: var(--font);
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background: var(--white);
+    }
+
+    img { max-width: 100%; display: block; }
+
+    /* ─── STICKY HEADER ─── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
+      padding: 0 24px;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+      gap: 16px;
+    }
+    .header-logo img { height: 40px; width: auto; display: block; }
+    .header-right { display: flex; align-items: center; gap: 20px; }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--red);
+      color: var(--white);
+      font-weight: 700;
+      font-size: .95rem;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background .2s, transform .1s;
+      white-space: nowrap;
+      letter-spacing: .02em;
+    }
+    .btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); }
+    .btn-primary:active { transform: translateY(0); }
+
+    /* ─── PROMO BANNER ─── */
+    .promo-banner {
+      background: var(--blue-dark);
+      color: white;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: .9rem;
+      font-weight: 600;
+      letter-spacing: .03em;
+    }
+    .promo-banner strong { color: #7dd3f8; font-size: 1rem; }
+    @media (max-width: 600px) { .promo-banner { display: none; } }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      min-height: 640px;
+      display: flex;
+      align-items: center;
+      background: var(--blue-dark);
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/img/champion-hero.jpg');
+      background-size: cover;
+      background-position: center 55%;
+      opacity: .5;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(105deg, rgba(0,15,30,.85) 0%, rgba(0,35,60,.6) 55%, rgba(0,83,135,.3) 100%);
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 24px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero-copy { color: white; }
+    .hero-badge {
+      display: inline-block;
+      background: var(--red);
+      color: white;
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+    .hero-headline {
+      font-size: clamp(2rem, 4.5vw, 3.1rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 8px;
+      text-shadow: 0 2px 12px rgba(0,0,0,.3);
+    }
+    .hero-headline span { color: white; }
+    .hero-headline .hl-blue { color: #7dd3f8; }
+    .hero-headline sup { font-size: .5em; top: -.6em; }
+    .headline-mobile { display: none; }
+    .hero-subhead {
+      font-size: 1.1rem;
+      opacity: .9;
+      max-width: 520px;
+      margin-bottom: 28px;
+      line-height: 1.65;
+    }
+    .hero-trust-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .hero-trust-chip {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.25);
+      color: white;
+      font-size: .8rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .hero-trust-chip svg { flex-shrink: 0; }
+
+    /* Quote form card */
+    .quote-card {
+      background: white;
+      border-radius: 12px;
+      padding: 32px 28px;
+      box-shadow: 0 16px 48px rgba(0,0,0,.3);
+      border-top: 5px solid var(--red);
+    }
+    .quote-card-promo {
+      background: var(--red);
+      color: white;
+      text-align: center;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: .02em;
+      margin-bottom: 20px;
+    }
+    .quote-card h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--blue);
+      text-align: center;
+      margin-bottom: 6px;
+    }
+    .quote-card .sub {
+      text-align: center;
+      color: var(--gray);
+      font-size: .85rem;
+      margin-bottom: 20px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .form-row .form-group { margin-bottom: 0; }
+    @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+
+    .form-group { margin-bottom: 14px; }
+    .form-group label {
+      display: block;
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--gray-light);
+      border-radius: 6px;
+      font-size: .95rem;
+      font-family: var(--font);
+      color: var(--dark);
+      outline: none;
+      transition: border-color .2s;
+      background: white;
+    }
+    .form-group input:focus,
+    .form-group select:focus { border-color: var(--blue); }
+    .form-group input::placeholder { color: #adb5bd; }
+    .btn-form {
+      width: 100%;
+      background: var(--red);
+      color: white;
+      font-size: 1.05rem;
+      font-weight: 800;
+      padding: 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      transition: background .2s, transform .1s;
+      margin-top: 6px;
+    }
+    .btn-form:hover { background: var(--red-dark); transform: translateY(-1px); }
+    .form-disclaimer {
+      text-align: center;
+      font-size: .72rem;
+      color: #9ca3af;
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+
+    /* ─── TRUST STATS ─── */
+    .trust-bar { background: var(--blue); padding: 0 24px; }
+    .trust-bar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: stretch;
+    }
+    .trust-stat {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 22px 24px;
+      flex: 1;
+      color: white;
+      position: relative;
+    }
+    .trust-stat + .trust-stat::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 20%;
+      height: 60%;
+      width: 1px;
+      background: rgba(255,255,255,.18);
+    }
+    .trust-stat-icon { flex-shrink: 0; color: rgba(255,255,255,.65); display: flex; align-items: center; }
+    .trust-stat-text { min-width: 0; }
+    .trust-stat-number {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: white;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+    .trust-stat-label {
+      font-size: .72rem;
+      color: rgba(255,255,255,.55);
+      margin-top: 2px;
+      font-weight: 400;
+      white-space: nowrap;
+    }
+    @media (max-width: 900px) {
+      .trust-bar-inner { flex-wrap: wrap; }
+      .trust-stat { flex: 1 1 45%; padding: 20px 20px; }
+      .trust-stat + .trust-stat::before { display: none; }
+    }
+    @media (max-width: 600px) {
+      .trust-bar-inner { display: grid; grid-template-columns: 1fr 1fr; }
+      .trust-stat {
+        flex: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 6px;
+        padding: 20px 12px;
+        border-top: 1px solid rgba(255,255,255,.1);
+      }
+      .trust-stat + .trust-stat::before { display: none; }
+      .trust-stat:nth-child(1),
+      .trust-stat:nth-child(2) { border-top: none; }
+      .trust-stat-icon svg { width: 22px; height: 22px; }
+      .trust-stat-number { font-size: .95rem; white-space: nowrap; }
+      .trust-stat-label { font-size: .67rem; white-space: nowrap; }
+    }
+
+    /* ─── SECTION WRAPPER ─── */
+    .section { padding: 72px 24px; }
+    .section-alt { background: var(--off-white); }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-eyebrow {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--blue);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+    .section-title span { color: var(--red); }
+    .section-sub {
+      color: var(--gray);
+      font-size: 1rem;
+      max-width: 560px;
+      line-height: 1.7;
+    }
+    .section-header { margin-bottom: 48px; }
+    .section-header.center { text-align: center; }
+    .section-header.center .section-sub { margin: 0 auto; }
+
+    /* ─── BENEFITS ─── */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .benefit-card {
+      background: white;
+      border-radius: 10px;
+      padding: 28px 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      border-top: 3px solid var(--blue);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .benefit-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,.1); }
+    .benefit-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(0,83,135,.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .benefit-icon svg { color: var(--blue); }
+    .benefit-card h4 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; color: var(--blue); }
+    .benefit-card p { font-size: .9rem; color: var(--gray); line-height: 1.65; }
+    .benefit-card .fine { font-size: .72rem; color: #9ca3af; margin-top: 6px; }
+
+    /* ─── OFFER HIGHLIGHT ─── */
+    .offer-section {
+      position: relative;
+      padding: 96px 24px;
+      text-align: center;
+      color: white;
+      overflow: hidden;
+    }
+    .offer-section-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/img/champion-installer.jpg');
+      background-size: cover;
+      background-position: center 25%;
+    }
+    .offer-section-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0,58,95,.93) 0%, rgba(0,15,30,.9) 100%);
+    }
+    .offer-section > *:not(.offer-section-bg):not(.offer-section-overlay) {
+      position: relative;
+      z-index: 2;
+    }
+    .offer-pill {
+      display: inline-block;
+      background: var(--red);
+      color: white;
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+    }
+    .offer-headline {
+      font-size: clamp(2.1rem, 5vw, 3.6rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+    .offer-headline span { color: #7dd3f8; }
+    .offer-headline sup { font-size: .4em; top: -1em; }
+    .offer-headline-sub {
+      font-size: clamp(1.3rem, 2.6vw, 1.8rem);
+      font-weight: 800;
+      color: white;
+      margin-bottom: 18px;
+    }
+    .offer-headline-sub sup { font-size: .55em; top: -.9em; }
+    .offer-sub {
+      font-size: 1.1rem;
+      opacity: .9;
+      max-width: 520px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+    }
+    .offer-cta { font-size: 1.1rem; padding: 16px 40px; }
+    .offer-fine { font-size: .75rem; opacity: .65; margin-top: 14px; }
+
+    /* ─── HOW IT WORKS ─── */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+      position: relative;
+    }
+    .steps-grid::before {
+      content: '';
+      position: absolute;
+      top: 32px;
+      left: calc(12.5% + 16px);
+      right: calc(12.5% + 16px);
+      height: 2px;
+      background: var(--gray-light);
+      z-index: 0;
+    }
+    .step { text-align: center; position: relative; z-index: 1; }
+    .step-number {
+      width: 64px;
+      height: 64px;
+      background: var(--red);
+      color: white;
+      font-size: 1.4rem;
+      font-weight: 800;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 4px 16px rgba(215,25,32,.4);
+    }
+    .step h4 { font-size: 1.02rem; font-weight: 700; margin-bottom: 8px; color: var(--blue); }
+    .step p { font-size: .88rem; color: var(--gray); line-height: 1.6; max-width: 220px; margin: 0 auto; }
+
+    /* ─── GALLERY ─── */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
+    }
+
+    /* ─── TESTIMONIALS ─── */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .testimonial-card {
+      background: white;
+      border-radius: 10px;
+      padding: 28px 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    }
+    .stars { color: #f59e0b; font-size: 1rem; margin-bottom: 12px; letter-spacing: 2px; }
+    .testimonial-card blockquote {
+      font-size: .92rem;
+      color: var(--dark);
+      line-height: 1.7;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+    .testimonial-meta { display: flex; align-items: center; gap: 12px; }
+    .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: white;
+      font-size: 1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .avatar.red { background: var(--red); }
+    .avatar.dark-blue { background: var(--blue-dark); }
+    .meta-info strong { font-size: .88rem; display: block; }
+    .meta-info span { font-size: .78rem; color: var(--gray); }
+
+    /* ─── BOTTOM CTA ─── */
+    .bottom-cta {
+      background: var(--blue-dark);
+      padding: 72px 24px;
+      text-align: center;
+      color: white;
+    }
+    .bottom-cta h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+    .bottom-cta h2 span { color: #7dd3f8; }
+    .bottom-cta p {
+      color: rgba(255,255,255,.75);
+      font-size: 1.05rem;
+      max-width: 480px;
+      margin: 0 auto 32px;
+      line-height: 1.65;
+    }
+    .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ─── FOOTER ─── */
+    footer { background: #071626; color: rgba(255,255,255,.55); padding: 32px 24px; }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    footer a { color: rgba(255,255,255,.55); text-decoration: none; }
+    footer a:hover { color: white; }
+    .footer-logo { opacity: .9; filter: brightness(0) invert(1); height: 26px; }
+    .footer-links { display: flex; gap: 20px; font-size: .8rem; flex-wrap: wrap; }
+    .footer-copy { font-size: .78rem; margin-bottom: 14px; }
+    .footer-disclaimers { font-size: .68rem; line-height: 1.7; color: rgba(255,255,255,.4); }
+    .footer-disclaimers p { margin-bottom: 10px; }
+    .footer-disclaimers p:last-child { margin-bottom: 0; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; padding: 48px 20px; gap: 32px; }
+      .hero-copy { text-align: center; }
+      .hero-trust-row { justify-content: center; }
+      .hero-subhead { margin-left: auto; margin-right: auto; }
+      .quote-card { max-width: 480px; margin: 0 auto; }
+
+      .trust-bar-inner { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps-grid { grid-template-columns: repeat(2, 1fr); gap: 32px 24px; }
+      .steps-grid::before { display: none; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .header-inner { height: 60px; }
+      .btn-primary { padding: 10px 16px; font-size: .85rem; }
+
+      .hero { min-height: auto; }
+      .hero-inner { padding: 40px 16px; }
+      .headline-full { display: none; }
+      .headline-mobile { display: inline; }
+
+      .trust-bar-inner { grid-template-columns: repeat(2, 1fr); }
+      .trust-stat-number { font-size: 1.5rem; }
+
+      .section { padding: 48px 16px; }
+      .benefits-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid img { height: 140px; }
+
+      .cta-buttons { flex-direction: column; align-items: center; }
+
+      .footer-top { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Promo Banner -->
+  <div class="promo-banner">
+    Limited Time: <strong>Buy 2 Windows, Get 2 FREE*</strong> + Pay Nothing for a Year!** — Fill Out The Form Below!
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="header-logo" href="#" aria-label="Champion Window">
+        <img src="assets/img/champion-logo.svg" alt="Champion Window" />
+      </a>
+      <div class="header-right">
+        <a class="btn-primary" href="#quote">Get Free Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="hero-badge">Limited Time Offer</div>
+        <h1 class="hero-headline">
+          <span class="headline-full">Buy 2 Windows,<br><span class="hl-blue">Get 2 FREE<sup>*</sup></span></span>
+          <span class="headline-mobile">Buy 2 Windows, <span class="hl-blue">Get 2 FREE<sup>*</sup></span></span>
+        </h1>
+        <p class="hero-subhead" style="font-weight:700; font-size:1.25rem; color:#fff; opacity:1; margin-bottom:14px;">Plus — Pay Nothing for a Year!<sup style="font-size:.6em;">**</sup></p>
+        <p class="hero-subhead">
+          Champion's Comfort 365 Windows&reg; deliver energy-efficient, custom-built comfort backed by a Limited Lifetime Warranty&dagger; — professionally installed by factory-trained crews.
+        </p>
+        <div class="hero-trust-row">
+          <div class="hero-trust-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5l-9-4z"/></svg>
+            Limited Lifetime Warranty
+          </div>
+          <div class="hero-trust-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 17.8 5.8 21.1 7 14.2 2 9.3l6.9-1L12 2z"/></svg>
+            ENERGY STAR&reg; Options
+          </div>
+          <div class="hero-trust-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M2 20h20"/><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+            Factory Direct
+          </div>
+        </div>
+      </div>
+
+      <!-- Quote Form -->
+      <div class="quote-card" id="quote">
+        <div class="quote-card-promo">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:6px;"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+          Buy 2, Get 2 FREE — Limited Time
+        </div>
+        <h3>Get Your Free Quote</h3>
+        <p class="sub">No obligation. No pressure. Just savings.</p>
+        <form action="thank-you.html" method="GET">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-first">First Name</label>
+              <input id="f-first" type="text" placeholder="John" autocomplete="given-name" />
+            </div>
+            <div class="form-group">
+              <label for="f-last">Last Name</label>
+              <input id="f-last" type="text" placeholder="Smith" autocomplete="family-name" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="f-email">Email</label>
+            <input id="f-email" type="email" placeholder="john@email.com" autocomplete="email" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-phone">Phone Number</label>
+              <input id="f-phone" type="tel" placeholder="(555) 123-4567" autocomplete="tel" />
+            </div>
+            <div class="form-group">
+              <label for="f-zip">Zip Code</label>
+              <input id="f-zip" type="text" placeholder="ZIP" autocomplete="postal-code" inputmode="numeric" maxlength="5" />
+            </div>
+          </div>
+          <button type="submit" class="btn-form">Claim My Free Offer →</button>
+          <p class="form-disclaimer">By submitting, you agree to be contacted by Champion. We respect your privacy and never share your information.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Stats Bar -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-stat">
+        <div class="trust-stat-icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="trust-stat-text">
+          <div class="trust-stat-number">70+ Years</div>
+          <div class="trust-stat-label">Window Expertise</div>
+        </div>
+      </div>
+      <div class="trust-stat">
+        <div class="trust-stat-icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="12" y1="2" x2="12" y2="22"/></svg>
+        </div>
+        <div class="trust-stat-text">
+          <div class="trust-stat-number">Comfort 365</div>
+          <div class="trust-stat-label">Windows&reg;</div>
+        </div>
+      </div>
+      <div class="trust-stat">
+        <div class="trust-stat-icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <div class="trust-stat-text">
+          <div class="trust-stat-number">Licensed</div>
+          <div class="trust-stat-label">&amp; Insured Installers</div>
+        </div>
+      </div>
+      <div class="trust-stat">
+        <div class="trust-stat-icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="trust-stat-text">
+          <div class="trust-stat-number">4.8/5</div>
+          <div class="trust-stat-label">Customer Rating</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Benefits -->
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="section-header center">
+        <div class="section-eyebrow">Why Choose Champion</div>
+        <h2 class="section-title">Quality You Can See. <span>Savings You Can Feel.</span></h2>
+        <p class="section-sub">From energy efficiency to curb appeal, Champion's Comfort 365 Windows&reg; deliver lasting value for your home.</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </div>
+          <h4>Energy Efficient</h4>
+          <p>Comfort 365 glass with Low-E coatings helps reduce heating and cooling costs year-round.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+          </div>
+          <h4>Limited Lifetime Warranty</h4>
+          <p>One of the strongest warranties in the industry, covering qualifying Champion products for as long as you own your home.</p>
+          <p class="fine">&dagger; See disclaimers below.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h4>Built to Last</h4>
+          <p>Champion windows resist warping, rotting, and fading — engineered for lasting performance in any climate.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M9 20V9l7-5v16"/><path d="M2 20V9l7 0"/><rect x="12" y="12" width="3" height="4"/><rect x="16" y="12" width="3" height="4"/></svg>
+          </div>
+          <h4>Factory Direct</h4>
+          <p>Windows are custom-built and sold factory direct — no dealer markup, no middleman.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
+          </div>
+          <h4>Custom Styles &amp; Sizes</h4>
+          <p>Double hung, casement, bay, bow, and more — custom sized and shaped to complement any home design.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h4>Flexible Financing</h4>
+          <p>Pay nothing for a year with approved credit. Don't let budget be a barrier — get beautiful new windows today.</p>
+          <p class="fine">** See disclaimers below.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offer Highlight -->
+  <section class="offer-section">
+    <div class="offer-section-bg"></div>
+    <div class="offer-section-overlay"></div>
+    <div class="offer-pill">Current Promotion</div>
+    <h2 class="offer-headline">Buy 2 Windows,<br><span>Get 2 FREE<sup>*</sup></span></h2>
+    <p class="offer-headline-sub">Plus Pay Nothing for a Year!<sup>**</sup></p>
+    <p class="offer-sub">This offer expires 10/31/26 — don't wait to lock in your savings.</p>
+    <a href="#quote" class="btn-primary offer-cta">Claim My Free Quote Now</a>
+    <p class="offer-fine">* &amp; ** Offer terms apply. See full disclaimers in the footer below.</p>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-header center">
+        <div class="section-eyebrow">Simple Process</div>
+        <h2 class="section-title">New Windows in <span>4 Easy Steps</span></h2>
+        <p class="section-sub">From free consultation to finished installation, we make the whole process effortless.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h4>Free Consultation</h4>
+          <p>We come to your home, walk through your options, and help you select the right windows.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h4>Precise Measurement</h4>
+          <p>Your windows are custom measured and manufactured to fit your home exactly.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h4>Professional Install</h4>
+          <p>Our certified installers complete the job efficiently, with proper sealing every time.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h4>Final Walkthrough</h4>
+          <p>We walk the job with you to confirm every window meets our quality standard.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="section-header center">
+        <div class="section-eyebrow">See The Difference</div>
+        <h2 class="section-title">Beautiful Windows, <span>Built For Your Home</span></h2>
+      </div>
+      <div class="gallery-grid">
+        <img src="assets/img/champion-window1.avif" alt="Champion replacement window style" loading="lazy" />
+        <img src="assets/img/champion-window2.avif" alt="Champion replacement window style" loading="lazy" />
+        <img src="assets/img/champion-window3.avif" alt="Champion replacement window style" loading="lazy" />
+        <img src="assets/img/champion-window4.avif" alt="Champion replacement window style" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-header center">
+        <div class="section-eyebrow">Real Customers. Real Results.</div>
+        <h2 class="section-title">Homeowners <span>Trust Champion</span></h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"The whole process was easy from start to finish. The crew was professional, fast, and cleaned up everything after. Our home is noticeably quieter already."</blockquote>
+          <div class="testimonial-meta">
+            <div class="avatar">SK</div>
+            <div class="meta-info">
+              <strong>Sandra K.</strong>
+              <span>Homeowner in Columbus, OH</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"We saved noticeably on our energy bill after installation. The Buy 2 Get 2 deal was exactly what we needed to finally do all our windows at once."</blockquote>
+          <div class="testimonial-meta">
+            <div class="avatar red">MT</div>
+            <div class="meta-info">
+              <strong>Mark &amp; Diane T.</strong>
+              <span>Homeowners in Charlotte, NC</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"I was skeptical about 'lifetime warranty' claims, but Champion's warranty is the real deal. The windows look amazing and the install crew was in and out in a day."</blockquote>
+          <div class="testimonial-meta">
+            <div class="avatar dark-blue">RH</div>
+            <div class="meta-info">
+              <strong>Robert H.</strong>
+              <span>Homeowner in Phoenix, AZ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="bottom-cta">
+    <h2>Ready to <span>Save Big?</span></h2>
+    <p>Don't miss this limited-time offer. Get your free, no-obligation quote today and see how much you can save.</p>
+    <div class="cta-buttons">
+      <a href="#quote" class="btn-primary" style="font-size:1.05rem;padding:15px 36px;">Get My Free Quote</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <img class="footer-logo" src="assets/img/champion-logo.svg" alt="Champion Window" />
+        <div class="footer-links">
+          <a href="https://championwindowdeals.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>
+          <a href="https://championwindowdeals.com/terms" target="_blank" rel="noopener">Terms &amp; Conditions</a>
+        </div>
+      </div>
+      <p class="footer-copy">&copy; Champion Opco LLC, 2026. All rights reserved.</p>
+      <div class="footer-disclaimers">
+        <p>*Buy 2 Comfort 365 Windows&reg; at regular price and get 2 additional windows of equal or lesser value free with participation in the Yes! Program. Offer applies to all window styles in white except nonrectangular shaped window styles. Window discount without participation in Yes! Program equals 40% off. Minimum purchase of 4 windows required. All prices include standard installation. All discounts apply to the MSRP cost. No adjustments can be made on prior sales. YES! Program valid only at the time of your initial demonstration and once per residence per term. Offer subject to change. &dagger;The Champion Limited Lifetime Warranty applies to Comfort 365 Windows&reg; and qualifying Champion products as long as the original purchaser owns the home. See website or a Champion representative for details. Offer expires 10/31/26. Lic# CGC1537616 &amp; CCC1336245. &copy;Champion Opco LLC, 2026.</p>
+        <p>**Plan 3120d. 29.49% APR accrues during the promotion period. Interest is waived if paid in full before the promotion period ends. Loans are subject to credit approval. Home Improvement Loans offered through Upgrade are made by Cross River Bank, Member FDIC, Equal Housing Lender. Upgrade, Inc. (NMLS #1548935) holds the following state licenses. Home Improvement Loans made through Upgrade feature Annual Percentage Rates (APRs) of 0.00%-29.99%. Lowest rates require Autopay. Loans feature repayment terms of 2 years to 15 years. Loans may be disbursed in one or more advances. Actual loan terms may vary depending on, among other things, the exact number of advances, the amount of each advance, the date on which each advance will occur, and if a promotional plan applies. For example, under this promotional plan (i.e., no payments required during the 12 months promotional period beginning after we disburse the first advance, and interest accrues during the promotional period but is waived if the loan is paid in full before the end of the promotional period), if a borrower receives a $10,000 loan with a 10-year term and a 29.49% Annual Percentage Rate (APR), the loan is disbursed in 2 advances (20% on Day 1 and 80% on Day 90), and the loan is not paid in full before the end of the promotional period, the borrower will have a required monthly payment of $279.66 after the promotional period ends. All interest accrued during the promotional period will be included in your monthly payment on a pro-rata basis for the remainder of the loan term if the loan is not paid in full by the end of the promotional period. If the loan is paid in full before the end of the promotional period, all interest accrued during the promotional period will be waived.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
