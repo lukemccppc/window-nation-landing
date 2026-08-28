@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Long Home | Bathroom Remodeling – Free Design Consultation</title>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PR3KDD45');</script>
+<!-- End Google Tag Manager -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue: #0554A0;
+    --blue-dark: #04408A;
+    --yellow: #FFCA2F;
+    --yellow-dark: #E8B600;
+    --white: #ffffff;
+    --gray-50: #F8F9FA;
+    --gray-200: #E9ECEF;
+    --gray-400: #ADB5BD;
+    --gray-600: #6C757D;
+    --gray-800: #343A40;
+    --dark: #0D1B2A;
+    --font: 'DM Sans', sans-serif;
+    --max: 1160px;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font); color: var(--gray-800); font-size: 16px; line-height: 1.6; }
+
+  /* ── ANNOUNCEMENT BAR ── */
+  .announce-bar {
+    background: var(--blue);
+    color: var(--white);
+    text-align: center;
+    padding: 10px 16px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+  }
+  .announce-bar span { color: var(--yellow); }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--white);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0 40px;
+  }
+  .site-header-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+  }
+  .site-header img { height: 52px; }
+  .btn-header {
+    background: var(--yellow);
+    color: var(--dark);
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 15px;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-header:hover { background: var(--yellow-dark); transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    background: var(--dark);
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('longhome-bathroom-hero.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, rgba(5,30,70,0.82) 0%, rgba(5,30,70,0.55) 100%);
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 60px 40px;
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+  }
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--yellow);
+    color: var(--dark);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 3px;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.08;
+    margin-bottom: 16px;
+  }
+  .hero h1 .accent { color: var(--yellow); }
+  .hero-sub {
+    color: rgba(255,255,255,0.82);
+    font-size: 17px;
+    margin-bottom: 28px;
+    line-height: 1.65;
+  }
+  .hero-h1-mobile { display: none; }
+  .hero-sub-mobile { display: none; }
+  .hero-offer {
+    color: var(--yellow);
+    font-weight: 800;
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+  .hero-offer-mobile { display: none; }
+  .hero-badges { display: flex; flex-wrap: wrap; gap: 10px; }
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.22);
+    color: var(--white);
+    border-radius: 40px;
+    padding: 7px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+  }
+
+  /* FORM CARD */
+  .form-card {
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    overflow: hidden;
+    min-width: 0;
+  }
+  .form-card-body { padding: 24px 24px 28px; }
+  .form-card-body h3 {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: 6px;
+    line-height: 1.2;
+    text-align: center;
+  }
+  .form-sub { color: var(--gray-600); font-size: 14px; margin-bottom: 22px; text-align: center; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 0; }
+  .form-row-addr { display: grid; grid-template-columns: 3fr 1fr; gap: 12px; margin-bottom: 0; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; min-width: 0; }
+  .form-group label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--dark); }
+  .form-group input {
+    border: 1.5px solid #E0E4EA;
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-family: var(--font);
+    font-size: 15px;
+    color: var(--gray-800);
+    outline: none;
+    background: var(--white);
+    transition: border-color 0.2s;
+    width: 100%;
+    min-width: 0;
+  }
+  .form-group input:focus { border-color: var(--blue); }
+  .form-group input::placeholder { color: #C0C7D0; }
+  .btn-form {
+    width: 100%;
+    background: var(--blue);
+    color: var(--white);
+    font-family: var(--font);
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 4px;
+    transition: background 0.2s, transform 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .btn-form:hover { background: var(--blue-dark); transform: translateY(-1px); }
+  .form-disclaimer { font-size: 12px; color: var(--gray-400); text-align: center; margin-top: 14px; line-height: 1.6; }
+
+  /* ── STATS BAR ── */
+  .stats-bar { background: var(--dark); padding: 28px 40px; }
+  .stats-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .stat-item { text-align: center; }
+  .stat-num { font-size: 28px; font-weight: 800; color: var(--yellow); line-height: 1.1; }
+  .stat-label { color: rgba(255,255,255,0.65); font-size: 13px; font-weight: 500; margin-top: 3px; }
+  .stat-divider { width: 1px; height: 44px; background: rgba(255,255,255,0.12); }
+
+  /* ── WHY SECTION ── */
+  .why-section { background: var(--white); padding: 80px 40px; }
+  .section-inner { max-width: var(--max); margin: 0 auto; }
+  .section-eyebrow {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    text-align: center;
+    font-size: clamp(26px, 3.5vw, 38px);
+    font-weight: 800;
+    color: var(--dark);
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+  .section-title .yellow { color: var(--yellow-dark); }
+  .section-title .accent { color: var(--blue); }
+  .section-desc {
+    text-align: center;
+    color: var(--gray-600);
+    max-width: 580px;
+    margin: 0 auto 50px;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .benefit-card {
+    border: 1.5px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 28px 24px;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  }
+  .benefit-card:hover {
+    border-color: var(--blue);
+    box-shadow: 0 6px 24px rgba(5,84,160,0.1);
+    transform: translateY(-3px);
+  }
+  .benefit-icon {
+    width: 48px; height: 48px;
+    background: rgba(5,84,160,0.08);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+    color: var(--blue);
+  }
+  .benefit-card h4 { font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+  .benefit-card p { color: var(--gray-600); font-size: 14px; line-height: 1.65; }
+
+  /* ── MID CTA BANNER ── */
+  .mid-cta { position: relative; padding: 90px 40px; text-align: center; overflow: hidden; }
+  .mid-cta-bg {
+    position: absolute; inset: 0;
+    background-image: url('longhome-bathroom-midcta.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .mid-cta-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(5,84,160,0.9) 0%, rgba(13,27,42,0.92) 100%);
+  }
+  .mid-cta-inner { position: relative; z-index: 2; max-width: 680px; margin: 0 auto; }
+  .mid-cta-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--yellow);
+    color: var(--dark);
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+  }
+  .mid-cta h2 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+  .mid-cta h2 .accent { color: var(--yellow); }
+  .mid-cta p { color: rgba(255,255,255,0.78); font-size: 17px; margin-bottom: 30px; line-height: 1.65; }
+  .btn-mid-cta {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--dark);
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 17px 44px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-mid-cta:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+  .mid-cta-fine { color: rgba(255,255,255,0.42); font-size: 12px; margin-top: 16px; }
+
+  /* ── PROCESS ── */
+  .process-section { background: var(--gray-50); padding: 80px 40px; }
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+    margin-top: 50px;
+    position: relative;
+  }
+  .steps-grid::before {
+    content: '';
+    position: absolute;
+    top: 36px;
+    left: calc(16.67% + 18px);
+    right: calc(16.67% + 18px);
+    height: 2px;
+    background: var(--gray-200);
+  }
+  .step-item { text-align: center; position: relative; z-index: 1; }
+  .step-num {
+    width: 72px; height: 72px;
+    background: var(--blue);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0 auto 20px;
+    box-shadow: 0 4px 16px rgba(5,84,160,0.3);
+  }
+  .step-item h4 { font-size: 17px; font-weight: 700; color: var(--dark); margin-bottom: 10px; }
+  .step-item p { color: var(--gray-600); font-size: 14px; line-height: 1.65; max-width: 240px; margin: 0 auto; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-section { background: var(--white); padding: 80px 40px; }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 50px;
+  }
+  .review-card {
+    background: var(--gray-50);
+    border-radius: 8px;
+    padding: 28px 24px;
+    border: 1.5px solid var(--gray-200);
+  }
+  .stars { color: #F4A500; font-size: 18px; letter-spacing: 2px; margin-bottom: 14px; }
+  .review-text { color: var(--gray-800); font-size: 14px; line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+  .reviewer { display: flex; align-items: center; gap: 12px; }
+  .reviewer-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800;
+    font-size: 14px;
+    color: var(--white);
+    flex-shrink: 0;
+  }
+  .reviewer-name { font-weight: 700; font-size: 14px; color: var(--dark); }
+  .reviewer-loc { font-size: 12px; color: var(--gray-400); margin-top: 2px; }
+
+  /* ── BOTTOM CTA ── */
+  .bottom-cta { background: var(--dark); padding: 72px 40px; text-align: center; }
+  .bottom-cta h2 { font-size: clamp(26px, 4vw, 42px); font-weight: 800; color: var(--white); margin-bottom: 10px; line-height: 1.2; }
+  .bottom-cta h2 .accent { color: var(--yellow); }
+  .bottom-cta p { color: rgba(255,255,255,0.68); font-size: 16px; margin-bottom: 30px; max-width: 520px; margin-left: auto; margin-right: auto; line-height: 1.65; }
+  .btn-bottom {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--dark);
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 17px 44px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-bottom:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    background: #07101C;
+    padding: 0 40px;
+  }
+  .site-footer-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 28px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .site-footer img { height: 36px; }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { color: rgba(255,255,255,0.45); font-size: 13px; text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--white); }
+  .footer-copy { color: rgba(255,255,255,0.3); font-size: 12px; }
+  .site-disclaimer {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 0 28px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .site-disclaimer p {
+    color: rgba(255,255,255,0.35);
+    font-size: 11px;
+    line-height: 1.7;
+    margin-top: 14px;
+  }
+  .site-disclaimer p:first-child { margin-top: 20px; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    .site-header { padding: 0 16px; }
+    .site-header img { height: 40px; }
+    .btn-header { padding: 10px 18px; font-size: 13px; }
+
+    .hero-inner { grid-template-columns: 1fr; padding: 36px 16px 20px; gap: 16px; }
+    .hero-tag { display: none; }
+    .hero h1 { display: none; }
+    .hero-h1-mobile { display: block; font-size: 48px; font-weight: 800; color: var(--white); line-height: 1.08; margin-bottom: 16px; text-align: center; }
+    .hero-offer { display: none; }
+    .hero-offer-mobile { display: block; color: var(--yellow); font-weight: 800; font-size: 18px; margin-bottom: 14px; text-align: center; }
+    .hero-sub { display: none; }
+    .hero-sub-mobile { display: block; font-size: 16px; color: rgba(255,255,255,0.82); line-height: 1.65; margin-bottom: 28px; text-align: center; }
+    .hero-content { text-align: center; }
+    .hero-badges { display: none; }
+
+    .stats-bar { padding: 24px 16px; }
+    .stat-divider { display: none; }
+    .stats-inner { gap: 16px; justify-content: center; }
+    .stat-num { font-size: 24px; }
+
+    .why-section { padding: 56px 16px; }
+    .benefits-grid { grid-template-columns: 1fr; gap: 16px; }
+    .benefit-card { text-align: center; }
+    .benefit-icon { margin-left: auto; margin-right: auto; }
+
+    .mid-cta { padding: 64px 16px; }
+    .mid-cta h2 { font-size: 30px; }
+
+    .process-section { padding: 56px 16px; }
+    .steps-grid { grid-template-columns: 1fr; gap: 32px; }
+    .steps-grid::before { display: none; }
+
+    .testimonials-section { padding: 56px 16px; }
+    .reviews-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    .bottom-cta { padding: 56px 16px; }
+
+    .site-footer { padding: 0 16px; }
+    .site-footer-inner { flex-direction: column; align-items: center; gap: 14px; text-align: center; }
+    .footer-links { flex-wrap: wrap; gap: 14px; justify-content: center; }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .hero-inner { grid-template-columns: 1fr 360px; gap: 40px; }
+    .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+    .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PR3KDD45"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce-bar">
+  For a Limited Time, <span>Get 50% Off + Free Upgrade</span>
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="site-header-inner">
+    <img src="longhome-logo.webp" alt="Long Home">
+    <a href="#quote-form" class="btn-header">Get Free Design Consult</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-tag">
+        ★★★★★ Thousands of 5-Star Reviews
+      </div>
+      <h1>Transform Your Bathroom In As Little As 1 Day*</h1>
+      <p class="hero-offer">Get 50% Off + Free Upgrade</p>
+      <h2 class="hero-h1-mobile">Transform Your Bathroom In As Little As 1 Day*</h2>
+      <p class="hero-offer-mobile">Get 50% Off + Free Upgrade</p>
+      <p class="hero-sub">With our shower and bath remodels completed in as little as 1 day,* you can transform your space without disrupting your routine. We offer a wide range of products and services to meet your needs — from tub-to-shower conversions and bathtub replacements to a complete selection of fixtures, flooring, vanities, and accessories.</p>
+      <p class="hero-sub-mobile">Transform your space without disrupting your routine. For a limited time, get a free design consultation with a bathroom expert.</p>
+      <div class="hero-badges">
+        <div class="badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Lifetime Warranty
+        </div>
+        <div class="badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Installed in 1 Day
+        </div>
+        <div class="badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          A+ BBB Rated
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="form-card" id="quote-form">
+      <div class="form-card-body">
+        <h3>Book Your Free<br>Design Consultation</h3>
+        <p class="form-sub">No obligation. No pressure. Just expert advice.</p>
+        <form onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="John">
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Smith">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="john@email.com">
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="(555) 000-0000">
+            </div>
+          </div>
+          <div class="form-row-addr">
+            <div class="form-group">
+              <label>Street Address</label>
+              <input type="text" placeholder="123 Main St">
+            </div>
+            <div class="form-group">
+              <label>Zip Code</label>
+              <input type="text" placeholder="ZIP">
+            </div>
+          </div>
+          <button type="submit" class="btn-form">
+            GET A FREE DESIGN CONSULT →
+          </button>
+        </form>
+        <p class="form-disclaimer">By submitting, you agree to be contacted by Long Home. We respect your privacy and never share your information.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-num">200K+</div>
+      <div class="stat-label">Happy Customers</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num">80+</div>
+      <div class="stat-label">Years Serving Homeowners</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num">1 Day*</div>
+      <div class="stat-label">Average Install Time</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num">BBB A+</div>
+      <div class="stat-label">Accredited Business</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num">4.9/5</div>
+      <div class="stat-label">Star Customer Rating</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY SECTION -->
+<section class="why-section">
+  <div class="section-inner">
+    <p class="section-eyebrow">Why Choose Long Home</p>
+    <h2 class="section-title">Quality You Can See.<br><span class="yellow">Value You Can Feel.</span></h2>
+    <p class="section-desc">From elegant walk-in showers to accessible bathtubs, our bathroom remodels deliver lasting beauty and comfort for every home.</p>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h4>Quality Is Our Foundation</h4>
+        <p>Our foundation was built on a simple belief: when you combine quality products, expert craftsmanship, and genuine respect for the customer, you create more than a business. You create lifelong relationships.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h4>Installed in One Day</h4>
+        <p>Our certified installers complete most bathroom remodels in as little as 1 day,* so you're never stuck without a bathroom for weeks on end.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h4>No Mess Left Behind</h4>
+        <p>We protect your home throughout the installation and leave it cleaner than we found it. Zero construction headaches.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+        <h4>Hundreds of Styles</h4>
+        <p>Choose from an extensive collection of tiles, fixtures, colors, and finishes. Our design experts help you create your dream bathroom.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h4>Accessible Designs</h4>
+        <p>We specialize in safe, beautiful walk-in showers and tubs designed for aging-in-place comfort — without sacrificing style.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h4>Flexible Financing</h4>
+        <p>We offer flexible financing options with payments as low as $149/mo so you can get your dream bathroom today.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MID CTA BANNER -->
+<section class="mid-cta">
+  <div class="mid-cta-bg"></div>
+  <div class="mid-cta-overlay"></div>
+  <div class="mid-cta-inner">
+    <div class="mid-cta-tag">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Summer Savings Event
+    </div>
+    <h2>Get a <span style="color:var(--yellow)">Free</span> Bathroom<br>Design Consultation</h2>
+    <p>Meet with one of our expert designers, explore styles, and get a complete quote for your bathroom transformation — at no cost and no obligation.</p>
+    <a href="#quote-form" class="btn-mid-cta">GET A FREE DESIGN CONSULT</a>
+    <p class="mid-cta-fine">* Available for a limited time. Contact us for details.</p>
+  </div>
+</section>
+
+<!-- PROCESS SECTION -->
+<section class="process-section">
+  <div class="section-inner">
+    <p class="section-eyebrow">Simple Process</p>
+    <h2 class="section-title">Your New Bathroom in <span class="accent">3 Easy Steps</span></h2>
+    <p class="section-desc">From your free design consultation to enjoying your finished bathroom, we make every step simple and stress-free.</p>
+    <div class="steps-grid">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <h4>Free Design Consultation</h4>
+        <p>We come to your home, discuss your vision, explore styles, and create a design plan — completely free with no pressure to commit.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <h4>Custom Materials & Plan</h4>
+        <p>Your bathroom is built to your exact specifications using premium, durable materials backed by our lifetime warranty.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <h4>Installed In As Little As 1 Day*</h4>
+        <p>Our certified installers complete the job in as little as 1 day,* leaving your home clean and your new bathroom ready to enjoy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="section-inner">
+    <p class="section-eyebrow">Real Customers. Real Results.</p>
+    <h2 class="section-title">200,000+ Homeowners <span class="accent">Trust Long Home</span></h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"We had a tub to shower conversion the two young men Roger and Joel who installed the shower did a fantastic job. They were on time, friendly, respectful, and very professional. They took less time than I expected and they explained everything in detail. We are happy and they cleaned up very well."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar" style="background: var(--blue);">QR</div>
+          <div>
+            <div class="reviewer-name">Q.R.</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Installers were on time and were able to convert jetted tub to shower and upgrade vanity, toilet and flooring in 1st bathroom and replace a shower in 2nd bathroom. Both bathrooms look GREAT!! Love new magnetic shower sprays...give space feel!!"</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar" style="background: #2A7A4B;">JC</div>
+          <div>
+            <div class="reviewer-name">J.C.</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"A wonderful experience, having our new walk in shower built by Long Home. My wife is recently disabled, so having the new shower built has given her a since of independence and confidence she didn't have before! Thank you Long Home for your care and professionalism throughout the entire process. From the heart, 'Thank You'!"</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar" style="background: #8B3A8B;">KR</div>
+          <div>
+            <div class="reviewer-name">K.R.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <h2>Ready to Love Your<br>Bathroom Again? <span class="accent">Let's Talk.</span></h2>
+  <p>Book your free, no-obligation bathroom design consultation today and take the first step toward your dream bathroom.</p>
+  <a href="#quote-form" class="btn-bottom">GET A FREE DESIGN CONSULT</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <img src="longhome-logo.webp" alt="Long Home">
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+    <p class="footer-copy">© 2026 Long Home. All rights reserved.</p>
+    <p class="footer-copy" style="margin-top:6px;">*Installation completion time varies by state.</p>
+  </div>
+  <div class="site-disclaimer">
+    <p>Subject to credit approval. Interest is billed during the promotional period but all interest is waived if the purchase amount is paid in full within 12 months. There are no required minimum monthly payments during the promotional period. Financing for GreenSky® consumer loan programs is provided by federally insured, equal opportunity lender banks. NMLS #1416362</p>
+    <p>Offers cannot be combined with any other promotions, discounts, or special offers. Other restrictions may apply.</p>
+    <p>By submitting a form, I authorize Long Home to contact me with information about its products and services via, mail, email, phone, and/or text at the contact information provided, even if I am on the national or local do not call list. Long Home products may use automated telephone technology to initiate calls to its customers.</p>
+    <p>MHIC# 166586 | DC# 420222000021 | VA# 2705048183 | WVA# 041015 | DE# 2017608055 | PA#166934 | CT# 0664416 | ME# OCR16265 | MA# 187510 | RI# GC-41201 | FL# CRC1334142</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('a[href="#quote-form"]').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      document.getElementById('quote-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+</body>
+</html>
