@@ -23,7 +23,7 @@
     --radius-sm:10px;
     --shadow-card:0 30px 60px -30px rgba(16,54,125,.35);
     --shadow-btn:0 14px 28px -12px rgba(16,54,125,.45);
-    --container:1080px;
+    --container:1200px;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -86,7 +86,7 @@
   .hero-content{
     position:relative;
     z-index:1;
-    max-width:1120px;
+    max-width:1240px;
     margin:0 auto;
     padding:52px 24px 48px;
     display:flex;
@@ -112,10 +112,12 @@
     opacity:0;
     animation:riseIn .7s ease forwards;
   }
+  .eyebrow-desktop{display:none;}
+  .eyebrow-mobile{display:inline;}
   .hero h1{
     color:var(--white);
-    font-size:clamp(2.1rem, 5vw, 3.4rem);
-    line-height:1.12;
+    font-size:clamp(1.85rem, 3.6vw, 2.75rem);
+    line-height:1.18;
     opacity:0;
     animation:riseIn .7s ease .1s forwards;
   }
@@ -173,8 +175,10 @@
     }
     .hero-inner{
       text-align:left;
-      max-width:560px;
+      max-width:600px;
     }
+    .eyebrow-desktop{display:inline;}
+    .eyebrow-mobile{display:none;}
     .hero-bullets{
       align-items:flex-start;
     }
@@ -518,7 +522,7 @@
 
   <div class="hero-content">
     <div class="hero-inner">
-      <span class="eyebrow">Trusted by Homeowners Nationwide</span>
+      <span class="eyebrow"><span class="eyebrow-mobile">Trusted Nationwide</span><span class="eyebrow-desktop">Trusted by Homeowners Nationwide</span></span>
       <h1>Find the Best Gutter &amp; Gutter Guard Deals <span class="accent">Near You</span></h1>
       <ul class="hero-bullets">
         <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="rgba(255,255,255,0.15)" stroke="#74B4D9" stroke-width="1.4"/><path d="M5 8.2l2 2 4-4.4" stroke="#74B4D9" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Top-Rated Installers</li>
@@ -633,10 +637,10 @@
   <div class="container">
     <h2>Partnered With The Industry Leaders</h2>
     <div class="partners-grid">
-      <div class="partner-card"><img src="img/partner-thompson-creek.png" alt="Thompson Creek" /></div>
+      <div class="partner-card"><img src="img/partner-leaffilter.svg" alt="LeafFilter" /></div>
       <div class="partner-card"><img src="img/partner-leafguard.jpg" alt="Leafguard" /></div>
       <div class="partner-card"><img src="img/partner-gutterhelmet.png" alt="Gutter Helmet" /></div>
-      <div class="partner-card"><img src="img/partner-allamerican.png" alt="All American Gutter Protection" /></div>
+      <div class="partner-card"><img src="img/partner-thompson-creek.png" alt="Thompson Creek" /></div>
     </div>
   </div>
 </section>
