@@ -116,7 +116,7 @@
   .eyebrow-mobile{display:inline;}
   .hero h1{
     color:var(--white);
-    font-size:clamp(1.85rem, 3.6vw, 2.75rem);
+    font-size:clamp(1.85rem, 3.6vw, 3.2rem);
     line-height:1.18;
     opacity:0;
     animation:riseIn .7s ease .1s forwards;
@@ -383,6 +383,85 @@
     margin-top:16px;
   }
 
+  /* ============ BENEFITS ============ */
+  .benefits-section{
+    background:var(--grey);
+    padding:64px 0 60px;
+  }
+  .benefits-heading{
+    text-align:center;
+    margin-bottom:40px;
+  }
+  .benefits-heading h2{
+    font-size:clamp(1.7rem, 3.4vw, 2.3rem);
+  }
+  .benefits-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+    max-width:920px;
+    margin:0 auto;
+  }
+  .benefit-card{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    background:var(--white);
+    border-radius:var(--radius-md);
+    padding:20px 22px;
+    box-shadow:0 8px 20px -14px rgba(16,54,125,.2);
+  }
+  .benefit-card.featured{
+    background:var(--royal-dark);
+    box-shadow:0 0 0 2px var(--sky), 0 16px 32px -14px rgba(16,54,125,.5);
+  }
+  .benefit-icon{
+    flex:none;
+    width:40px;height:40px;
+    border-radius:10px;
+    background:var(--royal);
+    color:var(--white);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .benefit-card.featured .benefit-icon{
+    background:var(--sky);
+    color:var(--royal-dark);
+  }
+  .benefit-card p{
+    font-size:0.94rem;
+    line-height:1.55;
+    color:var(--ink);
+  }
+  .benefit-card p strong{color:var(--royal);}
+  .benefit-card.featured p{color:rgba(255,255,255,0.92);}
+  .benefit-card.featured p strong{color:var(--white);}
+  .benefits-cta{
+    text-align:center;
+    margin-top:36px;
+  }
+  .benefits-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--royal);
+    color:var(--white);
+    padding:15px 30px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:1rem;
+    text-decoration:none;
+    box-shadow:var(--shadow-btn);
+    transition:transform .15s ease, background .15s ease, box-shadow .15s ease;
+  }
+  .benefits-btn:hover{
+    background:var(--royal-dark);
+    transform:translateY(-2px);
+    box-shadow:0 18px 34px -14px rgba(16,54,125,.55);
+  }
+  @media (min-width:700px){
+    .benefits-grid{grid-template-columns:1fr 1fr;}
+  }
+
   /* ============ PARTNERS ============ */
   .partners-section{
     background:var(--white);
@@ -566,7 +645,7 @@
   <div class="hero-content">
     <div class="hero-inner">
       <span class="eyebrow"><span class="eyebrow-mobile">Trusted Nationwide</span><span class="eyebrow-desktop">Trusted by Homeowners Nationwide</span></span>
-      <h1>Find the Best Gutter &amp; Gutter Guard Deals <span class="accent">Near You</span></h1>
+      <h1>Find the Best Gutter &amp; Gutter Guard <span class="accent">Deals</span></h1>
       <ul class="hero-bullets">
         <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="rgba(255,255,255,0.15)" stroke="#74B4D9" stroke-width="1.4"/><path d="M5 8.2l2 2 4-4.4" stroke="#74B4D9" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Top-Rated Installers</li>
         <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="rgba(255,255,255,0.15)" stroke="#74B4D9" stroke-width="1.4"/><path d="M5 8.2l2 2 4-4.4" stroke="#74B4D9" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Industry-Leading Warranties</li>
@@ -672,6 +751,53 @@
 
       </form>
     </div>
+    </div>
+  </div>
+</section>
+
+<section class="benefits-section">
+  <div class="container">
+    <div class="benefits-heading">
+      <h2>Say Goodbye to Clogged Gutters</h2>
+    </div>
+    <div class="benefits-grid">
+
+      <div class="benefit-card featured">
+        <span class="benefit-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2l7 3v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V5Z" stroke="currentColor" stroke-width="1.6"/><polyline points="6.5,10 9,12.5 13.5,7.5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <p><strong>Lifetime Warranty:</strong> Full coverage included on every installation.</p>
+      </div>
+
+      <div class="benefit-card">
+        <span class="benefit-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 16c0-7 4-11 11-11-1 7-4 11-11 11Z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round"/><line x1="3" y1="17" x2="15.5" y2="4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        <p><strong>Debris-Proof:</strong> Keeps out leaves, pine needles, and roof grit year-round.</p>
+      </div>
+
+      <div class="benefit-card">
+        <span class="benefit-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 2v16M14 2v16M6 6.5h8M6 13.5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="3" y1="17" x2="17" y2="3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        <p><strong>Maintenance-Free:</strong> End seasonal gutter cleaning and dangerous ladder climbs.</p>
+      </div>
+
+      <div class="benefit-card">
+        <span class="benefit-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><ellipse cx="10" cy="11" rx="3.2" ry="4.5" stroke="currentColor" stroke-width="1.5"/><line x1="10" y1="4" x2="10" y2="6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="5.5" y1="8" x2="7.3" y2="9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><line x1="14.5" y1="8" x2="12.7" y2="9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><line x1="5.5" y1="15" x2="7.3" y2="14" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><line x1="14.5" y1="15" x2="12.7" y2="14" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><line x1="3" y1="17" x2="17" y2="3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        <p><strong>Pest-Resistant:</strong> Prevents birds, rodents, and insects from nesting in your gutters.</p>
+      </div>
+
+      <div class="benefit-card">
+        <span class="benefit-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2l7 3v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V5Z" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></span>
+        <p><strong>Durable Build:</strong> Weather-resistant materials engineered to last decades.</p>
+      </div>
+
+      <div class="benefit-card">
+        <span class="benefit-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M13.5 3.5a3 3 0 0 0-4 4L4 13l3 3 5.5-5.5a3 3 0 0 0 4-4l-2 2-1.5-1.5Z" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linejoin="round"/></svg></span>
+        <p><strong>Universal Fit:</strong> Works with your existing gutters and roof &mdash; no modifications needed.</p>
+      </div>
+
+    </div>
+    <div class="benefits-cta">
+      <a class="benefits-btn" href="#top">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><line x1="8" y1="13" x2="8" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><polyline points="4,7 8,3 12,7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Get Your Free Quote!
+      </a>
     </div>
   </div>
 </section>
