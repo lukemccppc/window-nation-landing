@@ -59,19 +59,9 @@
     padding:22px 0;
     text-align:center;
   }
-  .wordmark{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    font-family:'Fraunces',serif;
-    font-weight:600;
-    font-size:1.3rem;
-    color:var(--royal);
-    letter-spacing:-0.01em;
-  }
-  .wordmark .dot{
-    width:8px;height:8px;border-radius:50%;
-    background:var(--sky);
+  .logo-mark{
+    height:28px;
+    width:auto;
     display:inline-block;
   }
 
@@ -89,12 +79,11 @@
   }
   .hero-media img{
     width:100%;height:100%;object-fit:cover;
-    filter:grayscale(1) contrast(1.08) brightness(0.95);
   }
   .hero-media::after{
     content:'';
     position:absolute;inset:0;
-    background:linear-gradient(180deg, rgba(10,37,87,.88) 0%, rgba(16,54,125,.82) 32%, rgba(16,54,125,.55) 58%, rgba(255,255,255,0) 88%);
+    background:rgba(0,0,0,0.62);
   }
   .hero-inner{
     position:relative;
@@ -353,6 +342,44 @@
     margin-top:16px;
   }
 
+  /* ============ PARTNERS ============ */
+  .partners-section{
+    background:var(--white);
+    padding:56px 0 60px;
+  }
+  .partners-section h2{
+    text-align:center;
+    font-size:clamp(1.4rem, 3vw, 1.9rem);
+    margin-bottom:32px;
+  }
+  .partners-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:14px;
+    max-width:900px;
+    margin:0 auto;
+  }
+  .partner-card{
+    background:var(--white);
+    border:1px solid var(--grey);
+    border-radius:var(--radius-md);
+    box-shadow:0 8px 20px -14px rgba(16,54,125,.2);
+    padding:22px 18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:88px;
+  }
+  .partner-card img{
+    max-height:44px;
+    max-width:100%;
+    width:auto;
+    object-fit:contain;
+  }
+  @media (min-width:700px){
+    .partners-grid{grid-template-columns:repeat(4, 1fr);}
+  }
+
   /* ============ VALUE PROPS ============ */
   .props-section{
     background:var(--grey);
@@ -408,8 +435,7 @@
     text-align:center;
     padding:40px 24px 32px;
   }
-  footer .wordmark{color:var(--white);}
-  footer .wordmark .dot{background:var(--sky);}
+  footer .logo-mark{margin:0 auto;}
   footer p{
     font-size:0.82rem;
     line-height:1.6;
@@ -445,17 +471,17 @@
 <body>
 
 <header>
-  <span class="wordmark">Affordable Home<span class="dot"></span></span>
+  <img src="img/logo.svg" alt="Affordable Home" class="logo-mark" />
 </header>
 
 <section class="hero" id="top">
   <div class="hero-media">
-    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=80" alt="Home exterior with gutters" />
+    <img src="img/hero.jpg" alt="Close-up of a home gutter and roofline" />
   </div>
 
   <div class="hero-inner">
     <span class="eyebrow">Gutter Services &middot; Nationwide</span>
-    <h1>Get Your Free Gutter Quote in <span class="accent">30 Seconds</span></h1>
+    <h1>Find the Best Gutter &amp; Gutter Guard Deals <span class="accent">Near You</span></h1>
     <p class="hero-sub">Tell us about your home and we'll connect you with licensed, pre-screened gutter pros near you &mdash; no cost, no obligation.</p>
   </div>
 
@@ -560,6 +586,18 @@
   </div>
 </section>
 
+<section class="partners-section">
+  <div class="container">
+    <h2>Partnered With The Industry Leaders</h2>
+    <div class="partners-grid">
+      <div class="partner-card"><img src="img/partner-thompson-creek.png" alt="Thompson Creek" /></div>
+      <div class="partner-card"><img src="img/partner-leafguard.jpg" alt="Leafguard" /></div>
+      <div class="partner-card"><img src="img/partner-gutterhelmet.png" alt="Gutter Helmet" /></div>
+      <div class="partner-card"><img src="img/partner-allamerican.png" alt="All American Gutter Protection" /></div>
+    </div>
+  </div>
+</section>
+
 <section class="props-section">
   <div class="container">
     <div class="props-heading">
@@ -633,7 +671,7 @@
 </section>
 
 <footer>
-  <span class="wordmark">Affordable Home<span class="dot"></span></span>
+  <img src="img/logo-white.svg" alt="Affordable Home" class="logo-mark" />
   <p>Affordable Home is a lead generation service connecting homeowners with independent, local gutter professionals. We are not a contractor.</p>
   <p class="copyright">&copy; 2026 Affordable Home. All rights reserved.</p>
   <div class="footer-links">
