@@ -88,14 +88,14 @@
     z-index:1;
     max-width:1240px;
     margin:0 auto;
-    padding:52px 24px 48px;
+    padding:52px 24px 56px;
     display:flex;
     flex-direction:column;
     align-items:center;
   }
   .hero-inner{
     text-align:center;
-    max-width:640px;
+    max-width:680px;
   }
   .hero h1{
     color:var(--white);
@@ -113,26 +113,6 @@
     opacity:0;
     animation:riseIn .7s ease .1s forwards;
   }
-  .hero-bullets{
-    list-style:none;
-    margin:22px 0 0;
-    padding:0;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:11px;
-    opacity:0;
-    animation:riseIn .7s ease .2s forwards;
-  }
-  .hero-bullets li{
-    display:flex;
-    align-items:center;
-    gap:9px;
-    color:var(--white);
-    font-size:1rem;
-    font-weight:600;
-  }
-  .hero-bullets li svg{flex:none;}
   @keyframes riseIn{
     from{opacity:0; transform:translateY(16px);}
     to{opacity:1; transform:translateY(0);}
@@ -143,35 +123,38 @@
     position:relative;
     z-index:1;
     width:100%;
-    margin-top:36px;
+    margin-top:32px;
     display:flex;
     justify-content:center;
     opacity:0;
+    animation:riseIn .7s ease .2s forwards;
+  }
+  .hero-bullets{
+    list-style:none;
+    margin:28px 0 0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:11px;
+    opacity:0;
     animation:riseIn .7s ease .3s forwards;
   }
-  @media (min-width:960px){
-    .hero-content{
-      flex-direction:row;
-      align-items:center;
-      justify-content:space-between;
-      padding:88px 48px;
-      gap:48px;
-    }
-    .hero-inner{
-      text-align:left;
-      max-width:600px;
-    }
-    .hero-sub{
-      margin-left:0;
-      margin-right:0;
-    }
+  .hero-bullets li{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    color:var(--white);
+    font-size:1rem;
+    font-weight:600;
+  }
+  .hero-bullets li svg{flex:none;}
+  @media (min-width:700px){
     .hero-bullets{
-      align-items:flex-start;
-    }
-    .form-wrap{
-      width:auto;
-      margin-top:0;
-      justify-content:flex-end;
+      flex-direction:row;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:14px 32px;
     }
   }
   .quote-card{
@@ -183,6 +166,23 @@
     padding:32px 28px 28px;
     position:relative;
   }
+  .qualify-banner{
+    display:none;
+    align-items:center;
+    gap:10px;
+    background:var(--sky-light);
+    color:var(--royal);
+    border:1px solid var(--sky);
+    border-radius:var(--radius-sm);
+    padding:12px 14px;
+    font-size:0.88rem;
+    font-weight:700;
+    line-height:1.3;
+    margin-bottom:18px;
+    text-align:left;
+  }
+  .qualify-banner.show{display:flex;}
+  .qualify-banner svg{flex:none;}
   .card-head{
     text-align:center;
     margin-bottom:22px;
@@ -198,11 +198,12 @@
     font-weight:600;
   }
   .progress-row{
-    display:flex;
+    display:none;
     align-items:center;
     gap:12px;
     margin-bottom:26px;
   }
+  .progress-row.show{display:flex;}
   .progress-track{
     flex:1;
     height:5px;
@@ -371,7 +372,7 @@
 
   /* ============ BENEFITS ============ */
   .benefits-section{
-    background:var(--grey);
+    background:var(--white);
     padding:64px 0 60px;
   }
   .benefits-heading{
@@ -450,7 +451,7 @@
 
   /* ============ PARTNERS ============ */
   .partners-section{
-    background:var(--white);
+    background:var(--grey);
     padding:56px 0 60px;
   }
   .partners-section h2{
@@ -486,53 +487,114 @@
     .partners-grid{grid-template-columns:repeat(4, 1fr);}
   }
 
-  /* ============ VALUE PROPS ============ */
-  .props-section{
+  /* ============ WHY CHOOSE US ============ */
+  .why-section{
     background:var(--grey);
-    padding:64px 0 70px;
+    padding:64px 0 56px;
   }
-  .props-heading{
+  .why-heading{
     text-align:center;
-    max-width:560px;
-    margin:0 auto 40px;
+    max-width:620px;
+    margin:0 auto 36px;
   }
-  .props-heading h2{
-    font-size:clamp(1.6rem, 3.4vw, 2.2rem);
+  .why-heading h2{
+    font-size:clamp(1.7rem, 3.4vw, 2.3rem);
   }
-  .props-heading p{
+  .why-heading p{
     margin-top:12px;
     color:var(--ink-soft);
     font-size:1rem;
   }
-  .props-grid{
+  .why-stats{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns:repeat(3, 1fr);
     gap:14px;
-    max-width:1000px;
-    margin:0 auto;
+    max-width:760px;
+    margin:0 auto 16px;
   }
-  .prop-card{
+  .why-stat{
+    background:var(--white);
+    border-radius:var(--radius-md);
+    padding:20px 10px;
+    text-align:center;
+    box-shadow:0 8px 20px -14px rgba(16,54,125,.2);
+  }
+  .why-stat strong{
+    display:block;
+    font-size:clamp(1.4rem, 4vw, 2rem);
+    color:var(--royal);
+    font-weight:800;
+  }
+  .why-stat span{
+    display:block;
+    margin-top:4px;
+    font-size:0.68rem;
+    font-weight:700;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .why-features{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+    max-width:900px;
+    margin:16px auto 0;
+  }
+  .why-feature{
     display:flex;
-    align-items:center;
+    align-items:flex-start;
     gap:14px;
     background:var(--white);
     border-radius:var(--radius-md);
-    padding:16px 18px;
-    box-shadow:0 8px 20px -14px rgba(16,54,125,.25);
+    padding:18px 20px;
+    box-shadow:0 8px 20px -14px rgba(16,54,125,.2);
   }
-  .prop-icon{
+  .why-feature-icon{
     flex:none;
-    width:42px;height:42px;
-    border-radius:12px;
+    width:38px;height:38px;
+    border-radius:10px;
     background:var(--sky-light);
+    color:var(--royal);
     display:flex;align-items:center;justify-content:center;
   }
-  .prop-card span{
-    font-size:0.92rem;
-    font-weight:700;
+  .why-feature p{
+    font-size:0.94rem;
+    line-height:1.5;
     color:var(--ink);
-    line-height:1.3;
   }
+  .why-feature p strong{color:var(--royal);}
+  @media (min-width:700px){
+    .why-features{grid-template-columns:1fr 1fr;}
+  }
+
+  /* ============ WHY CTA BANNER ============ */
+  .why-cta{
+    background:var(--royal-dark);
+    padding:56px 24px 64px;
+    text-align:center;
+  }
+  .why-cta h2{
+    color:var(--white);
+    font-size:clamp(1.5rem, 3.2vw, 2rem);
+  }
+  .why-cta p{
+    margin:12px auto 0;
+    color:rgba(255,255,255,0.85);
+    font-size:1rem;
+    max-width:560px;
+    line-height:1.55;
+  }
+  .why-cta p strong{color:var(--white);}
+  .why-cta-form{
+    max-width:420px;
+    margin:32px auto 0;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.18);
+    border-radius:var(--radius-lg);
+    padding:24px;
+  }
+  .why-cta-form .field-error{color:#FFD1D1;}
 
   /* ============ GALLERY ============ */
   .gallery-section{
@@ -632,18 +694,18 @@
     <div class="hero-inner">
       <h1>Save Up to 75% on New Gutters &amp; Gutter Guards</h1>
       <p class="hero-sub">Get matched with a trusted local gutter professional and claim up to 75% off installation + an extra $200 off your purchase</p>
-      <ul class="hero-bullets">
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="rgba(255,255,255,0.15)" stroke="#74B4D9" stroke-width="1.4"/><path d="M5 8.2l2 2 4-4.4" stroke="#74B4D9" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Top-Rated Installers</li>
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="rgba(255,255,255,0.15)" stroke="#74B4D9" stroke-width="1.4"/><path d="M5 8.2l2 2 4-4.4" stroke="#74B4D9" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Industry-Leading Warranties</li>
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="rgba(255,255,255,0.15)" stroke="#74B4D9" stroke-width="1.4"/><path d="M5 8.2l2 2 4-4.4" stroke="#74B4D9" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>100% Free, No-Obligation Quote</li>
-      </ul>
     </div>
 
     <div class="form-wrap">
     <div class="quote-card">
 
+      <div class="qualify-banner" data-banner>
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" stroke="currentColor" stroke-width="1.6"/><polyline points="5.5,9.3 8,11.8 12.5,6.5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Congratulations, you live in a qualifying zip code!</span>
+      </div>
+
       <div class="card-head">
-        <h2>Build Your FREE Custom Quote</h2>
+        <h2>Check if your zip code qualifies</h2>
         <p>Only takes 30 seconds</p>
       </div>
 
@@ -663,7 +725,7 @@
           <p class="step-note">So we know who services your area</p>
           <input class="field-input" data-field="zip" type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="5" placeholder="Enter ZIP code" autocomplete="postal-code" />
           <div class="field-error" data-err="zip">Please enter a valid 5-digit zip code.</div>
-          <button type="button" class="submit-btn" data-next="1">Continue</button>
+          <button type="button" class="submit-btn" data-next="1">Check my zip code</button>
         </div>
 
         <div class="step" data-step="2">
@@ -738,6 +800,12 @@
       </form>
     </div>
     </div>
+
+    <ul class="hero-bullets">
+      <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="rgba(255,255,255,0.15)" stroke="#74B4D9" stroke-width="1.4"/><path d="M5 8.2l2 2 4-4.4" stroke="#74B4D9" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Top-Rated Installers</li>
+      <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="rgba(255,255,255,0.15)" stroke="#74B4D9" stroke-width="1.4"/><path d="M5 8.2l2 2 4-4.4" stroke="#74B4D9" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Industry-Leading Warranties</li>
+      <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="rgba(255,255,255,0.15)" stroke="#74B4D9" stroke-width="1.4"/><path d="M5 8.2l2 2 4-4.4" stroke="#74B4D9" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>100% Free, No-Obligation Quote</li>
+    </ul>
   </div>
 </section>
 
@@ -800,77 +868,6 @@
   </div>
 </section>
 
-<section class="props-section">
-  <div class="container">
-    <div class="props-heading">
-      <h2>Why Homeowners Choose Us</h2>
-    </div>
-    <div class="props-grid">
-
-      <div class="prop-card">
-        <span class="prop-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2l7 3v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V5Z" stroke="#10367D" stroke-width="1.6"/><polyline points="6.5,10 9,12.5 13.5,7.5" stroke="#10367D" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <span>Licensed &amp; Insured Professionals</span>
-      </div>
-
-      <div class="prop-card">
-        <span class="prop-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="4.5" stroke="#10367D" stroke-width="1.6"/><path d="M7 11 5.5 18l4.5-2 4.5 2L13 11" stroke="#10367D" stroke-width="1.6" fill="none" stroke-linejoin="round"/></svg></span>
-        <span>Industry-Leading Warranties</span>
-      </div>
-
-      <div class="prop-card">
-        <span class="prop-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="#10367D" stroke-width="1.6"/><path d="M2.5 10h15M10 2.5c2.2 2.2 2.2 13 0 15M10 2.5c-2.2 2.2-2.2 13 0 15" stroke="#10367D" stroke-width="1.3" fill="none"/></svg></span>
-        <span>Trusted by Homeowners Nationwide</span>
-      </div>
-
-      <div class="prop-card">
-        <span class="prop-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M9 2H3v6l9 9 6-6-9-9Z" stroke="#10367D" stroke-width="1.6" fill="none" stroke-linejoin="round"/><circle cx="6" cy="6" r="1.2" fill="#10367D"/></svg></span>
-        <span>100% Free Quotes</span>
-      </div>
-
-      <div class="prop-card">
-        <span class="prop-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="5" y="9" width="10" height="8" rx="1.5" stroke="#10367D" stroke-width="1.6"/><path d="M7 9V6a3 3 0 0 1 6 0" stroke="#10367D" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></span>
-        <span>No Obligation</span>
-      </div>
-
-      <div class="prop-card">
-        <span class="prop-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="11" r="7" stroke="#10367D" stroke-width="1.6"/><path d="M10 7v4l3 2" stroke="#10367D" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 2h4" stroke="#10367D" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-        <span>Only Takes 30 Seconds</span>
-      </div>
-
-      <div class="prop-card">
-        <span class="prop-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 4h6a1 1 0 0 1 1 1v3h1.5a1.5 1.5 0 0 1 0 3H14v3a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-3H4.5a1.5 1.5 0 0 1 0-3H6V5a1 1 0 0 1 1-1Z" stroke="#10367D" stroke-width="1.4" fill="none" stroke-linejoin="round"/></svg></span>
-        <span>Partnered With Industry Leaders</span>
-      </div>
-
-      <div class="prop-card">
-        <span class="prop-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 1.3 9.2 3l2-.6.6 2 2 .6-.6 2 .6 2-2 .6-.6 2-2-.6L8 12.7 6.8 11l-2 .6-.6-2-2-.6.6-2-.6-2 2-.6.6-2 2 .6Z" stroke="#10367D" stroke-width="1.2" fill="none" stroke-linejoin="round"/><polyline points="5.8,8 7.3,9.5 10.3,6.3" stroke="#10367D" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <span>Pre-Screened &amp; Vetted Pros</span>
-      </div>
-
-      <div class="prop-card">
-        <span class="prop-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><ellipse cx="10" cy="6" rx="6" ry="2.5" stroke="#10367D" stroke-width="1.6"/><path d="M4 6v8c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5V6" stroke="#10367D" stroke-width="1.6" fill="none"/><path d="M4 10c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5" stroke="#10367D" stroke-width="1.6" fill="none"/></svg></span>
-        <span>Save Time &amp; Money</span>
-      </div>
-
-      <div class="prop-card">
-        <span class="prop-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><polygon points="11,2 4,11 9,11 8,18 15,8 10,8" stroke="#10367D" stroke-width="1.4" fill="none" stroke-linejoin="round"/></svg></span>
-        <span>Fast, Simple Process</span>
-      </div>
-
-      <div class="prop-card">
-        <span class="prop-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 1.5l2.4 5 5.4.6-4 3.8 1 5.4L10 13.6l-4.8 2.7 1-5.4-4-3.8 5.4-.6Z" stroke="#10367D" stroke-width="1.4" fill="none" stroke-linejoin="round"/></svg></span>
-        <span>Top-Rated Installers</span>
-      </div>
-
-      <div class="prop-card">
-        <span class="prop-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10 9 4l6 6" stroke="#10367D" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 8.5V16h8v-4.5" stroke="#10367D" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="14" r="2.6" stroke="#10367D" stroke-width="1.4"/><line x1="16.8" y1="15.8" x2="18.3" y2="17.3" stroke="#10367D" stroke-width="1.4" stroke-linecap="round"/></svg></span>
-        <span>Find the Right Pro for Your Home &amp; Budget</span>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <section class="gallery-section">
   <div class="container">
     <div class="gallery-heading">
@@ -882,6 +879,53 @@
       <div class="gallery-item"><img src="img/gallery-2.jpg" alt="Close-up of a finished gutter and downspout installation" /></div>
       <div class="gallery-item"><img src="img/gallery-3.jpg" alt="Home exterior with dormer window and gutters" /></div>
       <div class="gallery-item"><img src="img/gallery-4.jpg" alt="Close-up of roofline and dormer detail" /></div>
+    </div>
+  </div>
+</section>
+
+<section class="why-section">
+  <div class="container">
+    <div class="why-heading">
+      <h2>Why Homeowners Choose Us</h2>
+      <p>We connect you with top-rated, verified gutter professionals. See if you qualify.</p>
+    </div>
+    <div class="why-stats">
+      <div class="why-stat"><strong>75%</strong><span>Off Installation</span></div>
+      <div class="why-stat"><strong>$200</strong><span>Extra Savings</span></div>
+      <div class="why-stat"><strong>4.8&#9733;</strong><span>Avg Rating</span></div>
+    </div>
+    <div class="why-features">
+      <div class="why-feature">
+        <span class="why-feature-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 4v4M4 4h4M16 4v4M16 4h-4M4 16v-4M4 16h4M16 16v-4M16 16h-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+        <p><strong>Custom-Fit</strong> &mdash; measured and installed for your exact gutter system</p>
+      </div>
+      <div class="why-feature">
+        <span class="why-feature-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 14a6 6 0 0 1 12 0" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/><rect x="2" y="14" width="16" height="2.6" rx="1" fill="currentColor"/><line x1="10" y1="5" x2="10" y2="8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+        <p><strong>Professional Installers</strong> with years of experience</p>
+      </div>
+      <div class="why-feature">
+        <span class="why-feature-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="5" y="3" width="10" height="14" rx="1.5" stroke="currentColor" stroke-width="1.5"/><line x1="7.5" y1="7" x2="12.5" y2="7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><polyline points="7,11 9,13 13,9" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <p><strong>Free Estimate</strong> &mdash; no obligation, no pressure</p>
+      </div>
+      <div class="why-feature">
+        <span class="why-feature-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 1.5l2.4 5 5.4.6-4 3.8 1 5.4L10 13.6l-4.8 2.7 1-5.4-4-3.8 5.4-.6Z" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linejoin="round"/></svg></span>
+        <p><strong>Top-Rated</strong> with thousands of verified 5-star reviews</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why-cta">
+  <div class="container">
+    <h2>Ready to Save Up to 75%?</h2>
+    <p>Enter your zip code to see if you qualify for <strong>up to 75% off gutter guard installation + an extra $200 off</strong>.</p>
+    <div class="why-cta-form">
+      <input class="field-input" data-field="zip2" type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="5" placeholder="Enter zip code" autocomplete="postal-code" />
+      <div class="field-error" data-err="zip2">Please enter a valid 5-digit zip code.</div>
+      <button type="button" class="submit-btn" data-checkzip2>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="3.5" y="7" width="9" height="6.5" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+        Check If I Qualify
+      </button>
     </div>
   </div>
 </section>
@@ -911,6 +955,8 @@
     document.querySelector('[data-bar]').style.width = (n / TOTAL_STEPS * 100) + '%';
     document.querySelector('[data-step-label]').textContent = 'Step ' + n + ' of ' + TOTAL_STEPS;
     document.querySelector('[data-back]').classList.toggle('show', n > 1);
+    document.querySelector('.progress-row').classList.toggle('show', n > 1);
+    document.querySelector('[data-banner]').classList.toggle('show', n > 1);
     const firstInput = form.querySelector('.step.active input');
     if (firstInput) setTimeout(()=>firstInput.focus(), 50);
   }
@@ -922,6 +968,13 @@
   document.querySelector('[data-back]').addEventListener('click', ()=> showStep(Math.max(1, step - 1)));
 
   const zipInput = form.querySelector('[data-field="zip"]');
+
+  function commitZip(val){
+    state.zip = val;
+    zipInput.value = val;
+    showStep(2);
+  }
+
   form.querySelector('[data-next="1"]').addEventListener('click', ()=>{
     const val = zipInput.value.trim();
     const err = form.querySelector('[data-err="zip"]');
@@ -931,9 +984,25 @@
       return;
     }
     err.classList.remove('show');
-    state.zip = val;
-    showStep(2);
+    commitZip(val);
   });
+
+  const ctaZipInput = document.querySelector('[data-field="zip2"]');
+  const ctaZipBtn = document.querySelector('[data-checkzip2]');
+  if(ctaZipBtn){
+    ctaZipBtn.addEventListener('click', ()=>{
+      const val = ctaZipInput.value.trim();
+      const err = document.querySelector('[data-err="zip2"]');
+      if(!/^\d{5}$/.test(val)){
+        err.classList.add('show');
+        ctaZipInput.focus();
+        return;
+      }
+      err.classList.remove('show');
+      commitZip(val);
+      window.location.hash = 'top';
+    });
+  }
 
   form.querySelectorAll('.options-grid').forEach(group=>{
     const field = group.dataset.options;
@@ -991,6 +1060,14 @@
       if(btn) btn.click();
     });
   });
+
+  if(ctaZipInput){
+    ctaZipInput.addEventListener('keydown', e=>{
+      if(e.key !== 'Enter') return;
+      e.preventDefault();
+      ctaZipBtn.click();
+    });
+  }
 
   showStep(1);
 })();
