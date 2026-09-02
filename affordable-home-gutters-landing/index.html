@@ -97,41 +97,25 @@
     text-align:center;
     max-width:640px;
   }
-  .eyebrow{
-    display:inline-block;
-    font-size:0.72rem;
-    font-weight:700;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--sky-light);
-    background:rgba(255,255,255,0.12);
-    border:1px solid rgba(255,255,255,0.28);
-    padding:8px 16px;
-    border-radius:999px;
-    margin-bottom:24px;
-    opacity:0;
-    animation:riseIn .7s ease forwards;
-  }
-  .eyebrow-desktop{display:none;}
-  .eyebrow-mobile{display:inline;}
   .hero h1{
     color:var(--white);
     font-size:clamp(1.85rem, 3.6vw, 3.2rem);
     line-height:1.18;
     opacity:0;
-    animation:riseIn .7s ease .1s forwards;
+    animation:riseIn .7s ease forwards;
   }
-  .hero h1 .accent{
-    white-space:nowrap;
-    text-decoration:underline;
-    text-decoration-color:var(--sky);
-    text-decoration-thickness:6px;
-    text-underline-offset:8px;
-    text-decoration-skip-ink:none;
+  .hero-sub{
+    margin:18px auto 0;
+    max-width:520px;
+    color:var(--sky-light);
+    font-size:1.05rem;
+    line-height:1.55;
+    opacity:0;
+    animation:riseIn .7s ease .1s forwards;
   }
   .hero-bullets{
     list-style:none;
-    margin:24px 0 0;
+    margin:22px 0 0;
     padding:0;
     display:flex;
     flex-direction:column;
@@ -177,8 +161,10 @@
       text-align:left;
       max-width:600px;
     }
-    .eyebrow-desktop{display:inline;}
-    .eyebrow-mobile{display:none;}
+    .hero-sub{
+      margin-left:0;
+      margin-right:0;
+    }
     .hero-bullets{
       align-items:flex-start;
     }
@@ -644,8 +630,8 @@
 
   <div class="hero-content">
     <div class="hero-inner">
-      <span class="eyebrow"><span class="eyebrow-mobile">Trusted Nationwide</span><span class="eyebrow-desktop">Trusted by Homeowners Nationwide</span></span>
-      <h1>Find the Best Gutter &amp; Gutter Guard <span class="accent">Deals</span></h1>
+      <h1>Save Up to 75% on New Gutters &amp; Gutter Guards</h1>
+      <p class="hero-sub">Get matched with a trusted local gutter professional and claim up to 75% off installation + an extra $200 off your purchase</p>
       <ul class="hero-bullets">
         <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="rgba(255,255,255,0.15)" stroke="#74B4D9" stroke-width="1.4"/><path d="M5 8.2l2 2 4-4.4" stroke="#74B4D9" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Top-Rated Installers</li>
         <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="rgba(255,255,255,0.15)" stroke="#74B4D9" stroke-width="1.4"/><path d="M5 8.2l2 2 4-4.4" stroke="#74B4D9" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Industry-Leading Warranties</li>
