@@ -7,7 +7,7 @@
 <meta name="description" content="Get a free, no-obligation gutter quote in 30 seconds. Licensed, insured, pre-screened pros. Nationwide coverage." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
     --royal:#10367D;
@@ -29,17 +29,17 @@
   html{scroll-behavior:smooth;}
   body{
     margin:0;
-    font-family:'Manrope',sans-serif;
+    font-family:'Montserrat',sans-serif;
     color:var(--ink);
     background:var(--white);
     -webkit-font-smoothing:antialiased;
     text-rendering:optimizeLegibility;
   }
   h1,h2,h3{
-    font-family:'Fraunces',serif;
+    font-family:'Montserrat',sans-serif;
     margin:0;
     color:var(--royal);
-    font-weight:600;
+    font-weight:700;
     letter-spacing:-0.01em;
   }
   p{margin:0;}
@@ -69,12 +69,10 @@
   .hero{
     position:relative;
     overflow:hidden;
-    padding-top:8px;
   }
   .hero-media{
     position:absolute;
     inset:0;
-    height:640px;
     z-index:0;
   }
   .hero-media img{
@@ -85,13 +83,19 @@
     position:absolute;inset:0;
     background:rgba(0,0,0,0.62);
   }
-  .hero-inner{
+  .hero-content{
     position:relative;
     z-index:1;
-    text-align:center;
-    padding:56px 24px 0;
-    max-width:720px;
+    max-width:1120px;
     margin:0 auto;
+    padding:52px 24px 48px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  .hero-inner{
+    text-align:center;
+    max-width:640px;
   }
   .eyebrow{
     display:inline-block;
@@ -123,15 +127,26 @@
     text-underline-offset:8px;
     text-decoration-skip-ink:none;
   }
-  .hero-sub{
-    margin:20px auto 0;
-    max-width:520px;
-    color:var(--sky-light);
-    font-size:1.05rem;
-    line-height:1.6;
+  .hero-bullets{
+    list-style:none;
+    margin:24px 0 0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:11px;
     opacity:0;
     animation:riseIn .7s ease .2s forwards;
   }
+  .hero-bullets li{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    color:var(--white);
+    font-size:1rem;
+    font-weight:600;
+  }
+  .hero-bullets li svg{flex:none;}
   @keyframes riseIn{
     from{opacity:0; transform:translateY(16px);}
     to{opacity:1; transform:translateY(0);}
@@ -141,11 +156,33 @@
   .form-wrap{
     position:relative;
     z-index:1;
-    padding:44px 20px 80px;
+    width:100%;
+    margin-top:36px;
     display:flex;
     justify-content:center;
     opacity:0;
     animation:riseIn .7s ease .3s forwards;
+  }
+  @media (min-width:960px){
+    .hero-content{
+      flex-direction:row;
+      align-items:center;
+      justify-content:space-between;
+      padding:88px 48px;
+      gap:48px;
+    }
+    .hero-inner{
+      text-align:left;
+      max-width:560px;
+    }
+    .hero-bullets{
+      align-items:flex-start;
+    }
+    .form-wrap{
+      width:auto;
+      margin-top:0;
+      justify-content:flex-end;
+    }
   }
   .quote-card{
     width:100%;
@@ -479,13 +516,18 @@
     <img src="img/hero.jpg" alt="Close-up of a home gutter and roofline" />
   </div>
 
-  <div class="hero-inner">
-    <span class="eyebrow">Gutter Services &middot; Nationwide</span>
-    <h1>Find the Best Gutter &amp; Gutter Guard Deals <span class="accent">Near You</span></h1>
-    <p class="hero-sub">Tell us about your home and we'll connect you with licensed, pre-screened gutter pros near you &mdash; no cost, no obligation.</p>
-  </div>
+  <div class="hero-content">
+    <div class="hero-inner">
+      <span class="eyebrow">Trusted by Homeowners Nationwide</span>
+      <h1>Find the Best Gutter &amp; Gutter Guard Deals <span class="accent">Near You</span></h1>
+      <ul class="hero-bullets">
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="rgba(255,255,255,0.15)" stroke="#74B4D9" stroke-width="1.4"/><path d="M5 8.2l2 2 4-4.4" stroke="#74B4D9" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Top-Rated Installers</li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="rgba(255,255,255,0.15)" stroke="#74B4D9" stroke-width="1.4"/><path d="M5 8.2l2 2 4-4.4" stroke="#74B4D9" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Industry-Leading Warranties</li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="rgba(255,255,255,0.15)" stroke="#74B4D9" stroke-width="1.4"/><path d="M5 8.2l2 2 4-4.4" stroke="#74B4D9" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>100% Free, No-Obligation Quote</li>
+      </ul>
+    </div>
 
-  <div class="form-wrap">
+    <div class="form-wrap">
     <div class="quote-card">
 
       <div class="card-head">
@@ -583,6 +625,7 @@
 
       </form>
     </div>
+    </div>
   </div>
 </section>
 
@@ -602,7 +645,6 @@
   <div class="container">
     <div class="props-heading">
       <h2>Why Homeowners Choose Us</h2>
-      <p>No reviews needed &mdash; here's what you get, every time.</p>
     </div>
     <div class="props-grid">
 
