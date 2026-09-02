@@ -104,6 +104,10 @@
     opacity:0;
     animation:riseIn .7s ease forwards;
   }
+  .hero-accent{
+    display:block;
+    color:var(--sky);
+  }
   .hero-sub{
     margin:18px auto 0;
     max-width:520px;
@@ -112,6 +116,10 @@
     line-height:1.55;
     opacity:0;
     animation:riseIn .7s ease .1s forwards;
+  }
+  .hero-sub strong{
+    color:var(--white);
+    font-weight:700;
   }
   @keyframes riseIn{
     from{opacity:0; transform:translateY(16px);}
@@ -694,8 +702,8 @@
 
   <div class="hero-content">
     <div class="hero-inner">
-      <h1>Save Up to 75% on New Gutters &amp; Gutter Guards</h1>
-      <p class="hero-sub">Get matched with a trusted local gutter professional and claim up to 75% off installation + an extra $200 off your purchase</p>
+      <h1><span class="hero-accent">Up to 75% Off</span>Gutter Guard Installation</h1>
+      <p class="hero-sub"><strong>+ An Extra $200 Off</strong> When You Purchase</p>
     </div>
 
     <div class="form-wrap">
