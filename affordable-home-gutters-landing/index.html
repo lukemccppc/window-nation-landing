@@ -14,7 +14,7 @@
     --royal-dark:#0A2557;
     --sky:#74B4D9;
     --sky-light:#EAF3F9;
-    --grey:#EBEBEB;
+    --grey:#D6EAF8;
     --white:#FFFFFF;
     --ink:#16233A;
     --ink-soft:#5B6B84;
@@ -146,21 +146,21 @@
   }
   .hero-bullets{
     list-style:none;
-    margin:28px 0 0;
+    margin:24px 0 0;
     padding:0;
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:11px;
+    gap:8px;
     opacity:0;
     animation:riseIn .7s ease .3s forwards;
   }
   .hero-bullets li{
     display:flex;
     align-items:center;
-    gap:9px;
+    gap:7px;
     color:var(--white);
-    font-size:1rem;
+    font-size:0.84rem;
     font-weight:600;
   }
   .hero-bullets li svg{flex:none;}
@@ -169,7 +169,7 @@
       flex-direction:row;
       flex-wrap:wrap;
       justify-content:center;
-      gap:14px 32px;
+      gap:8px 18px;
     }
   }
   .quote-card{
@@ -202,6 +202,7 @@
     text-align:center;
     margin-bottom:22px;
   }
+  .card-head.hide{display:none;}
   .card-head h2{
     font-size:1.5rem;
     line-height:1.25;
@@ -467,42 +468,185 @@
     .benefits-grid{grid-template-columns:1fr 1fr;}
   }
 
-  /* ============ PARTNERS ============ */
-  .partners-section{
+  /* ============ FEATURED PARTNER ============ */
+  .featured-section{
     background:var(--grey);
     padding:56px 0 60px;
   }
-  .partners-section h2{
-    text-align:center;
-    font-size:clamp(1.4rem, 3vw, 1.9rem);
-    margin-bottom:32px;
+  .fp-card{
+    display:grid;
+    grid-template-columns:1fr;
+    background:var(--white);
+    border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-card);
+    overflow:hidden;
+    max-width:980px;
+    margin:0 auto;
   }
-  .partners-grid{
+  .fp-media{
+    height:220px;
+  }
+  .fp-media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  .fp-content{
+    padding:28px 26px 30px;
+  }
+  .fp-eyebrow{
+    display:block;
+    font-size:0.74rem;
+    font-weight:700;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--sky);
+    margin-bottom:8px;
+  }
+  .fp-content h2{
+    font-size:clamp(1.4rem, 2.6vw, 1.7rem);
+    line-height:1.25;
+  }
+  .fp-content p{
+    margin-top:12px;
+    color:var(--ink-soft);
+    font-size:0.94rem;
+    line-height:1.55;
+  }
+  .fp-badges{
     display:grid;
     grid-template-columns:repeat(2, 1fr);
     gap:14px;
-    max-width:900px;
+    margin-top:22px;
+  }
+  .fp-badge{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:8px;
+  }
+  .fp-badge-icon{
+    flex:none;
+    width:38px;height:38px;
+    border-radius:50%;
+    background:var(--sky-light);
+    color:var(--royal);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .fp-badge span{
+    font-size:0.7rem;
+    font-weight:700;
+    line-height:1.3;
+    color:var(--ink-soft);
+  }
+  .fp-subheading{
+    text-align:center;
+    font-size:clamp(1.3rem, 2.6vw, 1.6rem);
+    margin:44px 0 24px;
+  }
+  .fp-features{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+    max-width:980px;
     margin:0 auto;
   }
-  .partner-card{
-    background:var(--white);
-    border:1px solid var(--grey);
-    border-radius:var(--radius-md);
-    box-shadow:0 8px 20px -14px rgba(16,54,125,.2);
-    padding:22px 18px;
+  .fp-feature{
     display:flex;
-    align-items:center;
-    justify-content:center;
-    height:88px;
+    align-items:flex-start;
+    gap:14px;
+    background:var(--white);
+    border-radius:var(--radius-md);
+    padding:18px 20px;
+    box-shadow:0 8px 20px -14px rgba(16,54,125,.2);
   }
-  .partner-card img{
-    max-height:44px;
-    max-width:100%;
+  .fp-feature-icon{
+    flex:none;
+    width:38px;height:38px;
+    border-radius:10px;
+    background:var(--sky-light);
+    color:var(--royal);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .fp-feature p{
+    font-size:0.94rem;
+    line-height:1.5;
+    color:var(--ink);
+  }
+  .fp-feature p strong{color:var(--royal);}
+  .fp-highlight{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    max-width:980px;
+    margin:20px auto 0;
+    background:var(--sky-light);
+    border:1px solid var(--sky);
+    border-radius:var(--radius-md);
+    padding:16px 18px;
+    color:var(--royal);
+    font-size:0.9rem;
+    font-weight:600;
+    line-height:1.5;
+  }
+  .fp-highlight svg{flex:none; margin-top:2px;}
+  .fp-cta{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:16px;
+    text-align:center;
+    max-width:820px;
+    margin:28px auto 0;
+    background:var(--white);
+    border-top:3px solid var(--sky);
+    border-radius:var(--radius-lg);
+    box-shadow:0 10px 24px -16px rgba(16,54,125,.25);
+    padding:26px 24px;
+  }
+  .fp-cta-logo{
+    height:32px;
     width:auto;
-    object-fit:contain;
+  }
+  .fp-cta-text strong{
+    display:block;
+    color:var(--royal);
+    font-size:1.05rem;
+  }
+  .fp-cta-text span{
+    display:block;
+    margin-top:4px;
+    color:var(--ink-soft);
+    font-size:0.88rem;
+  }
+  .fp-cta-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--royal);
+    color:var(--white);
+    padding:14px 28px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:0.96rem;
+    text-decoration:none;
+    box-shadow:var(--shadow-btn);
+    white-space:nowrap;
+    transition:transform .15s ease, background .15s ease, box-shadow .15s ease;
+  }
+  .fp-cta-btn:hover{
+    background:var(--royal-dark);
+    transform:translateY(-2px);
+    box-shadow:0 18px 34px -14px rgba(16,54,125,.55);
   }
   @media (min-width:700px){
-    .partners-grid{grid-template-columns:repeat(4, 1fr);}
+    .fp-card{grid-template-columns:38% 1fr;}
+    .fp-media{height:auto;}
+    .fp-badges{grid-template-columns:repeat(4, 1fr);}
+    .fp-features{grid-template-columns:1fr 1fr;}
+    .fp-cta{flex-direction:row; text-align:left; justify-content:space-between;}
+    .fp-cta-text{flex:1; padding:0 20px;}
   }
 
   /* ============ WHY CHOOSE US ============ */
@@ -592,26 +736,18 @@
     padding:56px 24px 64px;
     text-align:center;
   }
-  .why-cta h2{
+  .why-cta-title{
     color:var(--white);
     font-size:clamp(1.5rem, 3.2vw, 2rem);
   }
-  .why-cta p{
+  .why-cta-desc{
     margin:12px auto 0;
     color:rgba(255,255,255,0.85);
     font-size:1rem;
     max-width:560px;
     line-height:1.55;
   }
-  .why-cta p strong{color:var(--white);}
-  .why-cta-form{
-    max-width:420px;
-    margin:32px auto 0;
-    background:var(--white);
-    box-shadow:var(--shadow-card);
-    border-radius:var(--radius-lg);
-    padding:24px;
-  }
+  .why-cta-desc strong{color:var(--white);}
 
   /* ============ GALLERY ============ */
   .gallery-section{
@@ -691,8 +827,6 @@
 
   @media (min-width:640px){
     .field-row.two-col{flex-direction:row;}
-    .options-grid{flex-direction:row;flex-wrap:wrap;}
-    .option-btn{flex:1 1 calc(50% - 5px);}
   }
 </style>
 </head>
@@ -735,7 +869,7 @@
         <span class="progress-label" data-step-label>Step 1 of 5</span>
       </div>
 
-      <form id="quoteForm" novalidate>
+      <form novalidate>
 
         <div class="step active" data-step="1">
           <input class="field-input zip-input" data-field="zip" type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="5" placeholder="Enter ZIP code" autocomplete="postal-code" />
@@ -871,14 +1005,72 @@
   </div>
 </section>
 
-<section class="partners-section">
+<section class="featured-section">
   <div class="container">
-    <h2>Partnered With The Industry Leaders</h2>
-    <div class="partners-grid">
-      <div class="partner-card"><img src="img/partner-leaffilter.svg" alt="LeafFilter" /></div>
-      <div class="partner-card"><img src="img/partner-leafguard.jpg" alt="Leafguard" /></div>
-      <div class="partner-card"><img src="img/partner-gutterhelmet.png" alt="Gutter Helmet" /></div>
-      <div class="partner-card"><img src="img/partner-thompson-creek.png" alt="Thompson Creek" /></div>
+    <div class="fp-card">
+      <div class="fp-media">
+        <img src="img/gallery-2.jpg" alt="Close-up of a finished gutter installation" />
+      </div>
+      <div class="fp-content">
+        <span class="fp-eyebrow">Featured Partner</span>
+        <h2>Why Homeowners Choose LeafGuard</h2>
+        <p>LeafGuard's one-piece, patented gutter system has a built-in hood that keeps leaves and debris out for good &mdash; backed by a warranty that's actually built to last.</p>
+        <div class="fp-badges">
+          <div class="fp-badge">
+            <span class="fp-badge-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="13" rx="1.5" stroke="currentColor" stroke-width="1.5"/><line x1="3" y1="8" x2="17" y2="8" stroke="currentColor" stroke-width="1.5"/><line x1="7" y1="2.5" x2="7" y2="5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="13" y1="2.5" x2="13" y2="5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            <span>Est. 1993</span>
+          </div>
+          <div class="fp-badge">
+            <span class="fp-badge-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 2l7 3v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V5Z" stroke="currentColor" stroke-width="1.6"/><polyline points="6.5,10 9,12.5 13.5,7.5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span>Lifetime Warranty</span>
+          </div>
+          <div class="fp-badge">
+            <span class="fp-badge-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 4v4M4 4h4M16 4v4M16 4h-4M4 16v-4M4 16h4M16 16v-4M16 16h-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+            <span>One-Piece Design</span>
+          </div>
+          <div class="fp-badge">
+            <span class="fp-badge-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M13.5 3.5a3 3 0 0 0-4 4L4 13l3 3 5.5-5.5a3 3 0 0 0 4-4l-2 2-1.5-1.5Z" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linejoin="round"/></svg></span>
+            <span>Pro Installed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="fp-subheading">What Sets LeafGuard Apart</h3>
+    <div class="fp-features">
+      <div class="fp-feature">
+        <span class="fp-feature-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 2l7 3v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V5Z" stroke="currentColor" stroke-width="1.6" fill="none"/><polyline points="6.5,10 9,12.5 13.5,7.5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <p><strong>Patented Design</strong> &mdash; a one-piece hood shields against pine needles, leaves, and roof grit</p>
+      </div>
+      <div class="fp-feature">
+        <span class="fp-feature-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.6"/><path d="M2.5 10h15M10 2.5c2.2 2.2 2.2 13 0 15M10 2.5c-2.2 2.2-2.2 13 0 15" stroke="currentColor" stroke-width="1.3" fill="none"/></svg></span>
+        <p><strong>Lifetime Clog-Free Warranty</strong> backed for as long as you own your home</p>
+      </div>
+      <div class="fp-feature">
+        <span class="fp-feature-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 14a6 6 0 0 1 12 0" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/><rect x="2" y="14" width="16" height="2.6" rx="1" fill="currentColor"/><line x1="10" y1="5" x2="10" y2="8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+        <p><strong>Installed by Trained Professionals</strong> &mdash; factory-trained crews handle every job start to finish</p>
+      </div>
+      <div class="fp-feature">
+        <span class="fp-feature-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 10a7 7 0 0 1 12-4.9M17 3v4h-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 10a7 7 0 0 1-12 4.9M3 17v-4h4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <p><strong>Replaces Your Existing Gutters</strong> entirely &mdash; not just a guard bolted on top</p>
+      </div>
+    </div>
+
+    <div class="fp-highlight">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" stroke="currentColor" stroke-width="1.6"/><polyline points="5.5,9.3 8,11.8 12.5,6.5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Best for homeowners who want a fully-guarded, seamless gutter system with a warranty that's actually backed for life.</span>
+    </div>
+
+    <div class="fp-cta">
+      <img class="fp-cta-logo" src="img/partner-leafguard.jpg" alt="LeafGuard" />
+      <div class="fp-cta-text">
+        <strong>Limited-Time Offer</strong>
+        <span>Save on LeafGuard installation this month</span>
+      </div>
+      <a class="fp-cta-btn" href="#top">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><line x1="8" y1="13" x2="8" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><polyline points="4,7 8,3 12,7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Get Free Quote
+      </a>
     </div>
   </div>
 </section>
@@ -932,15 +1124,110 @@
 
 <section class="why-cta">
   <div class="container">
-    <h2>Ready to Save Up to 75%?</h2>
-    <p>Enter your zip code to see if you qualify for <strong>up to 75% off gutter guard installation + an extra $200 off</strong>.</p>
-    <div class="why-cta-form">
-      <input class="field-input zip-input" data-field="zip2" type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="5" placeholder="Enter zip code" autocomplete="postal-code" />
-      <div class="field-error" data-err="zip2">Please enter a valid 5-digit zip code.</div>
-      <button type="button" class="submit-btn" data-checkzip2>
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="3.5" y="7" width="9" height="6.5" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
-        Check If I Qualify
-      </button>
+    <h2 class="why-cta-title">Ready to Save Up to 75%?</h2>
+    <p class="why-cta-desc">Enter your zip code to see if you qualify for <strong>up to 75% off gutter guard installation + an extra $200 off</strong>.</p>
+
+    <div class="form-wrap">
+    <div class="quote-card">
+
+      <div class="qualify-banner" data-banner>
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" stroke="currentColor" stroke-width="1.6"/><polyline points="5.5,9.3 8,11.8 12.5,6.5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Congratulations, you live in a qualifying zip code!</span>
+      </div>
+
+      <div class="card-head">
+        <h2>Check if your zip code qualifies</h2>
+        <p>Only takes 30 seconds</p>
+      </div>
+
+      <div class="progress-row">
+        <button type="button" class="back-btn" data-back>
+          <svg width="12" height="12" viewBox="0 0 13 13" fill="none"><polyline points="8,2 3,6.5 8,11" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Back
+        </button>
+        <div class="progress-track"><div class="progress-fill" data-bar></div></div>
+        <span class="progress-label" data-step-label>Step 1 of 5</span>
+      </div>
+
+      <form novalidate>
+
+        <div class="step active" data-step="1">
+          <input class="field-input zip-input" data-field="zip" type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="5" placeholder="Enter ZIP code" autocomplete="postal-code" />
+          <div class="field-error" data-err="zip">Please enter a valid 5-digit zip code.</div>
+          <button type="button" class="submit-btn" data-next="1">Check my zip code</button>
+        </div>
+
+        <div class="step" data-step="2">
+          <h3>What type of project?</h3>
+          <p class="step-note">Pick the option that fits best</p>
+          <div class="options-grid" data-options="project">
+            <button type="button" class="option-btn" data-value="Install Gutter Guards">
+              <span class="option-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 2l7 3v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V5Z" stroke="#10367D" stroke-width="1.6"/><polyline points="6.5,10 9,12.5 13.5,7.5" stroke="#10367D" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              Install Gutter Guards
+            </button>
+            <button type="button" class="option-btn" data-value="Replace Existing Gutters">
+              <span class="option-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 10a7 7 0 0 1 12-4.9M17 3v4h-4" stroke="#10367D" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 10a7 7 0 0 1-12 4.9M3 17v-4h4" stroke="#10367D" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              Replace Existing Gutters
+            </button>
+            <button type="button" class="option-btn" data-value="New Gutter Installation">
+              <span class="option-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="#10367D" stroke-width="1.6"/><line x1="10" y1="6.5" x2="10" y2="13.5" stroke="#10367D" stroke-width="1.6" stroke-linecap="round"/><line x1="6.5" y1="10" x2="13.5" y2="10" stroke="#10367D" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+              New Gutter Installation
+            </button>
+            <button type="button" class="option-btn" data-value="I'm Not Sure Yet">
+              <span class="option-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="#10367D" stroke-width="1.6"/><path d="M7.8 7.8a2.2 2.2 0 1 1 3.3 1.9c-.8.5-1.1.9-1.1 1.8" stroke="#10367D" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="14" r="0.9" fill="#10367D"/></svg></span>
+              I'm Not Sure Yet
+            </button>
+          </div>
+        </div>
+
+        <div class="step" data-step="3">
+          <h3>What type of home?</h3>
+          <p class="step-note">This helps us match the right pro</p>
+          <div class="options-grid" data-options="hometype">
+            <button type="button" class="option-btn" data-value="Single Family Home">
+              <span class="option-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 10 10 4l7 6" stroke="#10367D" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 8.5V16h10V8.5" stroke="#10367D" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              Single Family Home
+            </button>
+            <button type="button" class="option-btn" data-value="Townhouse">
+              <span class="option-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M1 9 5.5 5l4.5 4" stroke="#10367D" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 9 14 5l4.5 4" stroke="#10367D" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="9" x2="10" y2="16" stroke="#10367D" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+              Townhouse
+            </button>
+            <button type="button" class="option-btn" data-value="Multi-Family Home">
+              <span class="option-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="4" y="2.5" width="12" height="14.5" rx="1" stroke="#10367D" stroke-width="1.6"/><rect x="6.3" y="5" width="2" height="2" fill="#10367D"/><rect x="11.7" y="5" width="2" height="2" fill="#10367D"/></svg></span>
+              Multi-Family Home
+            </button>
+            <button type="button" class="option-btn" data-value="Mobile Home">
+              <span class="option-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="2" y="6" width="16" height="8.5" rx="1.5" stroke="#10367D" stroke-width="1.6"/><line x1="2" y1="10" x2="18" y2="10" stroke="#10367D" stroke-width="1.4"/></svg></span>
+              Mobile Home
+            </button>
+          </div>
+        </div>
+
+        <div class="step" data-step="4">
+          <h3>What's your name?</h3>
+          <p class="step-note">So we know who to send your quote to</p>
+          <div class="field-row two-col">
+            <input class="field-input" data-field="fname" type="text" placeholder="First name" autocomplete="given-name" />
+            <input class="field-input" data-field="lname" type="text" placeholder="Last name" autocomplete="family-name" />
+          </div>
+          <div class="field-error" data-err="name">Please enter your first and last name.</div>
+          <button type="button" class="submit-btn" data-next="4">Continue</button>
+        </div>
+
+        <div class="step" data-step="5">
+          <h3>Where should we send it?</h3>
+          <p class="step-note">Your info is never sold or shared</p>
+          <div class="field-row">
+            <input class="field-input" data-field="phone" type="tel" placeholder="Phone number" autocomplete="tel" />
+            <input class="field-input" data-field="email" type="email" placeholder="Email address" autocomplete="email" />
+          </div>
+          <div class="field-error" data-err="contact">Please enter a valid phone number and email.</div>
+          <button type="button" class="submit-btn" data-submit>Get FREE Quote</button>
+          <p class="privacy-note">By continuing, you agree to be contacted about your project. No spam, ever.</p>
+        </div>
+
+      </form>
+    </div>
     </div>
   </div>
 </section>
@@ -958,141 +1245,117 @@
 <script>
 (function(){
   const TOTAL_STEPS = 5;
-  const form = document.getElementById('quoteForm');
-  const state = { zip:'', project:'', hometype:'', fname:'', lname:'', phone:'', email:'' };
-  let step = 1;
+  const zipInputs = [];
 
-  function showStep(n){
-    step = n;
-    form.querySelectorAll('.step').forEach(el=>{
-      el.classList.toggle('active', Number(el.dataset.step) === n);
-    });
-    document.querySelector('[data-bar]').style.width = (n / TOTAL_STEPS * 100) + '%';
-    document.querySelector('[data-step-label]').textContent = 'Step ' + n + ' of ' + TOTAL_STEPS;
-    document.querySelector('[data-back]').classList.toggle('show', n > 1);
-    document.querySelector('.progress-row').classList.toggle('show', n > 1);
-    document.querySelector('[data-banner]').classList.toggle('show', n > 1);
-    const firstInput = form.querySelector('.step.active input');
-    if (firstInput) setTimeout(()=>firstInput.focus(), 50);
-  }
+  function initQuoteForm(card){
+    const form = card.querySelector('form');
+    const state = { zip:'', project:'', hometype:'', fname:'', lname:'', phone:'', email:'' };
+    let step = 1;
 
-  function advanceAfterSelect(){
-    setTimeout(()=> showStep(Math.min(TOTAL_STEPS, step + 1)), 200);
-  }
-
-  document.querySelector('[data-back]').addEventListener('click', ()=> showStep(Math.max(1, step - 1)));
-
-  const zipInput = form.querySelector('[data-field="zip"]');
-
-  function commitZip(val){
-    state.zip = val;
-    zipInput.value = val;
-    showStep(2);
-  }
-
-  form.querySelector('[data-next="1"]').addEventListener('click', ()=>{
-    const val = zipInput.value.trim();
-    const err = form.querySelector('[data-err="zip"]');
-    if(!/^\d{5}$/.test(val)){
-      err.classList.add('show');
-      zipInput.focus();
-      return;
+    function showStep(n){
+      step = n;
+      form.querySelectorAll('.step').forEach(el=>{
+        el.classList.toggle('active', Number(el.dataset.step) === n);
+      });
+      card.querySelector('[data-bar]').style.width = (n / TOTAL_STEPS * 100) + '%';
+      card.querySelector('[data-step-label]').textContent = 'Step ' + n + ' of ' + TOTAL_STEPS;
+      card.querySelector('[data-back]').classList.toggle('show', n > 1);
+      card.querySelector('.progress-row').classList.toggle('show', n > 1);
+      card.querySelector('[data-banner]').classList.toggle('show', n > 1);
+      card.querySelector('.card-head').classList.toggle('hide', n > 1);
+      const firstInput = form.querySelector('.step.active input');
+      if (firstInput) setTimeout(()=>firstInput.focus(), 50);
     }
-    err.classList.remove('show');
-    commitZip(val);
-  });
 
-  const ctaZipInput = document.querySelector('[data-field="zip2"]');
-  const ctaZipBtn = document.querySelector('[data-checkzip2]');
-  if(ctaZipBtn){
-    ctaZipBtn.addEventListener('click', ()=>{
-      const val = ctaZipInput.value.trim();
-      const err = document.querySelector('[data-err="zip2"]');
+    function advanceAfterSelect(){
+      setTimeout(()=> showStep(Math.min(TOTAL_STEPS, step + 1)), 200);
+    }
+
+    card.querySelector('[data-back]').addEventListener('click', ()=> showStep(Math.max(1, step - 1)));
+
+    const zipInput = form.querySelector('[data-field="zip"]');
+    form.querySelector('[data-next="1"]').addEventListener('click', ()=>{
+      const val = zipInput.value.trim();
+      const err = form.querySelector('[data-err="zip"]');
       if(!/^\d{5}$/.test(val)){
         err.classList.add('show');
-        ctaZipInput.focus();
+        zipInput.focus();
         return;
       }
       err.classList.remove('show');
-      commitZip(val);
-      window.location.hash = 'top';
+      state.zip = val;
+      showStep(2);
     });
-  }
 
-  form.querySelectorAll('.options-grid').forEach(group=>{
-    const field = group.dataset.options;
-    group.querySelectorAll('.option-btn').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        group.querySelectorAll('.option-btn').forEach(b=>b.classList.remove('selected'));
-        btn.classList.add('selected');
-        state[field] = btn.dataset.value;
-        advanceAfterSelect();
+    form.querySelectorAll('.options-grid').forEach(group=>{
+      const field = group.dataset.options;
+      group.querySelectorAll('.option-btn').forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          group.querySelectorAll('.option-btn').forEach(b=>b.classList.remove('selected'));
+          btn.classList.add('selected');
+          state[field] = btn.dataset.value;
+          advanceAfterSelect();
+        });
       });
     });
-  });
 
-  const fnameInput = form.querySelector('[data-field="fname"]');
-  const lnameInput = form.querySelector('[data-field="lname"]');
-  form.querySelector('[data-next="4"]').addEventListener('click', ()=>{
-    const fname = fnameInput.value.trim();
-    const lname = lnameInput.value.trim();
-    const err = form.querySelector('[data-err="name"]');
-    if(!fname || !lname){
-      err.classList.add('show');
-      (fname ? lnameInput : fnameInput).focus();
-      return;
-    }
-    err.classList.remove('show');
-    state.fname = fname;
-    state.lname = lname;
-    showStep(5);
-  });
-
-  const phoneInput = form.querySelector('[data-field="phone"]');
-  const emailInput = form.querySelector('[data-field="email"]');
-  form.querySelector('[data-submit]').addEventListener('click', ()=>{
-    const phone = phoneInput.value.trim();
-    const email = emailInput.value.trim();
-    const err = form.querySelector('[data-err="contact"]');
-    const phoneValid = /^[\d\s\-().+]{7,}$/.test(phone);
-    const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    if(!phoneValid || !emailValid){
-      err.classList.add('show');
-      (!phoneValid ? phoneInput : emailInput).focus();
-      return;
-    }
-    err.classList.remove('show');
-    state.phone = phone;
-    state.email = email;
-    window.location.href = 'thank-you.html?' + new URLSearchParams(state).toString();
-  });
-
-  form.querySelectorAll('input').forEach(inp=>{
-    inp.addEventListener('keydown', e=>{
-      if(e.key !== 'Enter') return;
-      e.preventDefault();
-      const btn = form.querySelector('.step.active [data-next], .step.active [data-submit]');
-      if(btn) btn.click();
+    const fnameInput = form.querySelector('[data-field="fname"]');
+    const lnameInput = form.querySelector('[data-field="lname"]');
+    form.querySelector('[data-next="4"]').addEventListener('click', ()=>{
+      const fname = fnameInput.value.trim();
+      const lname = lnameInput.value.trim();
+      const err = form.querySelector('[data-err="name"]');
+      if(!fname || !lname){
+        err.classList.add('show');
+        (fname ? lnameInput : fnameInput).focus();
+        return;
+      }
+      err.classList.remove('show');
+      state.fname = fname;
+      state.lname = lname;
+      showStep(5);
     });
-  });
 
-  if(ctaZipInput){
-    ctaZipInput.addEventListener('keydown', e=>{
-      if(e.key !== 'Enter') return;
-      e.preventDefault();
-      ctaZipBtn.click();
+    const phoneInput = form.querySelector('[data-field="phone"]');
+    const emailInput = form.querySelector('[data-field="email"]');
+    form.querySelector('[data-submit]').addEventListener('click', ()=>{
+      const phone = phoneInput.value.trim();
+      const email = emailInput.value.trim();
+      const err = form.querySelector('[data-err="contact"]');
+      const phoneValid = /^[\d\s\-().+]{7,}$/.test(phone);
+      const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if(!phoneValid || !emailValid){
+        err.classList.add('show');
+        (!phoneValid ? phoneInput : emailInput).focus();
+        return;
+      }
+      err.classList.remove('show');
+      state.phone = phone;
+      state.email = email;
+      window.location.href = 'thank-you.html?' + new URLSearchParams(state).toString();
     });
+
+    form.querySelectorAll('input').forEach(inp=>{
+      inp.addEventListener('keydown', e=>{
+        if(e.key !== 'Enter') return;
+        e.preventDefault();
+        const btn = form.querySelector('.step.active [data-next], .step.active [data-submit]');
+        if(btn) btn.click();
+      });
+    });
+
+    showStep(1);
+    zipInputs.push(zipInput);
   }
 
-  showStep(1);
+  document.querySelectorAll('.quote-card').forEach(initQuoteForm);
 
   fetch('https://ipapi.co/json/')
     .then(res => res.json())
     .then(data => {
       const zip = data && data.postal;
       if(!/^\d{5}$/.test(zip)) return;
-      if(!zipInput.value) zipInput.value = zip;
-      if(ctaZipInput && !ctaZipInput.value) ctaZipInput.value = zip;
+      zipInputs.forEach(inp=>{ if(!inp.value) inp.value = zip; });
     })
     .catch(()=>{});
 })();
