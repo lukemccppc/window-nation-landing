@@ -389,63 +389,50 @@
     margin-top:16px;
   }
 
-  /* ============ BENEFITS ============ */
-  .benefits-section{
+  /* ============ PROMISE ============ */
+  .promise-section{
     background:var(--white);
     padding:64px 0 60px;
   }
-  .benefits-heading{
+  .promise-heading{
     text-align:center;
     margin-bottom:40px;
   }
-  .benefits-heading h2{
+  .promise-heading h2{
     font-size:clamp(1.7rem, 3.4vw, 2.3rem);
   }
-  .benefits-grid{
+  .promise-grid{
     display:grid;
     grid-template-columns:1fr;
-    gap:14px;
-    max-width:920px;
+    gap:32px;
+    max-width:1000px;
     margin:0 auto;
   }
-  .benefit-card{
-    display:flex;
-    align-items:flex-start;
-    gap:14px;
-    background:var(--white);
-    border-radius:var(--radius-md);
-    padding:20px 22px;
-    box-shadow:0 8px 20px -14px rgba(16,54,125,.2);
-  }
-  .benefit-card.featured{
-    background:var(--royal-dark);
-    box-shadow:0 0 0 2px var(--sky), 0 16px 32px -14px rgba(16,54,125,.5);
-  }
-  .benefit-icon{
-    flex:none;
-    width:40px;height:40px;
-    border-radius:10px;
-    background:var(--royal);
-    color:var(--white);
-    display:flex;align-items:center;justify-content:center;
-  }
-  .benefit-card.featured .benefit-icon{
-    background:var(--sky);
-    color:var(--royal-dark);
-  }
-  .benefit-card p{
-    font-size:0.94rem;
-    line-height:1.55;
-    color:var(--ink);
-  }
-  .benefit-card p strong{color:var(--royal);}
-  .benefit-card.featured p{color:rgba(255,255,255,0.92);}
-  .benefit-card.featured p strong{color:var(--white);}
-  .benefits-cta{
+  .promise-item{
     text-align:center;
-    margin-top:36px;
   }
-  .benefits-btn{
+  .promise-item img{
+    width:100%;
+    aspect-ratio:4/3;
+    object-fit:cover;
+    border-radius:var(--radius-lg);
+    box-shadow:0 10px 24px -16px rgba(16,54,125,.3);
+  }
+  .promise-item h3{
+    margin-top:18px;
+    font-size:1.1rem;
+  }
+  .promise-item p{
+    margin-top:8px;
+    color:var(--ink-soft);
+    font-size:0.92rem;
+    line-height:1.5;
+  }
+  .promise-cta{
+    text-align:center;
+    margin-top:40px;
+  }
+  .promise-btn{
     display:inline-flex;
     align-items:center;
     gap:8px;
@@ -459,13 +446,13 @@
     box-shadow:var(--shadow-btn);
     transition:transform .15s ease, background .15s ease, box-shadow .15s ease;
   }
-  .benefits-btn:hover{
+  .promise-btn:hover{
     background:var(--royal-dark);
     transform:translateY(-2px);
     box-shadow:0 18px 34px -14px rgba(16,54,125,.55);
   }
   @media (min-width:700px){
-    .benefits-grid{grid-template-columns:1fr 1fr;}
+    .promise-grid{grid-template-columns:repeat(3, 1fr);}
   }
 
   /* ============ FEATURED PARTNER ============ */
@@ -491,6 +478,20 @@
     height:100%;
     object-fit:cover;
   }
+  .fp-media-brand{
+    background:#16233A;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+  }
+  .fp-media-brand img{
+    width:auto;
+    height:auto;
+    max-width:100%;
+    max-height:100%;
+    object-fit:contain;
+  }
   .fp-content{
     padding:28px 26px 30px;
   }
@@ -515,30 +516,24 @@
   }
   .fp-badges{
     display:grid;
-    grid-template-columns:repeat(2, 1fr);
+    grid-template-columns:repeat(3, 1fr);
     gap:14px;
     margin-top:22px;
   }
   .fp-badge{
     display:flex;
-    flex-direction:column;
     align-items:center;
-    text-align:center;
-    gap:8px;
+    justify-content:center;
+    background:var(--white);
+    border:1px solid var(--grey);
+    border-radius:var(--radius-sm);
+    padding:10px;
+    height:64px;
   }
-  .fp-badge-icon{
-    flex:none;
-    width:38px;height:38px;
-    border-radius:50%;
-    background:var(--sky-light);
-    color:var(--royal);
-    display:flex;align-items:center;justify-content:center;
-  }
-  .fp-badge span{
-    font-size:0.7rem;
-    font-weight:700;
-    line-height:1.3;
-    color:var(--ink-soft);
+  .fp-badge img{
+    max-width:100%;
+    max-height:100%;
+    object-fit:contain;
   }
   .fp-subheading{
     text-align:center;
@@ -643,7 +638,6 @@
   @media (min-width:700px){
     .fp-card{grid-template-columns:38% 1fr;}
     .fp-media{height:auto;}
-    .fp-badges{grid-template-columns:repeat(4, 1fr);}
     .fp-features{grid-template-columns:1fr 1fr;}
     .fp-cta{flex-direction:row; text-align:left; justify-content:space-between;}
     .fp-cta-text{flex:1; padding:0 20px;}
@@ -843,8 +837,8 @@
 
   <div class="hero-content">
     <div class="hero-inner">
-      <h1><span class="hero-accent">Up to 75% Off</span><span class="hero-secondary">Gutter Guard Installation</span></h1>
-      <p class="hero-sub"><strong>+ An Extra $200 Off</strong> When You Purchase</p>
+      <h1><span class="hero-accent">Get 75% Off</span><span class="hero-secondary">Gutter Installation</span></h1>
+      <p class="hero-sub"><strong>+ Receive An Extra $200 Off</strong> Today</p>
     </div>
 
     <div class="form-wrap">
@@ -958,46 +952,34 @@
   </div>
 </section>
 
-<section class="benefits-section">
+<section class="promise-section">
   <div class="container">
-    <div class="benefits-heading">
-      <h2>Say Goodbye to Clogged Gutters</h2>
+    <div class="promise-heading">
+      <h2>More Protection. Less Maintenance.</h2>
     </div>
-    <div class="benefits-grid">
+    <div class="promise-grid">
 
-      <div class="benefit-card featured">
-        <span class="benefit-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2l7 3v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V5Z" stroke="currentColor" stroke-width="1.6"/><polyline points="6.5,10 9,12.5 13.5,7.5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <p><strong>Lifetime Warranty:</strong> Full coverage included on every installation.</p>
+      <div class="promise-item">
+        <img src="img/promise-1.webp" alt="Close-up of a new gutter and downspout installation" />
+        <h3>Maintenance-Free</h3>
+        <p>You never have to climb a ladder to clean your gutters again.</p>
       </div>
 
-      <div class="benefit-card">
-        <span class="benefit-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 16c0-7 4-11 11-11-1 7-4 11-11 11Z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round"/><line x1="3" y1="17" x2="15.5" y2="4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-        <p><strong>Debris-Proof:</strong> Keeps out leaves, pine needles, and roof grit year-round.</p>
+      <div class="promise-item">
+        <img src="img/promise-2.webp" alt="Close-up of a gutter along a roofline" />
+        <h3>Clog-Free</h3>
+        <p>A one-piece design is built to keep debris out for good, backed by a real warranty.</p>
       </div>
 
-      <div class="benefit-card">
-        <span class="benefit-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 2v16M14 2v16M6 6.5h8M6 13.5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="3" y1="17" x2="17" y2="3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-        <p><strong>Maintenance-Free:</strong> End seasonal gutter cleaning and dangerous ladder climbs.</p>
-      </div>
-
-      <div class="benefit-card">
-        <span class="benefit-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><ellipse cx="10" cy="11" rx="3.2" ry="4.5" stroke="currentColor" stroke-width="1.5"/><line x1="10" y1="4" x2="10" y2="6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="5.5" y1="8" x2="7.3" y2="9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><line x1="14.5" y1="8" x2="12.7" y2="9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><line x1="5.5" y1="15" x2="7.3" y2="14" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><line x1="14.5" y1="15" x2="12.7" y2="14" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><line x1="3" y1="17" x2="17" y2="3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-        <p><strong>Pest-Resistant:</strong> Prevents birds, rodents, and insects from nesting in your gutters.</p>
-      </div>
-
-      <div class="benefit-card">
-        <span class="benefit-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2l7 3v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V5Z" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></span>
-        <p><strong>Durable Build:</strong> Weather-resistant materials engineered to last decades.</p>
-      </div>
-
-      <div class="benefit-card">
-        <span class="benefit-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M13.5 3.5a3 3 0 0 0-4 4L4 13l3 3 5.5-5.5a3 3 0 0 0 4-4l-2 2-1.5-1.5Z" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linejoin="round"/></svg></span>
-        <p><strong>Universal Fit:</strong> Works with your existing gutters and roof &mdash; no modifications needed.</p>
+      <div class="promise-item">
+        <img src="img/promise-3.webp" alt="Gutter installed along a covered porch roofline" />
+        <h3>From Pros You Can Trust</h3>
+        <p>Every installer in our network is licensed, insured, and vetted before we recommend them.</p>
       </div>
 
     </div>
-    <div class="benefits-cta">
-      <a class="benefits-btn" href="#top">
+    <div class="promise-cta">
+      <a class="promise-btn" href="#top">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><line x1="8" y1="13" x2="8" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><polyline points="4,7 8,3 12,7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Get Your Free Quote!
       </a>
@@ -1008,30 +990,17 @@
 <section class="featured-section">
   <div class="container">
     <div class="fp-card">
-      <div class="fp-media">
-        <img src="img/gallery-2.jpg" alt="Close-up of a finished gutter installation" />
+      <div class="fp-media fp-media-brand">
+        <img src="img/leafguard-brand.jpg" alt="LeafGuard" />
       </div>
       <div class="fp-content">
         <span class="fp-eyebrow">Featured Partner</span>
         <h2>Why Homeowners Choose LeafGuard</h2>
         <p>LeafGuard's one-piece, patented gutter system has a built-in hood that keeps leaves and debris out for good &mdash; backed by a warranty that's actually built to last.</p>
         <div class="fp-badges">
-          <div class="fp-badge">
-            <span class="fp-badge-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="13" rx="1.5" stroke="currentColor" stroke-width="1.5"/><line x1="3" y1="8" x2="17" y2="8" stroke="currentColor" stroke-width="1.5"/><line x1="7" y1="2.5" x2="7" y2="5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="13" y1="2.5" x2="13" y2="5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-            <span>Est. 1993</span>
-          </div>
-          <div class="fp-badge">
-            <span class="fp-badge-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 2l7 3v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V5Z" stroke="currentColor" stroke-width="1.6"/><polyline points="6.5,10 9,12.5 13.5,7.5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            <span>Lifetime Warranty</span>
-          </div>
-          <div class="fp-badge">
-            <span class="fp-badge-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 4v4M4 4h4M16 4v4M16 4h-4M4 16v-4M4 16h4M16 16v-4M16 16h-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-            <span>One-Piece Design</span>
-          </div>
-          <div class="fp-badge">
-            <span class="fp-badge-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M13.5 3.5a3 3 0 0 0-4 4L4 13l3 3 5.5-5.5a3 3 0 0 0 4-4l-2 2-1.5-1.5Z" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linejoin="round"/></svg></span>
-            <span>Pro Installed</span>
-          </div>
+          <div class="fp-badge"><img src="img/badge-made-in-usa.webp" alt="Made in the USA" /></div>
+          <div class="fp-badge"><img src="img/badge-lifetime-warranty.webp" alt="Lifetime No-Clog Warranty" /></div>
+          <div class="fp-badge"><img src="img/badge-bbb.webp" alt="BBB A+ Rating" /></div>
         </div>
       </div>
     </div>
@@ -1125,7 +1094,7 @@
 <section class="why-cta">
   <div class="container">
     <h2 class="why-cta-title">Ready to Save Up to 75%?</h2>
-    <p class="why-cta-desc">Enter your zip code to see if you qualify for <strong>up to 75% off gutter guard installation + an extra $200 off</strong>.</p>
+    <p class="why-cta-desc">Enter your zip code to see if you qualify for <strong>Get 75% Off Gutter Installation + Receive An Extra $200 Off Today</strong>.</p>
 
     <div class="form-wrap">
     <div class="quote-card">
