@@ -49,6 +49,8 @@
   /* ============ HEADER ============ */
   header{padding:20px 0; text-align:center;}
   .logo-mark{height:26px; width:auto; display:inline-block;}
+  .site-header{background:var(--white); padding:16px 0; text-align:center;}
+  .site-logo{height:42px; width:auto; display:inline-block;}
   .promo-bar{
     background:var(--royal-dark);
     color:var(--white);
@@ -213,11 +215,11 @@
   }
 
   @media (min-width:960px){
-    .hero{min-height:720px; display:flex; align-items:center; padding:64px 0;}
+    .hero{min-height:560px; display:flex; align-items:center; padding:48px 0;}
     .hero .container{width:100%;}
     .hero-grid{grid-template-columns:1fr 1.1fr;}
     .hero-copy{text-align:left;}
-    .hero h1{font-size:clamp(2.6rem, 4vw, 3.6rem);}
+    .hero h1{font-size:clamp(2.1rem, 3.2vw, 2.6rem);}
     .hero-bullets{align-items:flex-start;}
     .form-wrap{margin-top:0;}
     .quote-card{max-width:560px;}
@@ -252,18 +254,36 @@
   @media (min-width:700px){.proof-grid{grid-template-columns:repeat(3, 1fr);}}
 
   /* ============ REVIEWS ============ */
-  .reviews-section{background:var(--royal-dark); padding:60px 0; overflow:hidden;}
+  .reviews-section{background:var(--royal-dark); padding:60px 0;}
   .reviews-heading{text-align:center; max-width:640px; margin:0 auto 36px; padding:0 24px;}
   .reviews-heading h2{color:var(--white); font-size:clamp(1.6rem, 3.2vw, 2.2rem);}
-  .reviews-track{width:100%; overflow:hidden; -webkit-mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);}
-  .reviews-scroll{display:flex; gap:16px; width:max-content; animation:scrollReviews 45s linear infinite;}
-  .reviews-scroll:hover{animation-play-state:paused;}
-  @keyframes scrollReviews{from{transform:translateX(0);} to{transform:translateX(-50%);}}
-  .review-card{flex:none; width:300px; background:var(--white); border-radius:var(--radius-md); padding:20px 22px;}
+  .reviews-track{
+    display:flex;
+    gap:16px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    padding:4px 24px 12px;
+    scrollbar-width:thin;
+  }
+  .review-card{
+    flex:0 0 100%;
+    scroll-snap-align:start;
+    background:var(--white);
+    border-radius:var(--radius-md);
+    padding:20px 22px;
+  }
   .review-stars{display:flex; gap:3px; color:#F5B400; margin-bottom:10px;}
   .review-card p{color:var(--ink); font-size:0.94rem; line-height:1.55; font-style:italic;}
   .review-author{margin-top:14px; font-style:normal; font-weight:700; color:var(--royal); font-size:0.88rem;}
   .review-author span{display:block; margin-top:2px; font-weight:500; color:var(--ink-soft); font-size:0.8rem;}
+  @media (min-width:700px){
+    .review-card{flex:0 0 calc(50% - 8px);}
+  }
+  @media (min-width:960px){
+    .reviews-track{max-width:var(--container); margin:0 auto; padding:4px 24px 12px;}
+    .review-card{flex:0 0 calc(25% - 12px);}
+  }
 
   /* ============ FAQ ============ */
   .faq-section{background:var(--white); padding:60px 0;}
@@ -307,9 +327,12 @@
 </head>
 <body>
 
-<header class="promo-bar">
-  <p>75% OFF INSTALLATION + SAVE AN EXTRA $200 TODAY</p>
+<header class="site-header">
+  <img src="img/logo-clickhive.svg" alt="ClickHive" class="site-logo" />
 </header>
+<div class="promo-bar">
+  <p>75% OFF INSTALLATION + SAVE AN EXTRA $200 TODAY</p>
+</div>
 <div class="promo-bar-secondary">
   <p>Now Offering Extended Financing &mdash; 9 to 18 Months 0% Interest*</p>
 </div>
@@ -468,77 +491,40 @@
     <h2>500,000+ Happy Customers</h2>
   </div>
   <div class="reviews-track">
-    <div class="reviews-scroll">
-      <div class="review-card">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>&ldquo;Great product and even better service. This level of detail is something rarely seen anymore.&rdquo;</p>
-        <p class="review-author">James S.<span>Springfield, IL</span></p>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>&ldquo;Were friendly and did a great job and clean afterwards.&rdquo;</p>
-        <p class="review-author">Daniel Pope<span>Elkmont, AL</span></p>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>&ldquo;The company is super easy to work with and very professional. It's at least worth getting a bid and having them explain how cool the gutters are.&rdquo;</p>
-        <p class="review-author">Hilary H.<span>Utah</span></p>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>&ldquo;The installation team did a great job installing and cleaning up before they left. Everything was just as promised!&rdquo;</p>
-        <p class="review-author">Jimmy S.<span>Charlotte, NC</span></p>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>&ldquo;I am absolutely impressed with the difference it made regarding appearance. The gutters will protect my home and give it a beautiful curb appeal simultaneously. Now that's a win win!&rdquo;</p>
-        <p class="review-author">Marylou V.<span>Austin, TX</span></p>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>&ldquo;I highly recommend that anyone considering doing something with their gutter system check out our network. You will not be disappointed in the quality.&rdquo;</p>
-        <p class="review-author">Sean H.<span>St. Louis, MO</span></p>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>&ldquo;Very happy and satisfied with my new gutters. The company installed while I was away for the day. Cleanest job I've seen! Great job!&rdquo;</p>
-        <p class="review-author">Kenny Brooks<span>Mobile, AL</span></p>
-      </div>
-      <div class="review-card" aria-hidden="true">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>&ldquo;Great product and even better service. This level of detail is something rarely seen anymore.&rdquo;</p>
-        <p class="review-author">James S.<span>Springfield, IL</span></p>
-      </div>
-      <div class="review-card" aria-hidden="true">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>&ldquo;Were friendly and did a great job and clean afterwards.&rdquo;</p>
-        <p class="review-author">Daniel Pope<span>Elkmont, AL</span></p>
-      </div>
-      <div class="review-card" aria-hidden="true">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>&ldquo;The company is super easy to work with and very professional. It's at least worth getting a bid and having them explain how cool the gutters are.&rdquo;</p>
-        <p class="review-author">Hilary H.<span>Utah</span></p>
-      </div>
-      <div class="review-card" aria-hidden="true">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>&ldquo;The installation team did a great job installing and cleaning up before they left. Everything was just as promised!&rdquo;</p>
-        <p class="review-author">Jimmy S.<span>Charlotte, NC</span></p>
-      </div>
-      <div class="review-card" aria-hidden="true">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>&ldquo;I am absolutely impressed with the difference it made regarding appearance. The gutters will protect my home and give it a beautiful curb appeal simultaneously. Now that's a win win!&rdquo;</p>
-        <p class="review-author">Marylou V.<span>Austin, TX</span></p>
-      </div>
-      <div class="review-card" aria-hidden="true">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>&ldquo;I highly recommend that anyone considering doing something with their gutter system check out our network. You will not be disappointed in the quality.&rdquo;</p>
-        <p class="review-author">Sean H.<span>St. Louis, MO</span></p>
-      </div>
-      <div class="review-card" aria-hidden="true">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>&ldquo;Very happy and satisfied with my new gutters. The company installed while I was away for the day. Cleanest job I've seen! Great job!&rdquo;</p>
-        <p class="review-author">Kenny Brooks<span>Mobile, AL</span></p>
-      </div>
+    <div class="review-card">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>&ldquo;Great product and even better service. This level of detail is something rarely seen anymore.&rdquo;</p>
+      <p class="review-author">James S.<span>Springfield, IL</span></p>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>&ldquo;Were friendly and did a great job and clean afterwards.&rdquo;</p>
+      <p class="review-author">Daniel Pope<span>Elkmont, AL</span></p>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>&ldquo;The company is super easy to work with and very professional. It's at least worth getting a bid and having them explain how cool the gutters are.&rdquo;</p>
+      <p class="review-author">Hilary H.<span>Utah</span></p>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>&ldquo;The installation team did a great job installing and cleaning up before they left. Everything was just as promised!&rdquo;</p>
+      <p class="review-author">Jimmy S.<span>Charlotte, NC</span></p>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>&ldquo;I am absolutely impressed with the difference it made regarding appearance. The gutters will protect my home and give it a beautiful curb appeal simultaneously. Now that's a win win!&rdquo;</p>
+      <p class="review-author">Marylou V.<span>Austin, TX</span></p>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>&ldquo;I highly recommend that anyone considering doing something with their gutter system check out our network. You will not be disappointed in the quality.&rdquo;</p>
+      <p class="review-author">Sean H.<span>St. Louis, MO</span></p>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>&ldquo;Very happy and satisfied with my new gutters. The company installed while I was away for the day. Cleanest job I've seen! Great job!&rdquo;</p>
+      <p class="review-author">Kenny Brooks<span>Mobile, AL</span></p>
     </div>
   </div>
 </section>
