@@ -53,11 +53,11 @@
     background:var(--royal-dark);
     color:var(--white);
     text-align:center;
-    padding:13px 20px;
+    padding:20px 20px;
   }
   .promo-bar p{
     font-weight:800;
-    font-size:clamp(0.82rem, 2.2vw, 1rem);
+    font-size:clamp(1.1rem, 3.2vw, 1.5rem);
     letter-spacing:0.02em;
   }
   .promo-bar span{color:var(--sky);}
@@ -97,12 +97,12 @@
   .hero-bullets li{
     display:flex;
     align-items:center;
-    gap:8px;
+    gap:10px;
     color:var(--white);
-    font-size:1rem;
-    font-weight:600;
+    font-size:1.2rem;
+    font-weight:700;
   }
-  .hero-bullets li svg{flex:none;}
+  .hero-bullets li svg{flex:none; width:22px; height:22px;}
   .hero-form-col{display:flex; justify-content:center;}
 
   /* ============ FORM CARD ============ */
@@ -229,34 +229,25 @@
   .proof-section{background:var(--white); padding:60px 0;}
   .proof-heading{text-align:center; max-width:600px; margin:0 auto 32px;}
   .proof-heading h2{font-size:clamp(1.6rem, 3.2vw, 2.1rem);}
-  .proof-heading p{margin-top:10px; color:var(--ink-soft); font-size:1rem;}
-  .proof-grid{display:grid; grid-template-columns:1fr; gap:18px; max-width:1000px; margin:0 auto;}
+  .proof-grid{display:grid; grid-template-columns:1fr; gap:30px; max-width:1000px; margin:0 auto;}
+  .proof-item{text-align:center;}
   .proof-item img{width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:var(--radius-md); box-shadow:0 10px 24px -16px rgba(16,54,125,.3);}
-  .proof-item p{margin-top:12px; text-align:center; font-weight:700; color:var(--royal); font-size:0.94rem;}
+  .proof-item h3{margin-top:16px; font-size:1.05rem;}
+  .proof-item p{margin-top:8px; color:var(--ink-soft); font-size:0.92rem; line-height:1.5;}
   @media (min-width:700px){.proof-grid{grid-template-columns:repeat(3, 1fr);}}
 
-  /* ============ BENEFITS RECAP ============ */
-  .recap-section{background:var(--grey); padding:56px 0;}
-  .recap-heading{text-align:center; margin-bottom:32px;}
-  .recap-heading h2{font-size:clamp(1.6rem, 3.2vw, 2.1rem);}
-  .recap-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:14px; max-width:900px; margin:0 auto;}
-  .recap-item{display:flex; align-items:center; gap:12px; background:var(--white); border-radius:var(--radius-md); padding:16px 16px; box-shadow:0 8px 20px -14px rgba(16,54,125,.2);}
-  .recap-icon{flex:none; width:38px; height:38px; border-radius:10px; background:var(--sky-light); color:var(--royal); display:flex; align-items:center; justify-content:center;}
-  .recap-item span{font-size:0.88rem; font-weight:700; color:var(--ink);}
-  @media (min-width:700px){.recap-grid{grid-template-columns:repeat(3, 1fr);}}
-
-  /* ============ MID CTA ============ */
-  .mid-cta{background:var(--royal-dark); padding:48px 24px; text-align:center;}
-  .mid-cta h2{color:var(--white); font-size:clamp(1.4rem, 3vw, 1.9rem);}
-  .mid-cta p{margin:10px auto 0; color:rgba(255,255,255,0.85); font-size:0.98rem; max-width:480px;}
-  .mid-cta-btn{
-    display:inline-flex; align-items:center; gap:8px; margin-top:22px;
-    background:var(--white); color:var(--royal); padding:15px 30px; border-radius:999px;
-    font-weight:700; font-size:0.98rem; text-decoration:none;
-    transition:transform .15s ease, box-shadow .15s ease;
-    box-shadow:0 14px 28px -12px rgba(0,0,0,.4);
-  }
-  .mid-cta-btn:hover{transform:translateY(-2px);}
+  /* ============ REVIEWS ============ */
+  .reviews-section{background:var(--royal-dark); padding:60px 0;}
+  .reviews-heading{text-align:center; max-width:640px; margin:0 auto 36px;}
+  .reviews-heading h2{color:var(--white); font-size:clamp(1.6rem, 3.2vw, 2.2rem);}
+  .reviews-grid{display:grid; grid-template-columns:1fr; gap:16px; max-width:1000px; margin:0 auto;}
+  .review-card{background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:var(--radius-md); padding:20px 22px;}
+  .review-stars{display:flex; gap:3px; color:var(--sky); margin-bottom:10px;}
+  .review-card p{color:rgba(255,255,255,0.9); font-size:0.94rem; line-height:1.55; font-style:italic;}
+  .review-author{margin-top:14px; font-style:normal; font-weight:700; color:var(--white); font-size:0.88rem;}
+  .review-author span{display:block; margin-top:2px; font-weight:500; color:rgba(255,255,255,0.6); font-size:0.8rem;}
+  @media (min-width:700px){.reviews-grid{grid-template-columns:repeat(2, 1fr);}}
+  @media (min-width:1000px){.reviews-grid{grid-template-columns:repeat(3, 1fr);}}
 
   /* ============ FAQ ============ */
   .faq-section{background:var(--white); padding:60px 0;}
@@ -311,7 +302,7 @@
   <div class="container">
     <div class="hero-grid">
       <div class="hero-copy">
-        <h1>Stop Climbing Ladders &mdash; Protect Your Gutters <em>Without Lifting a Finger</em></h1>
+        <h1>Say Goodbye To Gutter Cleaning <em>For Good</em></h1>
         <ul class="hero-bullets">
           <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="rgba(255,255,255,0.15)" stroke="#74B4D9" stroke-width="1.4"/><path d="M5 8.2l2 2 4-4.4" stroke="#74B4D9" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Clog-Free Guarantee</li>
           <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="rgba(255,255,255,0.15)" stroke="#74B4D9" stroke-width="1.4"/><path d="M5 8.2l2 2 4-4.4" stroke="#74B4D9" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Maintenance-Free</li>
@@ -429,6 +420,31 @@
   </div>
 </section>
 
+<section class="proof-section">
+  <div class="container">
+    <div class="proof-heading">
+      <h2>Our Gutters Set The Standard</h2>
+    </div>
+    <div class="proof-grid">
+      <div class="proof-item">
+        <img src="img/promise-1.webp" alt="Close-up of a new gutter and downspout installation" />
+        <h3>Maintenance-Free Protection</h3>
+        <p>You never have to climb a ladder to clean your gutters again.</p>
+      </div>
+      <div class="proof-item">
+        <img src="img/promise-2.webp" alt="Close-up of a gutter along a roofline" />
+        <h3>Clog-Free Guarantee</h3>
+        <p>Our one-piece system is designed to keep debris out for good, backed by a real warranty.</p>
+      </div>
+      <div class="proof-item">
+        <img src="img/promise-3.webp" alt="Gutter installed along a covered porch roofline" />
+        <h3>500,000+ Happy Customers</h3>
+        <p>Join the hundreds of thousands of homeowners who trust us to protect their homes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="quality-section">
   <div class="container">
     <div class="quality-heading">
@@ -453,70 +469,49 @@
   </div>
 </section>
 
-<section class="proof-section">
+<section class="reviews-section">
   <div class="container">
-    <div class="proof-heading">
-      <h2>See the Difference a Real Installation Makes</h2>
-      <p>Real gutter and gutter guard installations from our network of professionals.</p>
+    <div class="reviews-heading">
+      <h2>500,000+ Happy, Clog-Free Customers</h2>
     </div>
-    <div class="proof-grid">
-      <div class="proof-item">
-        <img src="img/promise-1.webp" alt="Close-up of a new gutter and downspout installation" />
-        <p>Precision-fit downspouts</p>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>&ldquo;Great product and even better service. This level of detail is something rarely seen anymore.&rdquo;</p>
+        <p class="review-author">James S.<span>Springfield, IL</span></p>
       </div>
-      <div class="proof-item">
-        <img src="img/promise-2.webp" alt="Close-up of a gutter along a roofline" />
-        <p>Seamless roofline coverage</p>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>&ldquo;Were friendly and did a great job and clean afterwards.&rdquo;</p>
+        <p class="review-author">Daniel Pope<span>Elkmont, AL</span></p>
       </div>
-      <div class="proof-item">
-        <img src="img/promise-3.webp" alt="Gutter installed along a covered porch roofline" />
-        <p>Clean, professional finish</p>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>&ldquo;The company is super easy to work with and very professional. It's at least worth getting a bid and having them explain how cool the gutters are.&rdquo;</p>
+        <p class="review-author">Hilary H.<span>Utah</span></p>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>&ldquo;The installation team did a great job installing and cleaning up before they left. Everything was just as promised!&rdquo;</p>
+        <p class="review-author">Jimmy S.<span>Charlotte, NC</span></p>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>&ldquo;I am absolutely impressed with the difference it made regarding appearance. The gutters will protect my home and give it a beautiful curb appeal simultaneously. Now that's a win win!&rdquo;</p>
+        <p class="review-author">Marylou V.<span>Austin, TX</span></p>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>&ldquo;I highly recommend that anyone considering doing something with their gutter system check out our network. You will not be disappointed in the quality.&rdquo;</p>
+        <p class="review-author">Sean H.<span>St. Louis, MO</span></p>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>&ldquo;Very happy and satisfied with my new gutters. The company installed while I was away for the day. Cleanest job I've seen! Great job!&rdquo;</p>
+        <p class="review-author">Kenny Brooks<span>Mobile, AL</span></p>
       </div>
     </div>
   </div>
-</section>
-
-<section class="recap-section">
-  <div class="container">
-    <div class="recap-heading">
-      <h2>Why Homeowners Choose Us</h2>
-    </div>
-    <div class="recap-grid">
-      <div class="recap-item">
-        <span class="recap-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 2l7 3v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V5Z" stroke="currentColor" stroke-width="1.6"/><polyline points="6.5,10 9,12.5 13.5,7.5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <span>Licensed &amp; Insured Pros</span>
-      </div>
-      <div class="recap-item">
-        <span class="recap-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="4.5" stroke="currentColor" stroke-width="1.6"/><path d="M7 11 5.5 18l4.5-2 4.5 2L13 11" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round"/></svg></span>
-        <span>Lifetime Warranty Available</span>
-      </div>
-      <div class="recap-item">
-        <span class="recap-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M9 2H3v6l9 9 6-6-9-9Z" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round"/><circle cx="6" cy="6" r="1.2" fill="currentColor"/></svg></span>
-        <span>100% Free, No-Obligation Quotes</span>
-      </div>
-      <div class="recap-item">
-        <span class="recap-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><polygon points="11,2 4,11 9,11 8,18 15,8 10,8" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linejoin="round"/></svg></span>
-        <span>Fast, No-Pressure Process</span>
-      </div>
-      <div class="recap-item">
-        <span class="recap-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 4v4M4 4h4M16 4v4M16 4h-4M4 16v-4M4 16h4M16 16v-4M16 16h-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-        <span>Custom-Fit for Any Home</span>
-      </div>
-      <div class="recap-item">
-        <span class="recap-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 1.5l2.4 5 5.4.6-4 3.8 1 5.4L10 13.6l-4.8 2.7 1-5.4-4-3.8 5.4-.6Z" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linejoin="round"/></svg></span>
-        <span>BBB A+ Rated Network</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="mid-cta">
-  <h2>Ready to See Your Price?</h2>
-  <p>Enter your zip code and find out in 30 seconds if you qualify for 75% off installation.</p>
-  <a class="mid-cta-btn" href="#top">
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><line x1="8" y1="13" x2="8" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><polyline points="4,7 8,3 12,7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    Get My Free Quote
-  </a>
 </section>
 
 <section class="faq-section">
