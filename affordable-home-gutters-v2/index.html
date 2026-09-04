@@ -11,7 +11,7 @@
 <style>
   :root{
     --royal:#10367D;
-    --royal-dark:#0A2557;
+    --royal-dark:#172A3A;
     --sky:#74B4D9;
     --sky-light:#EAF3F9;
     --grey:#D6EAF8;
@@ -22,7 +22,7 @@
     --radius-md:14px;
     --radius-sm:10px;
     --shadow-card:0 30px 60px -30px rgba(16,54,125,.35);
-    --shadow-btn:0 14px 28px -12px rgba(16,54,125,.45);
+    --shadow-btn:0 14px 28px -12px rgba(251,68,54,.45);
     --container:1180px;
   }
   *{box-sizing:border-box;}
@@ -59,16 +59,16 @@
     justify-content:space-between;
     gap:16px;
   }
-  .site-logo{height:64px; width:auto; display:inline-block;}
+  .site-logo{width:50%; max-width:220px; height:auto; display:inline-block;}
   .header-badge{
     display:flex;
     flex-direction:column;
     align-items:flex-end;
     text-align:right;
-    color:var(--royal);
+    color:#1AB277;
     font-weight:800;
-    font-size:0.85rem;
-    line-height:1.3;
+    font-size:1.05rem;
+    line-height:1.25;
     letter-spacing:0.01em;
     white-space:nowrap;
   }
@@ -85,7 +85,7 @@
     letter-spacing:0.02em;
   }
   .promo-bar-secondary{
-    background:var(--royal);
+    background:#1AB277;
     color:var(--white);
     text-align:center;
     padding:10px 20px;
@@ -105,19 +105,19 @@
   .hero-grid{
     display:grid;
     grid-template-columns:1fr;
-    gap:40px;
+    gap:20px;
     align-items:center;
   }
   .hero-copy{text-align:center;}
   .hero h1{
     color:var(--white);
-    font-size:clamp(1.9rem, 3.8vw, 2.7rem);
+    font-size:clamp(33px, calc(12.7vw - 7.6px), 2.5rem);
     line-height:1.2;
   }
   .hero h1 em{
     font-style:normal;
     color:var(--sky);
-    display:inline;
+    display:none;
   }
   .hero-bullets{
     list-style:none;
@@ -143,7 +143,7 @@
   .form-wrap{
     display:flex;
     justify-content:center;
-    margin-top:32px;
+    margin-top:12px;
   }
   .quote-card{
     width:100%;
@@ -220,12 +220,12 @@
 
   .submit-btn{
     width:100%; display:flex; align-items:center; justify-content:center; gap:10px;
-    background:var(--royal); color:var(--white); border:none; border-radius:var(--radius-sm);
+    background:#FB4436; color:var(--white); border:none; border-radius:var(--radius-sm);
     padding:15px 20px; font-size:0.98rem; font-weight:700; letter-spacing:0.02em; cursor:pointer;
     box-shadow:var(--shadow-btn); margin-top:6px;
     transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
   }
-  .submit-btn:hover{background:var(--royal-dark); transform:translateY(-2px); box-shadow:0 18px 34px -14px rgba(16,54,125,.55);}
+  .submit-btn:hover{background:#E23A2E; transform:translateY(-2px); box-shadow:0 18px 34px -14px rgba(251,68,54,.55);}
   .submit-btn:active{transform:translateY(0);}
   .field-row.two-col{flex-direction:column;}
   .privacy-note{text-align:center; font-size:0.74rem; color:var(--ink-soft); margin-top:14px;}
@@ -238,11 +238,13 @@
   @media (min-width:960px){
     .hero{min-height:560px; display:flex; align-items:center; padding:48px 0;}
     .hero .container{width:100%;}
-    .hero-grid{grid-template-columns:1fr 1.1fr;}
+    .hero-grid{grid-template-columns:1fr 1.1fr; gap:40px;}
     .hero-copy{text-align:left;}
     .hero h1{font-size:clamp(2.1rem, 3.2vw, 2.6rem);}
+    .hero h1 em{display:inline;}
     .hero-bullets{display:flex; align-items:flex-start;}
     .site-header-inner{justify-content:center;}
+    .site-logo{width:auto; max-width:none; height:64px;}
     .header-badge{display:none;}
     .form-wrap{margin-top:0;}
     .quote-card{max-width:560px;}
@@ -332,11 +334,11 @@
   .final-cta p{margin:10px auto 0; color:var(--ink-soft); max-width:480px; font-size:1rem;}
   .final-cta-btn{
     display:inline-flex; align-items:center; gap:8px; margin-top:22px;
-    background:var(--royal); color:var(--white); padding:16px 32px; border-radius:999px;
+    background:#FB4436; color:var(--white); padding:16px 32px; border-radius:999px;
     font-weight:700; font-size:1rem; text-decoration:none; box-shadow:var(--shadow-btn);
     transition:transform .15s ease, background .15s ease;
   }
-  .final-cta-btn:hover{background:var(--royal-dark); transform:translateY(-2px);}
+  .final-cta-btn:hover{background:#E23A2E; transform:translateY(-2px);}
 
   /* ============ FOOTER ============ */
   footer{background:var(--royal-dark); color:rgba(255,255,255,0.75); text-align:center; padding:36px 24px 28px;}
@@ -372,7 +374,7 @@
   <div class="container">
     <div class="hero-grid">
       <div class="hero-copy">
-        <h1>Say Goodbye To Gutter Cleaning <em>For Good</em></h1>
+        <h1>Say Goodbye To Gutter Cleaning<em> For Good</em></h1>
         <ul class="hero-bullets">
           <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="rgba(255,255,255,0.15)" stroke="#74B4D9" stroke-width="1.4"/><path d="M5 8.2l2 2 4-4.4" stroke="#74B4D9" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Clog-Free Guarantee</li>
           <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="rgba(255,255,255,0.15)" stroke="#74B4D9" stroke-width="1.4"/><path d="M5 8.2l2 2 4-4.4" stroke="#74B4D9" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Maintenance-Free</li>
