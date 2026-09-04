@@ -50,7 +50,28 @@
   header{padding:20px 0; text-align:center;}
   .logo-mark{height:26px; width:auto; display:inline-block;}
   .site-header{background:var(--white); padding:16px 0; text-align:center;}
+  .site-header-inner{
+    max-width:var(--container);
+    margin:0 auto;
+    padding:0 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+  }
   .site-logo{height:64px; width:auto; display:inline-block;}
+  .header-badge{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    text-align:right;
+    color:var(--royal);
+    font-weight:800;
+    font-size:0.85rem;
+    line-height:1.3;
+    letter-spacing:0.01em;
+    white-space:nowrap;
+  }
   .promo-bar{
     background:var(--royal-dark);
     color:var(--white);
@@ -221,6 +242,8 @@
     .hero-copy{text-align:left;}
     .hero h1{font-size:clamp(2.1rem, 3.2vw, 2.6rem);}
     .hero-bullets{display:flex; align-items:flex-start;}
+    .site-header-inner{justify-content:center;}
+    .header-badge{display:none;}
     .form-wrap{margin-top:0;}
     .quote-card{max-width:560px;}
   }
@@ -328,7 +351,10 @@
 <body>
 
 <header class="site-header">
-  <img src="img/logo-clickhive.svg" alt="ClickHive" class="site-logo" />
+  <div class="site-header-inner">
+    <img src="img/logo-clickhive.svg" alt="ClickHive" class="site-logo" />
+    <div class="header-badge"><span>CLOG-FREE</span><span>GUARANTEE*</span></div>
+  </div>
 </header>
 <div class="promo-bar">
   <p>75% OFF INSTALLATION + SAVE AN EXTRA $200 TODAY</p>
