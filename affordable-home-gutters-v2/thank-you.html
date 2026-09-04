@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thank You | Affordable Home</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --royal:#10367D;
+    --royal-dark:#0A2557;
+    --sky:#74B4D9;
+    --sky-light:#EAF3F9;
+    --grey:#D6EAF8;
+    --white:#FFFFFF;
+    --ink:#16233A;
+    --ink-soft:#5B6B84;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Montserrat',sans-serif;
+    color:var(--ink);
+    background:var(--sky-light);
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+  }
+  h1,h2{font-family:'Montserrat',sans-serif; margin:0; color:var(--royal); font-weight:700;}
+  header{padding:20px 0; text-align:center;}
+  .logo-mark{height:26px; width:auto; display:inline-block;}
+  main{flex:1; display:flex; align-items:center; justify-content:center; padding:40px 24px;}
+  .card{
+    max-width:520px; width:100%; text-align:center; background:var(--white);
+    border-radius:22px; box-shadow:0 30px 60px -30px rgba(16,54,125,.3); padding:48px 32px;
+  }
+  .check{
+    width:72px; height:72px; border-radius:50%; background:var(--sky-light);
+    display:flex; align-items:center; justify-content:center; margin:0 auto 24px;
+  }
+  h1{font-size:clamp(1.6rem,4vw,2.1rem); line-height:1.25;}
+  .lead{margin-top:14px; color:var(--ink-soft); font-size:1.02rem; line-height:1.6;}
+  .steps{margin-top:32px; text-align:left; display:flex; flex-direction:column; gap:14px;}
+  .step-item{display:flex; gap:12px; align-items:flex-start;}
+  .step-num{
+    flex:none; width:26px; height:26px; border-radius:50%; background:var(--royal); color:var(--white);
+    font-size:0.78rem; font-weight:700; display:flex; align-items:center; justify-content:center;
+  }
+  .step-item p{margin:0; font-size:0.92rem; color:var(--ink);}
+  .home-link{display:inline-block; margin-top:32px; color:var(--ink-soft); font-size:0.85rem; text-decoration:none; border-bottom:1px solid var(--grey);}
+  .home-link:hover{color:var(--royal);}
+  footer{background:var(--royal-dark); color:rgba(255,255,255,0.6); text-align:center; padding:24px; font-size:0.78rem;}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="img/logo.svg" alt="Affordable Home" class="logo-mark" />
+</header>
+
+<main>
+  <div class="card">
+    <div class="check">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="13" stroke="#10367D" stroke-width="2"/><polyline points="9,15.5 13,19.5 21,10.5" stroke="#10367D" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <h1 id="thankYouHeading">You're All Set!</h1>
+    <p class="lead">Thanks for requesting your free quote. A licensed, pre-screened gutter pro in your area will reach out shortly to confirm the details.</p>
+
+    <div class="steps">
+      <div class="step-item">
+        <span class="step-num">1</span>
+        <p>We match your project with a trusted local pro.</p>
+      </div>
+      <div class="step-item">
+        <span class="step-num">2</span>
+        <p>They'll call or email you to confirm details &mdash; no obligation.</p>
+      </div>
+      <div class="step-item">
+        <span class="step-num">3</span>
+        <p>You get your free, no-pressure quote.</p>
+      </div>
+    </div>
+
+    <a class="home-link" href="index.html">&larr; Back to homepage</a>
+  </div>
+</main>
+
+<footer>&copy; 2026 Affordable Home. All rights reserved.</footer>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const fname = params.get('fname');
+  if (fname) {
+    document.getElementById('thankYouHeading').textContent = 'You\'re All Set, ' + fname + '!';
+  }
+</script>
+
+</body>
+</html>
