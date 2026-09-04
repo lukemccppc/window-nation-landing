@@ -37,7 +37,7 @@
   h1,h2,h3{
     font-family:'Montserrat',sans-serif;
     margin:0;
-    color:var(--royal);
+    color:#15211B;
     font-weight:700;
     letter-spacing:-0.01em;
   }
@@ -114,9 +114,8 @@
     font-size:clamp(33px, calc(12.7vw - 7.6px), 2.5rem);
     line-height:1.2;
   }
-  .hero h1 em{
+  .hero h1 .h1-desktop{
     font-style:normal;
-    color:var(--sky);
     display:none;
   }
   .hero-bullets{
@@ -241,13 +240,14 @@
     .hero-grid{grid-template-columns:1fr 1.1fr; gap:40px;}
     .hero-copy{text-align:left;}
     .hero h1{font-size:clamp(2.1rem, 3.2vw, 2.6rem);}
-    .hero h1 em{display:inline;}
+    .hero h1 .h1-mobile{display:none;}
+    .hero h1 .h1-desktop{display:inline;}
     .hero-bullets{display:flex; align-items:flex-start;}
     .site-header-inner{justify-content:center;}
     .site-logo{width:auto; max-width:none; height:64px;}
     .header-badge{display:none;}
     .form-wrap{margin-top:0;}
-    .quote-card{max-width:560px;}
+    .quote-card{max-width:600px;}
   }
 
   /* ============ QUALITY ============ */
@@ -329,9 +329,9 @@
   .faq-item.open .faq-a{max-height:220px;}
 
   /* ============ FINAL CTA ============ */
-  .final-cta{background:var(--sky-light); padding:56px 24px; text-align:center;}
-  .final-cta h2{font-size:clamp(1.5rem, 3vw, 2rem);}
-  .final-cta p{margin:10px auto 0; color:var(--ink-soft); max-width:480px; font-size:1rem;}
+  .final-cta{background:#1AB277; padding:56px 24px; text-align:center;}
+  .final-cta h2{font-size:clamp(1.5rem, 3vw, 2rem); color:var(--white);}
+  .final-cta p{margin:10px auto 0; color:rgba(255,255,255,0.9); max-width:480px; font-size:1rem;}
   .final-cta-btn{
     display:inline-flex; align-items:center; gap:8px; margin-top:22px;
     background:#FB4436; color:var(--white); padding:16px 32px; border-radius:999px;
@@ -374,12 +374,12 @@
   <div class="container">
     <div class="hero-grid">
       <div class="hero-copy">
-        <h1>Say Goodbye To Gutter Cleaning<em> For Good</em></h1>
+        <h1><span class="h1-mobile">Say Goodbye To Gutter Cleaning</span><span class="h1-desktop">Say Goodbye to Gutter Cleaning With Maintenance-Free Gutter Protection</span></h1>
         <ul class="hero-bullets">
-          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="rgba(255,255,255,0.15)" stroke="#74B4D9" stroke-width="1.4"/><path d="M5 8.2l2 2 4-4.4" stroke="#74B4D9" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Clog-Free Guarantee</li>
-          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="rgba(255,255,255,0.15)" stroke="#74B4D9" stroke-width="1.4"/><path d="M5 8.2l2 2 4-4.4" stroke="#74B4D9" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Maintenance-Free</li>
-          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="rgba(255,255,255,0.15)" stroke="#74B4D9" stroke-width="1.4"/><path d="M5 8.2l2 2 4-4.4" stroke="#74B4D9" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Lifetime Warranty</li>
-          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="rgba(255,255,255,0.15)" stroke="#74B4D9" stroke-width="1.4"/><path d="M5 8.2l2 2 4-4.4" stroke="#74B4D9" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Made In the USA</li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="rgba(255,255,255,0.15)" stroke="#8DD8BB" stroke-width="1.4"/><path d="M5 8.2l2 2 4-4.4" stroke="#8DD8BB" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Clog-Free Guarantee</li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="rgba(255,255,255,0.15)" stroke="#8DD8BB" stroke-width="1.4"/><path d="M5 8.2l2 2 4-4.4" stroke="#8DD8BB" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Maintenance-Free</li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="rgba(255,255,255,0.15)" stroke="#8DD8BB" stroke-width="1.4"/><path d="M5 8.2l2 2 4-4.4" stroke="#8DD8BB" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Lifetime Warranty</li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="rgba(255,255,255,0.15)" stroke="#8DD8BB" stroke-width="1.4"/><path d="M5 8.2l2 2 4-4.4" stroke="#8DD8BB" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Made In the USA</li>
         </ul>
       </div>
 
