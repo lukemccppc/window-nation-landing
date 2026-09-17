@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Compare Local Gutter Pros | Gutter Savings</title>
+<meta name="description" content="Compare free quotes from licensed, local gutter pros. Get up to 75% off installation plus an additional $200 off new gutters." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#141F19;
+    --ink-soft:#5C6B62;
+    --green:#1B7A3E;
+    --green-dark:#0E3B22;
+    --green-deep:#0A2416;
+    --orange:#F2871A;
+    --orange-dark:#D9700A;
+    --bg-page:#EEF3EF;
+    --white:#FFFFFF;
+    --line:#DCE7DF;
+    --radius-xl:26px;
+    --radius-md:14px;
+    --radius-sm:10px;
+    --shadow:0 40px 80px -40px rgba(14,59,34,0.4);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Montserrat',sans-serif;
+    color:var(--ink);
+    background:var(--bg-page);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Montserrat',sans-serif; margin:0; color:var(--ink); font-weight:800; letter-spacing:-0.01em;}
+  p{margin:0;}
+  img{max-width:100%; display:block;}
+  button{font-family:inherit;}
+
+  /* ============ TOP BAR ============ */
+  .top-bar{background:var(--green-dark); color:var(--white); text-align:center; padding:10px 20px;}
+  .top-bar p{font-size:clamp(0.78rem, 2vw, 0.9rem); font-weight:700; letter-spacing:0.02em;}
+  .top-bar span{color:#8FE0AC;}
+
+  /* ============ SITE HEADER ============ */
+  .site-header{background:var(--white); border-bottom:1px solid var(--line); padding:16px 20px; text-align:center;}
+  .site-header .logo{height:64px; width:auto; margin:0 auto;}
+  @media (min-width:640px){.site-header .logo{height:80px;}}
+
+  /* ============ MASTHEAD ============ */
+  .masthead{text-align:center; padding:40px 24px 32px;}
+  .masthead h1{font-size:clamp(26px, 4.6vw, 42px); line-height:1.12;}
+  .masthead h1 .hl{color:var(--green);}
+  .masthead .tagline{margin-top:12px; font-size:0.8rem; font-weight:800; letter-spacing:1.6px; text-transform:uppercase; color:var(--green);}
+
+  /* ============ SHELL / SPLIT LAYOUT ============ */
+  .shell{max-width:1160px; margin:0 auto; padding:0 20px 56px;}
+  .split-grid{display:flex; flex-direction:column; gap:24px;}
+  @media (min-width:960px){
+    .split-grid{display:grid; grid-template-columns:1fr 1.15fr; gap:28px; align-items:start;}
+    .media-col{order:1;}
+    .quiz-card{order:2;}
+  }
+
+  .quiz-card{
+    background:var(--white); border-radius:var(--radius-xl); box-shadow:var(--shadow);
+    border:1px solid var(--line); overflow:hidden; padding:36px 26px 30px;
+    display:flex; flex-direction:column; justify-content:center;
+  }
+  @media (min-width:640px){.quiz-card{padding:44px 44px 38px;}}
+
+  .card-head{margin-bottom:22px;}
+  .card-head h2{font-size:clamp(1.35rem, 2.4vw, 1.6rem); line-height:1.2;}
+  .card-head p{margin-top:6px; color:var(--ink-soft); font-size:0.92rem; font-weight:600;}
+  .card-head.hide{display:none;}
+
+  .progress-wrap{margin-bottom:22px;}
+  .progress-labels{display:flex; align-items:center; justify-content:space-between; margin-bottom:7px;}
+  .progress-labels .back-btn{
+    display:none; align-items:center; gap:5px; background:none; border:none; cursor:pointer;
+    color:var(--ink-soft); font-size:0.72rem; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; padding:0;
+  }
+  .progress-labels .back-btn.show{display:inline-flex;}
+  .progress-labels .step-label{font-size:0.68rem; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-soft); margin-left:auto;}
+  .progress-track{height:4px; background:var(--line); border-radius:999px; overflow:hidden;}
+  .progress-fill{height:100%; width:20%; background:linear-gradient(90deg, var(--green), var(--orange)); border-radius:999px; transition:width .35s ease;}
+
+  .qualify-banner{
+    display:none; align-items:center; gap:12px; background:linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%); color:var(--white);
+    border:none; border-radius:var(--radius-md); padding:16px 18px; font-size:1rem;
+    font-weight:800; line-height:1.3; margin-bottom:20px; text-align:left;
+    box-shadow:0 18px 34px -14px rgba(14,59,34,0.55);
+  }
+  .qualify-banner.show{display:flex; animation:bannerPop .45s ease;}
+  @keyframes bannerPop{0%{opacity:0; transform:scale(0.9);}60%{opacity:1; transform:scale(1.03);}100%{opacity:1; transform:scale(1);}}
+  .qualify-banner .badge-icon{
+    flex:none; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.2);
+    display:flex; align-items:center; justify-content:center;
+  }
+
+  .step{display:none;}
+  .step.active{display:block; animation:stepIn .35s ease;}
+  @keyframes stepIn{from{opacity:0; transform:translateX(8px);} to{opacity:1; transform:translateX(0);}}
+  .step h3{font-size:1.15rem; margin-bottom:14px;}
+  .step-note{color:var(--ink-soft); font-size:0.86rem; margin-bottom:16px;}
+
+  .field-input{
+    width:100%; padding:15px 17px; border:1.5px solid var(--line); border-radius:var(--radius-sm);
+    font-size:1.02rem; font-family:inherit; color:var(--ink); background:var(--white); outline:none;
+    transition:border-color .2s ease, box-shadow .2s ease;
+  }
+  .field-input::placeholder{color:#9AA8A0;}
+  .field-input:focus{border-color:var(--green); box-shadow:0 0 0 4px rgba(27,122,62,0.14);}
+  .field-row{display:flex; flex-direction:column; gap:12px; margin-bottom:6px;}
+  .field-row.two-col{flex-direction:column;}
+  @media (min-width:480px){.field-row.two-col{flex-direction:row;}}
+  .field-error{display:none; color:#C0392B; font-size:0.8rem; font-weight:600; margin:8px 2px 0;}
+  .field-error.show{display:block;}
+
+  .options-grid{display:flex; flex-direction:column; gap:11px; margin-bottom:4px;}
+  @media (min-width:560px){.options-grid{display:grid; grid-template-columns:1fr 1fr;}}
+  .option-btn{
+    display:flex; align-items:center; gap:11px; width:100%; text-align:left; padding:14px 14px;
+    border:1.5px solid var(--line); border-radius:var(--radius-sm); background:var(--white); cursor:pointer;
+    font-size:0.9rem; font-weight:700; color:var(--ink);
+    transition:border-color .16s ease, background .16s ease, transform .1s ease;
+  }
+  .option-btn:hover{border-color:var(--green); background:#F5FAF6;}
+  .option-btn:active{transform:scale(0.99);}
+  .option-btn.selected{border-color:var(--green); background:#F0F9F2;}
+  .option-icon{flex:none; width:36px; height:36px; border-radius:50%; background:#F0F9F2; display:flex; align-items:center; justify-content:center;}
+  .option-btn.selected .option-icon{background:var(--green);}
+  .option-btn.selected .option-icon svg path,
+  .option-btn.selected .option-icon svg circle,
+  .option-btn.selected .option-icon svg rect,
+  .option-btn.selected .option-icon svg line{stroke:var(--white);}
+
+  .pill-grid{display:flex; flex-direction:column; gap:10px; margin-bottom:4px;}
+  @media (min-width:560px){.pill-grid{flex-direction:row; flex-wrap:wrap;}}
+  .pill-btn{
+    flex:1 1 auto; text-align:center; padding:14px 10px; border:1.5px solid var(--line);
+    border-radius:999px; background:var(--white); cursor:pointer; font-size:0.9rem; font-weight:700; color:var(--ink);
+    transition:border-color .16s ease, background .16s ease, color .16s ease;
+  }
+  @media (min-width:560px){.pill-btn{flex:1 1 calc(50% - 5px);}}
+  .pill-btn:hover{border-color:var(--green);}
+  .pill-btn.selected{border-color:var(--green); background:var(--green); color:var(--white);}
+
+  .submit-btn{
+    width:100%; display:flex; align-items:center; justify-content:center; gap:9px;
+    background:var(--orange); color:var(--white); border:none; border-radius:var(--radius-sm);
+    padding:16px 20px; font-size:1rem; font-weight:700; letter-spacing:0.01em; cursor:pointer;
+    box-shadow:0 14px 26px -12px rgba(242,135,26,0.5); margin-top:8px;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .submit-btn:hover{background:var(--orange-dark); transform:translateY(-1px);}
+  .submit-btn:active{transform:translateY(0);}
+
+  .privacy-note{display:flex; align-items:center; justify-content:center; gap:6px; text-align:center; font-size:0.76rem; color:var(--ink-soft); margin-top:14px;}
+  .form-microcopy{text-align:center; margin-top:14px; font-size:0.8rem; color:var(--ink-soft); font-weight:600;}
+
+  /* ============ MEDIA COLUMN (PHOTO + BULLETS) ============ */
+  .media-col{display:flex; flex-direction:column; gap:18px;}
+  .quote-photo{
+    position:relative; width:100%; aspect-ratio:16/10; background:var(--bg-page); overflow:hidden;
+    border-radius:var(--radius-xl); border:1px solid var(--line); box-shadow:0 30px 60px -35px rgba(14,59,34,0.3);
+  }
+  .quote-photo img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center;}
+  .checklist{display:flex; flex-direction:column; gap:14px; list-style:none; margin:0; padding:2px 4px;}
+  .checklist li{display:flex; align-items:center; gap:11px; color:var(--ink); font-weight:700; font-size:0.9rem;}
+  .checklist li svg{flex:none; width:19px; height:19px;}
+  @media (min-width:960px){
+    .media-col{gap:24px;}
+    .checklist{gap:20px;}
+    .checklist li{gap:14px; font-size:1.12rem;}
+    .checklist li svg{width:26px; height:26px;}
+  }
+
+  /* ============ TRUST ROW ============ */
+  .trust-row{display:flex; justify-content:center; align-items:center; gap:34px; flex-wrap:wrap; margin-top:30px;}
+  .trust-mini{display:flex; align-items:center; gap:8px; font-size:0.78rem; font-weight:700; color:var(--ink-soft);}
+  .trust-mini svg{flex:none;}
+
+  /* ============ FOOTER ============ */
+  footer{
+    background:var(--ink); text-align:center; padding:38px 24px 30px;
+    display:flex; flex-direction:column; align-items:center; gap:20px;
+  }
+  .footer-disclaimer{max-width:720px; margin:0 auto; font-size:0.68rem; font-style:italic; line-height:1.65; color:rgba(255,255,255,0.45);}
+  .footer-copy{font-size:0.66rem; color:rgba(255,255,255,0.4);}
+  .footer-links{display:flex; flex-wrap:wrap; justify-content:center; gap:18px;}
+  .footer-links a{color:rgba(255,255,255,0.55); font-size:0.7rem; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.22);}
+  .footer-links a:hover{color:rgba(255,255,255,0.85);}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <p>Limited-Time Offer &mdash; <span>Up To 75% Off Installation</span> + An Additional <span>$200 Off</span> New Gutters</p>
+</div>
+
+<header class="site-header">
+  <img src="img/logo.webp" alt="Gutter Savings" class="logo" />
+</header>
+
+<div class="masthead">
+  <h1>Get the Best Deals on Top <span class="hl">Gutter</span> Brands</h1>
+  <p class="tagline">Free Quotes &middot; Licensed Local Installers</p>
+</div>
+
+<div class="shell">
+  <div class="split-grid">
+    <div class="quiz-card">
+
+      <div class="card-head">
+        <h2>See How Much You Can Save</h2>
+      </div>
+
+      <div class="qualify-banner" data-banner>
+        <span class="badge-icon">
+          <svg width="20" height="20" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" stroke="#fff" stroke-width="1.8"/><polyline points="5.5,9.3 8,11.8 12.5,6.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span>Great! You qualify for gutter savings.</span>
+      </div>
+
+      <div class="progress-wrap">
+        <div class="progress-labels">
+          <button type="button" class="back-btn" data-back>
+            <svg width="11" height="11" viewBox="0 0 13 13" fill="none"><polyline points="8,2 3,6.5 8,11" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Back
+          </button>
+          <span class="step-label" data-step-label>Step 1 of 5</span>
+        </div>
+        <div class="progress-track"><div class="progress-fill" data-bar></div></div>
+      </div>
+
+      <form novalidate>
+
+        <div class="step active" data-step="1">
+          <h3>What gutter service do you need?</h3>
+          <div class="options-grid" data-options="service">
+            <button type="button" class="option-btn" data-value="Install Gutter Guards">
+              <span class="option-icon"><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><path d="M3 10 10 4l7 6" stroke="#1B7A3E" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 8.5V16h10V8.5" stroke="#1B7A3E" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 12h6" stroke="#1B7A3E" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+              Install Gutter Guards
+            </button>
+            <button type="button" class="option-btn" data-value="Install New Gutters">
+              <span class="option-icon"><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><path d="M2 7h16" stroke="#1B7A3E" stroke-width="1.6" stroke-linecap="round"/><path d="M4 7v3a2 2 0 0 0 2 2h1" stroke="#1B7A3E" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="12" x2="7" y2="17" stroke="#1B7A3E" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+              Install New Gutters
+            </button>
+            <button type="button" class="option-btn" data-value="Install Both">
+              <span class="option-icon"><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><rect x="2.5" y="4.5" width="10" height="10" rx="1.5" stroke="#1B7A3E" stroke-width="1.4" fill="none"/><rect x="7.5" y="7.5" width="10" height="10" rx="1.5" stroke="#1B7A3E" stroke-width="1.4" fill="none"/></svg></span>
+              Install Both
+            </button>
+            <button type="button" class="option-btn" data-value="Not Sure">
+              <span class="option-icon"><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="#1B7A3E" stroke-width="1.5"/><path d="M7.8 8a2.2 2.2 0 1 1 3.3 1.9c-.7.4-1.1.9-1.1 1.6" stroke="#1B7A3E" stroke-width="1.5" fill="none" stroke-linecap="round"/><circle cx="10" cy="13.8" r="0.9" fill="#1B7A3E"/></svg></span>
+              I'm Not Sure
+            </button>
+          </div>
+        </div>
+
+        <div class="step" data-step="2">
+          <h3>When do you want to begin?</h3>
+          <div class="pill-grid" data-options="timing">
+            <button type="button" class="pill-btn" data-value="Immediately">Immediately</button>
+            <button type="button" class="pill-btn" data-value="Within 1 Month">Within 1 Month</button>
+            <button type="button" class="pill-btn" data-value="1-6 Months">1&ndash;6 Months</button>
+            <button type="button" class="pill-btn" data-value="Not Sure">I'm Not Sure</button>
+          </div>
+        </div>
+
+        <div class="step" data-step="3">
+          <h3>Where's the project located?</h3>
+          <p class="step-note">See if your zip code qualifies</p>
+          <input class="field-input" data-field="zip" type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="5" placeholder="Enter ZIP code" autocomplete="postal-code" style="text-align:center;" />
+          <div class="field-error" data-err="zip">Please enter a valid 5-digit zip code.</div>
+          <button type="button" class="submit-btn" data-next="3">Check My Zip Code</button>
+        </div>
+
+        <div class="step" data-step="4">
+          <h3>Who are we talking to?</h3>
+          <div class="field-row two-col">
+            <input class="field-input" data-field="fname" type="text" placeholder="First name" autocomplete="given-name" />
+            <input class="field-input" data-field="lname" type="text" placeholder="Last name" autocomplete="family-name" />
+          </div>
+          <div class="field-error" data-err="name">Please enter your first and last name.</div>
+          <button type="button" class="submit-btn" data-next="4">Continue</button>
+        </div>
+
+        <div class="step" data-step="5">
+          <h3 style="margin-bottom:18px;">Where should we send your discount?</h3>
+          <div class="field-row">
+            <input class="field-input" data-field="phone" type="tel" placeholder="Phone number" autocomplete="tel" />
+            <input class="field-input" data-field="email" type="email" placeholder="Email address" autocomplete="email" />
+          </div>
+          <div class="field-error" data-err="contact">Please enter a valid phone number and email.</div>
+          <button type="button" class="submit-btn" data-submit>
+            Get My Free Quotes
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><line x1="2" y1="9" x2="15" y2="9" stroke="#fff" stroke-width="2" stroke-linecap="round"/><polyline points="10,4 15,9 10,14" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="privacy-note">
+            <svg width="12" height="12" viewBox="0 0 13 13" fill="none" aria-hidden="true"><rect x="1.5" y="5.5" width="10" height="7" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M4 5.5V4C4 2.3 9 2.3 9 4V5.5" stroke="currentColor" stroke-width="1.2"/></svg>
+            Your information is safe and secure.
+          </p>
+        </div>
+
+      </form>
+      <p class="form-microcopy">100% Free &middot; No Obligation &middot; Takes 30 Seconds</p>
+    </div>
+
+    <div class="media-col">
+      <div class="quote-photo">
+        <img src="img/hero.jpg" alt="Close-up of a clean gutter and downspout on a home roofline with autumn leaves" />
+      </div>
+      <ul class="checklist">
+        <li><svg width="19" height="19" viewBox="0 0 19 19" fill="none"><circle cx="9.5" cy="9.5" r="9.5" fill="#1B7A3E"/><path d="M5.5 9.7l2.4 2.4 5-5.5" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Compare Multiple Free Quotes</li>
+        <li><svg width="19" height="19" viewBox="0 0 19 19" fill="none"><circle cx="9.5" cy="9.5" r="9.5" fill="#1B7A3E"/><path d="M5.5 9.7l2.4 2.4 5-5.5" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Licensed, Background-Checked Pros</li>
+        <li><svg width="19" height="19" viewBox="0 0 19 19" fill="none"><circle cx="9.5" cy="9.5" r="9.5" fill="#1B7A3E"/><path d="M5.5 9.7l2.4 2.4 5-5.5" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Save Up To 75% On Installation</li>
+        <li><svg width="19" height="19" viewBox="0 0 19 19" fill="none"><circle cx="9.5" cy="9.5" r="9.5" fill="#1B7A3E"/><path d="M5.5 9.7l2.4 2.4 5-5.5" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>100% Risk-Free, No Obligation</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="trust-row">
+    <div class="trust-mini">
+      <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><rect x="2" y="7.5" width="13" height="8" rx="1.8" stroke="#5C6B62" stroke-width="1.4"/><path d="M5 7.5V5.2a3.5 3.5 0 0 1 7 0V7.5" stroke="#5C6B62" stroke-width="1.4" fill="none"/></svg>
+      We take your privacy seriously
+    </div>
+    <div class="trust-mini">
+      <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M8.5 1.5 15 4v5c0 5-3.5 7.5-6.5 8.5C5 16.5 1.5 14 1.5 9V4Z" stroke="#5C6B62" stroke-width="1.4" fill="none"/></svg>
+      Trusted, Verified Pros
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms &amp; Conditions</a>
+  </div>
+  <p class="footer-disclaimer">*Up to 75% off applies to gutter guard installation on qualifying projects. Extra $200 off with qualifying purchase. Restrictions apply. Cannot be combined with other offers. See consultant for details. By using this site, you authorize GutterSavings.com and its partners to contact you about home improvement products or services via email, phone (including autodialed or prerecorded calls), or text at the number provided. Consent is not required for purchase.</p>
+  <p class="footer-disclaimer">*This offer is valid for homeowners over 18 years of age. The following persons are not eligible for this offer: employees of Leafguard or affiliated companies or entities, their immediate family members, previous participants in a Company in-home consultation within the past 12 months and all current and former Company customers. Previous/future purchases are not eligible for a discount or sale price adjustment. Sales tax does not qualify for discount. This offer cannot be combined with any other sale, promotion, discount, code, coupon and/or offer. This promotion has no cash value. Leafguard reserves the right to end any promotion at any time without notice.</p>
+  <p class="footer-copy">&copy; 2026 guttersavings.com. All Rights Reserved.</p>
+</footer>
+
+<script>
+(function(){
+  const TOTAL_STEPS = 5;
+  const panel = document.querySelector('.quiz-card');
+  const form = panel.querySelector('form');
+  const state = { service:'', timing:'', zip:'', fname:'', lname:'', phone:'', email:'' };
+  let step = 1;
+
+  function showStep(n){
+    step = n;
+    form.querySelectorAll('.step').forEach(el=>{
+      el.classList.toggle('active', Number(el.dataset.step) === n);
+    });
+    panel.querySelector('[data-bar]').style.width = (n / TOTAL_STEPS * 100) + '%';
+    panel.querySelector('[data-step-label]').textContent = 'Step ' + n + ' of ' + TOTAL_STEPS;
+    panel.querySelector('[data-back]').classList.toggle('show', n > 1);
+    panel.querySelector('[data-banner]').classList.toggle('show', n > 3);
+    const firstInput = form.querySelector('.step.active input');
+    if (firstInput) setTimeout(()=>firstInput.focus(), 50);
+  }
+
+  function advanceAfterSelect(){
+    setTimeout(()=> showStep(Math.min(TOTAL_STEPS, step + 1)), 200);
+  }
+
+  panel.querySelector('[data-back]').addEventListener('click', ()=> showStep(Math.max(1, step - 1)));
+
+  form.querySelectorAll('[data-options="service"] .option-btn, [data-options="timing"] .pill-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const group = btn.closest('[data-options]');
+      const field = group.dataset.options;
+      group.querySelectorAll('.option-btn, .pill-btn').forEach(b=>b.classList.remove('selected'));
+      btn.classList.add('selected');
+      state[field] = btn.dataset.value;
+      advanceAfterSelect();
+    });
+  });
+
+  const zipInput = form.querySelector('[data-field="zip"]');
+  form.querySelector('[data-next="3"]').addEventListener('click', ()=>{
+    const val = zipInput.value.trim();
+    const err = form.querySelector('[data-err="zip"]');
+    if(!/^\d{5}$/.test(val)){
+      err.classList.add('show');
+      zipInput.focus();
+      return;
+    }
+    err.classList.remove('show');
+    state.zip = val;
+    showStep(4);
+  });
+
+  const fnameInput = form.querySelector('[data-field="fname"]');
+  const lnameInput = form.querySelector('[data-field="lname"]');
+  form.querySelector('[data-next="4"]').addEventListener('click', ()=>{
+    const fname = fnameInput.value.trim();
+    const lname = lnameInput.value.trim();
+    const err = form.querySelector('[data-err="name"]');
+    if(!fname || !lname){
+      err.classList.add('show');
+      (fname ? lnameInput : fnameInput).focus();
+      return;
+    }
+    err.classList.remove('show');
+    state.fname = fname;
+    state.lname = lname;
+    showStep(5);
+  });
+
+  const phoneInput = form.querySelector('[data-field="phone"]');
+  const emailInput = form.querySelector('[data-field="email"]');
+  form.querySelector('[data-submit]').addEventListener('click', ()=>{
+    const phone = phoneInput.value.trim();
+    const email = emailInput.value.trim();
+    const err = form.querySelector('[data-err="contact"]');
+    const phoneValid = /^[\d\s\-().+]{7,}$/.test(phone);
+    const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if(!phoneValid || !emailValid){
+      err.classList.add('show');
+      (!phoneValid ? phoneInput : emailInput).focus();
+      return;
+    }
+    err.classList.remove('show');
+    state.phone = phone;
+    state.email = email;
+    window.location.href = 'thank-you.html?' + new URLSearchParams(state).toString();
+  });
+
+  form.querySelectorAll('input').forEach(inp=>{
+    inp.addEventListener('keydown', e=>{
+      if(e.key !== 'Enter') return;
+      e.preventDefault();
+      const btn = form.querySelector('.step.active [data-next], .step.active [data-submit]');
+      if(btn) btn.click();
+    });
+  });
+
+  showStep(1);
+
+  fetch('https://ipapi.co/json/')
+    .then(res => res.json())
+    .then(data => {
+      const zip = data && data.postal;
+      if(!/^\d{5}$/.test(zip)) return;
+      if(!zipInput.value) zipInput.value = zip;
+    })
+    .catch(()=>{});
+})();
+</script>
+
+</body>
+</html>

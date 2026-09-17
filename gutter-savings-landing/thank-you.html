@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thank You | Gutter Savings</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#1B7A3E;
+    --green-dark:#0E3B22;
+    --bg-page:#EEF3EF;
+    --orange:#F2871A;
+    --ink:#141F19;
+    --ink-soft:#5C6B62;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Montserrat',sans-serif;
+    color:var(--ink);
+    background:var(--bg-page);
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+  }
+  h1,h2{font-family:'Montserrat',sans-serif; margin:0; color:var(--ink); font-weight:800;}
+  header{padding:28px 0 8px; text-align:center;}
+  .logo-mark{height:56px; width:auto; display:inline-block;}
+  main{flex:1; display:flex; align-items:center; justify-content:center; padding:40px 24px;}
+  .card{
+    max-width:520px; width:100%; text-align:center; background:#fff;
+    border-radius:22px; border:1px solid #DCE7DF; box-shadow:0 40px 80px -40px rgba(14,59,34,.4); padding:48px 32px;
+  }
+  .check{
+    width:72px; height:72px; border-radius:50%; background:#F0F9F2;
+    display:flex; align-items:center; justify-content:center; margin:0 auto 24px;
+  }
+  h1{font-size:clamp(1.6rem,4vw,2.1rem); line-height:1.25;}
+  .lead{margin-top:14px; color:var(--ink-soft); font-size:1.02rem; line-height:1.6;}
+  .steps{margin-top:32px; text-align:left; display:flex; flex-direction:column; gap:14px;}
+  .step-item{display:flex; gap:12px; align-items:flex-start;}
+  .step-num{
+    flex:none; width:26px; height:26px; border-radius:50%; background:var(--green); color:#fff;
+    font-size:0.78rem; font-weight:700; display:flex; align-items:center; justify-content:center;
+  }
+  .step-item p{margin:0; font-size:0.92rem; color:var(--ink);}
+  .home-link{display:inline-block; margin-top:32px; color:var(--ink-soft); font-size:0.85rem; text-decoration:none; border-bottom:1px solid #BFE6CC;}
+  .home-link:hover{color:var(--green-dark);}
+  footer{background:var(--ink); color:rgba(255,255,255,0.6); text-align:center; padding:24px; font-size:0.78rem;}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="img/logo.webp" alt="Gutter Savings" class="logo-mark" />
+</header>
+
+<main>
+  <div class="card">
+    <div class="check">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="13" stroke="#1B7A3E" stroke-width="2"/><polyline points="9,15.5 13,19.5 21,10.5" stroke="#1B7A3E" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <h1 id="thankYouHeading">You're All Set!</h1>
+    <p class="lead">Thanks for requesting your free quote. A licensed, pre-screened gutter pro in your area will reach out shortly to confirm the details.</p>
+
+    <div class="steps">
+      <div class="step-item">
+        <span class="step-num">1</span>
+        <p>We match your project with a trusted local pro.</p>
+      </div>
+      <div class="step-item">
+        <span class="step-num">2</span>
+        <p>They'll call or email you to confirm details &mdash; no obligation.</p>
+      </div>
+      <div class="step-item">
+        <span class="step-num">3</span>
+        <p>You get your free, no-pressure quote and compare your savings.</p>
+      </div>
+    </div>
+
+    <a class="home-link" href="index.html">&larr; Back to homepage</a>
+  </div>
+</main>
+
+<footer>&copy; 2026 GutterSavings.com. All rights reserved.</footer>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const fname = params.get('fname');
+  if (fname) {
+    document.getElementById('thankYouHeading').textContent = 'You\'re All Set, ' + fname + '!';
+  }
+</script>
+
+</body>
+</html>
