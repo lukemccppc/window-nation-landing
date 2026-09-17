@@ -54,7 +54,7 @@
   .hero-grid{max-width:1160px; margin:0 auto; display:grid; grid-template-columns:1fr; gap:48px;}
   @media (min-width:960px){.hero-grid{grid-template-columns:1.15fr 440px; align-items:start; gap:56px;}}
 
-  .rating-row{display:flex; align-items:center; gap:10px; margin-bottom:18px; flex-wrap:wrap;}
+  .rating-row{display:flex; align-items:center; gap:10px; margin-bottom:14px; flex-wrap:wrap;}
   .rating-stars{display:flex; gap:2px;}
   .rating-row span{font-weight:700; font-size:0.92rem; color:var(--ink);}
   .rating-text-full{display:none;}
@@ -69,16 +69,17 @@
     text-transform:uppercase; color:var(--ink);
   }
 
-  .hero-offer{margin-top:18px; font-size:clamp(1.3rem, 2.6vw, 1.7rem); font-weight:700; line-height:1.3;}
+  .hero-offer{margin-top:12px; font-size:clamp(1.3rem, 2.6vw, 1.7rem); font-weight:700; line-height:1.3;}
+  @media (min-width:640px){.hero-offer{font-size:clamp(1.7rem, 2.6vw, 2.1rem);}}
   .hero-offer .g{color:var(--green);}
   .hero-offer .o{color:var(--orange);}
 
-  .benefit-list{margin-top:32px;}
+  .benefit-list{margin-top:18px;}
   .benefit-item{display:flex; align-items:center; gap:14px; padding:8px 0;}
-  .benefit-icon{flex:none; width:24px; height:24px; border-radius:50%; background:var(--green-dark); display:flex; align-items:center; justify-content:center;}
+  .benefit-icon{flex:none; width:24px; height:24px; border-radius:50%; background:var(--orange); display:flex; align-items:center; justify-content:center;}
   .benefit-item p{font-size:1rem; font-weight:600; color:var(--ink);}
 
-  .hero-photo{margin-top:32px; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow);}
+  .hero-photo{margin-top:20px; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow);}
   .hero-photo img{width:100%; height:auto; display:block;}
 
   @media (max-width:639px){
@@ -181,7 +182,7 @@
 
       <h1><span class="hl-line1">Save Thousands On</span> <span class="hl-line2">Gutter Protection</span></h1>
 
-      <p class="hero-offer"><span class="g">Get a FREE Quote &amp;</span> <span class="o">Save Today!</span></p>
+      <p class="hero-offer"><span class="g">Get a FREE Quote &amp; Save Today!</span></p>
 
       <div class="benefit-list">
         <div class="benefit-item">
