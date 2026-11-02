@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bathroom Remodeling: Showers, Tubs &amp; Full Remodels | ZINTEX</title>
+<meta name="description" content="New walk-in showers, bathtub replacements, tub-to-shower conversions, walk-in tubs, and full bathroom remodels from ZINTEX Remodeling Group. Upfront pricing and a lifetime warranty. Get your free quote.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0D2236">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="assets/hero-shower.webp" fetchpriority="high">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --navy:#0D2236;
+    --navy-2:#16324D;
+    --blue:#0276CF;
+    --blue-dark:#015FA8;
+    --ink:#1B2733;
+    --muted:#5B6371;
+    --sand:#F5F1EB;
+    --stone:#E7E0D6;
+    --line:#DDD6CB;
+    --white:#fff;
+    --error:#B42318;
+    --radius:6px;
+    --gutter:20px;
+    --head:'Manrope',system-ui,sans-serif;
+    --body:'Open Sans',system-ui,sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  *{margin:0;padding:0;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none!important;}}
+  body{font-family:var(--body);color:var(--ink);background:var(--white);font-size:16px;line-height:1.6;}
+  img{max-width:100%;display:block;height:auto;}
+  a{color:inherit;}
+  h1,h2,h3{font-family:var(--head);color:var(--navy);line-height:1.12;letter-spacing:-.02em;font-weight:800;}
+  h2{font-size:clamp(1.75rem,3.2vw,2.6rem);}
+  h3{font-size:1.25rem;font-weight:700;letter-spacing:-.01em;}
+  :focus-visible{outline:3px solid var(--blue);outline-offset:3px;}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 var(--gutter);}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+  .eyebrow{font-family:var(--head);font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);}
+  .lede{color:var(--muted);font-size:1.0625rem;max-width:34em;}
+  section{scroll-margin-top:72px;}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;border:0;border-radius:var(--radius);background:var(--blue);color:#fff;font-family:var(--head);font-weight:800;font-size:1rem;letter-spacing:.01em;text-decoration:none;cursor:pointer;transition:background .15s;}
+  .btn:hover{background:var(--blue-dark);}
+  .btn svg{width:18px;height:18px;}
+  .text-link{font-family:var(--head);font-weight:700;color:var(--blue);text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:1px;}
+
+  /* HEADER */
+  .site-header{position:sticky;top:0;z-index:40;background:var(--navy);color:#fff;}
+  .site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px;}
+  .logo img{height:36px;width:auto;}
+  .header-right{display:flex;align-items:center;gap:28px;}
+  .header-note{display:none;font-size:.82rem;color:#B8C6D6;letter-spacing:.01em;}
+  .header-phone{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .header-phone svg{width:18px;height:18px;color:#7FC0F2;flex-shrink:0;}
+  .header-phone span{display:flex;flex-direction:column;line-height:1.15;}
+  .header-phone small{font-size:.7rem;color:#B8C6D6;letter-spacing:.04em;}
+  .header-phone strong{font-family:var(--head);font-size:1rem;font-weight:800;white-space:nowrap;}
+  @media (min-width:900px){.header-note{display:block;}.logo img{height:40px;}}
+  @media (max-width:359px){.logo img{height:30px;}.header-phone small{display:none;}.header-phone strong{font-size:.92rem;}}
+
+  /* HERO */
+  .hero{background:var(--sand);}
+  .hero-grid{display:grid;}
+  .hero-copy{padding:26px var(--gutter) 24px;}
+  .hero-copy h1{font-size:clamp(1.95rem,7.4vw,3.5rem);margin:10px 0 12px;}
+  .hero-copy .lede{font-size:.98rem;line-height:1.55;}
+  .hero-points{list-style:none;margin-top:16px;display:grid;gap:8px;}
+  .hero-points li{display:flex;gap:10px;align-items:flex-start;font-size:.93rem;line-height:1.45;}
+  @media (min-width:768px){.hero-copy .lede{font-size:1.06rem;}.hero-points{gap:10px;margin-top:20px;}.hero-points li{font-size:.97rem;}}
+  .hero-points svg{flex-shrink:0;width:20px;height:20px;margin-top:1px;color:var(--blue);}
+  .hero-points b{color:var(--navy);font-weight:700;}
+  .hero-proof{display:none;}
+  .hero-media{position:relative;}
+  .hero-media > img{width:100%;height:170px;object-fit:cover;object-position:50% 40%;}
+  .quote-card{position:relative;margin:-72px 12px 0;background:#fff;border-radius:var(--radius);box-shadow:0 18px 40px -18px rgba(13,34,54,.35),0 2px 6px rgba(13,34,54,.06);overflow:hidden;}
+  .quote-head{background:var(--navy);color:#fff;padding:20px 22px 18px;}
+  .quote-head h2{color:#fff;font-size:1.35rem;letter-spacing:-.01em;}
+  .quote-head p{color:#C9D5E2;font-size:.9rem;margin-top:4px;line-height:1.45;}
+  .promo{display:flex;gap:10px;align-items:baseline;background:#EAF3FB;color:var(--navy);padding:11px 22px;font-size:.86rem;line-height:1.4;border-bottom:1px solid #D3E5F5;}
+  .promo b{font-family:var(--head);font-weight:800;white-space:nowrap;color:var(--blue-dark);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;}
+  .promo[hidden]{display:none;}
+  @media (min-width:768px){
+    .hero-media > img{height:300px;}
+    .quote-card{max-width:560px;margin:-120px auto 0;}
+    .hero-copy{padding:48px var(--gutter) 36px;max-width:760px;}
+  }
+  @media (min-width:1024px){
+    .hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);min-height:640px;}
+    .hero-copy{align-self:center;max-width:none;padding:64px 56px 64px max(var(--gutter),calc((100vw - 1200px)/2 + var(--gutter)));}
+    .hero-media{display:flex;align-items:center;justify-content:center;padding:48px 40px;}
+    .hero-media > img{position:absolute;inset:0;height:100%;object-position:50% 50%;}
+    .quote-card{width:100%;max-width:440px;margin:0;}
+    .hero-proof{display:block;margin-top:28px;padding-top:22px;border-top:1px solid var(--line);font-size:.88rem;color:var(--muted);}
+    .hero-proof strong{color:var(--navy);font-family:var(--head);}
+  }
+
+  /* FORM */
+  form{padding:20px 22px 22px;}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .field{margin-bottom:12px;}
+  .field label{display:block;font-size:.8rem;font-weight:600;color:var(--navy);margin-bottom:5px;}
+  .field label .opt{font-weight:400;color:var(--muted);}
+  .field input,.field select{width:100%;height:48px;padding:0 13px;font:inherit;font-size:16px;color:var(--ink);background:#fff;border:1.5px solid #C9CFD6;border-radius:5px;appearance:none;-webkit-appearance:none;transition:border-color .15s;}
+  .field select{background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235B6371' stroke-width='1.8' fill='none'/%3E%3C/svg%3E") no-repeat right 14px center;padding-right:36px;}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(2,118,207,.18);}
+  .field[data-invalid] input{border-color:var(--error);}
+  .err{display:none;color:var(--error);font-size:.78rem;margin-top:4px;line-height:1.35;}
+  .field[data-invalid] .err{display:block;}
+  .submit{width:100%;margin-top:4px;font-size:1.06rem;}
+  .submit[aria-busy="true"]{opacity:.75;cursor:progress;}
+  .spinner{display:none;width:18px;height:18px;border:2.5px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;}
+  .submit[aria-busy="true"] .spinner{display:inline-block;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .form-alert{display:none;margin-bottom:12px;padding:10px 12px;border-radius:5px;background:#FEF3F2;border:1px solid #FDA29B;color:var(--error);font-size:.86rem;line-height:1.45;}
+  .form-alert.show{display:block;}
+  .consent{font-size:.68rem;line-height:1.5;color:var(--muted);margin-top:12px;}
+  .consent a{color:var(--navy);}
+  .hp{position:absolute;left:-9999px;}
+
+  /* TRUST STRIP */
+  .trust{border-bottom:1px solid var(--line);background:#fff;}
+  .trust ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;}
+  .trust li{padding:20px 12px;text-align:center;border-right:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .trust li:nth-child(2n){border-right:0;}
+  .trust li:nth-child(n+3){border-bottom:0;}
+  .trust strong{display:block;font-family:var(--head);font-weight:800;font-size:1.6rem;color:var(--navy);letter-spacing:-.02em;line-height:1.1;}
+  .trust span{font-size:.82rem;color:var(--muted);}
+  @media (min-width:768px){
+    .trust ul{grid-template-columns:repeat(4,1fr);}
+    .trust li{border-bottom:0;padding:28px 12px;}
+    .trust li:nth-child(2n){border-right:1px solid var(--line);}
+    .trust li:last-child{border-right:0;}
+    .trust strong{font-size:2rem;}
+  }
+
+  /* SECTION SHELL */
+  .sec{padding:64px 0;}
+  .sec-head{margin-bottom:32px;}
+  .sec-head h2{margin:10px 0 12px;}
+  @media (min-width:1024px){
+    .sec{padding:96px 0;}
+    .sec-head.split{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:end;}
+    .sec-head.split .lede{justify-self:end;}
+  }
+
+  /* SERVICES */
+  .services{display:grid;gap:28px;}
+  .svc img{width:100%;object-fit:cover;border-radius:var(--radius);background:var(--stone);}
+  .svc-kicker{font-family:var(--head);font-size:.74rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin:16px 0 6px;}
+  .svc h3{margin-bottom:6px;}
+  .svc p{color:var(--muted);font-size:.96rem;}
+  .svc .avail{display:inline-block;margin-top:10px;font-size:.78rem;font-weight:600;color:var(--navy);background:var(--sand);border:1px solid var(--line);border-radius:4px;padding:3px 9px;}
+  .svc.feature img{aspect-ratio:4/3;}
+  .svc.compact{display:grid;grid-template-columns:112px 1fr;gap:16px;align-items:start;padding-top:24px;border-top:1px solid var(--line);}
+  .svc.compact img{aspect-ratio:1;}
+  .svc.compact .svc-kicker{margin-top:0;}
+  .svc.compact h3{font-size:1.08rem;}
+  .svc.compact p{font-size:.92rem;}
+  .services-cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;margin-top:40px;padding-top:28px;border-top:1px solid var(--line);}
+  .services-cta p{color:var(--muted);font-size:.95rem;}
+  @media (min-width:768px){
+    .services{grid-template-columns:repeat(6,1fr);column-gap:28px;row-gap:44px;}
+    .svc.feature{grid-column:span 3;}
+    .svc.compact{grid-column:span 2;display:block;padding-top:0;border-top:0;}
+    .svc.compact img{aspect-ratio:4/3;}
+    .svc.compact .svc-kicker{margin-top:16px;}
+  }
+  @media (min-width:1024px){
+    .services{grid-template-columns:repeat(12,1fr);column-gap:32px;}
+    .svc.feature:first-child{grid-column:span 7;}
+    .svc.feature:nth-child(2){grid-column:span 5;}
+    .svc.feature img{aspect-ratio:auto;height:440px;}
+    .svc.compact{grid-column:span 4;}
+    .svc.compact img{aspect-ratio:auto;height:250px;}
+    .svc.feature h3{font-size:1.45rem;}
+  }
+
+  /* WHY */
+  .why{background:var(--sand);}
+  .why-grid{display:grid;gap:32px;}
+  .why-media img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:var(--radius);}
+  .pillars{list-style:none;display:grid;gap:0;counter-reset:p;}
+  .pillars li{padding:20px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:44px 1fr;column-gap:8px;}
+  .pillars li::before{counter-increment:p;content:"0" counter(p);font-family:var(--head);font-weight:800;font-size:.85rem;color:var(--blue);padding-top:3px;}
+  .pillars h3{font-size:1.08rem;margin-bottom:4px;}
+  .pillars p{color:var(--muted);font-size:.95rem;grid-column:2;}
+  .why-note{margin-top:20px;font-size:.9rem;color:var(--muted);}
+  .why-note strong{color:var(--navy);}
+  @media (min-width:1024px){
+    .why-grid{grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+    .why-media img{aspect-ratio:4/5;object-position:30% 50%;}
+    .pillars{grid-template-columns:1fr 1fr;column-gap:36px;}
+  }
+
+  /* GALLERY */
+  .gallery{display:grid;gap:12px;}
+  .shot{position:relative;margin:0;overflow:hidden;border-radius:var(--radius);background:var(--stone);}
+  .shot img{width:100%;height:100%;object-fit:cover;}
+  .shot figcaption{position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,.94);color:var(--navy);font-family:var(--head);font-weight:700;font-size:.8rem;padding:6px 11px;border-radius:4px;}
+  .shot.ba img{aspect-ratio:1400/874;height:auto;}
+  .gallery-side{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .gallery-side .shot{aspect-ratio:1;}
+  .gallery-side .shot:first-child img{object-position:50% 50%;}
+  .gallery-side .shot:last-child img{object-position:30% 30%;}
+  @media (min-width:768px){
+    .gallery{grid-template-columns:2fr 1fr;gap:16px;}
+    .gallery-side{grid-template-columns:1fr;grid-template-rows:1fr 1fr;gap:16px;}
+    .gallery-side .shot{aspect-ratio:auto;position:relative;min-height:0;}
+    .gallery-side .shot img{position:absolute;inset:0;}
+  }
+
+  /* PROCESS */
+  .process{background:var(--sand);}
+  .steps{list-style:none;display:grid;gap:0;}
+  .steps li{padding:24px 0;border-top:2px solid var(--navy);}
+  .steps .step-num{font-family:var(--head);font-weight:800;font-size:2.4rem;line-height:1;color:var(--blue);letter-spacing:-.03em;}
+  .steps h3{margin:12px 0 6px;}
+  .steps p{color:var(--muted);font-size:.96rem;max-width:30em;}
+  .timeline{margin-top:28px;padding:18px 20px;background:#fff;border-left:3px solid var(--blue);font-size:.93rem;color:var(--ink);border-radius:0 var(--radius) var(--radius) 0;}
+  @media (min-width:768px){.steps{grid-template-columns:repeat(3,1fr);gap:32px;}}
+
+  /* TESTIMONIALS */
+  .reviews-grid{display:grid;gap:28px;}
+  .reviews{list-style:none;}
+  .reviews li{padding:24px 0;border-top:1px solid var(--line);}
+  .reviews li:last-child{border-bottom:1px solid var(--line);}
+  .reviews blockquote p{font-size:1.1rem;line-height:1.55;color:var(--ink);}
+  .reviews footer{margin-top:10px;font-size:.88rem;color:var(--muted);}
+  .reviews footer strong{color:var(--navy);font-family:var(--head);}
+  .reviews-src{margin-top:16px;font-size:.8rem;color:var(--muted);}
+  @media (min-width:1024px){
+    .reviews-grid{grid-template-columns:5fr 7fr;gap:72px;}
+    .reviews-grid .sec-head{position:sticky;top:110px;align-self:start;}
+    .reviews blockquote p{font-size:1.2rem;}
+  }
+
+  /* FINAL CTA */
+  .final{background:var(--navy);color:#fff;}
+  .final-grid{display:grid;}
+  .final-copy{padding:56px var(--gutter);}
+  .final-copy h2{color:#fff;margin:10px 0 14px;}
+  .final-copy .eyebrow{color:#7FC0F2;}
+  .final-copy p{color:#C9D5E2;max-width:30em;margin-bottom:28px;}
+  .final-actions{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;}
+  .final-actions a.call{color:#fff;font-family:var(--head);font-weight:700;text-decoration:none;}
+  .final-actions a.call span{color:#7FC0F2;}
+  .final-media img{width:100%;height:240px;object-fit:cover;}
+  @media (min-width:1024px){
+    .final-grid{grid-template-columns:1fr 1fr;}
+    .final-copy{padding:96px 64px 96px max(var(--gutter),calc((100vw - 1200px)/2 + var(--gutter)));}
+    .final-media{position:relative;}
+    .final-media img{position:absolute;inset:0;height:100%;}
+  }
+
+  /* FOOTER */
+  .site-footer{background:#081725;color:#9FB0C2;font-size:.82rem;padding:40px 0 calc(40px + env(safe-area-inset-bottom));}
+  .foot-top{display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between;align-items:flex-start;padding-bottom:24px;border-bottom:1px solid #1E3247;}
+  .foot-top img{height:36px;width:auto;}
+  .foot-top address{font-style:normal;line-height:1.7;}
+  .foot-top address strong{color:#fff;}
+  .foot-top a{color:#fff;text-decoration:none;}
+  .foot-links{display:flex;gap:18px;}
+  .foot-links a{color:#fff;}
+  .disclaimers{padding-top:20px;font-size:.7rem;line-height:1.6;color:#7F92A6;}
+  .disclaimers p+p,.disclaimers p+div{margin-top:10px;}
+
+  /* STICKY MOBILE CTA */
+  .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:45;display:flex;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(13,34,54,.08);transform:translateY(110%);transition:transform .25s ease;}
+  .sticky-cta.show{transform:none;}
+  .sticky-cta .btn{flex:1;min-height:48px;padding:0 14px;font-size:.98rem;}
+  .sticky-cta .call{flex:0 0 auto;width:52px;padding:0;background:#fff;color:var(--navy);border:1.5px solid var(--navy);}
+  .sticky-cta .call:hover{background:var(--sand);}
+  @media (min-width:1024px){.sticky-cta{display:none;}}
+  @media (max-width:1023px){body.has-sticky .site-footer{padding-bottom:calc(100px + env(safe-area-inset-bottom));}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="ZINTEX Remodeling Group">
+      <img src="assets/logo-white.webp" alt="ZINTEX Remodeling Group" width="179" height="80">
+    </a>
+    <div class="header-right">
+      <p class="header-note">Family-owned &middot; 25 years remodeling homes</p>
+      <a class="header-phone" href="tel:+18554946839" data-phone-link>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+        <span><small>Call for a free quote</small><strong data-phone-display>(855) 494-6839</strong></span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Bathroom remodeling by ZINTEX</p>
+        <h1 id="hero-title">A better bathroom starts here.</h1>
+        <p class="lede">Walk-in showers, new bathtubs, tub-to-shower conversions, walk-in tubs, and full remodels &mdash; designed around how you use your bathroom and installed by certified crews.</p>
+        <ul class="hero-points">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span><b>Upfront pricing.</b> The price we quote is the price you pay.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span><b>Many installs done in 1&ndash;2 days</b> for showers, bathtubs, and walk-in tubs.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span><b>Lifetime warranty</b> covering products and installation.</span></li>
+        </ul>
+        <p class="hero-proof"><strong>20,000+</strong> projects installed for homeowners in <strong>12 states</strong>.</p>
+      </div>
+
+      <div class="hero-media">
+        <img src="assets/hero-shower.webp" alt="Bright walk-in shower with white tile-look walls, a low-threshold shower pan, fold-down seat, and grab bar" width="1100" height="1100" fetchpriority="high">
+        <div class="quote-card" id="quote">
+          <div class="quote-head">
+            <h2 id="form-title">Get Your Free Bathroom Quote</h2>
+            <p>Tell us a little about your project and we'll help you explore your options.</p>
+          </div>
+          <p class="promo" data-promo hidden><b>Limited time</b><span data-promo-text></span></p>
+          <form id="leadForm" novalidate aria-labelledby="form-title">
+            <div class="form-alert" role="alert" id="formAlert"></div>
+            <div class="row">
+              <div class="field">
+                <label for="first_name">First name</label>
+                <input id="first_name" name="first_name" type="text" autocomplete="given-name" required aria-describedby="first_name-err">
+                <p class="err" id="first_name-err">Please enter your first name.</p>
+              </div>
+              <div class="field">
+                <label for="last_name">Last name</label>
+                <input id="last_name" name="last_name" type="text" autocomplete="family-name" required aria-describedby="last_name-err">
+                <p class="err" id="last_name-err">Please enter your last name.</p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" required aria-describedby="phone-err" placeholder="(555) 555-5555">
+              <p class="err" id="phone-err">Please enter a 10-digit phone number.</p>
+            </div>
+            <div class="row">
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" inputmode="email" autocomplete="email" required aria-describedby="email-err">
+                <p class="err" id="email-err">Please enter a valid email.</p>
+              </div>
+              <div class="field">
+                <label for="zip">ZIP code</label>
+                <input id="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="5" required aria-describedby="zip-err">
+                <p class="err" id="zip-err">Please enter a 5-digit ZIP.</p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="service_type">What are you looking to remodel? <span class="opt">(optional)</span></label>
+              <select id="service_type" name="service_type">
+                <option value="">Choose one</option>
+                <option>Shower</option>
+                <option>Bathtub</option>
+                <option>Tub-to-Shower Conversion</option>
+                <option>Walk-In Tub</option>
+                <option>Full Bathroom</option>
+                <option>Not Sure Yet</option>
+              </select>
+            </div>
+            <div class="hp" aria-hidden="true"><label for="company">Company</label><input id="company" name="company" type="text" tabindex="-1" autocomplete="off"></div>
+            <button type="submit" class="btn submit"><span class="spinner" aria-hidden="true"></span><span class="label">Get My Free Quote</span></button>
+            <!-- Consent copied from zintexhomedeals.com; only the quoted button name was changed to match this button. Needs legal sign-off. -->
+            <p class="consent" id="consentText">By clicking "Get My Free Quote", I expressly consent to ZINTEX Remodeling Group, directly or by third parties acting on its behalf, to send marketing and promotional messages - including texts and calls using an automatic telephone dialing system or pre-recorded voice messages - related to residential home improvements that I am inquiring about, to the number I provided above. I also agree to Zintex's <a href="https://zintexhomedeals.com/privacy" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://zintexhomedeals.com/terms" target="_blank" rel="noopener">Terms &amp; Conditions</a>. Accepting this consent is not required to obtain any good or service.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <section class="trust" aria-label="ZINTEX at a glance">
+    <div class="wrap">
+      <ul>
+        <li><strong>20,000+</strong><span>Projects installed</span></li>
+        <li><strong>25 years</strong><span>Family-owned experience</span></li>
+        <li><strong>Lifetime</strong><span>Warranty on products &amp; install</span></li>
+        <li><strong>12 states</strong><span>40+ local markets</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="sec" aria-labelledby="services-title">
+    <div class="wrap">
+      <div class="sec-head split">
+        <div>
+          <p class="eyebrow">What we install</p>
+          <h2 id="services-title">The right upgrade for your bathroom.</h2>
+        </div>
+        <p class="lede">Whether you're replacing one fixture or rethinking the entire room, ZINTEX has a remodeling solution to fit your space and needs.</p>
+      </div>
+
+      <div class="services">
+        <article class="svc feature">
+          <img src="assets/svc-shower.webp" alt="Low-threshold walk-in shower with marble-look wall panels, grab bar, and corner shelf" width="1000" height="667" loading="lazy">
+          <p class="svc-kicker">Walk-in showers</p>
+          <h3>A better shower, built around you.</h3>
+          <p>Replace an outdated shower with a modern, easy-to-clean design &mdash; customizable walls, fixtures, and accessibility options like seats, grab bars, and low thresholds.</p>
+        </article>
+        <article class="svc feature">
+          <img src="assets/svc-conversion.webp" alt="Former tub space converted into a walk-in shower with gray marble-look walls, recessed niche, and grab bar" width="800" height="1067" loading="lazy" style="object-position:50% 35%">
+          <p class="svc-kicker">Tub-to-shower conversions</p>
+          <h3>Make room for a better shower.</h3>
+          <p>Swap the tub you never use for a spacious, low-maintenance walk-in shower that's easier to step into every day.</p>
+        </article>
+        <article class="svc compact">
+          <img src="assets/svc-bathtub.webp" alt="New soaking bathtub with stone-look wall surround in a bright bathroom" width="1000" height="598" loading="lazy" style="object-position:62% 50%">
+          <div>
+            <p class="svc-kicker">Bathtub replacements</p>
+            <h3>A fresh start for your bathtub.</h3>
+            <p>Replace a worn-out tub with a comfortable new one and coordinated wall surrounds.</p>
+          </div>
+        </article>
+        <article class="svc compact">
+          <img src="assets/svc-walkin-tub.webp" alt="White walk-in tub with a low entry door, built-in seat, and handheld shower" width="900" height="1146" loading="lazy" style="object-position:50% 70%">
+          <div>
+            <p class="svc-kicker">Walk-in tubs</p>
+            <h3>Comfort and confidence, together.</h3>
+            <p>Low-entry tubs with a door and built-in seat for safer, more relaxing baths.</p>
+          </div>
+        </article>
+        <article class="svc compact">
+          <img src="assets/svc-full-remodel.webp" alt="Remodeled bathroom with a double wood vanity, two framed mirrors, and tile flooring" width="700" height="587" loading="lazy">
+          <div>
+            <p class="svc-kicker">Full bathroom remodels</p>
+            <h3>A complete bathroom refresh.</h3>
+            <p>Shower, vanity, flooring, and fixtures brought together in one coordinated remodel with one project manager.</p>
+            <span class="avail">Oklahoma &amp; select Texas markets</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="services-cta">
+        <a class="btn" href="#quote" data-scroll-form>Get My Free Quote</a>
+        <p>Not sure which option fits? We'll walk you through it at your free consultation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY ZINTEX -->
+  <section class="sec why" aria-labelledby="why-title">
+    <div class="wrap why-grid">
+      <div class="why-media">
+        <img src="assets/why-bathroom.webp" alt="Finished bathroom with a white subway-tile tub and shower combo, glass sliding doors, and a wood vanity" width="1200" height="699" loading="lazy">
+      </div>
+      <div>
+        <div class="sec-head">
+          <p class="eyebrow">Why homeowners choose ZINTEX</p>
+          <h2 id="why-title">A better remodel. A better experience.</h2>
+          <p class="lede">A bathroom remodel is a big investment. Here's what you can count on from the first visit to long after the crew leaves.</p>
+        </div>
+        <ol class="pillars">
+          <li><h3>Professional installation</h3><p>Trained, certified installers do the work, and My Project Portal keeps you updated every step of the way.</p></li>
+          <li><h3>Upfront, transparent pricing</h3><p>No surprises on the final invoice. The price we quote is the price you pay.</p></li>
+          <li><h3>Built around your needs</h3><p>Choose the walls, colors, fixtures, and safety features &mdash; seats, grab bars, low thresholds &mdash; that suit your home.</p></li>
+          <li><h3>Quality that lasts</h3><p>A lifetime warranty covers products and installation, backed by customer support 365 days a year.</p></li>
+        </ol>
+        <p class="why-note">We install products from trusted brands, <strong>including Jacuzzi&reg;</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="sec" aria-labelledby="gallery-title">
+    <div class="wrap">
+      <div class="sec-head split">
+        <div>
+          <p class="eyebrow">Bathroom transformations</p>
+          <h2 id="gallery-title">See what's possible for your bathroom.</h2>
+        </div>
+        <p class="lede">From a dated tub-and-tile alcove to a clean walk-in shower, small changes to the layout make a big difference in how a bathroom feels and functions.</p>
+      </div>
+      <div class="gallery">
+        <figure class="shot ba">
+          <img src="assets/gallery-before-after.webp" alt="Before and after: a dated corner tub with a shower curtain replaced by a glass-enclosed walk-in shower with gray tile and a recessed niche" width="1400" height="874" loading="lazy">
+          <figcaption>Tub-to-shower conversion</figcaption>
+        </figure>
+        <div class="gallery-side">
+          <figure class="shot">
+            <img src="assets/gallery-walkin-overhead.webp" alt="Overhead view of a walk-in tub with a contoured seat, headrest, grab bar, and hydrotherapy jets" width="900" height="600" loading="lazy">
+            <figcaption>Walk-in tub</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/gallery-fixture.webp" alt="Matte black rain showerhead and handheld sprayer against gray tile-look shower walls" width="800" height="865" loading="lazy">
+            <figcaption>Fixtures &amp; finishes</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="sec process" aria-labelledby="process-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">How it works</p>
+        <h2 id="process-title">From first conversation to finished bathroom.</h2>
+      </div>
+      <ol class="steps">
+        <li><p class="step-num" aria-hidden="true">01</p><h3>Tell us about your project</h3><p>Share what you'd like to change and schedule a free, no-obligation consultation.</p></li>
+        <li><p class="step-num" aria-hidden="true">02</p><h3>Explore your options</h3><p>Review designs, materials, and safety features, and get upfront pricing for the right solution.</p></li>
+        <li><p class="step-num" aria-hidden="true">03</p><h3>Enjoy your new bathroom</h3><p>Our installation team handles the work and keeps you informed until everything is finished.</p></li>
+      </ol>
+      <p class="timeline"><strong>How long does it take?</strong> Many walk-in shower, bathtub, and walk-in tub installations are completed in 1&ndash;2 days. Full bathroom remodels involve more work and take longer &mdash; you'll get a timeline for your specific project at your consultation.</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="sec" aria-labelledby="reviews-title">
+    <div class="wrap reviews-grid">
+      <div class="sec-head">
+        <p class="eyebrow">Homeowner stories</p>
+        <h2 id="reviews-title">Real homes. Real experiences.</h2>
+        <p class="lede">What homeowners told us after their ZINTEX projects.</p>
+      </div>
+      <div>
+        <ul class="reviews">
+          <li>
+            <blockquote>
+              <p>&ldquo;They installed a walk-in shower, and redid our sub-flooring and flooring. So that's going to make our lives way better and the shower is going to be much safer.&rdquo;</p>
+              <footer><strong>Robert T.</strong> &middot; Azle, TX &middot; Walk-in shower</footer>
+            </blockquote>
+          </li>
+          <li>
+            <blockquote>
+              <p>&ldquo;ZINTEX also went above and beyond to ensure we understood the importance of safety and quality work from their team.&rdquo;</p>
+              <footer><strong>Samantha G.</strong> &middot; Greenville, TX &middot; Full remodel</footer>
+            </blockquote>
+          </li>
+          <li>
+            <blockquote>
+              <p>&ldquo;It was a magical experience to watch this transform from a useless tub to a MAGNIFICENT shower.&rdquo;</p>
+              <footer><strong>Sandy P.</strong> &middot; Tub-to-shower conversion</footer>
+            </blockquote>
+          </li>
+        </ul>
+        <p class="reviews-src">Customer testimonials as published on zintex.com.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final" aria-labelledby="final-title">
+    <div class="final-grid">
+      <div class="final-copy">
+        <p class="eyebrow">Free, no-obligation quote</p>
+        <h2 id="final-title">Ready for a bathroom that works better for you?</h2>
+        <p>Explore your remodeling options and get a personalized quote from ZINTEX.</p>
+        <div class="final-actions">
+          <a class="btn" href="#quote" data-scroll-form>Get My Free Quote</a>
+          <a class="call" href="tel:+18554946839" data-phone-link>or call <span data-phone-display>(855) 494-6839</span></a>
+        </div>
+      </div>
+      <div class="final-media">
+        <img src="assets/gallery-vanity.webp" alt="Marble-look double vanity top with matte black faucets above navy cabinetry" width="900" height="756" loading="lazy">
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <img src="assets/logo-white.webp" alt="ZINTEX Remodeling Group" width="179" height="80" loading="lazy">
+      <address>
+        <strong>ZINTEX Remodeling Group</strong><br>
+        591 Benjamin's Way, Lewisville, TX 75057<br>
+        <a href="tel:+18554946839" data-phone-link data-phone-display>(855) 494-6839</a> &middot; License #46071
+      </address>
+      <div>
+        <div class="foot-links">
+          <a href="https://zintexhomedeals.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>
+          <a href="https://zintexhomedeals.com/terms" target="_blank" rel="noopener">Terms &amp; Conditions</a>
+        </div>
+        <p style="margin-top:10px">&copy; <span id="yr">2026</span> ZINTEX Remodeling Group</p>
+      </div>
+    </div>
+    <div class="disclaimers">
+      <p>Full bathroom remodels are available in Oklahoma and select Texas markets only. Installation timelines vary by product, project scope, and site conditions. Lifetime warranty terms and exclusions apply; ask your consultant for details.</p>
+      <div data-promo-disclaimer hidden>
+        <p>*Valid only for new product replacement customers who purchase products and have them installed through Zintex Remodeling. Not valid with any other offer or promotion. Repairs to existing products including parts and service excluded. Prior sales excluded. Other restrictions may apply. See local exclusive dealer for details.</p>
+        <p>^Subject to credit approval. Rates range from 17.99% - 24.99% APR. Loan amount and rate will vary based on your income and creditworthiness. 24 month promotional period ("Promo Period") during which interest is billed but will be waived if the amount financed is paid in full before Promo Period . Monthly payments are required during the Promo Period, but making only the required monthly payments will not pay off the amount financed by Promo Period expiration date. Any unpaid balance and amounts owed after Promo Period will be paid over 66 monthly payments. For example, assuming the full credit limit is used on loan approval date, for every $1,000 financed at 24.99% APR, 84 monthly payments of $25.30. This example is an estimate only. Actual payment amounts based on amount and timing of purchases. Call 866-936-0602 for financing costs and terms. Financing for the GreenSky&reg; consumer loan program is provided by Equal Opportunity Lenders. GreenSky&reg; is a registered trademark of GreenSky, LLC, a subsidiary of Goldman Sachs Bank USA. NMLS #1416362. Loans originated by Goldman Sachs are issued by Goldman Sachs Bank USA, Salt Lake City Branch. NMLS #208156. &copy;2026 Zintex Remodeling. Expires <span data-promo-expires></span>.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="stickyCta" aria-hidden="true">
+  <a class="btn call" href="tel:+18554946839" data-phone-link aria-label="Call ZINTEX" tabindex="-1">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+  </a>
+  <a class="btn" href="#quote" data-scroll-form tabindex="-1">Get My Free Quote</a>
+</div>
+
+<script>
+/* ---------------------------------------------------------------------------
+   CONFIG — fill these in before sending paid traffic.
+   endpoint      Lead API/CRM URL. Receives a JSON POST (see buildPayload).
+                 Any 2xx response = accepted. Empty = form shows an error and
+                 asks the visitor to call (no fake success).
+   gtmId         Google Tag Manager container for this page (e.g. GTM-XXXXXXX).
+                 GA4 + Google Ads conversions are configured inside GTM and
+                 should fire on the dataLayer event "zintex_lead_submitted",
+                 which is pushed ONLY after the endpoint accepts the lead.
+   phone         Tracking number shown on the page. tel = E.164 digits.
+   promo         Offer from zintexhomedeals.com (expires 12/31/2026).
+                 Set enabled:false to hide it and its disclaimers. It also
+                 hides itself automatically after the expiry date.
+--------------------------------------------------------------------------- */
+var CONFIG = {
+  endpoint: '',
+  gtmId: '',
+  thankYouUrl: 'thank-you.html',
+  phone: { display: '(855) 494-6839', tel: '+18554946839' },
+  promo: {
+    enabled: true,
+    text: 'Free installation labor* or no payments, no interest until 2027.^',
+    expires: '2026-12-31'
+  }
+};
+
+(function(){
+  var d = document, w = window;
+
+  // Google Tag Manager (only when an ID is configured)
+  w.dataLayer = w.dataLayer || [];
+  if (CONFIG.gtmId) {
+    w.dataLayer.push({'gtm.start': Date.now(), event: 'gtm.js'});
+    var s = d.createElement('script'); s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtm.js?id=' + encodeURIComponent(CONFIG.gtmId);
+    d.head.appendChild(s);
+  }
+
+  // Phone number
+  d.querySelectorAll('[data-phone-link]').forEach(function(a){ a.href = 'tel:' + CONFIG.phone.tel; });
+  d.querySelectorAll('[data-phone-display]').forEach(function(el){ el.textContent = CONFIG.phone.display; });
+  d.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Promo
+  var p = CONFIG.promo;
+  if (p.enabled && new Date() <= new Date(p.expires + 'T23:59:59')) {
+    d.querySelector('[data-promo-text]').textContent = p.text;
+    d.querySelector('[data-promo-expires]').textContent = new Date(p.expires + 'T12:00:00').toLocaleDateString('en-US');
+    d.querySelector('[data-promo]').hidden = false;
+    d.querySelector('[data-promo-disclaimer]').hidden = false;
+  }
+
+  // Attribution: capture once per visitor (first touch wins), keep for the session
+  var KEYS = ['gclid','gbraid','wbraid','utm_source','utm_medium','utm_campaign','utm_term','utm_content','msclkid','fbclid'];
+  var store = {};
+  try { store = JSON.parse(sessionStorage.getItem('zx_attr') || '{}'); } catch(e) {}
+  var qs = new URLSearchParams(location.search), fresh = false;
+  KEYS.forEach(function(k){ var v = qs.get(k); if (v && !store[k]) { store[k] = v; fresh = true; } });
+  if (!store.landing_page_url) { store.landing_page_url = location.href; store.referrer = d.referrer || ''; fresh = true; }
+  if (fresh) { try { sessionStorage.setItem('zx_attr', JSON.stringify(store)); } catch(e) {} }
+
+  // Form
+  var form = d.getElementById('leadForm');
+  var btn = form.querySelector('.submit');
+  var alertBox = d.getElementById('formAlert');
+  var phone = d.getElementById('phone'), zip = d.getElementById('zip');
+
+  var rules = {
+    first_name: function(v){ return v.trim().length > 0; },
+    last_name: function(v){ return v.trim().length > 0; },
+    phone: function(v){ var n = v.replace(/\D/g,''); if (n.length === 11 && n[0] === '1') n = n.slice(1); return n.length === 10 && /^[2-9]/.test(n); },
+    email: function(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()); },
+    zip: function(v){ return /^\d{5}$/.test(v.trim()); }
+  };
+
+  function check(name){
+    var input = form.elements[name], ok = rules[name](input.value);
+    var field = input.closest('.field');
+    if (ok) { field.removeAttribute('data-invalid'); input.removeAttribute('aria-invalid'); }
+    else { field.setAttribute('data-invalid',''); input.setAttribute('aria-invalid','true'); }
+    return ok;
+  }
+
+  Object.keys(rules).forEach(function(name){
+    var input = form.elements[name];
+    input.addEventListener('blur', function(){ if (input.value) { input.dataset.touched = '1'; check(name); } });
+    input.addEventListener('input', function(){ if (input.dataset.touched) check(name); });
+  });
+
+  phone.addEventListener('input', function(){
+    var n = phone.value.replace(/\D/g,'');
+    if (n.length === 11 && n[0] === '1') n = n.slice(1);
+    n = n.slice(0,10);
+    phone.value = n.length > 6 ? '(' + n.slice(0,3) + ') ' + n.slice(3,6) + '-' + n.slice(6)
+               : n.length > 3 ? '(' + n.slice(0,3) + ') ' + n.slice(3) : n;
+  });
+  zip.addEventListener('input', function(){ zip.value = zip.value.replace(/\D/g,'').slice(0,5); });
+
+  function buildPayload(){
+    var f = form.elements, digits = f.phone.value.replace(/\D/g,'').slice(-10);
+    return Object.assign({
+      first_name: f.first_name.value.trim(),
+      last_name: f.last_name.value.trim(),
+      phone: digits,
+      email: f.email.value.trim(),
+      zip: f.zip.value.trim(),
+      service_type: f.service_type.value || null,
+      consent_given: true,
+      consent_text: d.getElementById('consentText').textContent.replace(/\s+/g,' ').trim(),
+      page_url: location.href,
+      submitted_at: new Date().toISOString(),
+      user_agent: navigator.userAgent
+    }, store);
+  }
+
+  function showAlert(msg){ alertBox.textContent = msg; alertBox.classList.add('show'); alertBox.focus && alertBox.setAttribute('tabindex','-1'); alertBox.focus(); }
+
+  var sending = false;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (sending) return;
+    alertBox.classList.remove('show');
+    if (form.elements.company.value) return; // honeypot
+
+    var firstBad = null;
+    Object.keys(rules).forEach(function(name){
+      form.elements[name].dataset.touched = '1';
+      if (!check(name) && !firstBad) firstBad = form.elements[name];
+    });
+    if (firstBad) { firstBad.focus(); return; }
+
+    if (!CONFIG.endpoint) {
+      console.warn('[ZINTEX] CONFIG.endpoint is not set; lead was not sent.', buildPayload());
+      showAlert('Sorry, we couldn\'t send your request online right now. Please call ' + CONFIG.phone.display + ' and we\'ll get your free quote started.');
+      return;
+    }
+
+    sending = true;
+    btn.setAttribute('aria-busy','true'); btn.disabled = true;
+    btn.querySelector('.label').textContent = 'Sending…';
+    var payload = buildPayload();
+
+    fetch(CONFIG.endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+      .then(function(res){
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        var go = function(){ if (go.done) return; go.done = true; location.href = CONFIG.thankYouUrl; };
+        w.dataLayer.push({
+          event: 'zintex_lead_submitted',
+          service_type: payload.service_type || 'not_selected',
+          user_data: { email: payload.email, phone_number: '+1' + payload.phone },
+          eventCallback: go, eventTimeout: 1500
+        });
+        setTimeout(go, CONFIG.gtmId ? 1600 : 0);
+      })
+      .catch(function(err){
+        console.error('[ZINTEX] lead submit failed', err);
+        sending = false;
+        btn.removeAttribute('aria-busy'); btn.disabled = false;
+        btn.querySelector('.label').textContent = 'Get My Free Quote';
+        showAlert('Something went wrong sending your request. Please try again, or call ' + CONFIG.phone.display + '.');
+      });
+  });
+
+  // Scroll-to-form links focus the first field
+  d.querySelectorAll('[data-scroll-form]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      var card = d.getElementById('quote');
+      var reduce = w.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var y = card.getBoundingClientRect().top + w.scrollY - 76;
+      w.scrollTo({ top: y, behavior: reduce ? 'auto' : 'smooth' });
+      setTimeout(function(){ d.getElementById('first_name').focus({ preventScroll: true }); }, reduce ? 0 : 500);
+    });
+  });
+
+  // Sticky mobile CTA: only while the form is off screen and after the hero
+  var sticky = d.getElementById('stickyCta');
+  if ('IntersectionObserver' in w) {
+    var formVisible = true, pastHero = false;
+    var update = function(){
+      var show = !formVisible && pastHero;
+      sticky.classList.toggle('show', show);
+      sticky.setAttribute('aria-hidden', show ? 'false' : 'true');
+      sticky.querySelectorAll('a').forEach(function(a){ a.tabIndex = show ? 0 : -1; });
+      d.body.classList.toggle('has-sticky', show);
+    };
+    new IntersectionObserver(function(en){ formVisible = en[0].isIntersecting; update(); }).observe(form);
+    new IntersectionObserver(function(en){ pastHero = !en[0].isIntersecting && en[0].boundingClientRect.top < 0; update(); }).observe(d.querySelector('.hero'));
+  }
+})();
+</script>
+</body>
+</html>
