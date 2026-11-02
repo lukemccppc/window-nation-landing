@@ -20,9 +20,9 @@
     --blue-dark:#015FA8;
     --ink:#1B2733;
     --muted:#5B6371;
-    --sand:#F5F1EB;
-    --stone:#E7E0D6;
-    --line:#DDD6CB;
+    --sand:#EEF2F6;
+    --stone:#DFE5EC;
+    --line:#D6DEE7;
     --white:#fff;
     --error:#B42318;
     --radius:6px;
@@ -67,7 +67,7 @@
   .hero-copy{grid-area:copy;padding:30px var(--gutter) 58vw;color:#fff;
     background:linear-gradient(180deg,var(--navy) 0,var(--navy) calc(100% - 70.7vw),rgba(13,34,54,.45) calc(100% - 55vw),rgba(13,34,54,0) calc(100% - 40vw)),url(assets/hero-bg-mobile.webp) 50% 100%/100% auto no-repeat,var(--navy);}
   .hero-copy .eyebrow{color:#8CC8F5;}
-  .hero-copy h1{color:#fff;font-size:clamp(2.25rem,9.6vw,3rem);line-height:1.02;letter-spacing:-.04em;margin:12px 0 14px;text-wrap:balance;}
+  .hero-copy h1{color:#fff;font-size:clamp(2.25rem,9.6vw,3rem);line-height:1.02;letter-spacing:-.04em;margin:0 0 14px;text-wrap:balance;}
   .hero-copy .lede{color:#D7E1EC;font-size:1rem;line-height:1.55;max-width:30em;}
   .hero-benefits{list-style:none;display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:18px;}
   .hero-benefits li{display:flex;align-items:center;gap:8px;font-family:var(--head);font-weight:700;font-size:.92rem;color:#fff;}
@@ -75,7 +75,6 @@
   .hero-stats{display:none;}
   .hero-form{grid-area:form;padding:28px var(--gutter) 36px;}
   .form-card h2{font-size:1.5rem;letter-spacing:-.025em;}
-  .form-sub{color:var(--muted);font-size:.92rem;line-height:1.5;margin-top:6px;}
   @media (min-width:768px){
     .hero-copy{padding:52px max(var(--gutter),calc((100vw - 640px)/2)) 50vw;background-image:linear-gradient(180deg,var(--navy) 0,var(--navy) calc(100% - 70.7vw),rgba(13,34,54,.45) calc(100% - 55vw),rgba(13,34,54,0) calc(100% - 40vw)),url(assets/hero-bg.webp);}
     .hero-copy h1{font-size:3.4rem;}
@@ -83,14 +82,14 @@
     .form-card{max-width:600px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:4px;box-shadow:0 24px 50px -24px rgba(13,34,54,.35);padding:28px 28px 22px;}
   }
   @media (min-width:1024px){
-    .hero{background:linear-gradient(90deg,rgba(13,34,54,.92) 0%,rgba(13,34,54,.78) 30%,rgba(13,34,54,.2) 52%,rgba(13,34,54,0) 66%),url(assets/hero-bg.webp) 50% 62%/cover no-repeat,var(--navy);}
-    .hero-inner{max-width:1360px;margin:0 auto;padding:64px 40px 72px;min-height:720px;grid-template-columns:minmax(0,1.15fr) minmax(0,.7fr) minmax(360px,1fr);grid-template-areas:"copy . form";column-gap:32px;align-items:stretch;}
-    .hero-copy{background:none;padding:8px 0 0;display:flex;flex-direction:column;max-width:520px;}
-    .hero-copy h1{font-size:clamp(3.1rem,4.4vw,4.3rem);margin:18px 0 20px;}
+    .hero{background:linear-gradient(90deg,rgba(13,34,54,.92) 0%,rgba(13,34,54,.8) 38%,rgba(13,34,54,.25) 58%,rgba(13,34,54,0) 72%),url(assets/hero-bg.webp) 50% 62%/cover no-repeat,var(--navy);}
+    .hero-inner{max-width:1360px;margin:0 auto;padding:64px 40px 72px;min-height:720px;grid-template-columns:minmax(0,1.7fr) minmax(0,.25fr) minmax(360px,1fr);grid-template-areas:"copy . form";column-gap:32px;align-items:stretch;}
+    .hero-copy{background:none;padding:0;display:flex;flex-direction:column;justify-content:center;max-width:680px;}
+    .hero-copy h1{font-size:clamp(3.1rem,4.4vw,4.4rem);margin:0 0 20px;}
     .hero-copy .lede{font-size:1.08rem;}
     .hero-benefits{flex-direction:column;gap:10px;margin-top:26px;}
     .hero-benefits li{font-size:1rem;}
-    .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:auto;padding-top:22px;border-top:1px solid rgba(255,255,255,.22);max-width:420px;}
+    .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,.22);max-width:440px;}
     .hero-stats strong{display:block;font-family:var(--head);font-weight:800;font-size:1.5rem;color:#fff;letter-spacing:-.02em;line-height:1.1;}
     .hero-stats span{font-size:.8rem;color:#B9C8D8;line-height:1.4;display:block;margin-top:4px;}
     .hero-form{padding:0;margin:0;align-self:center;}
@@ -112,7 +111,7 @@
   .field input,.field select{width:100%;height:48px;padding:0 13px;font:inherit;font-size:16px;color:var(--ink);background:#fff;border:1.5px solid #C9CFD6;border-radius:5px;appearance:none;-webkit-appearance:none;transition:border-color .15s;}
   .field select{background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235B6371' stroke-width='1.8' fill='none'/%3E%3C/svg%3E") no-repeat right 14px center;padding-right:36px;}
   .field input:focus,.field select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(2,118,207,.18);}
-  .field[data-invalid] input{border-color:var(--error);}
+  .field[data-invalid] input,.field[data-invalid] select{border-color:var(--error);}
   .err{display:none;color:var(--error);font-size:.78rem;margin-top:4px;line-height:1.35;}
   .field[data-invalid] .err{display:block;}
   .submit{width:100%;margin-top:4px;font-size:1.06rem;}
@@ -300,7 +299,6 @@
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero-inner">
       <div class="hero-copy">
-        <p class="eyebrow">Bathroom remodeling by ZINTEX</p>
         <h1 id="hero-title">A Better Bathroom Starts Here.</h1>
         <p class="lede">From walk-in showers and new bathtubs to complete bathroom remodels, ZINTEX makes upgrading your bathroom simple.</p>
         <ul class="hero-benefits">
@@ -317,7 +315,6 @@
       <div class="hero-form" id="quote">
         <div class="form-card">
           <h2 id="form-title">Get your free quote</h2>
-          <p class="form-sub">Tell us a little about your project and we'll help you explore your options.</p>
           <form id="leadForm" novalidate aria-labelledby="form-title">
             <div class="form-alert" role="alert" id="formAlert"></div>
             <div class="row">
@@ -350,8 +347,8 @@
               </div>
             </div>
             <div class="field">
-              <label for="service_type">What are you looking to remodel? <span class="opt">(optional)</span></label>
-              <select id="service_type" name="service_type">
+              <label for="service_type">What are you looking to remodel?</label>
+              <select id="service_type" name="service_type" required aria-describedby="service_type-err">
                 <option value="">Choose one</option>
                 <option>Shower</option>
                 <option>Bathtub</option>
@@ -360,6 +357,7 @@
                 <option>Full Bathroom</option>
                 <option>Not Sure Yet</option>
               </select>
+              <p class="err" id="service_type-err">Please choose what you'd like to remodel.</p>
             </div>
             <div class="hp" aria-hidden="true"><label for="company">Company</label><input id="company" name="company" type="text" tabindex="-1" autocomplete="off"></div>
             <button type="submit" class="btn submit"><span class="spinner" aria-hidden="true"></span><span class="label">Get My Free Quote</span></button>
@@ -660,7 +658,8 @@ var CONFIG = {
     last_name: function(v){ return v.trim().length > 0; },
     phone: function(v){ var n = v.replace(/\D/g,''); if (n.length === 11 && n[0] === '1') n = n.slice(1); return n.length === 10 && /^[2-9]/.test(n); },
     email: function(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()); },
-    zip: function(v){ return /^\d{5}$/.test(v.trim()); }
+    zip: function(v){ return /^\d{5}$/.test(v.trim()); },
+    service_type: function(v){ return v !== ''; }
   };
 
   function check(name){
@@ -694,7 +693,7 @@ var CONFIG = {
       phone: digits,
       email: f.email.value.trim(),
       zip: f.zip.value.trim(),
-      service_type: f.service_type.value || null,
+      service_type: f.service_type.value,
       consent_given: true,
       consent_text: d.getElementById('consentText').textContent.replace(/\s+/g,' ').trim(),
       page_url: location.href,
@@ -736,7 +735,7 @@ var CONFIG = {
         var go = function(){ if (go.done) return; go.done = true; location.href = CONFIG.thankYouUrl; };
         w.dataLayer.push({
           event: 'zintex_lead_submitted',
-          service_type: payload.service_type || 'not_selected',
+          service_type: payload.service_type,
           user_data: { email: payload.email, phone_number: '+1' + payload.phone },
           eventCallback: go, eventTimeout: 1500
         });
