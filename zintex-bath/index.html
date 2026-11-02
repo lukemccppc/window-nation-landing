@@ -64,15 +64,14 @@
   /* HERO */
   .hero{background:#fff;}
   .hero-inner{display:grid;grid-template-areas:"copy" "form";}
-  .hero-copy{grid-area:copy;padding:30px var(--gutter) 58vw;color:#fff;
+  .hero-copy{grid-area:copy;padding:30px var(--gutter) 62vw;color:#fff;
     background:linear-gradient(180deg,var(--navy) 0,var(--navy) calc(100% - 70.7vw),rgba(13,34,54,.45) calc(100% - 55vw),rgba(13,34,54,0) calc(100% - 40vw)),url(assets/hero-bg-mobile.webp) 50% 100%/100% auto no-repeat,var(--navy);}
   .hero-copy .eyebrow{color:#8CC8F5;}
   .hero-copy h1{color:#fff;font-size:clamp(2.25rem,9.6vw,3rem);line-height:1.02;letter-spacing:-.04em;margin:0 0 14px;text-wrap:balance;}
   .hero-copy .lede{color:#D7E1EC;font-size:1rem;line-height:1.55;max-width:30em;}
-  .hero-benefits{list-style:none;display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:18px;}
-  .hero-benefits li{display:flex;align-items:center;gap:8px;font-family:var(--head);font-weight:700;font-size:.92rem;color:#fff;}
-  .hero-benefits svg{width:18px;height:18px;flex-shrink:0;color:#8CC8F5;}
-  .hero-stats{display:none;}
+  .hero-benefits{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 16px;margin-top:18px;max-width:520px;}
+  .hero-benefits li{display:flex;align-items:flex-start;gap:8px;line-height:1.3;font-family:var(--head);font-weight:700;font-size:.92rem;color:#fff;}
+  .hero-benefits svg{width:18px;height:18px;flex-shrink:0;margin-top:1px;color:#8CC8F5;}
   .hero-form{grid-area:form;padding:28px var(--gutter) 36px;}
   .form-card h2{font-size:1.5rem;letter-spacing:-.025em;}
   @media (min-width:768px){
@@ -87,11 +86,8 @@
     .hero-copy{background:none;padding:0;display:flex;flex-direction:column;justify-content:center;max-width:680px;}
     .hero-copy h1{font-size:clamp(3.1rem,4.4vw,4.4rem);margin:0 0 20px;}
     .hero-copy .lede{font-size:1.08rem;}
-    .hero-benefits{flex-direction:column;gap:10px;margin-top:26px;}
+    .hero-benefits{gap:14px 24px;margin-top:28px;}
     .hero-benefits li{font-size:1rem;}
-    .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,.22);max-width:440px;}
-    .hero-stats strong{display:block;font-family:var(--head);font-weight:800;font-size:1.5rem;color:#fff;letter-spacing:-.02em;line-height:1.1;}
-    .hero-stats span{font-size:.8rem;color:#B9C8D8;line-height:1.4;display:block;margin-top:4px;}
     .hero-form{padding:0;margin:0;align-self:center;}
     .form-card{max-width:420px;margin-left:auto;box-shadow:0 30px 60px -28px rgba(8,23,37,.55),0 2px 6px rgba(8,23,37,.08);border-color:rgba(255,255,255,.6);}
     .site-header .wrap{max-width:1360px;padding:0 40px;}
@@ -105,9 +101,10 @@
   /* FORM */
   form{margin-top:20px;}
   .row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-  .field{margin-bottom:12px;}
-  .field label{display:block;font-size:.8rem;font-weight:600;color:var(--navy);margin-bottom:5px;}
-  .field label .opt{font-weight:400;color:var(--muted);}
+  .field{margin-bottom:10px;}
+  .field input::placeholder{color:#7A8592;opacity:1;}
+  .field select:invalid{color:#7A8592;}
+  .field select option{color:var(--ink);}
   .field input,.field select{width:100%;height:48px;padding:0 13px;font:inherit;font-size:16px;color:var(--ink);background:#fff;border:1.5px solid #C9CFD6;border-radius:5px;appearance:none;-webkit-appearance:none;transition:border-color .15s;}
   .field select{background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235B6371' stroke-width='1.8' fill='none'/%3E%3C/svg%3E") no-repeat right 14px center;padding-right:36px;}
   .field input:focus,.field select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(2,118,207,.18);}
@@ -304,11 +301,9 @@
         <ul class="hero-benefits">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Upfront pricing</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Professional installation</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>20,000+ projects installed</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Lifetime warranty</li>
         </ul>
-        <div class="hero-stats">
-          <p><strong>20,000+</strong><span>Projects installed</span></p>
-          <p><strong>Lifetime</strong><span>Warranty on products &amp; installation</span></p>
-        </div>
       </div>
 
 
@@ -319,37 +314,37 @@
             <div class="form-alert" role="alert" id="formAlert"></div>
             <div class="row">
               <div class="field">
-                <label for="first_name">First name</label>
-                <input id="first_name" name="first_name" type="text" autocomplete="given-name" required aria-describedby="first_name-err">
+                <label class="sr-only" for="first_name">First name</label>
+                <input id="first_name" name="first_name" placeholder="First name" type="text" autocomplete="given-name" required aria-describedby="first_name-err">
                 <p class="err" id="first_name-err">Please enter your first name.</p>
               </div>
               <div class="field">
-                <label for="last_name">Last name</label>
-                <input id="last_name" name="last_name" type="text" autocomplete="family-name" required aria-describedby="last_name-err">
+                <label class="sr-only" for="last_name">Last name</label>
+                <input id="last_name" name="last_name" placeholder="Last name" type="text" autocomplete="family-name" required aria-describedby="last_name-err">
                 <p class="err" id="last_name-err">Please enter your last name.</p>
               </div>
             </div>
             <div class="field">
-              <label for="phone">Phone</label>
-              <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" required aria-describedby="phone-err" placeholder="(555) 555-5555">
+              <label class="sr-only" for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" required aria-describedby="phone-err" placeholder="Phone">
               <p class="err" id="phone-err">Please enter a 10-digit phone number.</p>
             </div>
             <div class="row">
               <div class="field">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" inputmode="email" autocomplete="email" required aria-describedby="email-err">
+                <label class="sr-only" for="email">Email</label>
+                <input id="email" name="email" placeholder="Email" type="email" inputmode="email" autocomplete="email" required aria-describedby="email-err">
                 <p class="err" id="email-err">Please enter a valid email.</p>
               </div>
               <div class="field">
-                <label for="zip">ZIP code</label>
-                <input id="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="5" required aria-describedby="zip-err">
+                <label class="sr-only" for="zip">ZIP code</label>
+                <input id="zip" name="zip" placeholder="ZIP code" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="5" required aria-describedby="zip-err">
                 <p class="err" id="zip-err">Please enter a 5-digit ZIP.</p>
               </div>
             </div>
             <div class="field">
-              <label for="service_type">What are you looking to remodel?</label>
+              <label class="sr-only" for="service_type">What are you looking to remodel?</label>
               <select id="service_type" name="service_type" required aria-describedby="service_type-err">
-                <option value="">Choose one</option>
+                <option value="" disabled selected>What are you looking to remodel?</option>
                 <option>Shower</option>
                 <option>Bathtub</option>
                 <option>Tub-to-Shower Conversion</option>
