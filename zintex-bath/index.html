@@ -43,7 +43,6 @@
   :focus-visible{outline:3px solid var(--blue);outline-offset:3px;}
   .wrap{max-width:1200px;margin:0 auto;padding:0 var(--gutter);}
   .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
-  .eyebrow{font-family:var(--head);font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);}
   .lede{color:var(--muted);font-size:1.0625rem;max-width:34em;}
   section{scroll-margin-top:72px;}
 
@@ -66,7 +65,6 @@
   .hero-inner{display:grid;grid-template-areas:"copy" "form";}
   .hero-copy{grid-area:copy;padding:30px var(--gutter) 62vw;color:#fff;
     background:linear-gradient(180deg,var(--navy) 0,var(--navy) calc(100% - 70.7vw),rgba(13,34,54,.45) calc(100% - 55vw),rgba(13,34,54,0) calc(100% - 40vw)),url(assets/hero-bg-mobile.webp) 50% 100%/100% auto no-repeat,var(--navy);}
-  .hero-copy .eyebrow{color:#8CC8F5;}
   .hero-copy h1{color:#fff;font-size:clamp(2.25rem,9.6vw,3rem);line-height:1.02;letter-spacing:-.04em;margin:0 0 14px;text-wrap:balance;}
   .hero-copy .lede{color:#D7E1EC;font-size:1rem;line-height:1.55;max-width:30em;}
   .hero-benefits{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 16px;margin-top:18px;max-width:520px;}
@@ -141,11 +139,9 @@
   /* SECTION SHELL */
   .sec{padding:64px 0;}
   .sec-head{margin-bottom:32px;}
-  .sec-head h2{margin:10px 0 12px;}
+  .sec-head h2{margin-bottom:12px;max-width:22em;}
   @media (min-width:1024px){
     .sec{padding:96px 0;}
-    .sec-head.split{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:end;}
-    .sec-head.split .lede{justify-self:end;}
   }
 
   /* SERVICES */
@@ -390,9 +386,8 @@
   <!-- SERVICES -->
   <section class="sec" aria-labelledby="services-title">
     <div class="wrap">
-      <div class="sec-head split">
+      <div class="sec-head">
         <div>
-          <p class="eyebrow">What we install</p>
           <h2 id="services-title">The right upgrade for your bathroom.</h2>
         </div>
         <p class="lede">Whether you're replacing one fixture or rethinking the entire room, ZINTEX has a remodeling solution to fit your space and needs.</p>
@@ -465,7 +460,6 @@
       </div>
       <div>
         <div class="sec-head">
-          <p class="eyebrow">Why homeowners choose ZINTEX</p>
           <h2 id="why-title">A better remodel. A better experience.</h2>
           <p class="lede">A bathroom remodel is a big investment. Here's what you can count on from the first visit to long after the crew leaves.</p>
         </div>
@@ -483,9 +477,8 @@
   <!-- GALLERY -->
   <section class="sec" aria-labelledby="gallery-title">
     <div class="wrap">
-      <div class="sec-head split">
+      <div class="sec-head">
         <div>
-          <p class="eyebrow">Bathroom transformations</p>
           <h2 id="gallery-title">See what's possible for your bathroom.</h2>
         </div>
         <p class="lede">From a dated tub-and-tile alcove to a clean walk-in shower, small changes to the layout make a big difference in how a bathroom feels and functions.</p>
@@ -513,7 +506,6 @@
   <section class="sec process" aria-labelledby="process-title">
     <div class="wrap">
       <div class="sec-head">
-        <p class="eyebrow">How it works</p>
         <h2 id="process-title">From first conversation to finished bathroom.</h2>
       </div>
       <ol class="steps">
@@ -529,7 +521,6 @@
   <section class="sec" aria-labelledby="reviews-title">
     <div class="wrap reviews-grid">
       <div class="sec-head">
-        <p class="eyebrow">Homeowner stories</p>
         <h2 id="reviews-title">Real homes. Real experiences.</h2>
         <p class="lede">What homeowners told us after their ZINTEX projects.</p>
       </div>
@@ -575,7 +566,7 @@
           </div>
         </div>
         <div class="cta-media">
-          <img src="assets/hero-shower.webp" alt="Walk-in shower with white tile-look walls, a fold-down seat, and grab bar" width="1100" height="1100" loading="lazy">
+          <img src="assets/cta-tub-shower.webp" alt="Bathtub and shower combo with sliding glass doors, white subway tile, and a wood vanity" width="1100" height="641" loading="lazy">
         </div>
       </div>
     </div>
