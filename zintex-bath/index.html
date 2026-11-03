@@ -161,8 +161,6 @@
   .svc.compact .svc-kicker{margin-top:0;}
   .svc.compact h3{font-size:1.08rem;}
   .svc.compact p{font-size:.92rem;}
-  .services-cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;margin-top:40px;padding-top:28px;border-top:1px solid var(--line);}
-  .services-cta p{color:var(--muted);font-size:.95rem;}
   @media (min-width:768px){
     .services{grid-template-columns:repeat(6,1fr);column-gap:28px;row-gap:44px;}
     .svc.feature{grid-column:span 3;}
@@ -239,20 +237,33 @@
     .reviews blockquote p{font-size:1.2rem;}
   }
 
-  /* FINAL CTA */
-  .final{background:var(--navy);color:#fff;}
-  .final-grid{display:grid;}
-  .final-copy{padding:56px var(--gutter);}
-  .final-copy h2{color:#fff;margin:10px 0 14px;}
-  .final-copy .eyebrow{color:#7FC0F2;}
-  .final-copy p{color:#C9D5E2;max-width:30em;margin-bottom:28px;}
-  .final-actions{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;}
-  .final-media img{width:100%;height:240px;object-fit:cover;}
-  @media (min-width:1024px){
-    .final-grid{grid-template-columns:1fr 1fr;}
-    .final-copy{padding:96px 64px 96px max(var(--gutter),calc((100vw - 1200px)/2 + var(--gutter)));}
-    .final-media{position:relative;}
-    .final-media img{position:absolute;inset:0;height:100%;}
+  /* CTA BANNER */
+  .cta-banner{display:grid;overflow:hidden;border-radius:16px;background:#E9F1F9;box-shadow:0 1px 2px rgba(13,34,54,.04);}
+  .cta-media{order:-1;}
+  .cta-media img{width:100%;height:180px;object-fit:cover;clip-path:polygon(0 0,100% 0,100% 100%,0 86%);}
+  .cta-copy{padding:24px 22px 28px;}
+  .cta-copy h2{font-size:clamp(1.55rem,3vw,2.35rem);margin-bottom:10px;}
+  .cta-copy p{color:var(--muted);font-size:1rem;margin-bottom:22px;}
+  .cta-actions{display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px;}
+  .cta-actions .btn{width:100%;min-height:56px;font-size:1.06rem;box-shadow:0 8px 18px rgba(2,118,207,.22);}
+  .cta-perks{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px;width:100%;}
+  .cta-perks li{display:flex;align-items:center;gap:10px;font-family:var(--head);font-weight:600;font-size:.95rem;line-height:1.25;color:var(--navy);}
+  .cta-perks svg{flex:none;width:30px;height:30px;color:var(--blue);}
+  @media (max-width:639px){.cta-perks br{display:none;}.cta-perks li{font-size:.9rem;}.cta-perks svg{width:26px;height:26px;}}
+  .services+.cta-banner{margin-top:48px;}
+  .final{padding:8px 0 64px;}
+  @media (min-width:640px){
+    .cta-actions .btn{width:auto;}
+    .cta-perks{display:flex;gap:14px 28px;width:auto;}
+  }
+  @media (min-width:900px){
+    .cta-banner{grid-template-columns:minmax(0,1.85fr) minmax(0,1fr);align-items:stretch;}
+    .cta-media{order:0;position:relative;min-height:240px;}
+    .cta-media img{position:absolute;inset:0;height:100%;clip-path:polygon(14% 0,100% 0,100% 100%,0 100%);}
+    .cta-copy{padding:44px 24px 44px 56px;}
+    .cta-actions .btn{padding:0 34px;}
+    .cta-perks{padding-left:28px;border-left:1px solid #C5D3E1;}
+    .final{padding:16px 0 96px;}
   }
 
   /* FOOTER */
@@ -427,9 +438,21 @@
         </article>
       </div>
 
-      <div class="services-cta">
-        <a class="btn" href="#quote" data-scroll-form>Get My Free Quote</a>
-        <p>Not sure which option fits? We'll walk you through it at your free consultation.</p>
+      <div class="cta-banner">
+        <div class="cta-copy">
+          <h2>Ready to Upgrade Your Bathroom?</h2>
+          <p>Not sure which option fits? We&rsquo;ll walk you through it at your free consultation.</p>
+          <div class="cta-actions">
+            <a class="btn" href="#quote" data-scroll-form>Get My Free Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <ul class="cta-perks">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/><path d="M7.5 13h.01M12 13h.01M16.5 13h.01M7.5 16.5h.01M12 16.5h.01" stroke-width="2.6"/></svg>Free <br>Consultation</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3.4 13.4A2 2 0 0 1 2.8 12V4.8a2 2 0 0 1 2-2H12a2 2 0 0 1 1.4.6l7.2 7.2a2 2 0 0 1 0 2.8Z"/><circle cx="8" cy="8" r="1.6"/><path d="m9.5 15.5 5-5"/></svg>No Obligation <br>Quote</li>
+            </ul>
+          </div>
+        </div>
+        <div class="cta-media">
+          <img src="assets/gallery-vanity.webp" alt="Marble-look double vanity top with matte black faucets above navy cabinetry" width="900" height="756" loading="lazy">
+        </div>
       </div>
     </div>
   </section>
@@ -538,17 +561,22 @@
 
   <!-- FINAL CTA -->
   <section class="final" aria-labelledby="final-title">
-    <div class="final-grid">
-      <div class="final-copy">
-        <p class="eyebrow">Free, no-obligation quote</p>
-        <h2 id="final-title">Ready for a bathroom that works better for you?</h2>
-        <p>Explore your remodeling options and get a personalized quote from ZINTEX.</p>
-        <div class="final-actions">
-          <a class="btn" href="#quote" data-scroll-form>Get My Free Quote</a>
+    <div class="wrap">
+      <div class="cta-banner">
+        <div class="cta-copy">
+          <h2 id="final-title">Ready for a Bathroom That Works Better for You?</h2>
+          <p>Explore your remodeling options and get a personalized quote from ZINTEX.</p>
+          <div class="cta-actions">
+            <a class="btn" href="#quote" data-scroll-form>Get My Free Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <ul class="cta-perks">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/><path d="M7.5 13h.01M12 13h.01M16.5 13h.01M7.5 16.5h.01M12 16.5h.01" stroke-width="2.6"/></svg>Free <br>Consultation</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3.4 13.4A2 2 0 0 1 2.8 12V4.8a2 2 0 0 1 2-2H12a2 2 0 0 1 1.4.6l7.2 7.2a2 2 0 0 1 0 2.8Z"/><circle cx="8" cy="8" r="1.6"/><path d="m9.5 15.5 5-5"/></svg>No Obligation <br>Quote</li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div class="final-media">
-        <img src="assets/gallery-vanity.webp" alt="Marble-look double vanity top with matte black faucets above navy cabinetry" width="900" height="756" loading="lazy">
+        <div class="cta-media">
+          <img src="assets/hero-shower.webp" alt="Walk-in shower with white tile-look walls, a fold-down seat, and grab bar" width="1100" height="1100" loading="lazy">
+        </div>
       </div>
     </div>
   </section>
