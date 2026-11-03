@@ -6,7 +6,7 @@
 <title>Bathroom Remodeling: Showers, Tubs &amp; Full Remodels | ZINTEX</title>
 <meta name="description" content="New walk-in showers, bathtub replacements, tub-to-shower conversions, walk-in tubs, and full bathroom remodels from ZINTEX Remodeling Group. Upfront pricing and a lifetime warranty. Get your free quote.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#0D2236">
+<meta name="theme-color" content="#003366">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="assets/hero-bg-mobile.webp" media="(max-width:1023px)" fetchpriority="high">
@@ -52,7 +52,7 @@
   .text-link{font-family:var(--head);font-weight:700;color:var(--blue);text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:1px;}
 
   /* HEADER */
-  .site-header{position:sticky;top:0;z-index:40;background:var(--navy);color:#fff;}
+  .site-header{position:sticky;top:0;z-index:40;background:#003366;color:#fff;}
   .site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px;}
   .logo img{height:36px;width:auto;}
   .header-right{display:flex;align-items:center;gap:28px;}
@@ -140,6 +140,7 @@
   .sec{padding:64px 0;}
   .sec-head{margin-bottom:32px;}
   .sec-head h2{margin-bottom:12px;max-width:22em;}
+  @media (min-width:1024px){.sec-head h2{max-width:none;}.sec-head .lede{max-width:52em;}}
   @media (min-width:1024px){
     .sec{padding:96px 0;}
   }
@@ -192,21 +193,8 @@
   }
 
   /* GALLERY */
-  .gallery{display:grid;gap:12px;}
-  .shot{position:relative;margin:0;overflow:hidden;border-radius:var(--radius);background:var(--stone);}
-  .shot img{width:100%;height:100%;object-fit:cover;}
-  .shot figcaption{position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,.94);color:var(--navy);font-family:var(--head);font-weight:700;font-size:.8rem;padding:6px 11px;border-radius:4px;}
-  .shot.ba img{aspect-ratio:1400/874;height:auto;}
-  .gallery-side{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-  .gallery-side .shot{aspect-ratio:1;}
-  .gallery-side .shot:first-child img{object-position:50% 50%;}
-  .gallery-side .shot:last-child img{object-position:30% 30%;}
-  @media (min-width:768px){
-    .gallery{grid-template-columns:2fr 1fr;gap:16px;}
-    .gallery-side{grid-template-columns:1fr;grid-template-rows:1fr 1fr;gap:16px;}
-    .gallery-side .shot{aspect-ratio:auto;position:relative;min-height:0;}
-    .gallery-side .shot img{position:absolute;inset:0;}
-  }
+  .shot{margin:0;overflow:hidden;border-radius:var(--radius);background:var(--stone);}
+  .shot img{width:100%;height:auto;aspect-ratio:1400/874;object-fit:cover;}
 
   /* PROCESS */
   .process{background:var(--sand);}
@@ -263,15 +251,15 @@
   }
 
   /* FOOTER */
-  .site-footer{background:#081725;color:#9FB0C2;font-size:.82rem;padding:40px 0 calc(40px + env(safe-area-inset-bottom));}
-  .foot-top{display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between;align-items:flex-start;padding-bottom:24px;border-bottom:1px solid #1E3247;}
+  .site-footer{background:#003366;color:#B3C3D4;font-size:.82rem;padding:40px 0 calc(40px + env(safe-area-inset-bottom));}
+  .foot-top{display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between;align-items:flex-start;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.16);}
   .foot-top img{height:36px;width:auto;}
   .foot-top address{font-style:normal;line-height:1.7;}
   .foot-top address strong{color:#fff;}
   .foot-top a{color:#fff;text-decoration:none;}
   .foot-links{display:flex;gap:18px;}
   .foot-links a{color:#fff;}
-  .disclaimers{padding-top:20px;font-size:.7rem;line-height:1.6;color:#7F92A6;}
+  .disclaimers{padding-top:20px;font-size:.7rem;line-height:1.6;color:#A3B5C8;}
   .disclaimers p+p,.disclaimers p+div{margin-top:10px;}
 
   /* STICKY MOBILE CTA */
@@ -483,22 +471,9 @@
         </div>
         <p class="lede">From a dated tub-and-tile alcove to a clean walk-in shower, small changes to the layout make a big difference in how a bathroom feels and functions.</p>
       </div>
-      <div class="gallery">
-        <figure class="shot ba">
-          <img src="assets/gallery-before-after.webp" alt="Before and after: a dated corner tub with a shower curtain replaced by a glass-enclosed walk-in shower with gray tile and a recessed niche" width="1400" height="874" loading="lazy">
-          <figcaption>Tub-to-shower conversion</figcaption>
-        </figure>
-        <div class="gallery-side">
-          <figure class="shot">
-            <img src="assets/gallery-walkin-overhead.webp" alt="Overhead view of a walk-in tub with a contoured seat, headrest, grab bar, and hydrotherapy jets" width="900" height="600" loading="lazy">
-            <figcaption>Walk-in tub</figcaption>
-          </figure>
-          <figure class="shot">
-            <img src="assets/gallery-fixture.webp" alt="Matte black rain showerhead and handheld sprayer against gray tile-look shower walls" width="800" height="865" loading="lazy">
-            <figcaption>Fixtures &amp; finishes</figcaption>
-          </figure>
-        </div>
-      </div>
+      <figure class="shot">
+        <img src="assets/gallery-before-after.webp" alt="Before and after: a dated corner tub with a shower curtain replaced by a glass-enclosed walk-in shower with gray tile and a recessed niche" width="1400" height="874" loading="lazy">
+      </figure>
     </div>
   </section>
 
