@@ -1,0 +1,72 @@
+{
+  "_note": "Copy shared by every brand page. Brand-specific lines live in config/brands/*.json. Keep claims to what refacing actually includes (renuityhome.com/kitchens): new doors, drawer fronts, matching veneer, and hardware over the existing cabinet boxes.",
+
+  "hero": {
+    "h1": "Love Your Kitchen Again",
+    "lede": "New doors, drawer fronts, finishes, and hardware give your kitchen a fresh look. <strong>Professional cabinet refacing</strong> keeps the cabinet boxes you already have, so there’s no tear-out.",
+    "imageAlt": "Bright kitchen with white shaker cabinets, brushed nickel pulls, blue subway tile backsplash, and a stainless range",
+    "formTitle": "Get Your Free Quote",
+    "formSub": "Free and no obligation. A local specialist will reach out to schedule."
+  },
+
+  "transformation": {
+    "h2": "A Fresh Kitchen Look. Without the Full Remodel.",
+    "lede": "Most of what makes a kitchen feel dated is on the surface. Refacing replaces those surfaces with new materials and keeps your existing cabinet boxes in place. You skip the demolition, plumbing reroutes, and extended downtime of a full remodel.",
+    "newTitle": "What’s new",
+    "new": ["New cabinet doors", "New drawer fronts", "Matching veneer on cabinet frames", "Updated pulls and knobs"],
+    "keepTitle": "What stays",
+    "keep": ["Your sturdy cabinet boxes", "Your kitchen’s layout", "Your plumbing, right where it is"],
+    "imageAlt": "White kitchen cabinets with a butcher-block island, pendant lights, and a stainless range hood"
+  },
+
+  "styles": {
+    "h2": "Your Kitchen. Your Style.",
+    "lede": "Choose your door style, color, and finish, then pick hardware to match. A design specialist helps you put it all together.",
+    "items": [
+      { "img": "finish-white", "name": "Crisp white", "text": "Clean and bright. Makes a small kitchen feel bigger.", "alt": "Close-up of white shaker cabinet doors and drawers with brushed metal pulls" },
+      { "img": "finish-gray", "name": "Soft gray", "text": "A modern neutral that hides everyday wear.", "alt": "Gray shaker cabinets with matte black bar pulls under a white tile backsplash" },
+      { "img": "finish-cherry", "name": "Warm wood", "text": "Rich wood tones for a traditional kitchen.", "alt": "Kitchen with cherry-toned raised-panel cabinets and a matching island" },
+      { "img": "finish-espresso", "name": "Deep espresso", "text": "Dark, dramatic finishes that ground the room.", "alt": "Open kitchen with dark espresso cabinets, a large island, and pendant lights" }
+    ]
+  },
+
+  "why": {
+    "h2": "Why Reface Instead of Replace?",
+    "lede": "If your cabinets are solid but tired-looking, replacing them means paying to tear out boxes that still work. Refacing puts your budget where you’ll see it.",
+    "items": [
+      { "h3": "A Big Visual Change", "p": "New doors, drawer fronts, and finishes change the look of the whole room, since cabinets cover more of your kitchen than anything else." },
+      { "h3": "Less Disruption", "p": "Your existing cabinet boxes stay in place, so there’s no demolition and no plumbing reroutes, and the work finishes much faster than a full remodel." },
+      { "h3": "More Design Flexibility", "p": "Mix and match door styles, colors, finishes, and hardware until it feels like your kitchen." },
+      { "h3": "A Smarter Way to Update", "p": "Refresh the most visible part of your kitchen without the cost and upheaval of rebuilding it." }
+    ]
+  },
+
+  "process": {
+    "h2": "A Simpler Way to a Kitchen You’ll Love",
+    "steps": [
+      { "h3": "Tell Us About Your Kitchen", "p": "Request your free quote and tell us what you’d like to change." },
+      { "h3": "Explore Your Options", "p": "Review door styles, finishes, materials, and project pricing with a remodeling specialist." },
+      { "h3": "Enjoy Your Updated Kitchen", "p": "Professional installers complete the approved work, then walk through the finished kitchen with you." }
+    ]
+  },
+
+  "gallery": {
+    "h2": "See What’s Possible for Your Kitchen",
+    "lede": "Classic white, warm wood, or a bold two-tone island: here are a few kitchen looks to get you thinking.",
+    "main": { "img": "gallery-main", "alt": "White kitchen with a dark wood island, black countertops, pendant lights, and hardwood floors" },
+    "side": [
+      { "img": "gallery-side-1", "alt": "White kitchen with a large island, three pendant lights, and black counter stools" },
+      { "img": "gallery-side-2", "alt": "L-shaped white kitchen with marble countertops, a mosaic backsplash, and a stainless hood" }
+    ]
+  },
+
+  "final": {
+    "h2": "Your Kitchen’s Next Chapter Starts Here",
+    "imageAlt": "Gray shaker cabinets with brass hardware, a white quartz counter, and a gold faucet"
+  },
+
+  "thankYou": {
+    "h1": "Thanks! We’ve Got Your Request.",
+    "p": "A {brand} specialist will contact you shortly to talk about your kitchen and schedule your free consultation."
+  }
+}

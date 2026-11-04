@@ -1,0 +1,70 @@
+{
+  "id": "mad-city",
+  "route": "mad-city-kitchens",
+  "name": "Mad City Kitchens",
+  "shortName": "Mad City",
+  "logo": { "src": "assets/mad-city/logo.png", "alt": "Mad City Kitchens", "headerHeight": 62, "mobileHeaderHeight": 46 },
+
+  "meta": {
+    "title": "Kitchen Cabinet Refacing in Wisconsin | Mad City Kitchens",
+    "description": "Give your kitchen a fresh new look with cabinet refacing from Mad City Kitchens: new doors, drawer fronts, finishes, and hardware. Serving Wisconsin homeowners. 70% off labor plus 12 months no interest, no payments.",
+    "themeColor": "#092F57"
+  },
+
+  "theme": {
+    "mode": "dark",
+    "fontsHref": "https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap",
+    "headFont": "'Nunito',system-ui,sans-serif",
+    "bodyFont": "'Nunito Sans',system-ui,sans-serif",
+    "headWeight": "800",
+    "navy": "#092F57",
+    "navyDeep": "#061F3A",
+    "accent": "#31B0C8",
+    "accentText": "#16758A",
+    "accentSoft": "#E2F2F6",
+    "surface": "#092F57",
+    "tint": "#F2F5F8",
+    "ctaBg": "#31B0C8",
+    "ctaHover": "#4CC0D5",
+    "ctaInk": "#092F57",
+    "offerBg": "#31B0C8",
+    "offerInk": "#092F57",
+    "offerAccent": "#092F57",
+    "radius": "4px",
+    "radiusSm": "4px"
+  },
+
+  "serviceArea": {
+    "label": "Serving Wisconsin homeowners",
+    "footer": "Serving Wisconsin homeowners in and around Appleton, Eau Claire, Green Bay, La Crosse, Madison, Milwaukee, and Wausau."
+  },
+
+  "copy": {
+    "headerNote": "Family owned · Serving Wisconsin",
+    "trust": [
+      { "icon": "home", "title": "Family owned", "text": "A local Wisconsin remodeling team" },
+      { "icon": "shield", "title": "Lifetime warranty", "text": "Workmanship coverage, transferable if you sell" },
+      { "icon": "clock", "title": "Often done in a day", "text": "Many refacing projects finish in one day" },
+      { "icon": "pin", "title": "Across Wisconsin", "text": "Madison, Milwaukee, Green Bay, Wausau & more" }
+    ],
+    "timelineNote": "In many cases, installation is completed in a single day. Your consultant confirms the schedule for your kitchen before any work begins.",
+    "finalLede": "Discover how a simple cabinet refresh can make a big difference in the space you use every day."
+  },
+
+  "legal": {
+    "footerOwnership": "A Renuity home improvement provider.",
+    "copyright": "Mad City Windows",
+    "copyrightYearPrefix": "2013 – ",
+    "nmls": "",
+    "nmlsUrl": "",
+    "privacyUrl": "https://madcitywindows.com/privacy-policy/",
+    "termsUrl": "https://madcitywindows.com/terms-and-conditions/",
+    "warrantyNote": "Lifetime warranty covers workmanship for as long as you own your home and can be transferred to the buyer if you sell. See warranty for complete terms and exclusions."
+  },
+
+  "tracking": {
+    "brandId": "mad-city",
+    "landingPageId": "mad-city-kitchens-refacing",
+    "cakeOfferId": ""
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "id": "fhia",
+  "route": "fhia-kitchens",
+  "name": "FHIA Remodeling",
+  "shortName": "FHIA",
+  "logo": { "src": "assets/fhia/logo.png", "alt": "FHIA Remodeling", "headerHeight": 64, "mobileHeaderHeight": 52 },
+
+  "meta": {
+    "title": "Kitchen Cabinet Refacing in Florida | FHIA Remodeling",
+    "description": "Give your kitchen a fresh new look with cabinet refacing from FHIA Remodeling: new doors, drawer fronts, finishes, and hardware for Florida homes. 70% off labor plus 12 months no interest, no payments.",
+    "themeColor": "#163155"
+  },
+
+  "theme": {
+    "mode": "light",
+    "fontsHref": "https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap",
+    "headFont": "'Outfit',system-ui,sans-serif",
+    "bodyFont": "'DM Sans',system-ui,sans-serif",
+    "headWeight": "600",
+    "navy": "#163155",
+    "navyDeep": "#0E2340",
+    "accent": "#2DAFC5",
+    "accentText": "#1A7F93",
+    "accentSoft": "#E3F3F6",
+    "surface": "#EEF6F8",
+    "tint": "#F5F8F9",
+    "ctaBg": "#163155",
+    "ctaHover": "#0E2340",
+    "ctaInk": "#FFFFFF",
+    "offerBg": "#163155",
+    "offerInk": "#FFFFFF",
+    "offerAccent": "#2DAFC5",
+    "radius": "14px",
+    "radiusSm": "8px"
+  },
+
+  "serviceArea": {
+    "label": "Serving Florida homeowners",
+    "footer": "Cabinet refacing for homeowners across Florida."
+  },
+
+  "copy": {
+    "headerNote": "Serving Florida homeowners",
+    "trust": [
+      { "icon": "users", "title": "250,000+ customers", "text": "Part of the Renuity family of home improvement brands" },
+      { "icon": "droplet", "title": "Made for Florida kitchens", "text": "Moisture-resistant finishes for humid conditions" },
+      { "icon": "clock", "title": "Days, not weeks", "text": "Most refacing projects finish quickly" },
+      { "icon": "ruler", "title": "Free design consultation", "text": "Plan styles and pricing with a specialist" }
+    ],
+    "timelineNote": "Most refacing projects are completed in days, not weeks. Your consultant confirms the schedule for your kitchen before any work begins.",
+    "finalLede": "Discover how a simple cabinet refresh can make a big difference in the space you use every day."
+  },
+
+  "legal": {
+    "footerOwnership": "FHIA Remodeling is now part of Renuity.",
+    "copyright": "Renuity Operations, LLC. All Rights Reserved.",
+    "copyrightYearPrefix": "",
+    "nmls": "NMLS #2781386",
+    "nmlsUrl": "https://www.nmlsconsumeraccess.org/",
+    "privacyUrl": "https://renuityhome.com/privacy-policy/",
+    "termsUrl": "https://renuityhome.com/terms-conditions/"
+  },
+
+  "tracking": {
+    "brandId": "fhia",
+    "landingPageId": "fhia-kitchens-refacing",
+    "cakeOfferId": ""
+  }
+}

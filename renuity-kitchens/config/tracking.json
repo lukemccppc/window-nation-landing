@@ -1,0 +1,22 @@
+{
+  "_note": "Fill these in before sending paid traffic. Nothing here is a real credential. With endpoint empty the form shows an error and no conversion fires.",
+
+  "endpoint": "",
+  "payloadFormat": "renuity-form",
+  "gtmId": "",
+  "thankYouPath": "thank-you.html",
+  "trustedForm": false,
+  "jornayaCampaignKey": "",
+  "zipLookup": "https://api.zippopotam.us/us/",
+
+  "attributionKeys": ["gclid", "gbraid", "wbraid", "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "msclkid", "fbclid", "transid", "pubid", "s1", "s2", "s3", "cid"],
+
+  "events": {
+    "ctaClick": "kitchen_cta_click",
+    "formStart": "kitchen_form_start",
+    "formError": "kitchen_form_validation_error",
+    "submitAttempt": "kitchen_form_submit_attempt",
+    "submitSuccess": "kitchen_lead_submitted",
+    "submitFailure": "kitchen_form_submit_failure"
+  }
+}

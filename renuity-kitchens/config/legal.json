@@ -1,0 +1,11 @@
+{
+  "_status": "PENDING_APPROVAL",
+  "_note": "Consent copied verbatim from the current Renuity form on madcitywindows.com/cabinet-refacing (Mad City is a Renuity brand; FHIA now operates as Renuity in Florida). Only the quoted button name was changed to match this page's button. Both brands' leads go to Renuity, so the consent names Renuity. Legal must confirm before paid traffic.",
+
+  "buttonLabel": "Get My Free Quote",
+  "consentHtml": "By clicking “{button}”, you agree to Renuity calling or sending text messages to you at the phone number provided above, with telemarketing promotions for our products and services, and with appointment-related and other informational messages and reminders, including using an automatic telephone dialing system or an artificial or prerecorded voice, and agree to our <a href=\"{callingTermsUrl}\" target=\"_blank\" rel=\"noopener\">Calling and Messaging Terms</a> and acknowledge our <a href=\"{consentPrivacyUrl}\" target=\"_blank\" rel=\"noopener\">Privacy Policy</a>. Your consent is not a condition of purchasing any property, goods, or services. You can reply “STOP” at any time to a text message from us to opt-out. Message and data rates may apply. Message frequency may vary, text HELP for assistance.",
+  "callingTermsUrl": "https://renuityhome.com/terms-conditions/",
+  "consentPrivacyUrl": "https://renuityhome.com/privacy-policy",
+
+  "imageNote": "Photos show example kitchen styles and finishes for inspiration and may not depict actual customer projects. Available door styles, colors, and finishes vary by market."
+}

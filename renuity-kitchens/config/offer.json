@@ -1,0 +1,18 @@
+{
+  "_status": "PENDING_APPROVAL",
+  "_note": "Headline offer matches renuityhome.com/kitchens ('Take 70% Off Labor for Kitchen Cabinet Refacing Installation' + '12 Months No Interest, No Payments', expires Dec 1, 2026 5:00 AM). Disclosure text below is copied verbatim from the Renuity Home Deals BATHROOM page (renuityhomedeals.com/bathrooms) with only the dates changed to {expires}. No kitchen-specific disclosure was published anywhere we could find. Legal must approve before paid traffic. Mad City's own site currently advertises 18 months (not 12) through 11/30/2026; confirm which financing term applies in Wisconsin.",
+
+  "enabled": true,
+  "expires": "2026-11-30",
+  "primary": "70% Off Labor",
+  "primaryLead": "70%",
+  "primaryTail": "Off Labor",
+  "secondary": "12 Months No Interest, No Payments",
+  "scope": "On kitchen cabinet refacing installation",
+  "label": "Limited-time kitchen offer",
+
+  "disclosures": [
+    "*Minimum purchase required. Cannot be combined with any other offer. Does not include material costs. New orders only for appointments completed by {expires}. Offer expires {expires}.",
+    "Financing available with minimum purchase and approved credit. Renuity Operations, LLC, is neither a broker nor a lender. Financing is provided by third-party lenders unaffiliated with Renuity Operations, LLC, under terms and conditions arranged directly between the customer and such lender, all subject to credit requirements and satisfactory completion of finance documents. Any finance terms advertised are estimate only. Ask for details. New orders only. Not valid with any other offer, or previous job. Interest will be charged to your account from the purchase date if the purchase balance is not paid in full within the/by the end of the 12 month period or if you make a late payment."
+  ]
+}
