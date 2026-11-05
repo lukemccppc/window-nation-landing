@@ -26,10 +26,10 @@
     "tint": "#F2F5F8",
     "ctaBg": "#31B0C8",
     "ctaHover": "#4CC0D5",
-    "ctaInk": "#092F57",
+    "ctaInk": "#FFFFFF",
     "offerBg": "#31B0C8",
-    "offerInk": "#092F57",
-    "offerAccent": "#092F57",
+    "offerInk": "#FFFFFF",
+    "offerAccent": "#FFFFFF",
     "radius": "4px",
     "radiusSm": "4px"
   },
