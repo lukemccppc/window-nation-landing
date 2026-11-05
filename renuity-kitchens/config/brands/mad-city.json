@@ -40,7 +40,7 @@
   },
 
   "copy": {
-    "headerNote": "Family owned · Serving Wisconsin",
+    "headerNote": "Family owned",
     "trust": [
       { "icon": "home", "title": "Family owned", "text": "A local Wisconsin remodeling team" },
       { "icon": "shield", "title": "Lifetime warranty", "text": "Workmanship coverage, transferable if you sell" },
