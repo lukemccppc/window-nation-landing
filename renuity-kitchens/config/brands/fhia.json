@@ -4,6 +4,7 @@
   "name": "FHIA Remodeling",
   "shortName": "FHIA",
   "logo": { "src": "assets/fhia/logo.png", "alt": "FHIA Remodeling", "headerHeight": 64, "mobileHeaderHeight": 52 },
+  "coLogo": { "src": "assets/fhia/renuity-logo.svg", "alt": "Renuity", "headerHeight": 34, "mobileHeaderHeight": 24 },
 
   "meta": {
     "title": "Kitchen Cabinet Refacing in Florida | FHIA Remodeling",
@@ -40,6 +41,7 @@
   },
 
   "copy": {
+    "announcement": "The Same Trusted FHIA Team You Know is Now Renuity - Bringing Faster, Easier Upgrades Without the Stress",
     "headerNote": "Serving Florida homeowners",
     "trust": [
       { "icon": "users", "title": "250,000+ customers", "text": "Part of the Renuity family of home improvement brands" },

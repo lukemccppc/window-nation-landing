@@ -8,6 +8,7 @@ Reads config/*.json + config/brands/<id>.json and writes a self-contained static
 ../<brand.route>/ (index.html, thank-you.html, assets/). Requires Pillow (with AVIF support).
 """
 import json
+import re
 import shutil
 import sys
 from datetime import date
@@ -94,8 +95,17 @@ def build_logo(brand, out):
     canvas = Image.new('RGBA', (64, 64), (0, 0, 0, 0))
     canvas.paste(ico, ((64 - ico.width) // 2, (64 - ico.height) // 2))
     canvas.save(out / 'assets' / 'icon.png')
-    return {'header': 'assets/logo.webp', 'footer': 'assets/logo-footer.webp', 'icon': 'assets/icon.png',
+    logo = {'header': 'assets/logo.webp', 'footer': 'assets/logo-footer.webp', 'icon': 'assets/icon.png',
             'w': round(w / 2), 'h': round(h / 2), 'fw': round(fw / 2), 'fh': round(fh / 2)}
+    co = brand.get('coLogo')
+    if co:
+        # Partner mark shown beside the brand logo (SVG, copied as-is; size from its viewBox).
+        src = ROOT / co['src']
+        shutil.copy(src, out / 'assets' / src.name)
+        vw, vh = map(float, re.search(r'viewBox="[\d.\s-]*?([\d.]+)\s+([\d.]+)"', src.read_text()).groups())
+        logo['co'] = {'src': f'assets/{src.name}', 'alt': co['alt'],
+                      'w': round(co['headerHeight'] * vw / vh), 'h': co['headerHeight']}
+    return logo
 
 
 def theme_vars(brand):
@@ -113,6 +123,9 @@ def theme_vars(brand):
         'hero-muted': '#C9D7E5' if dark else '#4E5B69',
         'logo-h': f"{brand['logo']['headerHeight']}px", 'logo-h-m': f"{brand['logo']['mobileHeaderHeight']}px",
     }
+    if brand.get('coLogo'):
+        v['co-logo-h'] = f"{brand['coLogo']['headerHeight']}px"
+        v['co-logo-h-m'] = f"{brand['coLogo']['mobileHeaderHeight']}px"
     return ':root{' + ';'.join(f'--{k}:{val}' for k, val in v.items()) + ';}'
 
 
@@ -174,7 +187,7 @@ def thank_you(c):
 <html lang="en">
 {K.head(c, f"Thank You | {b['name']}", f"Your {b['name']} quote request was received.", preload=False)}
 <body class="brand-{b['id']}">
-<header class="site-header"><div class="wrap"><a class="logo" href="./" aria-label="{K.e(b['name'])} home"><img src="{c['logo']['header']}" alt="{K.e(b['logo']['alt'])}" width="{c['logo']['w']}" height="{c['logo']['h']}"></a></div></header>
+<header class="site-header"><div class="wrap">{K.logos(c, './')}</div></header>
 <main class="ty">
   <div class="ty-card">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m7.5 12.3 3 3 6-6.3"/></svg>

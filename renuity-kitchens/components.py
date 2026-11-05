@@ -41,13 +41,29 @@ def cta(c, where, text=None, cls='btn', icon_svg=ARROW):
 
 # ---------------------------------------------------------------------------
 
+def logos(c, href):
+    b, co = c['brand'], c['logo'].get('co')
+    second = (f'<span class="logo-rule" aria-hidden="true"></span>'
+              f'<img class="co-logo" src="{co["src"]}" alt="{e(co["alt"])}" width="{co["w"]}" height="{co["h"]}">') if co else ''
+    return f'''<a class="logo" href="{href}" aria-label="{e(b['name'])} home">
+      <img src="{c['logo']['header']}" alt="{e(b['logo']['alt'])}" width="{c['logo']['w']}" height="{c['logo']['h']}">{second}
+    </a>'''
+
+
+def announcement(c):
+    text = c['brand']['copy'].get('announcement')
+    if not text:
+        return ''
+    lead, _, tail = text.partition(' - ')
+    tail_html = f'<span class="announce-dash" aria-hidden="true"> – </span><span class="announce-tail">{e(tail)}</span>' if tail else ''
+    return f'<div class="announce"><p class="wrap"><strong>{e(lead)}</strong>{tail_html}</p></div>\n'
+
+
 def header(c):
     b = c['brand']
-    return f'''<header class="site-header">
+    return f'''{announcement(c)}<header class="site-header">
   <div class="wrap">
-    <a class="logo" href="#top" aria-label="{e(b['name'])} home">
-      <img src="{c['logo']['header']}" alt="{e(b['logo']['alt'])}" width="{c['logo']['w']}" height="{c['logo']['h']}">
-    </a>
+    {logos(c, '#top')}
     <div class="header-right">
       <p class="header-note">{e(b['copy']['headerNote'])}</p>
       <a class="btn btn-sm" href="#quote" data-cta="header"><span class="long">Get My Free Quote</span><span class="short">Free Quote</span></a>

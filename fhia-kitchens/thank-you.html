@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap">
 <style>
-:root{--head:'Outfit',system-ui,sans-serif;--body:'DM Sans',system-ui,sans-serif;--head-w:600;--navy:#163155;--navy-deep:#0E2340;--accent:#2DAFC5;--accent-text:#1A7F93;--accent-soft:#E3F3F6;--surface:#EEF6F8;--tint:#F5F8F9;--cta-bg:#163155;--cta-hover:#0E2340;--cta-ink:#FFFFFF;--offer-bg:#163155;--offer-ink:#FFFFFF;--offer-accent:#2DAFC5;--radius:14px;--radius-sm:8px;--step-radius:50%;--hero-ink:#163155;--hero-muted:#4E5B69;--logo-h:64px;--logo-h-m:52px;}
+:root{--head:'Outfit',system-ui,sans-serif;--body:'DM Sans',system-ui,sans-serif;--head-w:600;--navy:#163155;--navy-deep:#0E2340;--accent:#2DAFC5;--accent-text:#1A7F93;--accent-soft:#E3F3F6;--surface:#EEF6F8;--tint:#F5F8F9;--cta-bg:#163155;--cta-hover:#0E2340;--cta-ink:#FFFFFF;--offer-bg:#163155;--offer-ink:#FFFFFF;--offer-accent:#2DAFC5;--radius:14px;--radius-sm:8px;--step-radius:50%;--hero-ink:#163155;--hero-muted:#4E5B69;--logo-h:64px;--logo-h-m:52px;--co-logo-h:34px;--co-logo-h-m:24px;}
 /* Shared styles for every Renuity kitchen brand page.
    Brand values arrive as custom properties from config/brands/*.json (see build.py: theme_vars). */
 *,*::before,*::after{box-sizing:border-box;}
@@ -47,11 +47,20 @@ section{scroll-margin-top:80px;}
 .site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:var(--header-h);max-width:1360px;}
 .logo{display:flex;align-items:center;}
 .logo img{height:var(--logo-h-m);width:auto;}
+.logo .co-logo{height:var(--co-logo-h-m);}
+.logo-rule{width:1px;align-self:stretch;margin:6px 14px;background:var(--line);}
+.announce{background:var(--navy);color:#fff;}
+.announce p{max-width:1360px;padding-top:7px;padding-bottom:7px;font-size:.75rem;line-height:1.35;text-align:center;text-wrap:balance;}
+.announce strong{font-weight:600;color:#fff;}
+.announce-tail{color:#CFE3EC;}
+.announce-dash{display:none;}
+.announce-tail{display:block;}
+@media (min-width:768px){.announce p{font-size:.9rem;padding-top:10px;padding-bottom:10px;}.announce-dash{display:inline;}.announce-tail{display:inline;}.logo-rule{margin:10px 20px;}}
 .header-right{display:flex;align-items:center;gap:24px;}
 .header-note{display:none;font-size:.86rem;color:var(--muted);}
 .btn .long{display:none;}
 @media (min-width:900px){.header-note{display:block;}.btn .long{display:inline;}.btn .short{display:none;}}
-@media (min-width:768px){.logo img{height:var(--logo-h);}}
+@media (min-width:768px){.logo img{height:var(--logo-h);}.logo .co-logo{height:var(--co-logo-h);}}
 :root{--header-h:64px;}
 @media (min-width:768px){:root{--header-h:80px;}}
 
@@ -292,7 +301,9 @@ section{scroll-margin-top:80px;}
 </style>
 </head>
 <body class="brand-fhia">
-<header class="site-header"><div class="wrap"><a class="logo" href="./" aria-label="FHIA Remodeling home"><img src="assets/logo.webp" alt="FHIA Remodeling" width="56" height="64"></a></div></header>
+<header class="site-header"><div class="wrap"><a class="logo" href="./" aria-label="FHIA Remodeling home">
+      <img src="assets/logo.webp" alt="FHIA Remodeling" width="56" height="64"><span class="logo-rule" aria-hidden="true"></span><img class="co-logo" src="assets/renuity-logo.svg" alt="Renuity" width="118" height="34">
+    </a></div></header>
 <main class="ty">
   <div class="ty-card">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m7.5 12.3 3 3 6-6.3"/></svg>
