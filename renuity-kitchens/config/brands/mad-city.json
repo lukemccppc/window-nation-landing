@@ -42,9 +42,10 @@
   "copy": {
     "headerNote": "Family owned",
     "trust": [
-      { "icon": "home", "title": "Family owned", "text": "A local Wisconsin remodeling team" },
+      { "icon": "home", "title": "Family owned", "text": "A local remodeling team" },
       { "icon": "shield", "title": "Lifetime warranty", "text": "Workmanship coverage, transferable if you sell" },
-      { "icon": "clock", "title": "Often done in a day", "text": "Many refacing projects finish in one day" }
+      { "icon": "clock", "title": "Often done in a day", "text": "Many refacing projects finish in one day" },
+      { "icon": "ruler", "title": "Free design consultation", "text": "Plan styles and pricing with a specialist" }
     ],
     "timelineNote": "In many cases, installation is completed in a single day. Your consultant confirms the schedule for your kitchen before any work begins.",
     "finalLede": "Discover how a simple cabinet refresh can make a big difference in the space you use every day."
